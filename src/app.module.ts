@@ -14,17 +14,25 @@ import { UsersService } from './users/users.service';
   imports: [
     LoggerModule.forRoot({
       pinoHttp: {
-        transport: {
-          target: 'pino-pretty',
-          options: {
-            messageKey: 'message',
-          },
-        },
+        transport:
+          process.env.NODE_ENV === 'development'
+            ? {
+                target: 'pino-pretty',
+                options: {
+                  messageKey: 'message',
+                },
+              }
+            : undefined,
         messageKey: 'message',
         customProps: (req: Request) => {
           return {
             requestId: req[REQUEST_ID_HEADER],
           };
+        },
+        autoLogging: false,
+        serializers: {
+          req: () => undefined,
+          res: () => undefined,
         },
       },
     }),
