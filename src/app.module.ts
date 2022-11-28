@@ -1,8 +1,12 @@
+import { Request } from 'express';
 import { MiddlewareConsumer, Module, NestModule } from '@nestjs/common';
 import { LoggerModule } from 'nestjs-pino';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { RequestIdMiddleware } from './middlewares/request-id/request-id.middleware';
+import {
+  RequestIdMiddleware,
+  REQUEST_ID_HEADER,
+} from './middlewares/request-id/request-id.middleware';
 import { UsersController } from './users/users.controller';
 import { UsersService } from './users/users.service';
 
@@ -17,6 +21,11 @@ import { UsersService } from './users/users.service';
           },
         },
         messageKey: 'message',
+        customProps: (req: Request) => {
+          return {
+            requestId: req[REQUEST_ID_HEADER],
+          };
+        },
       },
     }),
   ],
