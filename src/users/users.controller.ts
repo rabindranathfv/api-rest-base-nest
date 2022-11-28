@@ -8,6 +8,7 @@ import {
   Post,
   Put,
 } from '@nestjs/common';
+import { CreateUserDto } from './dtos/create-user.dto';
 
 @Controller('users')
 export class UsersController {
@@ -24,12 +25,20 @@ export class UsersController {
   }
 
   @Post()
-  async createUser(@Body() createUserDTO: any) {
+  async createUser(@Body() createUserDTO: CreateUserDto) {
+    console.log(
+      '🚀 ~ file: users.controller.ts ~ line 29 ~ UsersController ~ createUser',
+      createUserDTO,
+      typeof createUserDTO,
+    );
     return await this.userService.createUser(createUserDTO);
   }
 
   @Put(':id')
-  async updateById(@Body() createUserDTO: any, @Param('id') id: string) {
+  async updateById(
+    @Body() createUserDTO: CreateUserDto,
+    @Param('id') id: string,
+  ) {
     return await this.userService.updateById(createUserDTO, id);
   }
 
