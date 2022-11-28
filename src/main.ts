@@ -3,10 +3,13 @@ import { AppModule } from './app.module';
 
 import { ValidationPipe } from '@nestjs/common';
 import { Logger } from 'nestjs-pino';
+import { ConfigService } from '@nestjs/config';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-  app.useLogger(app.get(Logger));
+  const configServ = app.get(ConfigService);
+  const appLogger = app.get(Logger);
+  app.useLogger(appLogger);
   app.useGlobalPipes(
     new ValidationPipe({
       whitelist: true, // delete fields non define into the dto class
@@ -14,6 +17,7 @@ async function bootstrap() {
       transform: true, // validate and transform into Js object, helps a lot with types
     }),
   );
-  await app.listen(3000);
+  appLogger.log(`Running on ENVIROMENT:${configServ.get('NODE_ENV')}`);
+  await app.listen(configServ.get('PORT'));
 }
 bootstrap();
