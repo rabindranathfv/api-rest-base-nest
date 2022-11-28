@@ -11,6 +11,7 @@ import {
   RequestIdMiddleware,
   REQUEST_ID_HEADER,
 } from './middlewares/request-id/request-id.middleware';
+import { validationSchema } from './config/env-schema';
 
 import { UsersController } from './users/users.controller';
 
@@ -46,7 +47,9 @@ import { UsersService } from './users/users.service';
       envFilePath: `${process.cwd()}/config/env/.env.${
         process.env.NODE_ENV
       }.local`,
+      isGlobal: true,
       load: [configuration],
+      validationSchema,
     }),
   ],
   controllers: [AppController, UsersController],
