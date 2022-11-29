@@ -1,8 +1,21 @@
+import { Body, Controller, Logger, Post, UseGuards } from '@nestjs/common';
+import { ApiTags, ApiBearerAuth, ApiHeader } from '@nestjs/swagger';
+
 import { CreateUserDto } from './../users/dtos/create-user.dto';
 import { LoginDto } from './dto/login.dto';
-import { Body, Controller, Logger, Post } from '@nestjs/common';
-import { AuthService } from './auth.service';
 
+import { AuthService } from './auth.service';
+import { JwtAuthGuard } from './jwt-auth.guard';
+
+@ApiTags('auth')
+@ApiHeader({
+  name: 'X-Request-id',
+  description: 'Custom header for requestId generated automaticly',
+})
+// @ApiHeader({
+//   name: 'Authorization',
+//   description: 'Auth Strategy Bearear token with jwt',
+// })
 @Controller('auth')
 export class AuthController {
   private readonly logger = new Logger(AuthController.name);
@@ -21,6 +34,8 @@ export class AuthController {
     return await this.authService.register(createUserDto);
   }
 
+  @UseGuards(JwtAuthGuard)
+  @ApiBearerAuth()
   @Post('logout')
   async logout() {
     this.logger.log('logout in Auth Ctrl');

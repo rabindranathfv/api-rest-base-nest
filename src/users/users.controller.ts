@@ -1,5 +1,3 @@
-import { JwtAuthGuard } from './../auth/jwt-auth.guard';
-import { UsersService } from './users.service';
 import {
   Body,
   Controller,
@@ -11,10 +9,28 @@ import {
   Put,
   UseGuards,
 } from '@nestjs/common';
+import {
+  ApiTags,
+  ApiBearerAuth,
+  ApiHeader,
+  ApiParam,
+  ApiResponse,
+  ApiBody,
+} from '@nestjs/swagger';
+
+import { JwtAuthGuard } from './../auth/jwt-auth.guard';
+import { UsersService } from './users.service';
+
 import { CreateUserDto } from './dtos/create-user.dto';
 import { UpdateUserDto } from './dtos/update-user.dto';
+import { User } from './entities/user.entity';
 
-// @ApiBearerAuth()
+@ApiBearerAuth()
+@ApiTags('user')
+@ApiHeader({
+  name: 'X-Request-id',
+  description: 'Custom header for requestId',
+})
 @UseGuards(JwtAuthGuard)
 @Controller('users')
 export class UsersController {
@@ -22,12 +38,24 @@ export class UsersController {
   constructor(private readonly userService: UsersService) {}
 
   @Get()
+  @ApiResponse({
+    status: 200,
+    description: 'A get for all Users successfully fetched',
+    type: [User],
+  })
+  @ApiBody({ type: User })
   async findAll() {
     this.logger.log('FindAll Users Ctrl');
     return await this.userService.findAll();
   }
 
   @Get(':id')
+  @ApiParam({
+    name: 'id',
+    required: true,
+    description: 'Should be an id of user',
+    type: String,
+  })
   async findById(@Param('id') id: string) {
     this.logger.log('findById Users Ctrl');
     return await this.userService.findById(id);
@@ -40,6 +68,12 @@ export class UsersController {
   }
 
   @Put(':id')
+  @ApiParam({
+    name: 'id',
+    required: true,
+    description: 'Should be an id of user',
+    type: String,
+  })
   async updateById(
     @Body() updateUserDTO: UpdateUserDto,
     @Param('id') id: string,
@@ -49,6 +83,12 @@ export class UsersController {
   }
 
   @Delete(':id')
+  @ApiParam({
+    name: 'id',
+    required: true,
+    description: 'Should be an id of user',
+    type: String,
+  })
   async deleteById(@Param('id') id: string) {
     this.logger.log('deleteById Users Ctrl');
     return await this.userService.deleteById(id);
