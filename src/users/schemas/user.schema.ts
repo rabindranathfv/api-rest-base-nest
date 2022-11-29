@@ -9,6 +9,9 @@ class User {
   @Prop({ type: String, required: true, unique: true, index: true })
   email: string;
 
+  @Prop({ type: String, required: true })
+  password: string;
+
   @Prop({ type: Date, default: Date.now() })
   updatedAt: Date;
 
