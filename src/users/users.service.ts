@@ -1,5 +1,3 @@
-import { CreateUserDto } from './dtos/create-user.dto';
-import { USER_REPOSITORY } from './repository/user.repository';
 import {
   HttpException,
   HttpStatus,
@@ -8,6 +6,11 @@ import {
   Logger,
   NotFoundException,
 } from '@nestjs/common';
+
+import { USER_REPOSITORY } from './repository/user.repository';
+
+import { CreateUserDto } from './dtos/create-user.dto';
+import { UpdateUserDto } from './dtos/update-user.dto';
 
 @Injectable()
 export class UsersService {
@@ -29,7 +32,7 @@ export class UsersService {
     return findUser;
   }
 
-  async createUser(createUserDTO: any) {
+  async createUser(createUserDTO: CreateUserDto) {
     this.logger.log('createUser Users Service');
     const newUser = await this.usersRepository.createUser(createUserDTO);
 
@@ -42,17 +45,13 @@ export class UsersService {
     return newUser;
   }
 
-  async updateById(createUserDTO: Partial<CreateUserDto>, id: string) {
+  async updateById(UpdateUserDto: UpdateUserDto, id: string) {
     this.logger.log('updateById Users Service');
-    console.log(
-      '🚀 ~ file: users.service.ts ~ line 46 ~ UsersService ~ updateById ~ createUserDTO',
-      createUserDTO,
-    );
-    const user = await this.usersRepository.updateById(createUserDTO, id);
+    const user = await this.usersRepository.updateById(UpdateUserDto, id);
 
     if (!user) throw new NotFoundException(`can not update user ${id}`);
 
-    return { id, createUserDTO };
+    return user;
   }
 
   async deleteById(id: string) {

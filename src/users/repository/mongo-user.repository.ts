@@ -8,6 +8,7 @@ import { User } from '../entities/user.entity';
 import { CreateUserDto } from '../dtos/create-user.dto';
 
 import { UsersRepository } from './user.repository';
+import { UpdateUserDto } from '../dtos/update-user.dto';
 
 @Injectable()
 export class MongoUserRepository implements UsersRepository {
@@ -58,12 +59,12 @@ export class MongoUserRepository implements UsersRepository {
   }
 
   async updateById(
-    createUserDto: Partial<CreateUserDto>,
+    updateUserDto: UpdateUserDto,
     id: string,
   ): Promise<User> | null {
     try {
       const updatedUser = await this.userModel
-        .findByIdAndUpdate({ _id: id }, createUserDto)
+        .findByIdAndUpdate({ _id: id }, updateUserDto)
         .lean();
       return this.mapToUser(updatedUser);
     } catch (error) {
@@ -77,8 +78,6 @@ export class MongoUserRepository implements UsersRepository {
     user.id = rawUser._id;
     user.name = rawUser.name;
     user.email = rawUser.email;
-    user.createdAt = rawUser.createdAt;
-    user.updatedAt = rawUser.updatedAt;
 
     return user;
   }
