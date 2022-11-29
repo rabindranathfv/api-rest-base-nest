@@ -1,4 +1,5 @@
-import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
+import { JwtService } from '@nestjs/jwt';
 import { InjectModel } from '@nestjs/mongoose';
 import { LeanDocument } from 'mongoose';
 
@@ -13,27 +14,29 @@ import { hash, compare } from 'bcrypt';
 
 @Injectable()
 export class MongoAuthRepository implements AuthRepository {
-  constructor(@InjectModel(User.name) private readonly userModel: UserModel) {}
+  constructor(
+    @InjectModel(User.name) private readonly userModel: UserModel,
+    private readonly jwtService: JwtService,
+  ) {}
 
   async login(loginDto: LoginDto): Promise<any> {
     try {
       const { email, password } = loginDto;
       const existUser = await this.userModel.findOne({ email }).lean();
-      console.log(
-        '🚀 ~ file: mongo-auth.repository.ts ~ line 22 ~ MongoAuthRepository ~ login ~ existUser',
-        existUser,
-      );
 
       if (!existUser) return null;
 
       const isPasswordMatching = await compare(password, existUser.password);
-      console.log(
-        '🚀 ~ file: mongo-auth.repository.ts ~ line 30 ~ MongoAuthRepository ~ login ~ isPasswordMatching',
-        isPasswordMatching,
-      );
+
       if (!isPasswordMatching) return null;
 
-      return { user: this.mapToUser(existUser), token: 'some token' };
+      const token = await this.jwtService.sign({
+        id: existUser._id,
+        email: existUser.email,
+        name: existUser.name,
+      });
+
+      return { user: this.mapToUser(existUser), token };
     } catch (error) {
       return error.message;
     }

@@ -15,7 +15,6 @@ import {
 import { validationSchema } from './config/env-schema';
 
 import { UserModule } from './users/user.module';
-import { AuthController } from './auth/auth.controller';
 import { AuthModule } from './auth/auth.module';
 
 @Module({
