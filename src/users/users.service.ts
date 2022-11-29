@@ -32,13 +32,13 @@ export class UsersService {
     return findUser;
   }
 
-  async createUser(createUserDTO: CreateUserDto) {
+  async createUser(createUserDto: CreateUserDto) {
     this.logger.log('createUser Users Service');
-    const newUser = await this.usersRepository.createUser(createUserDTO);
+    const newUser = await this.usersRepository.createUser(createUserDto);
 
     if (!newUser)
       throw new HttpException(
-        `this ${createUserDTO.email} already exist or have some errors`,
+        `this ${createUserDto.email} already exist or have some errors`,
         HttpStatus.CONFLICT,
       );
 

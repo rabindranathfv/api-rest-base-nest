@@ -1,11 +1,11 @@
-import { Exclude } from 'class-transformer';
+// import { Exclude } from 'class-transformer';
 
-export class UserEntity {
+export class User {
   id: string;
   name: string;
   email: string;
 
-  @Exclude()
+  // @Exclude()
   password: string;
   createdAt: Date;
   updatedAt: Date;

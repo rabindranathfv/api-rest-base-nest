@@ -3,40 +3,44 @@ import { InjectModel } from '@nestjs/mongoose';
 import { LeanDocument } from 'mongoose';
 
 import { UserDocument, UserModel } from './../schemas/user.schema';
-import { UserEntity } from '../entities/user.entity';
+import { User } from '../entities/user.entity';
 
 import { CreateUserDto } from '../dtos/create-user.dto';
 
 import { UsersRepository } from './user.repository';
 import { UpdateUserDto } from '../dtos/update-user.dto';
 
+import { hash } from 'bcrypt';
+
 @Injectable()
 export class MongoUserRepository implements UsersRepository {
-  constructor(
-    @InjectModel(UserEntity.name) private readonly userModel: UserModel,
-  ) {}
+  constructor(@InjectModel(User.name) private readonly userModel: UserModel) {}
 
-  async createUser(createUserDto: CreateUserDto): Promise<UserEntity> | null {
+  async createUser(createUserDto: CreateUserDto): Promise<User> | null {
     try {
-      const { email } = createUserDto;
-      const existUser = await this.userModel.findOne({ email }).lean();
+      const { email, password } = createUserDto;
+      const existUser = await this.userModel.find({ email }).lean();
 
       if (!existUser) return null;
 
-      const newUser = await new this.userModel(createUserDto).save();
+      const hashedPassword = await hash(password, 10);
+      const newUser = await new this.userModel({
+        ...createUserDto,
+        password: hashedPassword,
+      }).save();
 
       return this.mapToUser(newUser);
     } catch (error) {
-      return null;
+      return error.message;
     }
   }
 
-  async findAll(): Promise<Array<UserEntity>> {
+  async findAll(): Promise<Array<User>> {
     const users = await this.userModel.find().lean();
     return users.map((user) => this.mapToUser(user));
   }
 
-  async findById(id: string): Promise<UserEntity> | null {
+  async findById(id: string): Promise<User> | null {
     try {
       const user = await this.userModel.findById({ _id: id }).lean();
 
@@ -48,7 +52,7 @@ export class MongoUserRepository implements UsersRepository {
     }
   }
 
-  async deleteById(id: string): Promise<UserEntity> | null {
+  async deleteById(id: string): Promise<User> | null {
     try {
       const user = await this.userModel.findByIdAndDelete({ _id: id }).lean();
 
@@ -63,7 +67,7 @@ export class MongoUserRepository implements UsersRepository {
   async updateById(
     updateUserDto: UpdateUserDto,
     id: string,
-  ): Promise<UserEntity> | null {
+  ): Promise<User> | null {
     try {
       const updatedUser = await this.userModel
         .findByIdAndUpdate({ _id: id }, updateUserDto)
@@ -74,8 +78,8 @@ export class MongoUserRepository implements UsersRepository {
     }
   }
 
-  private mapToUser(rawUser: LeanDocument<UserDocument>): UserEntity {
-    const user = new UserEntity();
+  private mapToUser(rawUser: LeanDocument<UserDocument>): User {
+    const user = new User();
 
     user.id = rawUser._id;
     user.name = rawUser.name;

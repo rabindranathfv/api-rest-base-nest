@@ -14,10 +14,9 @@ import {
 } from './middlewares/request-id/request-id.middleware';
 import { validationSchema } from './config/env-schema';
 
-import { UsersController } from './users/users.controller';
-
-import { UsersService } from './users/users.service';
 import { UserModule } from './users/user.module';
+import { AuthController } from './auth/auth.controller';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -62,6 +61,7 @@ import { UserModule } from './users/user.module';
       },
     }),
     UserModule,
+    AuthModule,
   ],
   controllers: [AppController],
   providers: [AppService, ConfigModule],

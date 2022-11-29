@@ -5,14 +5,14 @@ import { UsersController } from './users.controller';
 import { UsersService } from './users.service';
 
 import { UserSchema } from './schemas/user.schema';
-import { UserEntity } from './entities/user.entity';
+import { User } from './entities/user.entity';
 
 import { MongoUserRepository } from './repository/mongo-user.repository';
 import { USER_REPOSITORY } from './repository/user.repository';
 
 @Module({
   imports: [
-    MongooseModule.forFeature([{ name: UserEntity.name, schema: UserSchema }]),
+    MongooseModule.forFeature([{ name: User.name, schema: UserSchema }]),
   ],
   providers: [
     UsersService,
