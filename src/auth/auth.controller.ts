@@ -12,10 +12,6 @@ import { JwtAuthGuard } from './jwt-auth.guard';
   name: 'X-Request-id',
   description: 'Custom header for requestId generated automaticly',
 })
-// @ApiHeader({
-//   name: 'Authorization',
-//   description: 'Auth Strategy Bearear token with jwt',
-// })
 @Controller('auth')
 export class AuthController {
   private readonly logger = new Logger(AuthController.name);
