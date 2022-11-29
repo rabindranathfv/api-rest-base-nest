@@ -47,7 +47,7 @@ services:
 
 networks:
   nestjs-network:
-    driver: bride
+    driver: brigde
 
 volumes:
   mongo:

@@ -16,6 +16,7 @@ import { USER_REPOSITORY } from 'src/users/repository/user.repository';
 
 import { MongoAuthRepository } from './repository/mongo-auth.repository';
 import { AUTH_REPOSITORY } from './repository/auth.repository';
+import { JwtStrategy } from './jwt.strategy';
 
 @Module({
   imports: [
@@ -43,6 +44,7 @@ import { AUTH_REPOSITORY } from './repository/auth.repository';
       provide: AUTH_REPOSITORY,
       useClass: MongoAuthRepository,
     },
+    JwtStrategy,
   ],
   controllers: [AuthController],
 })
