@@ -3,7 +3,7 @@ import { InjectModel } from '@nestjs/mongoose';
 import { LeanDocument } from 'mongoose';
 
 import { UserDocument, UserModel } from './../schemas/user.schema';
-import { User } from '../entities/user.entity';
+import { UserEntity } from '../entities/user.entity';
 
 import { CreateUserDto } from '../dtos/create-user.dto';
 
@@ -12,9 +12,11 @@ import { UpdateUserDto } from '../dtos/update-user.dto';
 
 @Injectable()
 export class MongoUserRepository implements UsersRepository {
-  constructor(@InjectModel(User.name) private readonly userModel: UserModel) {}
+  constructor(
+    @InjectModel(UserEntity.name) private readonly userModel: UserModel,
+  ) {}
 
-  async createUser(createUserDto: CreateUserDto): Promise<User> | null {
+  async createUser(createUserDto: CreateUserDto): Promise<UserEntity> | null {
     try {
       const { email } = createUserDto;
       const existUser = await this.userModel.findOne({ email }).lean();
@@ -29,12 +31,12 @@ export class MongoUserRepository implements UsersRepository {
     }
   }
 
-  async findAll(): Promise<Array<User>> {
+  async findAll(): Promise<Array<UserEntity>> {
     const users = await this.userModel.find().lean();
     return users.map((user) => this.mapToUser(user));
   }
 
-  async findById(id: string): Promise<User> | null {
+  async findById(id: string): Promise<UserEntity> | null {
     try {
       const user = await this.userModel.findById({ _id: id }).lean();
 
@@ -46,7 +48,7 @@ export class MongoUserRepository implements UsersRepository {
     }
   }
 
-  async deleteById(id: string): Promise<User> | null {
+  async deleteById(id: string): Promise<UserEntity> | null {
     try {
       const user = await this.userModel.findByIdAndDelete({ _id: id }).lean();
 
@@ -61,7 +63,7 @@ export class MongoUserRepository implements UsersRepository {
   async updateById(
     updateUserDto: UpdateUserDto,
     id: string,
-  ): Promise<User> | null {
+  ): Promise<UserEntity> | null {
     try {
       const updatedUser = await this.userModel
         .findByIdAndUpdate({ _id: id }, updateUserDto)
@@ -72,8 +74,8 @@ export class MongoUserRepository implements UsersRepository {
     }
   }
 
-  private mapToUser(rawUser: LeanDocument<UserDocument>): User {
-    const user = new User();
+  private mapToUser(rawUser: LeanDocument<UserDocument>): UserEntity {
+    const user = new UserEntity();
 
     user.id = rawUser._id;
     user.name = rawUser.name;
