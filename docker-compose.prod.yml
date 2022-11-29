@@ -1,0 +1,56 @@
+version: '3.0'
+
+# Services to run
+services:
+  api_rest: # name of backend service
+    build:
+      dockerfile: Dockerfile
+      context: . # specify the directory of the Dockerfile
+      target: development
+    container_name: api_rest
+    env_file:
+      - /src/config/env/.env.development.local
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    command: npm run start:dev
+    ports:
+      - 3000:3000
+    restart: always
+    networks:
+      - nestjs-network
+    depends_on:
+      - mongo-db
+      - redis-db
+
+  mongo: # name of BD service
+    image: mongo
+    container_name: mongo_db
+    ports:
+      - 27017:27017
+    volumes:
+      - mongo:/data/configdb
+      - mongo:/data/db
+    networks:
+      - nestjs-network
+    restart: always
+
+  redis-db:
+    image: redis:7.0.5-alpine
+    container_name: redis_db
+    ports:
+      - 6379:6379
+    volumes:
+      - redis:/data
+    networks:
+      - nestjs-network
+
+networks:
+  nestjs-network:
+    driver: bride
+
+volumes:
+  mongo:
+    name: global_mongo
+  redis:
+    driver: local

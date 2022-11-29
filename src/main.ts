@@ -17,7 +17,11 @@ async function bootstrap() {
       transform: true, // validate and transform into Js object, helps a lot with types
     }),
   );
-  appLogger.log(`Running on ENVIROMENT:${configServ.get<string>('NODE_ENV')}`);
+  appLogger.log(
+    `Running on ENVIROMENT:${configServ.get<string>(
+      'NODE_ENV',
+    )} on PORT: ${configServ.get<string>('PORT')}`,
+  );
   await app.listen(configServ.get<string>('PORT'));
 }
 bootstrap();

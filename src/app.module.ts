@@ -1,8 +1,9 @@
 import { Request } from 'express';
 import { MiddlewareConsumer, Module, NestModule } from '@nestjs/common';
 import { LoggerModule } from 'nestjs-pino';
+import { MongooseModule } from '@nestjs/mongoose';
 import { AppController } from './app.controller';
-import { ConfigModule } from '@nestjs/config';
+import { ConfigModule, ConfigService } from '@nestjs/config';
 import { AppService } from './app.service';
 
 import { configuration } from './config/configuration';
@@ -16,6 +17,7 @@ import { validationSchema } from './config/env-schema';
 import { UsersController } from './users/users.controller';
 
 import { UsersService } from './users/users.service';
+import { UserModule } from './users/user.module';
 
 @Module({
   imports: [
@@ -44,16 +46,25 @@ import { UsersService } from './users/users.service';
       },
     }),
     ConfigModule.forRoot({
-      envFilePath: `${process.cwd()}/config/env/.env.${
+      envFilePath: `${process.cwd()}/src/config/env/.env.${
         process.env.NODE_ENV
       }.local`,
       isGlobal: true,
       load: [configuration],
       validationSchema,
     }),
+    MongooseModule.forRootAsync({
+      imports: [ConfigModule],
+      inject: [ConfigService],
+      useFactory: (configService: ConfigService) => {
+        const mongoConfig = configService.get('MONGO');
+        return { uri: mongoConfig.uri };
+      },
+    }),
+    UserModule,
   ],
-  controllers: [AppController, UsersController],
-  providers: [AppService, UsersService],
+  controllers: [AppController],
+  providers: [AppService, ConfigModule],
 })
 export class AppModule implements NestModule {
   configure(consumer: MiddlewareConsumer) {

@@ -1,4 +1,5 @@
-import { Injectable, Logger, NotFoundException } from '@nestjs/common';
+import { USER_REPOSITORY } from './repository/user.repository';
+import { Inject, Injectable, Logger, NotFoundException } from '@nestjs/common';
 
 const users = [
   { id: '1', name: 'u1' },
@@ -8,6 +9,9 @@ const users = [
 @Injectable()
 export class UsersService {
   private readonly logger = new Logger(UsersService.name);
+
+  constructor(@Inject(USER_REPOSITORY) private readonly usersRepository) {}
+
   async findAll() {
     this.logger.log('FindAll Users Service');
     return users;
@@ -24,7 +28,7 @@ export class UsersService {
 
   async createUser(createUserDTO: any) {
     this.logger.log('createUser Users Service');
-    return createUserDTO;
+    return await this.usersRepository.createUser(createUserDTO);
   }
 
   async updateById(createUserDTO: any, id: string) {
