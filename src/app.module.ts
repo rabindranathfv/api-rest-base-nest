@@ -56,7 +56,6 @@ import { AuthModule } from './auth/auth.module';
       inject: [ConfigService],
       useFactory: (configService: ConfigService) => {
         const mongoConfig = configService.get('MONGO');
-        console.log('🚀 ~ file: app.module.ts:59 ~ mongoConfig', mongoConfig);
         return { uri: mongoConfig.uri };
       },
     }),
