@@ -31,7 +31,7 @@ export class MongoUserRepository implements UsersRepository {
 
       return this.mapToUser(newUser);
     } catch (error) {
-      return error.message;
+      return null;
     }
   }
 
@@ -64,14 +64,9 @@ export class MongoUserRepository implements UsersRepository {
     }
   }
 
-  async updateById(
-    updateUserDto: UpdateUserDto,
-    id: string,
-  ): Promise<User> | null {
+  async updateById(updateUserDto: UpdateUserDto, id: string): Promise<User> | null {
     try {
-      const updatedUser = await this.userModel
-        .findByIdAndUpdate({ _id: id }, updateUserDto)
-        .lean();
+      const updatedUser = await this.userModel.findByIdAndUpdate({ _id: id }, updateUserDto).lean();
       return this.mapToUser(updatedUser);
     } catch (error) {
       return null;

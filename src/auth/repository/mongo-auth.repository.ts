@@ -14,10 +14,7 @@ import { hash, compare } from 'bcrypt';
 
 @Injectable()
 export class MongoAuthRepository implements AuthRepository {
-  constructor(
-    @InjectModel(User.name) private readonly userModel: UserModel,
-    private readonly jwtService: JwtService,
-  ) {}
+  constructor(@InjectModel(User.name) private readonly userModel: UserModel, private readonly jwtService: JwtService) {}
 
   async login(loginDto: LoginDto): Promise<any> {
     try {
@@ -38,7 +35,7 @@ export class MongoAuthRepository implements AuthRepository {
 
       return { user: this.mapToUser(existUser), token };
     } catch (error) {
-      return error.message;
+      return null;
     }
   }
 
@@ -57,7 +54,7 @@ export class MongoAuthRepository implements AuthRepository {
 
       return this.mapToUser(newUser);
     } catch (error) {
-      return error.message;
+      return null;
     }
   }
 
