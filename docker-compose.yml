@@ -2,6 +2,50 @@ version: '3.0'
 
 # Services to run
 services:
+  dev:
+    container_name: nestjs_api_dev
+    image: nestjs-api-dev:1.0.0
+    env_file:
+      - ./src/config/env/.env.development.local
+    build:
+      context: .
+      target: development
+      dockerfile: ./Dockerfile
+    command: npm run start:debug
+    ports:
+      - 3000:3000
+      - 9229:9229
+    networks:
+      - nestjs-network
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    restart: unless-stopped
+    depends_on:
+      - mongo
+
+  prod:
+    container_name: nestjs_api_prod
+    image: nestjs-api-prod:1.0.0
+    env_file:
+      - ./src/config/env/.env.production.local
+    build:
+      context: .
+      target: production
+      dockerfile: ./Dockerfile
+    command: npm run start:prod
+    ports:
+      - 3000:3000
+      - 9229:9229
+    networks:
+      - nestjs-network
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    restart: unless-stopped
+    depends_on:
+      - mongo
+
   mongo: # name of BD service
     image: mongo
     container_name: mongo_db
@@ -11,6 +55,11 @@ services:
       - mongo:/data/configdb
       - mongo:/data/db
     restart: always
+    networks:
+      - nestjs-network
+
+networks:
+  nestjs-network:
 
 volumes:
   mongo:
