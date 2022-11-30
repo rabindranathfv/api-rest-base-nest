@@ -14,7 +14,10 @@ import { hash, compare } from 'bcrypt';
 
 @Injectable()
 export class MongoAuthRepository implements AuthRepository {
-  constructor(@InjectModel(User.name) private readonly userModel: UserModel, private readonly jwtService: JwtService) {}
+  constructor(
+    @InjectModel(User.name) private readonly userModel: UserModel,
+    private readonly jwtService: JwtService,
+  ) {}
 
   async login(loginDto: LoginDto): Promise<any> {
     try {
