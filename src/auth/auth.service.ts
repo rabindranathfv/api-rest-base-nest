@@ -1,10 +1,12 @@
 import {
+  CACHE_MANAGER,
   HttpException,
   HttpStatus,
   Inject,
   Injectable,
   Logger,
 } from '@nestjs/common';
+import { Cache } from 'cache-manager';
 
 import { USER_REPOSITORY } from 'src/users/repository/user.repository';
 import { AUTH_REPOSITORY } from './repository/auth.repository';
@@ -19,6 +21,7 @@ export class AuthService {
   constructor(
     @Inject(USER_REPOSITORY) private readonly usersRepository,
     @Inject(AUTH_REPOSITORY) private readonly authRepository,
+    @Inject(CACHE_MANAGER) private readonly cacheManager: Cache,
   ) {}
 
   async login(loginDto: LoginDto) {
@@ -31,6 +34,8 @@ export class AuthService {
         HttpStatus.CONFLICT,
       );
 
+    // await this.cacheManager.set(`login-${loginProcess.id}`, loginProcess);
+    // const cacheResp = await this.cacheManager.get(`users-${loginProcess.id}`);
     return loginProcess;
   }
 

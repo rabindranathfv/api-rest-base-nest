@@ -1,4 +1,4 @@
-import { Module } from '@nestjs/common';
+import { Module, CacheModule } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose';
 import { JwtModule } from '@nestjs/jwt';
@@ -30,6 +30,18 @@ import { JwtStrategy } from './jwt.strategy';
         return {
           secret: jwtConfig.secret,
           signOptions: { expiresIn: jwtConfig.expiresIn },
+        };
+      },
+    }),
+    CacheModule.registerAsync({
+      imports: [ConfigModule],
+      inject: [ConfigService],
+      useFactory: (configService: ConfigService) => {
+        const cacheConfig = configService.get('CACHE');
+        return {
+          isGlobal: true,
+          ttl: Number(cacheConfig.ttl),
+          max: Number(cacheConfig.storage),
         };
       },
     }),

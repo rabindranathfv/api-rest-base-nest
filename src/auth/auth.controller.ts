@@ -1,4 +1,12 @@
-import { Body, Controller, Logger, Post, UseGuards } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Logger,
+  Post,
+  UseGuards,
+  CacheKey,
+  CacheTTL,
+} from '@nestjs/common';
 import { ApiTags, ApiBearerAuth, ApiHeader } from '@nestjs/swagger';
 
 import { CreateUserDto } from './../users/dtos/create-user.dto';
@@ -19,6 +27,8 @@ export class AuthController {
   constructor(private readonly authService: AuthService) {}
 
   @Post('login')
+  @CacheKey('login')
+  @CacheTTL(60)
   async login(@Body() loginDto: LoginDto) {
     this.logger.log('login in Auth Ctrl');
     return await this.authService.login(loginDto);

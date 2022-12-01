@@ -1,9 +1,16 @@
-import { MiddlewareConsumer, Module, NestModule } from '@nestjs/common';
+import {
+  MiddlewareConsumer,
+  Module,
+  NestModule,
+  CacheModule,
+  CacheInterceptor,
+} from '@nestjs/common';
 import { IncomingMessage } from 'http';
 import { LoggerModule } from 'nestjs-pino';
 import { MongooseModule } from '@nestjs/mongoose';
 import { AppController } from './app.controller';
 import { ConfigModule, ConfigService } from '@nestjs/config';
+import { APP_INTERCEPTOR } from '@nestjs/core';
 import { AppService } from './app.service';
 
 import { configuration } from './config/configuration';
@@ -59,11 +66,31 @@ import { AuthModule } from './auth/auth.module';
         return { uri: mongoConfig.uri };
       },
     }),
+    CacheModule.registerAsync({
+      imports: [ConfigModule],
+      inject: [ConfigService],
+      useFactory: (configService: ConfigService) => {
+        const cacheConfig = configService.get('CACHE');
+        return {
+          isGlobal: true,
+          ttl: Number(cacheConfig.ttl),
+          max: Number(cacheConfig.storage),
+        };
+      },
+    }),
     UserModule,
     AuthModule,
   ],
   controllers: [AppController],
-  providers: [AppService, ConfigModule],
+  providers: [
+    AppService,
+    ConfigModule,
+    // cache all endpoints with this config
+    {
+      provide: APP_INTERCEPTOR,
+      useClass: CacheInterceptor,
+    },
+  ],
 })
 export class AppModule implements NestModule {
   configure(consumer: MiddlewareConsumer) {

@@ -1,4 +1,5 @@
 import {
+  CACHE_MANAGER,
   HttpException,
   HttpStatus,
   Inject,
@@ -6,6 +7,7 @@ import {
   Logger,
   NotFoundException,
 } from '@nestjs/common';
+import { Cache } from 'cache-manager';
 
 import { USER_REPOSITORY } from './repository/user.repository';
 
@@ -16,7 +18,10 @@ import { UpdateUserDto } from './dtos/update-user.dto';
 export class UsersService {
   private readonly logger = new Logger(UsersService.name);
 
-  constructor(@Inject(USER_REPOSITORY) private readonly usersRepository) {}
+  constructor(
+    @Inject(USER_REPOSITORY) private readonly usersRepository,
+    @Inject(CACHE_MANAGER) private readonly cacheManager: Cache,
+  ) {}
 
   async findAll() {
     this.logger.log('FindAll Users Service');
@@ -29,6 +34,13 @@ export class UsersService {
 
     if (!findUser) throw new NotFoundException(`user not found ${id}`);
 
+    await this.cacheManager.set(`users-${findUser.id}`, findUser);
+    const cacheResp = await this.cacheManager.get(`users-${findUser.id}`);
+
+    console.log(
+      '🚀 ~ file: users.service.ts:40 ~ UsersService ~ findById ~ cacheResp',
+      cacheResp,
+    );
     return findUser;
   }
 

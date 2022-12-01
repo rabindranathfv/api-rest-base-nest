@@ -8,4 +8,8 @@ export const configuration = () => ({
   MONGO: {
     uri: process.env.MONGO_URI,
   },
+  CACHE: {
+    ttl: process.env.NEST_TTL_CACHE,
+    storage: process.env.NEST_MAX_CACHE_STORAGE,
+  },
 });

@@ -1,5 +1,8 @@
 import {
   Body,
+  CacheInterceptor,
+  CacheKey,
+  CacheTTL,
   Controller,
   Delete,
   Get,
@@ -8,6 +11,7 @@ import {
   Post,
   Put,
   UseGuards,
+  UseInterceptors,
 } from '@nestjs/common';
 import {
   ApiTags,
@@ -32,6 +36,7 @@ import { User } from './entities/user.entity';
   description: 'Custom header for requestId',
 })
 @UseGuards(JwtAuthGuard)
+@UseInterceptors(CacheInterceptor) // cache for all get methods on this ctrl
 @Controller('users')
 export class UsersController {
   private readonly logger = new Logger(UsersController.name);
@@ -46,7 +51,8 @@ export class UsersController {
   @ApiBody({ type: User })
   async findAll() {
     this.logger.log('FindAll Users Ctrl');
-    return await this.userService.findAll();
+    const userList = await this.userService.findAll();
+    return userList;
   }
 
   @Get(':id')
@@ -58,7 +64,8 @@ export class UsersController {
   })
   async findById(@Param('id') id: string) {
     this.logger.log('findById Users Ctrl');
-    return await this.userService.findById(id);
+    const user: User = await this.userService.findById(id);
+    return user;
   }
 
   @Post()
