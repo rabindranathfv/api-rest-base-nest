@@ -5,6 +5,9 @@
 # env variables
 /src/config/env/*.local
 
+#bigQUery credentials
+auth-connection-bigquery.json
+
 # Logs
 logs
 *.log

@@ -23,6 +23,7 @@ import { validationSchema } from './config/env-schema';
 
 import { UserModule } from './users/user.module';
 import { AuthModule } from './auth/auth.module';
+import { BigqueryModule } from './bigquery/bigquery.module';
 
 @Module({
   imports: [
@@ -80,6 +81,7 @@ import { AuthModule } from './auth/auth.module';
     }),
     UserModule,
     AuthModule,
+    BigqueryModule,
   ],
   controllers: [AppController],
   providers: [
