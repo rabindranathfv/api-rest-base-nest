@@ -1,4 +1,4 @@
-import { Body, Res, Controller, Logger, Post } from '@nestjs/common';
+import { Res, Controller, Logger, Get } from '@nestjs/common';
 import { ApiHeader, ApiTags } from '@nestjs/swagger';
 import { BigqueryService } from './bigquery.service';
 
@@ -14,10 +14,10 @@ export class BigqueryController {
 
   constructor(private readonly bigQueryService: BigqueryService) {}
 
-  @Post('login')
-  async login(@Body() body: any, @Res() res: Response) {
+  @Get('check')
+  async login(@Res() res: Response) {
     this.logger.log(`Login bigQueryEndpoint bigQuery Ctrl`);
-    const resp = await this.bigQueryService.login(body);
+    const resp = await this.bigQueryService.check();
     console.log(
       '🚀 ~ file: bigquery.controller.ts:20 ~ BigqueryController ~ login ~ resp',
       resp,
