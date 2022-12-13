@@ -1,4 +1,4 @@
-import { Res, Controller, Logger, Get } from '@nestjs/common';
+import { Res, Controller, Logger, Get, HttpStatus } from '@nestjs/common';
 import { ApiHeader, ApiTags } from '@nestjs/swagger';
 import { BigqueryService } from './bigquery.service';
 
@@ -22,6 +22,10 @@ export class BigqueryController {
       '🚀 ~ file: bigquery.controller.ts:20 ~ BigqueryController ~ login ~ resp',
       resp,
     );
+    if (!resp)
+      res
+        .status(HttpStatus.NOT_FOUND)
+        .json({ message: `query with no results` });
 
     return res.status(201).json(resp);
   }
