@@ -37,4 +37,27 @@ export class ArtistService {
       );
     }
   }
+
+  async getAllSongsByArtists(): Promise<any> {
+    this.logger.log(`${ArtistService.name} - getAllSongsByArtists`);
+    try {
+      const query = `SELECT emisora_N1, emisora_N2, id_interprete, interprete_colaboradores, nombre_interprete, inserciones, universo, 
+        cobertura, cob, contactos, grp_s, ots, ola, fecha_peticion, rango, rango_sort_order, fecha
+        FROM dataglobalproduccion.BI_Artistas_Alt.odec_t`;
+      const queryResults = await this.artistRepository.getAllSongsByArtists(
+        query,
+      );
+
+      return queryResults;
+    } catch (error) {
+      this.logger.log(
+        `${ArtistService.name} - getAllSongsByArtists -  ERROR`,
+        error,
+      );
+      throw new HttpException(
+        `Error make query`,
+        HttpStatus.INTERNAL_SERVER_ERROR,
+      );
+    }
+  }
 }

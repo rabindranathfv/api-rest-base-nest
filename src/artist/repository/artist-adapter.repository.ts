@@ -3,6 +3,7 @@ import { Inject, Injectable, Logger } from '@nestjs/common';
 
 import { ArtistRepository } from './artist.repository';
 import { artistsMockData } from '../mocks/artists.mock';
+import { songsByartistsMockData } from '../mocks/songsByArtist';
 
 @Injectable()
 export class ArtistAdapterRepository implements ArtistRepository {
@@ -14,7 +15,7 @@ export class ArtistAdapterRepository implements ArtistRepository {
 
   async getAllArtists(queryStr: string): Promise<any[]> {
     this.logger.log(
-      `Apply check GCP on ${ArtistAdapterRepository.name} - repository - method: check`,
+      `Apply check GCP on ${ArtistAdapterRepository.name} - repository - method: getAllArtists`,
     );
     try {
       const instance = await this.bigQueryRepository.connectWithGCP();
@@ -22,6 +23,23 @@ export class ArtistAdapterRepository implements ArtistRepository {
       const query = `${queryStr}`;
       // const queryResults = await this.bigQueryRepository.query(instance, query);
       const queryResults = artistsMockData;
+
+      return queryResults;
+    } catch (error) {
+      return null;
+    }
+  }
+
+  async getAllSongsByArtists(queryStr: string): Promise<any[]> {
+    this.logger.log(
+      `Apply check GCP on ${ArtistAdapterRepository.name} - repository - method: getAllSongsByArtists`,
+    );
+    try {
+      const instance = await this.bigQueryRepository.connectWithGCP();
+
+      const query = `${queryStr}`;
+      // const queryResults = await this.bigQueryRepository.query(instance, query);
+      const queryResults = songsByartistsMockData;
 
       return queryResults;
     } catch (error) {

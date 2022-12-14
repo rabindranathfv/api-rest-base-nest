@@ -20,4 +20,17 @@ export class ArtistController {
 
     return res.status(HttpStatus.OK).json(resp);
   }
+
+  @Get('/songs')
+  async getAllSongsByArtists(@Res() res: Response) {
+    this.logger.log(`${ArtistController.name} - getAllSongsByArtists`);
+    const resp = await this.artistService.getAllSongsByArtists();
+
+    if (!resp)
+      res
+        .status(HttpStatus.NOT_FOUND)
+        .json({ message: `there is no artists info available` });
+
+    return res.status(HttpStatus.OK).json(resp);
+  }
 }
