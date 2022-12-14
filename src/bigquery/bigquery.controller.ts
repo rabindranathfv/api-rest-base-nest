@@ -18,15 +18,12 @@ export class BigqueryController {
   async login(@Res() res: Response) {
     this.logger.log(`Login bigQueryEndpoint bigQuery Ctrl`);
     const resp = await this.bigQueryService.check();
-    console.log(
-      '🚀 ~ file: bigquery.controller.ts:20 ~ BigqueryController ~ login ~ resp',
-      resp,
-    );
+
     if (!resp)
       res
         .status(HttpStatus.NOT_FOUND)
         .json({ message: `query with no results` });
 
-    return res.status(201).json(resp);
+    return res.status(HttpStatus.OK).json(resp);
   }
 }

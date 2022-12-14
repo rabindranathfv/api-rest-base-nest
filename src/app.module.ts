@@ -24,6 +24,7 @@ import { validationSchema } from './config/env-schema';
 import { UserModule } from './users/user.module';
 import { AuthModule } from './auth/auth.module';
 import { BigqueryModule } from './bigquery/bigquery.module';
+import { ArtistModule } from './artist/artist.module';
 
 @Module({
   imports: [
@@ -82,6 +83,7 @@ import { BigqueryModule } from './bigquery/bigquery.module';
     UserModule,
     AuthModule,
     BigqueryModule,
+    ArtistModule,
   ],
   controllers: [AppController],
   providers: [

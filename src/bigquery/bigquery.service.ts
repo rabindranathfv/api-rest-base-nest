@@ -4,7 +4,6 @@ import {
   Inject,
   Injectable,
   Logger,
-  Res,
 } from '@nestjs/common';
 
 import { BIG_QUERY_REPOSITORY } from './repository/big-query.repository';
