@@ -32,7 +32,7 @@ export const songsByartistsMockData = [
 
   {
     id: 4,
-    songName: 'Songs Blinding Lights 3',
+    songName: 'Songs Blinding Lights 4',
     albumName: 'After Hours 3',
     launchYear: 2021,
     playTimeValue: 46.568,
@@ -43,7 +43,7 @@ export const songsByartistsMockData = [
 
   {
     id: 5,
-    songName: 'Songs Blinding Lights 3',
+    songName: 'Songs Blinding Lights 5',
     albumName: 'After Hours 3',
     launchYear: 2021,
     playTimeValue: 46.568,
@@ -54,7 +54,7 @@ export const songsByartistsMockData = [
 
   {
     id: 6,
-    songName: 'Songs Blinding Lights 3',
+    songName: 'Songs Blinding Lights 6',
     albumName: 'After Hours 3',
     launchYear: 2021,
     playTimeValue: 46.568,
@@ -65,7 +65,7 @@ export const songsByartistsMockData = [
 
   {
     id: 7,
-    songName: 'Songs Blinding Lights 3',
+    songName: 'Songs Blinding Lights 7',
     albumName: 'After Hours 3',
     launchYear: 2021,
     playTimeValue: 46.568,

@@ -33,4 +33,17 @@ export class ArtistController {
 
     return res.status(HttpStatus.OK).json(resp);
   }
+
+  @Get('/summary')
+  async getArtistSummary(@Res() res: Response) {
+    this.logger.log(`${ArtistController.name} - getArtistSummary`);
+    const resp = await this.artistService.getArtistSummary();
+
+    if (!resp)
+      res
+        .status(HttpStatus.NOT_FOUND)
+        .json({ message: `there is no artists summary info available` });
+
+    return res.status(HttpStatus.OK).json(resp);
+  }
 }
