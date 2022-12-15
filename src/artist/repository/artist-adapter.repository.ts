@@ -1,8 +1,11 @@
-import { BIG_QUERY_REPOSITORY } from 'src/bigquery/repository/big-query.repository';
 import { Inject, Injectable, Logger } from '@nestjs/common';
 
 import { ArtistRepository } from './artist.repository';
-import { artistsMockData } from '../mocks/artists.mock';
+import { BIG_QUERY_REPOSITORY } from 'src/bigquery/repository/big-query.repository';
+
+import { radioStationStadistic } from './../mocks/radioStationKPI';
+import { artistKpiOverview } from './../mocks/artistKpiOverview';
+import { artistsMockData } from '../mocks/artistsMock';
 import { songsByartistsMockData } from '../mocks/songsByArtist';
 import { artistDetailMockData } from '../mocks/artistDetailMock';
 
@@ -14,9 +17,43 @@ export class ArtistAdapterRepository implements ArtistRepository {
     @Inject(BIG_QUERY_REPOSITORY) private readonly bigQueryRepository,
   ) {}
 
+  async getArtistRadioStationKpi(queryStr: string): Promise<any> {
+    this.logger.log(
+      `using ${ArtistAdapterRepository.name} - repository - method: getArtistRadioStationKpi`,
+    );
+    try {
+      const instance = await this.bigQueryRepository.connectWithGCP();
+
+      const query = `${queryStr}`;
+      // const queryResults = await this.bigQueryRepository.query(instance, query);
+      const queryResults = radioStationStadistic;
+
+      return queryResults;
+    } catch (error) {
+      return null;
+    }
+  }
+
+  async getArtistKpi(queryStr: string): Promise<any> {
+    this.logger.log(
+      `using ${ArtistAdapterRepository.name} - repository - method: getArtistKpi`,
+    );
+    try {
+      const instance = await this.bigQueryRepository.connectWithGCP();
+
+      const query = `${queryStr}`;
+      // const queryResults = await this.bigQueryRepository.query(instance, query);
+      const queryResults = artistKpiOverview;
+
+      return queryResults;
+    } catch (error) {
+      return null;
+    }
+  }
+
   async getArtistSummary(queryStr: string): Promise<any> {
     this.logger.log(
-      `Apply check GCP on ${ArtistAdapterRepository.name} - repository - method: getAllArtists`,
+      `using ${ArtistAdapterRepository.name} - repository - method: getAllArtists`,
     );
     try {
       const instance = await this.bigQueryRepository.connectWithGCP();
@@ -33,7 +70,7 @@ export class ArtistAdapterRepository implements ArtistRepository {
 
   async getAllArtists(queryStr: string): Promise<any[]> {
     this.logger.log(
-      `Apply check GCP on ${ArtistAdapterRepository.name} - repository - method: getAllArtists`,
+      `using ${ArtistAdapterRepository.name} - repository - method: getAllArtists`,
     );
     try {
       const instance = await this.bigQueryRepository.connectWithGCP();
@@ -50,7 +87,7 @@ export class ArtistAdapterRepository implements ArtistRepository {
 
   async getAllSongsByArtists(queryStr: string): Promise<any[]> {
     this.logger.log(
-      `Apply check GCP on ${ArtistAdapterRepository.name} - repository - method: getAllSongsByArtists`,
+      `using ${ArtistAdapterRepository.name} - repository - method: getAllSongsByArtists`,
     );
     try {
       const instance = await this.bigQueryRepository.connectWithGCP();

@@ -46,4 +46,30 @@ export class ArtistController {
 
     return res.status(HttpStatus.OK).json(resp);
   }
+
+  @Get('/kpi')
+  async getArtistKpi(@Res() res: Response) {
+    this.logger.log(`${ArtistController.name} - getArtistKpi`);
+    const resp = await this.artistService.getArtistKpi();
+
+    if (!resp)
+      res
+        .status(HttpStatus.NOT_FOUND)
+        .json({ message: `there is no artists kpi info available` });
+
+    return res.status(HttpStatus.OK).json(resp);
+  }
+
+  @Get('/stationskpi')
+  async getArtistRadioStationKpi(@Res() res: Response) {
+    this.logger.log(`${ArtistController.name} - getArtistRadioStationKpi`);
+    const resp = await this.artistService.getArtistRadioStationKpi();
+
+    if (!resp)
+      res.status(HttpStatus.NOT_FOUND).json({
+        message: `there is no artists radio stations kpi info available`,
+      });
+
+    return res.status(HttpStatus.OK).json(resp);
+  }
 }
