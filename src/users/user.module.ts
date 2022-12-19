@@ -1,3 +1,6 @@
+import { BigQueryAdapterRepository } from 'src/bigquery/repository/big-query-adapter.repository';
+import { BIG_QUERY_REPOSITORY } from 'src/bigquery/repository/big-query.repository';
+import { USER_DATASTORE_REPOSITORY } from './repository/user-datastore.repository';
 import { Module, CacheModule } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 import { ConfigModule, ConfigService } from '@nestjs/config';
@@ -10,6 +13,7 @@ import { User } from './entities/user.entity';
 
 import { MongoUserRepository } from './repository/mongo-user.repository';
 import { USER_REPOSITORY } from './repository/user.repository';
+import { DatastoreUserRepository } from './repository/datastore-user.repository';
 
 @Module({
   imports: [
@@ -31,6 +35,14 @@ import { USER_REPOSITORY } from './repository/user.repository';
     {
       provide: USER_REPOSITORY,
       useClass: MongoUserRepository,
+    },
+    {
+      provide: BIG_QUERY_REPOSITORY,
+      useClass: BigQueryAdapterRepository,
+    },
+    {
+      provide: USER_DATASTORE_REPOSITORY,
+      useClass: DatastoreUserRepository,
     },
     ConfigModule,
   ],

@@ -35,7 +35,7 @@ import { User } from './entities/user.entity';
   name: 'X-Request-id',
   description: 'Custom header for requestId',
 })
-@UseGuards(JwtAuthGuard)
+// @UseGuards(JwtAuthGuard)
 @UseInterceptors(CacheInterceptor) // cache for all get methods on this ctrl
 @Controller('users')
 export class UsersController {
@@ -55,18 +55,19 @@ export class UsersController {
     return userList;
   }
 
-  @Get(':id')
-  @ApiParam({
-    name: 'id',
-    required: true,
-    description: 'Should be an id of user',
-    type: String,
-  })
-  async findById(@Param('id') id: string) {
-    this.logger.log('findById Users Ctrl');
-    const user: User = await this.userService.findById(id);
-    return user;
-  }
+  // TODO: only comments for testing datastore endpoins
+  // @Get(':id')
+  // @ApiParam({
+  //   name: 'id',
+  //   required: true,
+  //   description: 'Should be an id of user',
+  //   type: String,
+  // })
+  // async findById(@Param('id') id: string) {
+  //   this.logger.log('findById Users Ctrl');
+  //   const user: User = await this.userService.findById(id);
+  //   return user;
+  // }
 
   @Post()
   async createUser(@Body() createUserDTO: CreateUserDto) {
@@ -74,30 +75,84 @@ export class UsersController {
     return await this.userService.createUser(createUserDTO);
   }
 
-  @Put(':id')
+  // @Put(':id')
+  // @ApiParam({
+  //   name: 'id',
+  //   required: true,
+  //   description: 'Should be an id of user',
+  //   type: String,
+  // })
+  // async updateById(
+  //   @Body() updateUserDTO: UpdateUserDto,
+  //   @Param('id') id: string,
+  // ) {
+  //   this.logger.log('updateById Users Ctrl');
+  //   return await this.userService.updateById(updateUserDTO, id);
+  // }
+
+  // @Delete(':id')
+  // @ApiParam({
+  //   name: 'id',
+  //   required: true,
+  //   description: 'Should be an id of user',
+  //   type: String,
+  // })
+  // async deleteById(@Param('id') id: string) {
+  //   this.logger.log('deleteById Users Ctrl');
+  //   return await this.userService.deleteById(id);
+  // }
+
+  // ENDPOINTS WITH DATASTORE
+  @Get('v2')
+  async findAllV2() {
+    this.logger.log('FindAll Users Ctrl with DATASTORE');
+    const userList = await this.userService.findAllV2();
+    return userList;
+  }
+
+  @Get(':id/v2')
   @ApiParam({
     name: 'id',
     required: true,
     description: 'Should be an id of user',
     type: String,
   })
-  async updateById(
+  async findByIdV2(@Param('id') id: string) {
+    this.logger.log('findById Users Ctrl');
+    const user: User = await this.userService.findByIdV2(id);
+    return user;
+  }
+
+  @Post('v2')
+  async createUserV2(@Body() createUserDTO: CreateUserDto) {
+    this.logger.log('createUserV2 Users Ctrl');
+    return await this.userService.createUserV2(createUserDTO);
+  }
+
+  @Put(':id/v2')
+  @ApiParam({
+    name: 'id',
+    required: true,
+    description: 'Should be an id of user',
+    type: String,
+  })
+  async updateByIdV2(
     @Body() updateUserDTO: UpdateUserDto,
     @Param('id') id: string,
   ) {
-    this.logger.log('updateById Users Ctrl');
-    return await this.userService.updateById(updateUserDTO, id);
+    this.logger.log('updateByIdV2 Users Ctrl');
+    return await this.userService.updateByIdV2(updateUserDTO, id);
   }
 
-  @Delete(':id')
+  @Delete(':id/v2')
   @ApiParam({
     name: 'id',
     required: true,
     description: 'Should be an id of user',
     type: String,
   })
-  async deleteById(@Param('id') id: string) {
-    this.logger.log('deleteById Users Ctrl');
-    return await this.userService.deleteById(id);
+  async deleteByIdV2(@Param('id') id: string) {
+    this.logger.log('deleteByIdV2 Users Ctrl');
+    return await this.userService.deleteByIdV2(id);
   }
 }
