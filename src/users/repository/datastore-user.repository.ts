@@ -131,7 +131,11 @@ export class DatastoreUserRepository implements UsersDatastoreRepository {
         '🚀 ~ file: datastore-user.repository.ts:144 ~ DatastoreUserRepository ~ deleteById ~ userKey',
         userKey,
       );
-      await instance.delete(userKey);
+      const result = await instance.delete(userKey);
+      console.log(
+        '🚀 ~ file: datastore-user.repository.ts:135 ~ DatastoreUserRepository ~ deleteById ~ result',
+        result,
+      );
       this.logger.log(`user ${id} deleted successfully.`);
 
       return null;
@@ -146,7 +150,8 @@ export class DatastoreUserRepository implements UsersDatastoreRepository {
   ): Promise<User> | null {
     const instance: Datastore =
       await this.bigQueryRepository.connectWithDatastorage();
-    const transaction = instance.transaction();
+    const transaction = await instance.transaction();
+
     const userKey = await instance.key([
       `${USER_DASHBOARD}`,
       Datastore.int(id),
@@ -155,14 +160,22 @@ export class DatastoreUserRepository implements UsersDatastoreRepository {
       await transaction.run();
       let [user] = await transaction.get(userKey);
       user = {
-        user,
-        ...updateUserDto,
+        ...(updateUserDto.email && { email: updateUserDto.email }),
+        ...(updateUserDto.username && { email: updateUserDto.username }),
+        ...(updateUserDto.password && { email: updateUserDto.password }),
       };
 
       await transaction.save({ key: userKey, data: user });
+
+      const [results] = await transaction.commit();
+
+      console.log(
+        '🚀 ~ file: datastore-user.repository.ts:166 ~ DatastoreUserRepository ~ result',
+        results.mutationResults,
+      );
       this.logger.log(`Task ${id} updated successfully.`);
 
-      return null;
+      return user;
     } catch (error) {
       await transaction.rollback();
       return null;
