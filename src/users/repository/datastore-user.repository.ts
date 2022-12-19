@@ -99,25 +99,20 @@ export class DatastoreUserRepository implements UsersDatastoreRepository {
       const instance: Datastore =
         await this.bigQueryRepository.connectWithDatastorage();
 
-      const transaction = instance.transaction();
-      const userKey = instance.key([`${USER_DASHBOARD}`, id]);
-
-      console.log(
-        '🚀 ~ file: datastore-user.repository.ts:124 ~ DatastoreUserRepository ~ findById ~ userKey',
-        userKey,
-      );
+      const transaction = await instance.transaction();
+      const userKey = await instance.key([
+        `${USER_DASHBOARD}`,
+        Datastore.int(id),
+      ]);
 
       await transaction.run();
       const [user] = await transaction.get(userKey);
-      console.log(
-        '🚀 ~ file: datastore-user.repository.ts:131 ~ DatastoreUserRepository ~ findById ~ data',
-        user,
-      );
 
-      //   if (!existUser) return null;
+      if (!user) return null;
 
-      return null;
+      return user;
     } catch (error) {
+      console.log(error);
       return null;
     }
   }
@@ -127,7 +122,10 @@ export class DatastoreUserRepository implements UsersDatastoreRepository {
       const instance: Datastore =
         await this.bigQueryRepository.connectWithDatastorage();
 
-      const userKey = instance.key([`${USER_DASHBOARD}`, id]);
+      const userKey = await instance.key([
+        `${USER_DASHBOARD}`,
+        Datastore.int(id),
+      ]);
       if (!userKey) return null;
       console.log(
         '🚀 ~ file: datastore-user.repository.ts:144 ~ DatastoreUserRepository ~ deleteById ~ userKey',
@@ -149,7 +147,10 @@ export class DatastoreUserRepository implements UsersDatastoreRepository {
     const instance: Datastore =
       await this.bigQueryRepository.connectWithDatastorage();
     const transaction = instance.transaction();
-    const userKey = instance.key([`${USER_DASHBOARD}`, id]);
+    const userKey = await instance.key([
+      `${USER_DASHBOARD}`,
+      Datastore.int(id),
+    ]);
     try {
       await transaction.run();
       let [user] = await transaction.get(userKey);
