@@ -1,16 +1,18 @@
-import { BigQuery } from '@google-cloud/bigquery';
 import { Injectable, Logger } from '@nestjs/common';
+import { Datastore } from '@google-cloud/datastore';
+import { BigQuery } from '@google-cloud/bigquery';
 import { BigQueryRepository } from './big-query.repository';
 
 import GCPCredentiales from '../../../auth-connection-bigquery.json';
+import GCPDatastoreCredentials from '../../../datastore-permission.json';
 
 @Injectable()
 export class BigQueryAdapterRepository implements BigQueryRepository {
   private readonly logger = new Logger(BigQueryAdapterRepository.name);
 
-  async connectWithGCP(): Promise<BigQuery> {
+  async connectWithBigquery(): Promise<BigQuery> {
     this.logger.log(
-      `connect with credentials to GCP on ${BigQueryAdapterRepository.name} - repository - connectWithGCP`,
+      `connect with credentials to GCP on ${BigQueryAdapterRepository.name} - repository - connectWithDataset`,
     );
     try {
       const credPath = `${process.cwd()}/auth-connection-bigquery.json`;
@@ -25,7 +27,7 @@ export class BigQueryAdapterRepository implements BigQueryRepository {
       return bigquery;
     } catch (error) {
       this.logger.log(
-        `error on ${BigQueryAdapterRepository.name} - repository - method: connectWithGCP, ${error}`,
+        `error on ${BigQueryAdapterRepository.name} - repository - method: connectWithBigquery, ${error}`,
       );
       return null;
     }
@@ -67,12 +69,79 @@ export class BigQueryAdapterRepository implements BigQueryRepository {
       `Apply check GCP on ${BigQueryAdapterRepository.name} - repository - method: check`,
     );
     try {
-      const instance = await this.connectWithGCP();
+      const instance = await this.connectWithBigquery();
 
       const query = `${queryStr}`;
       const queryResults = await this.query(instance, query);
 
       return queryResults;
+    } catch (error) {
+      return null;
+    }
+  }
+
+  async connectWithDatastorage(): Promise<Datastore> {
+    this.logger.log(
+      `connect with credentials to GCP DATASTORE on ${BigQueryAdapterRepository.name} - repository - connectWithDatastorage`,
+    );
+    try {
+      const credPath = `${process.cwd()}/datastore-permission.json`;
+      const projectId = GCPDatastoreCredentials.project_id;
+      const options = {
+        keyFilename: credPath,
+        projectId: projectId,
+      };
+
+      const datastore: Datastore = new Datastore(options);
+
+      return datastore;
+    } catch (error) {
+      this.logger.log(
+        `error on ${BigQueryAdapterRepository.name} - repository - method: connectWithDatastorage, ${error}`,
+      );
+      return null;
+    }
+  }
+
+  async checkDs(queryStr: string): Promise<any> {
+    this.logger.log(
+      `Apply check GCP on ${BigQueryAdapterRepository.name} - repository - method: checkDs`,
+    );
+    try {
+      const instance = await this.connectWithDatastorage();
+
+      const query = `${queryStr}`;
+      const taskKey = instance.key('Task');
+      const entity = {
+        key: taskKey,
+        data: [
+          {
+            name: 'created',
+            value: new Date().toJSON(),
+          },
+          {
+            name: 'description',
+            value: 'some description',
+            excludeFromIndexes: true,
+          },
+          {
+            name: 'done',
+            value: false,
+          },
+        ],
+      };
+      await instance.save(entity);
+      console.log(`Task ${taskKey.id} created successfully.`);
+
+      const queryResults = await instance.createQuery('Task').order('created');
+      const [tasks] = await instance.runQuery(queryResults);
+      console.log('Tasks from DATASTORE:');
+      for (const task of tasks) {
+        const taskKey = task[instance.KEY];
+        console.log(taskKey.id, task);
+      }
+
+      return tasks;
     } catch (error) {
       return null;
     }

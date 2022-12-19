@@ -8,6 +8,9 @@
 #bigQUery credentials
 auth-connection-bigquery.json
 
+#dataset credentials
+datastore-permission.json
+
 # Logs
 logs
 *.log

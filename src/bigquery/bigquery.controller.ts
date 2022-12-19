@@ -15,9 +15,22 @@ export class BigqueryController {
   constructor(private readonly bigQueryService: BigqueryService) {}
 
   @Get('check')
-  async login(@Res() res: Response) {
-    this.logger.log(`Login bigQueryEndpoint bigQuery Ctrl`);
+  async checkBigQuery(@Res() res: Response) {
+    this.logger.log(`checkBigQuery bigQueryEndpoint bigQuery Ctrl`);
     const resp = await this.bigQueryService.check();
+
+    if (!resp)
+      res
+        .status(HttpStatus.NOT_FOUND)
+        .json({ message: `query with no results` });
+
+    return res.status(HttpStatus.OK).json(resp);
+  }
+
+  @Get('datastore')
+  async checkDatastore(@Res() res: Response) {
+    this.logger.log(`checkDatastore bigQueryEndpoint bigQuery Ctrl`);
+    const resp = await this.bigQueryService.checkDatastore();
 
     if (!resp)
       res

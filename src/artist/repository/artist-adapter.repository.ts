@@ -22,7 +22,7 @@ export class ArtistAdapterRepository implements ArtistRepository {
       `using ${ArtistAdapterRepository.name} - repository - method: getArtistRadioStationKpi`,
     );
     try {
-      const instance = await this.bigQueryRepository.connectWithGCP();
+      const instance = await this.bigQueryRepository.connectWithBigquery();
 
       const query = `${queryStr}`;
       // const queryResults = await this.bigQueryRepository.query(instance, query);
@@ -39,7 +39,7 @@ export class ArtistAdapterRepository implements ArtistRepository {
       `using ${ArtistAdapterRepository.name} - repository - method: getArtistKpi`,
     );
     try {
-      const instance = await this.bigQueryRepository.connectWithGCP();
+      const instance = await this.bigQueryRepository.connectWithBigquery();
 
       const query = `${queryStr}`;
       // const queryResults = await this.bigQueryRepository.query(instance, query);
@@ -56,7 +56,7 @@ export class ArtistAdapterRepository implements ArtistRepository {
       `using ${ArtistAdapterRepository.name} - repository - method: getAllArtists`,
     );
     try {
-      const instance = await this.bigQueryRepository.connectWithGCP();
+      const instance = await this.bigQueryRepository.connectWithBigquery();
 
       const query = `${queryStr}`;
       // const queryResults = await this.bigQueryRepository.query(instance, query);
@@ -73,7 +73,7 @@ export class ArtistAdapterRepository implements ArtistRepository {
       `using ${ArtistAdapterRepository.name} - repository - method: getAllArtists`,
     );
     try {
-      const instance = await this.bigQueryRepository.connectWithGCP();
+      const instance = await this.bigQueryRepository.connectWithBigquery();
 
       const query = `${queryStr}`;
       // const queryResults = await this.bigQueryRepository.query(instance, query);
@@ -90,7 +90,7 @@ export class ArtistAdapterRepository implements ArtistRepository {
       `using ${ArtistAdapterRepository.name} - repository - method: getAllSongsByArtists`,
     );
     try {
-      const instance = await this.bigQueryRepository.connectWithGCP();
+      const instance = await this.bigQueryRepository.connectWithBigquery();
 
       const query = `${queryStr}`;
       // const queryResults = await this.bigQueryRepository.query(instance, query);
