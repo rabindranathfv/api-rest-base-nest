@@ -1,3 +1,8 @@
+import {
+  AUTH_DATASTORAGE_REPOSITORY,
+  AuthDatastorageRepository,
+} from './repository/auth-datastorage.repository';
+import { BigQueryAdapterRepository } from 'src/bigquery/repository/big-query-adapter.repository';
 import { Module, CacheModule } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose';
@@ -17,6 +22,8 @@ import { USER_REPOSITORY } from 'src/users/repository/user.repository';
 import { MongoAuthRepository } from './repository/mongo-auth.repository';
 import { AUTH_REPOSITORY } from './repository/auth.repository';
 import { JwtStrategy } from './jwt.strategy';
+import { BIG_QUERY_REPOSITORY } from 'src/bigquery/repository/big-query.repository';
+import { DatastorageAuthRepository } from './repository/datastorage-auth.repository';
 
 @Module({
   imports: [
@@ -55,6 +62,14 @@ import { JwtStrategy } from './jwt.strategy';
     {
       provide: AUTH_REPOSITORY,
       useClass: MongoAuthRepository,
+    },
+    {
+      provide: BIG_QUERY_REPOSITORY,
+      useClass: BigQueryAdapterRepository,
+    },
+    {
+      provide: AUTH_DATASTORAGE_REPOSITORY,
+      useClass: DatastorageAuthRepository,
     },
     JwtStrategy,
   ],

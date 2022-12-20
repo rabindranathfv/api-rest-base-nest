@@ -2,6 +2,8 @@ import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 
+import cookieParser from 'cookie-parser';
+
 import { ValidationPipe } from '@nestjs/common';
 import { Logger } from 'nestjs-pino';
 import { ConfigService } from '@nestjs/config';
@@ -11,6 +13,7 @@ async function bootstrap() {
   const configServ = app.get(ConfigService);
   const appLogger = app.get(Logger);
   app.useLogger(appLogger);
+  app.use(cookieParser());
   app.useGlobalPipes(
     new ValidationPipe({
       whitelist: true, // delete fields non define into the dto class

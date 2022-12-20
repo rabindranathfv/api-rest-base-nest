@@ -10,6 +10,7 @@ import { Cache } from 'cache-manager';
 
 import { USER_REPOSITORY } from 'src/users/repository/user.repository';
 import { AUTH_REPOSITORY } from './repository/auth.repository';
+import { AUTH_DATASTORAGE_REPOSITORY } from './repository/auth-datastorage.repository';
 
 import { CreateUserDto } from './../users/dtos/create-user.dto';
 import { LoginDto } from './dto/login.dto';
@@ -21,12 +22,20 @@ export class AuthService {
   constructor(
     @Inject(USER_REPOSITORY) private readonly usersRepository,
     @Inject(AUTH_REPOSITORY) private readonly authRepository,
+    @Inject(AUTH_DATASTORAGE_REPOSITORY)
+    private readonly authDatastoreRepository,
     @Inject(CACHE_MANAGER) private readonly cacheManager: Cache,
   ) {}
 
   async login(loginDto: LoginDto) {
     this.logger.log('login Auth Service');
-    const loginProcess = await this.authRepository.login(loginDto);
+    // TODO: Remenber using different REPOSITORY
+    // const loginProcess = await this.authRepository.login(loginDto);
+    const loginProcess = await this.authDatastoreRepository.login(loginDto);
+    console.log(
+      '🚀 ~ file: auth.service.ts:30 ~ AuthService ~ login ~ loginProcess',
+      loginProcess,
+    );
 
     if (!loginProcess)
       throw new HttpException(
