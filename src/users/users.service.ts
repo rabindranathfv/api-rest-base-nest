@@ -39,7 +39,7 @@ export class UsersService {
 
     if (!newUser)
       throw new HttpException(
-        `this ${createUserDto.email} already exist or have some errors`,
+        `this email ${createUserDto.email} already exist or have some errors`,
         HttpStatus.CONFLICT,
       );
 

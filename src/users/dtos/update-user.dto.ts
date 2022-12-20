@@ -6,12 +6,6 @@ export class UpdateUserDto {
   @IsNotEmpty()
   name?: string;
 
-  // TODO: fix later deberia ser el campo name, error al crear las entididas en el repository
-  @IsOptional()
-  @IsString()
-  @IsNotEmpty()
-  username?: string;
-
   @IsOptional()
   @IsString()
   @IsNotEmpty()

@@ -11,6 +11,6 @@ export class User {
 
   // @Exclude()
   password: string;
-  createdAt: Date;
-  updatedAt: Date;
+  createdAt?: Date;
+  updatedAt?: Date;
 }

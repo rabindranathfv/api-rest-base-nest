@@ -1,11 +1,10 @@
-import { Datastore } from '@google-cloud/datastore';
+import { Datastore, Entity } from '@google-cloud/datastore';
 import { Inject, Injectable, Logger } from '@nestjs/common';
 
 import { User } from '../entities/user.entity';
 
 import { CreateUserDto } from '../dtos/create-user.dto';
 
-import { UsersRepository } from './user.repository';
 import { UpdateUserDto } from '../dtos/update-user.dto';
 
 import { hash } from 'bcrypt';
@@ -26,22 +25,19 @@ export class DatastoreUserRepository implements UsersDatastoreRepository {
     try {
       const { email, password, name } = createUserDto;
 
-      const instance = await this.bigQueryRepository.connectWithDatastorage();
+      const instance: Datastore =
+        await this.bigQueryRepository.connectWithDatastorage();
 
       const queryResults = instance
         .createQuery('User_Dashboard')
-        .order('createdAt');
+        .filter('email', '=', email);
       const [existUser] = await instance.runQuery(queryResults);
-      console.log(
-        '🚀 ~ file: datastore-user.repository.ts:58 ~ DatastoreUserRepository ~ createUser ~ existUser',
-        existUser,
-      );
 
-      if (!existUser || existUser.length === 0) return null;
+      if (!existUser || existUser[0]?.email) return null;
 
       const hashedPassword = await hash(password, 10);
       const userKey = instance.key('User_Dashboard');
-      const entity = {
+      const entity: Entity = {
         key: userKey,
         data: [
           {
@@ -49,7 +45,7 @@ export class DatastoreUserRepository implements UsersDatastoreRepository {
             value: new Date().toJSON(),
           },
           {
-            name: 'username',
+            name: 'name',
             value: name,
             excludeFromIndexes: true,
           },
@@ -69,14 +65,19 @@ export class DatastoreUserRepository implements UsersDatastoreRepository {
         newUser,
       );
 
-      return newUser;
+      return {
+        id: userKey.id,
+        name: createUserDto.name,
+        email: createUserDto.email,
+        password: hashedPassword,
+      };
     } catch (error) {
+      console.log(error);
       return null;
     }
   }
 
   async findAll(): Promise<Array<User>> {
-    console.log('USANDO EL DATASTORE USER REPOSITORY*******************');
     this.logger.log(
       `using ${DatastoreUserRepository.name} - repository - method: findAll`,
     );
@@ -90,6 +91,7 @@ export class DatastoreUserRepository implements UsersDatastoreRepository {
 
       return users;
     } catch (error) {
+      console.log(error);
       return null;
     }
   }
@@ -117,7 +119,7 @@ export class DatastoreUserRepository implements UsersDatastoreRepository {
     }
   }
 
-  async deleteById(id: string): Promise<User> | null {
+  async deleteById(id: string): Promise<Partial<User>> | null {
     try {
       const instance: Datastore =
         await this.bigQueryRepository.connectWithDatastorage();
@@ -126,20 +128,22 @@ export class DatastoreUserRepository implements UsersDatastoreRepository {
         `${USER_DASHBOARD}`,
         Datastore.int(id),
       ]);
-      if (!userKey) return null;
-      console.log(
-        '🚀 ~ file: datastore-user.repository.ts:144 ~ DatastoreUserRepository ~ deleteById ~ userKey',
-        userKey,
-      );
-      const result = await instance.delete(userKey);
-      console.log(
-        '🚀 ~ file: datastore-user.repository.ts:135 ~ DatastoreUserRepository ~ deleteById ~ result',
-        result,
-      );
-      this.logger.log(`user ${id} deleted successfully.`);
 
-      return null;
+      if (!userKey) return null;
+
+      const queryResults = await instance
+        .createQuery(`${USER_DASHBOARD}`)
+        .filter('__key__', '>', userKey);
+
+      const [existUser] = await instance.runQuery(queryResults);
+
+      if (!existUser || existUser.length === 0) return null;
+
+      await instance.delete(userKey);
+
+      return { id };
     } catch (error) {
+      console.log(error);
       return null;
     }
   }
@@ -156,27 +160,38 @@ export class DatastoreUserRepository implements UsersDatastoreRepository {
       `${USER_DASHBOARD}`,
       Datastore.int(id),
     ]);
+
+    if (!userKey) return null;
+
     try {
+      const queryResults = await instance
+        .createQuery(`${USER_DASHBOARD}`)
+        .filter('__key__', '>', userKey);
+
+      const [existUser] = await instance.runQuery(queryResults);
+
+      if (!existUser) return null;
+
       await transaction.run();
       let [user] = await transaction.get(userKey);
       user = {
         ...(updateUserDto.email && { email: updateUserDto.email }),
-        ...(updateUserDto.username && { email: updateUserDto.username }),
-        ...(updateUserDto.password && { email: updateUserDto.password }),
+        ...(updateUserDto.name && { name: updateUserDto.name }),
+        ...(updateUserDto.password && {
+          password:
+            updateUserDto.password && (await hash(updateUserDto?.password, 10)),
+        }),
+        createdAt: user.createdAt,
       };
 
       await transaction.save({ key: userKey, data: user });
 
-      const [results] = await transaction.commit();
-
-      console.log(
-        '🚀 ~ file: datastore-user.repository.ts:166 ~ DatastoreUserRepository ~ result',
-        results.mutationResults,
-      );
+      await transaction.commit();
       this.logger.log(`Task ${id} updated successfully.`);
 
       return user;
     } catch (error) {
+      console.log(error);
       await transaction.rollback();
       return null;
     }
