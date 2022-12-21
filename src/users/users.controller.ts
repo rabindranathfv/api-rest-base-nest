@@ -104,7 +104,7 @@ export class UsersController {
 
   // ENDPOINTS WITH DATASTORE
   @Get('v2')
-  @UseGuards(JwtAuthGuard)
+  // @UseGuards(JwtAuthGuard)
   async findAllV2() {
     this.logger.log('FindAll Users Ctrl with DATASTORE');
     const userList = await this.userService.findAllV2();

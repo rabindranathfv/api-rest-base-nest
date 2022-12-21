@@ -1,5 +1,5 @@
-import { Datastore } from '@google-cloud/datastore';
-import { Inject, Injectable } from '@nestjs/common';
+import { Datastore, Entity } from '@google-cloud/datastore';
+import { Inject, Injectable, Logger } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 
 import { BIG_QUERY_REPOSITORY } from 'src/bigquery/repository/big-query.repository';
@@ -14,6 +14,8 @@ import { LoginDto } from '../dto/login.dto';
 
 @Injectable()
 export class DatastorageAuthRepository implements AuthDatastorageRepository {
+  private readonly logger = new Logger(DatastorageAuthRepository.name);
+
   constructor(
     private readonly jwtService: JwtService,
     @Inject(BIG_QUERY_REPOSITORY) private readonly bigQueryRepository,
@@ -43,11 +45,59 @@ export class DatastorageAuthRepository implements AuthDatastorageRepository {
   }
 
   async register(createUserDto: CreateUserDto): Promise<User> {
-    console.log(
-      '🚀 ~ file: datastorage-auth.repository.ts:50 ~ DatastorageAuthRepository ~ register ~ createUserDto',
-      createUserDto,
-    );
-    throw new Error('Method not implemented.');
+    try {
+      const { email, password, name } = createUserDto;
+
+      const instance: Datastore =
+        await this.bigQueryRepository.connectWithDatastorage();
+
+      const queryResults = instance
+        .createQuery('User_Dashboard')
+        .filter('email', '=', email);
+      const [existUser] = await instance.runQuery(queryResults);
+
+      if (!existUser || existUser[0]?.email) return null;
+
+      const hashedPassword = await hash(password, 10);
+      const userKey = instance.key('User_Dashboard');
+      const entity: Entity = {
+        key: userKey,
+        data: [
+          {
+            name: 'createdAt',
+            value: new Date().toJSON(),
+          },
+          {
+            name: 'name',
+            value: name,
+            excludeFromIndexes: true,
+          },
+          {
+            name: 'email',
+            value: email,
+          },
+          {
+            name: 'password',
+            value: hashedPassword,
+          },
+        ],
+      };
+      const [newUser] = await instance.save(entity);
+      this.logger.log(
+        `user ${email} with userId ${userKey.id} created successfully.`,
+        newUser,
+      );
+
+      return {
+        id: userKey.id,
+        name: createUserDto.name,
+        email: createUserDto.email,
+        password: hashedPassword,
+      };
+    } catch (error) {
+      console.log(error);
+      return null;
+    }
   }
 
   async logout(): Promise<any> {

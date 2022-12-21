@@ -1,7 +1,3 @@
-import {
-  AUTH_DATASTORAGE_REPOSITORY,
-  AuthDatastorageRepository,
-} from './repository/auth-datastorage.repository';
 import { BigQueryAdapterRepository } from 'src/bigquery/repository/big-query-adapter.repository';
 import { Module, CacheModule } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
@@ -16,14 +12,15 @@ import { AuthService } from './auth.service';
 import { User } from 'src/users/entities/user.entity';
 import { UserSchema } from 'src/users/schemas/user.schema';
 
-import { MongoUserRepository } from 'src/users/repository/mongo-user.repository';
 import { USER_REPOSITORY } from 'src/users/repository/user.repository';
-
-import { MongoAuthRepository } from './repository/mongo-auth.repository';
-import { AUTH_REPOSITORY } from './repository/auth.repository';
-import { JwtStrategy } from './jwt.strategy';
 import { BIG_QUERY_REPOSITORY } from 'src/bigquery/repository/big-query.repository';
+import { AUTH_REPOSITORY } from './repository/auth.repository';
+import { AUTH_DATASTORAGE_REPOSITORY } from './repository/auth-datastorage.repository';
 import { DatastorageAuthRepository } from './repository/datastorage-auth.repository';
+import { MongoUserRepository } from 'src/users/repository/mongo-user.repository';
+import { MongoAuthRepository } from './repository/mongo-auth.repository';
+
+import { JwtStrategy } from './jwt.strategy';
 
 @Module({
   imports: [

@@ -1,3 +1,4 @@
+import { USER_DATASTORE_REPOSITORY } from './../users/repository/user-datastore.repository';
 import {
   CACHE_MANAGER,
   HttpException,
@@ -50,7 +51,8 @@ export class AuthService {
 
   async register(createUserDto: CreateUserDto) {
     this.logger.log('register Auth Service');
-    const newUser = await this.usersRepository.createUser(createUserDto);
+    // const newUser = await this.usersRepository.createUser(createUserDto);
+    const newUser = await this.authDatastoreRepository.register(createUserDto);
 
     if (!newUser)
       throw new HttpException(
