@@ -36,7 +36,7 @@ import { DatastorageAuthRepository } from './repository/datastorage-auth.reposit
         const jwtConfig = configService.get('JWT');
         return {
           secret: jwtConfig.secret,
-          signOptions: { expiresIn: jwtConfig.expiresIn },
+          signOptions: { expiresIn: '900s' || jwtConfig.expiresIn },
         };
       },
     }),

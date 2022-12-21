@@ -24,7 +24,7 @@ export class DatastorageAuthRepository implements AuthDatastorageRepository {
     const instance: Datastore =
       await this.bigQueryRepository.connectWithDatastorage();
 
-    const queryResults = instance
+    const queryResults = await instance
       .createQuery('User_Dashboard')
       .filter('email', '=', email);
     const [existUser] = await instance.runQuery(queryResults);
@@ -38,10 +38,10 @@ export class DatastorageAuthRepository implements AuthDatastorageRepository {
     const token = await this.jwtService.sign({
       email: existUser[0]?.email,
       name: existUser[0]?.name,
-      password: existUser[0]?.paswword,
     });
     return { ...existUser[0], token };
   }
+
   async register(createUserDto: CreateUserDto): Promise<User> {
     console.log(
       '🚀 ~ file: datastorage-auth.repository.ts:50 ~ DatastorageAuthRepository ~ register ~ createUserDto',
@@ -49,6 +49,7 @@ export class DatastorageAuthRepository implements AuthDatastorageRepository {
     );
     throw new Error('Method not implemented.');
   }
+
   async logout(): Promise<any> {
     throw new Error('Method not implemented.');
   }

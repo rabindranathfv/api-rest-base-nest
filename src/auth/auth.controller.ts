@@ -6,8 +6,6 @@ import {
   UseGuards,
   CacheKey,
   CacheTTL,
-  Res,
-  Req,
 } from '@nestjs/common';
 import { ApiTags, ApiBearerAuth, ApiHeader } from '@nestjs/swagger';
 
@@ -16,8 +14,6 @@ import { LoginDto } from './dto/login.dto';
 
 import { AuthService } from './auth.service';
 import { JwtAuthGuard } from './jwt-auth.guard';
-
-import { Response, Request } from 'express';
 
 @ApiTags('auth')
 @ApiHeader({
@@ -33,13 +29,9 @@ export class AuthController {
   @Post('login')
   @CacheKey('login')
   @CacheTTL(60)
-  async login(
-    @Body() loginDto: LoginDto,
-    @Res({ passthrough: true }) res: Response,
-    @Req() req: Request,
-  ) {
+  async login(@Body() loginDto: LoginDto) {
     this.logger.log('login in Auth Ctrl');
-    return await this.authService.login(loginDto, res, req);
+    return await this.authService.login(loginDto);
   }
 
   @Post('register')
@@ -51,8 +43,8 @@ export class AuthController {
   @UseGuards(JwtAuthGuard)
   @ApiBearerAuth()
   @Post('logout')
-  async logout(@Res({ passthrough: true }) res: Response, @Req() req: Request) {
+  async logout() {
     this.logger.log('logout in Auth Ctrl');
-    return await this.authService.logout(res, req);
+    return await this.authService.logout();
   }
 }

@@ -11,7 +11,7 @@ import { hash } from 'bcrypt';
 import { BIG_QUERY_REPOSITORY } from 'src/bigquery/repository/big-query.repository';
 import { UsersDatastoreRepository } from './user-datastore.repository';
 
-const USER_DASHBOARD = 'User_Dashboard';
+export const USER_DASHBOARD = 'User_Dashboard';
 
 @Injectable()
 export class DatastoreUserRepository implements UsersDatastoreRepository {
