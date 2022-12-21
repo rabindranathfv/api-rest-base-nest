@@ -17,7 +17,10 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
     @InjectModel(User.name) private readonly userModel: UserModel,
   ) {
     super({
-      jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
+      jwtFromRequest: ExtractJwt.fromExtractors([
+        JwtStrategy.extractJWT,
+        ExtractJwt.fromAuthHeaderAsBearerToken(),
+      ]),
       ignoreExpiration: false,
       secretOrKey: configServ.get('JWT').secret,
     });
@@ -25,10 +28,14 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
 
   async validate(payload: { id: string }) {
     console.log(
-      '🚀 ~ file: jwt.strategy.ts:27 ~ JwtStrategy ~ validate ~ payload',
+      '🚀 ~ file: jwt.strategy.ts:27 ~ JwtStrategy ~ validate ~ payload *********',
       payload,
     );
     const user = await this.userModel.findById(payload.id);
+    console.log(
+      '🚀 ~ file: jwt.strategy.ts:35 ~ JwtStrategy ~ validate ~ user',
+      user,
+    );
     return user;
   }
 
@@ -38,7 +45,12 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
       'token' in req.cookies &&
       req.cookies.user_token.length > 0
     ) {
-      return req.cookies.token;
+      const token = req.cookies.token;
+      console.log(
+        '🚀 ~ file: jwt.strategy.ts:45 ~ JwtStrategy ~ extractJWT ~ token',
+        token,
+      );
+      return token;
     }
     return null;
   }

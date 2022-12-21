@@ -29,19 +29,9 @@ export class DatastorageAuthRepository implements AuthDatastorageRepository {
       .filter('email', '=', email);
     const [existUser] = await instance.runQuery(queryResults);
 
-    console.log(
-      '🚀 ~ file: datastorage-auth.repository.ts:33 ~ DatastorageAuthRepository ~ login ~ password*****',
-      password,
-      existUser[0].password,
-      !existUser || existUser[0]?.email,
-    );
     if (!existUser) return null;
 
     const isPasswordMatching = await compare(password, existUser[0].password);
-    console.log(
-      '🚀 ~ file: datastorage-auth.repository.ts:43 ~ DatastorageAuthRepository ~ login ~ isPasswordMatching',
-      isPasswordMatching,
-    );
 
     if (!isPasswordMatching) return null;
 

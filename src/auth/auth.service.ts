@@ -5,6 +5,8 @@ import {
   Inject,
   Injectable,
   Logger,
+  Req,
+  Res,
 } from '@nestjs/common';
 import { Cache } from 'cache-manager';
 
@@ -14,6 +16,7 @@ import { AUTH_DATASTORAGE_REPOSITORY } from './repository/auth-datastorage.repos
 
 import { CreateUserDto } from './../users/dtos/create-user.dto';
 import { LoginDto } from './dto/login.dto';
+import { Response, Request } from 'express';
 
 @Injectable()
 export class AuthService {
@@ -27,15 +30,26 @@ export class AuthService {
     @Inject(CACHE_MANAGER) private readonly cacheManager: Cache,
   ) {}
 
-  async login(loginDto: LoginDto) {
+  async login(
+    loginDto: LoginDto,
+    @Res({ passthrough: true }) res: Response,
+    @Req() req: Request,
+  ) {
     this.logger.log('login Auth Service');
+    const reqCookie = req.cookies;
+    console.log(
+      '🚀 ~ file: auth.service.ts:40 ~ AuthService ~ reqCookie',
+      reqCookie,
+    );
     // TODO: Remenber using different REPOSITORY
     // const loginProcess = await this.authRepository.login(loginDto);
     const loginProcess = await this.authDatastoreRepository.login(loginDto);
     console.log(
-      '🚀 ~ file: auth.service.ts:30 ~ AuthService ~ login ~ loginProcess',
+      '🚀 ~ file: auth.service.ts:48 ~ AuthService ~ login ~ loginProcess',
       loginProcess,
     );
+
+    res.cookie('token', loginProcess.token, { httpOnly: true, secure: true });
 
     if (!loginProcess)
       throw new HttpException(
@@ -61,7 +75,13 @@ export class AuthService {
     return newUser;
   }
 
-  async logout() {
-    return undefined;
+  async logout(@Res({ passthrough: true }) res: Response, @Req() req: Request) {
+    const reqCookie = req.cookies;
+    console.log(
+      '🚀 ~ file: auth.service.ts:80 ~ AuthService ~ logout ~ reqCookie',
+      reqCookie,
+    );
+    res.clearCookie('token');
+    return { message: 'Successfully logged' };
   }
 }
