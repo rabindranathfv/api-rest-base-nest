@@ -1,4 +1,3 @@
-import { USER_DATASTORE_REPOSITORY } from './../users/repository/user-datastore.repository';
 import {
   CACHE_MANAGER,
   HttpException,
@@ -6,6 +5,7 @@ import {
   Inject,
   Injectable,
   Logger,
+  Req,
 } from '@nestjs/common';
 import { Cache } from 'cache-manager';
 
@@ -13,8 +13,12 @@ import { USER_REPOSITORY } from 'src/users/repository/user.repository';
 import { AUTH_REPOSITORY } from './repository/auth.repository';
 import { AUTH_DATASTORAGE_REPOSITORY } from './repository/auth-datastorage.repository';
 
+import { verify } from 'jsonwebtoken';
+
 import { CreateUserDto } from './../users/dtos/create-user.dto';
 import { LoginDto } from './dto/login.dto';
+
+import { Request } from 'express';
 
 @Injectable()
 export class AuthService {
@@ -63,7 +67,27 @@ export class AuthService {
     return newUser;
   }
 
+  async refresh(@Req() req: Request) {
+    try {
+      const [, token] = req.headers.authorization.split(' ');
+      const newToken = await this.authDatastoreRepository.refresh(token);
+
+      if (!newToken) return null;
+
+      return newToken;
+    } catch (error) {
+      console.log(error);
+      return null;
+    }
+  }
+
   async logout() {
+    this.logger.log('logout Auth Service');
+    const newUser = await this.authDatastoreRepository.logout();
+    console.log(
+      '🚀 ~ file: auth.service.ts:81 ~ AuthService ~ logout ~ newUser',
+      newUser,
+    );
     return { message: 'Successfully logged' };
   }
 }

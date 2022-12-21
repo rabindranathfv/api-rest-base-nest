@@ -6,11 +6,18 @@ import { BIG_QUERY_REPOSITORY } from 'src/bigquery/repository/big-query.reposito
 import { AuthDatastorageRepository } from './auth-datastorage.repository';
 
 import { hash, compare } from 'bcrypt';
+import { verify } from 'jsonwebtoken';
 
 import { User } from 'src/users/entities/user.entity';
 
 import { CreateUserDto } from 'src/users/dtos/create-user.dto';
 import { LoginDto } from '../dto/login.dto';
+import { USER_DASHBOARD } from 'src/users/repository/datastore-user.repository';
+
+export interface ITokenPayload {
+  name: string;
+  email: string;
+}
 
 @Injectable()
 export class DatastorageAuthRepository implements AuthDatastorageRepository {
@@ -21,13 +28,30 @@ export class DatastorageAuthRepository implements AuthDatastorageRepository {
     @Inject(BIG_QUERY_REPOSITORY) private readonly bigQueryRepository,
   ) {}
 
+  async refresh(token: string): Promise<any> | null {
+    try {
+      const data = await verify(token, 'secretSeed');
+      const { email, name } = data as ITokenPayload;
+
+      const newToken = await this.jwtService.sign({
+        email: email,
+        name: name,
+      });
+
+      return newToken;
+    } catch (error) {
+      console.log(error);
+      return null;
+    }
+  }
+
   async login(loginDto: LoginDto): Promise<any> {
     const { email, password } = loginDto;
     const instance: Datastore =
       await this.bigQueryRepository.connectWithDatastorage();
 
     const queryResults = await instance
-      .createQuery('User_Dashboard')
+      .createQuery(`${USER_DASHBOARD}`)
       .filter('email', '=', email);
     const [existUser] = await instance.runQuery(queryResults);
 
@@ -52,14 +76,14 @@ export class DatastorageAuthRepository implements AuthDatastorageRepository {
         await this.bigQueryRepository.connectWithDatastorage();
 
       const queryResults = instance
-        .createQuery('User_Dashboard')
+        .createQuery(`${USER_DASHBOARD}`)
         .filter('email', '=', email);
       const [existUser] = await instance.runQuery(queryResults);
 
       if (!existUser || existUser[0]?.email) return null;
 
       const hashedPassword = await hash(password, 10);
-      const userKey = instance.key('User_Dashboard');
+      const userKey = instance.key(`${USER_DASHBOARD}`);
       const entity: Entity = {
         key: userKey,
         data: [
@@ -101,6 +125,6 @@ export class DatastorageAuthRepository implements AuthDatastorageRepository {
   }
 
   async logout(): Promise<any> {
-    throw new Error('Method not implemented.');
+    throw new Error('lgout');
   }
 }

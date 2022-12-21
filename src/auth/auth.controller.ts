@@ -6,6 +6,10 @@ import {
   UseGuards,
   CacheKey,
   CacheTTL,
+  Get,
+  Req,
+  Res,
+  HttpStatus,
 } from '@nestjs/common';
 import { ApiTags, ApiBearerAuth, ApiHeader } from '@nestjs/swagger';
 
@@ -14,6 +18,8 @@ import { LoginDto } from './dto/login.dto';
 
 import { AuthService } from './auth.service';
 import { JwtAuthGuard } from './jwt-auth.guard';
+
+import { Request, Response } from 'express';
 
 @ApiTags('auth')
 @ApiHeader({
@@ -38,6 +44,20 @@ export class AuthController {
   async register(@Body() createUserDto: CreateUserDto) {
     this.logger.log('register in Auth Ctrl');
     return await this.authService.register(createUserDto);
+  }
+
+  @Get('/refresh')
+  async refresh(@Req() req: Request, @Res() res: Response) {
+    this.logger.log('refresh in Auth Ctrl');
+    const refreshToken = await this.authService.refresh(req);
+    if (!refreshToken) {
+      res.status(HttpStatus.UNAUTHORIZED).json({
+        message: 'invalid token, can not refresh',
+      });
+    }
+    return res.status(200).json({
+      token: refreshToken,
+    });
   }
 
   @UseGuards(JwtAuthGuard)
