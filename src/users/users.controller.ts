@@ -35,7 +35,7 @@ import { User } from './entities/user.entity';
   name: 'X-Request-id',
   description: 'Custom header for requestId',
 })
-// @UseGuards(JwtAuthGuard)
+@UseGuards(JwtAuthGuard)
 @UseInterceptors(CacheInterceptor) // cache for all get methods on this ctrl
 @Controller('users')
 export class UsersController {

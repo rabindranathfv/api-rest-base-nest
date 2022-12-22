@@ -33,7 +33,7 @@ import { JwtStrategy } from './jwt.strategy';
         const jwtConfig = configService.get('JWT');
         return {
           secret: jwtConfig.secret,
-          signOptions: { expiresIn: '900s' || jwtConfig.expiresIn },
+          signOptions: { expiresIn: '2h' || jwtConfig.expiresIn },
         };
       },
     }),

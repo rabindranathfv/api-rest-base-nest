@@ -82,14 +82,19 @@ export class DatastoreUserRepository implements UsersDatastoreRepository {
       `using ${DatastoreUserRepository.name} - repository - method: findAll`,
     );
     try {
-      const instance = await this.bigQueryRepository.connectWithDatastorage();
+      const instance: Datastore =
+        await this.bigQueryRepository.connectWithDatastorage();
 
       const queryResults = instance
         .createQuery(`${USER_DASHBOARD}`)
         .order('createdAt');
       const [users] = await instance.runQuery(queryResults);
+      const usersMapped = users.map((u) => {
+        const uKey = u[instance.KEY];
+        return { id: uKey.id, ...u };
+      });
 
-      return users;
+      return usersMapped;
     } catch (error) {
       console.log(error);
       return null;
@@ -112,7 +117,9 @@ export class DatastoreUserRepository implements UsersDatastoreRepository {
 
       if (!user) return null;
 
-      return user;
+      const userMapped = { ...user, id: id || user[instance.KEY].id };
+
+      return userMapped;
     } catch (error) {
       console.log(error);
       return null;
@@ -130,14 +137,6 @@ export class DatastoreUserRepository implements UsersDatastoreRepository {
       ]);
 
       if (!userKey) return null;
-
-      const queryResults = await instance
-        .createQuery(`${USER_DASHBOARD}`)
-        .filter('__key__', '>', userKey);
-
-      const [existUser] = await instance.runQuery(queryResults);
-
-      if (!existUser || existUser.length === 0) return null;
 
       await instance.delete(userKey);
 
@@ -160,17 +159,26 @@ export class DatastoreUserRepository implements UsersDatastoreRepository {
       `${USER_DASHBOARD}`,
       Datastore.int(id),
     ]);
+    console.log(
+      '🚀 ~ file: datastore-user.repository.ts:162 ~ DatastoreUserRepository ~ userKey',
+      userKey,
+    );
 
     if (!userKey) return null;
 
     try {
-      const queryResults = await instance
-        .createQuery(`${USER_DASHBOARD}`)
-        .filter('__key__', '>', userKey);
+      // TODO: this query get some erros with non specific behavior on datastore
+      // const queryResults = await instance
+      //   .createQuery(`${USER_DASHBOARD}`)
+      //   .filter('__key__', '>', userKey);
 
-      const [existUser] = await instance.runQuery(queryResults);
+      // const [existUser] = await instance.runQuery(queryResults);
+      // console.log(
+      //   '🚀 ~ file: datastore-user.repository.ts:171 ~ DatastoreUserRepository ~ existUser',
+      //   existUser,
+      // );
 
-      if (!existUser) return null;
+      // if (!existUser) return null;
 
       await transaction.run();
       let [user] = await transaction.get(userKey);

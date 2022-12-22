@@ -28,7 +28,7 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
   }
 
   async validate(payload: { email: string; name: string }) {
-    const { email } = payload;
+    const { email, name } = payload;
 
     const instance: Datastore =
       await this.bigQueryRepository.connectWithDatastorage();
@@ -38,14 +38,8 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
       .filter('email', '=', email);
     const [existUser] = await instance.runQuery(queryResults);
 
-    console.log(
-      '🚀 ~ file: jwt.strategy.ts:42 ~ JwtStrategy ~ validate ~ user *****',
-      existUser[0],
-    );
-    if (!existUser || existUser[0]?.email) return null;
-    // const user = await this.userModel.findById(payload.id);
+    if (!existUser || Object.keys(existUser[0]).length < 0) return null;
 
-    console.log('feo****');
-    return existUser[0];
+    return { email, name };
   }
 }
