@@ -68,6 +68,7 @@ export class AuthService {
   }
 
   async refresh(@Req() req: Request) {
+    this.logger.log('refresh Auth Service');
     try {
       const [, token] = req.headers.authorization.split(' ');
       const newToken = await this.authDatastoreRepository.refresh(token);
@@ -83,11 +84,14 @@ export class AuthService {
 
   async logout() {
     this.logger.log('logout Auth Service');
-    const newUser = await this.authDatastoreRepository.logout();
-    console.log(
-      '🚀 ~ file: auth.service.ts:81 ~ AuthService ~ logout ~ newUser',
-      newUser,
-    );
-    return { message: 'Successfully logged' };
+    try {
+      const logoutUser = await this.authDatastoreRepository.logout();
+      if (!logoutUser) return null;
+
+      return logoutUser;
+    } catch (error) {
+      console.log(error);
+      return null;
+    }
   }
 }

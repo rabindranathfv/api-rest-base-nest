@@ -46,6 +46,7 @@ export class AuthController {
     return await this.authService.register(createUserDto);
   }
 
+  @UseGuards(JwtAuthGuard)
   @Get('/refresh')
   async refresh(@Req() req: Request, @Res() res: Response) {
     this.logger.log('refresh in Auth Ctrl');
@@ -65,6 +66,8 @@ export class AuthController {
   @Post('logout')
   async logout() {
     this.logger.log('logout in Auth Ctrl');
-    return await this.authService.logout();
+    const logoutRes = await this.authService.logout();
+
+    return logoutRes;
   }
 }

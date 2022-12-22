@@ -13,6 +13,7 @@ import { User } from 'src/users/entities/user.entity';
 import { CreateUserDto } from 'src/users/dtos/create-user.dto';
 import { LoginDto } from '../dto/login.dto';
 import { USER_DASHBOARD } from 'src/users/repository/datastore-user.repository';
+import { ConfigService } from '@nestjs/config';
 
 export interface ITokenPayload {
   name: string;
@@ -25,25 +26,9 @@ export class DatastorageAuthRepository implements AuthDatastorageRepository {
 
   constructor(
     private readonly jwtService: JwtService,
+    private readonly configServ: ConfigService,
     @Inject(BIG_QUERY_REPOSITORY) private readonly bigQueryRepository,
   ) {}
-
-  async refresh(token: string): Promise<any> | null {
-    try {
-      const data = await verify(token, 'secretSeed');
-      const { email, name } = data as ITokenPayload;
-
-      const newToken = await this.jwtService.sign({
-        email: email,
-        name: name,
-      });
-
-      return newToken;
-    } catch (error) {
-      console.log(error);
-      return null;
-    }
-  }
 
   async login(loginDto: LoginDto): Promise<any> {
     const { email, password } = loginDto;
@@ -125,6 +110,30 @@ export class DatastorageAuthRepository implements AuthDatastorageRepository {
   }
 
   async logout(): Promise<any> {
-    throw new Error('lgout');
+    try {
+      return { message: 'Logout Successfully' };
+    } catch (error) {
+      console.log(error);
+      return null;
+    }
+  }
+
+  async refresh(token: string): Promise<any> | null {
+    try {
+      const configJwt = this.configServ.get('JWT');
+
+      const data = await verify(token, configJwt.secret);
+      const { email, name } = data as ITokenPayload;
+
+      const newToken = await this.jwtService.sign({
+        email: email,
+        name: name,
+      });
+
+      return newToken;
+    } catch (error) {
+      console.log(error);
+      return null;
+    }
   }
 }
