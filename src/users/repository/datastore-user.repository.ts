@@ -188,10 +188,11 @@ export class DatastoreUserRepository implements UsersDatastoreRepository {
         createdAt: user.createdAt,
       };
 
-      await transaction.save({ key: userKey, data: user });
+      await transaction.update({ key: userKey, data: user });
+      // await transaction.save({ key: userKey, data: user });
 
       await transaction.commit();
-      this.logger.log(`Task ${id} updated successfully.`);
+      this.logger.log(`this UserId ${id} was updated successfully.`);
 
       return user;
     } catch (error) {
