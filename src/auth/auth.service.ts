@@ -37,10 +37,6 @@ export class AuthService {
     // TODO: Remenber using different REPOSITORY
     // const loginProcess = await this.authRepository.login(loginDto);
     const loginProcess = await this.authDatastoreRepository.login(loginDto);
-    console.log(
-      '🚀 ~ file: auth.service.ts:48 ~ AuthService ~ login ~ loginProcess',
-      loginProcess,
-    );
 
     if (!loginProcess)
       throw new HttpException(

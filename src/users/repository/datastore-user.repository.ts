@@ -159,10 +159,6 @@ export class DatastoreUserRepository implements UsersDatastoreRepository {
       `${USER_DASHBOARD}`,
       Datastore.int(id),
     ]);
-    console.log(
-      '🚀 ~ file: datastore-user.repository.ts:162 ~ DatastoreUserRepository ~ userKey',
-      userKey,
-    );
 
     if (!userKey) return null;
 

@@ -103,6 +103,7 @@ export class BigQueryAdapterRepository implements BigQueryRepository {
     }
   }
 
+  // TODO: Just checking method for consume datastore
   async checkDs(queryStr: string): Promise<any> {
     this.logger.log(
       `Apply check GCP on ${BigQueryAdapterRepository.name} - repository - method: checkDs`,
@@ -131,14 +132,12 @@ export class BigQueryAdapterRepository implements BigQueryRepository {
         ],
       };
       await instance.save(entity);
-      console.log(`Task ${taskKey.id} created successfully.`);
 
       const queryResults = await instance.createQuery('Task').order('created');
       const [tasks] = await instance.runQuery(queryResults);
-      console.log('Tasks from DATASTORE:');
       for (const task of tasks) {
         const taskKey = task[instance.KEY];
-        console.log(taskKey.id, task);
+        this.logger.log(taskKey.id, task);
       }
 
       return tasks;
