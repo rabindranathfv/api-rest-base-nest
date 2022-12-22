@@ -22,6 +22,9 @@ export class DatastoreUserRepository implements UsersDatastoreRepository {
   ) {}
 
   async createUser(createUserDto: CreateUserDto): Promise<User> | null {
+    this.logger.log(
+      `using ${DatastoreUserRepository.name} - repository - method: createUser`,
+    );
     try {
       const { email, password, name } = createUserDto;
 
@@ -102,6 +105,9 @@ export class DatastoreUserRepository implements UsersDatastoreRepository {
   }
 
   async findById(id: string): Promise<User> | null {
+    this.logger.log(
+      `using ${DatastoreUserRepository.name} - repository - method: findById`,
+    );
     try {
       const instance: Datastore =
         await this.bigQueryRepository.connectWithDatastorage();
@@ -127,6 +133,9 @@ export class DatastoreUserRepository implements UsersDatastoreRepository {
   }
 
   async deleteById(id: string): Promise<Partial<User>> | null {
+    this.logger.log(
+      `using ${DatastoreUserRepository.name} - repository - method: deleteById`,
+    );
     try {
       const instance: Datastore =
         await this.bigQueryRepository.connectWithDatastorage();
@@ -135,6 +144,10 @@ export class DatastoreUserRepository implements UsersDatastoreRepository {
         `${USER_DASHBOARD}`,
         Datastore.int(id),
       ]);
+      console.log(
+        '🚀 ~ file: datastore-user.repository.ts:138 ~ DatastoreUserRepository ~ deleteById ~ userKey',
+        userKey,
+      );
 
       if (!userKey) return null;
 
@@ -151,6 +164,9 @@ export class DatastoreUserRepository implements UsersDatastoreRepository {
     updateUserDto: UpdateUserDto,
     id: string,
   ): Promise<User> | null {
+    this.logger.log(
+      `using ${DatastoreUserRepository.name} - repository - method: updateById`,
+    );
     const instance: Datastore =
       await this.bigQueryRepository.connectWithDatastorage();
     const transaction = await instance.transaction();
