@@ -9,24 +9,20 @@ import {
 } from '@nestjs/common';
 import { Cache } from 'cache-manager';
 
-import { USER_REPOSITORY } from 'src/users/repository/user.repository';
-import { AUTH_REPOSITORY } from './repository/auth.repository';
 import { AUTH_DATASTORAGE_REPOSITORY } from './repository/auth-datastorage.repository';
-
-import { verify } from 'jsonwebtoken';
 
 import { CreateUserDto } from './../users/dtos/create-user.dto';
 import { LoginDto } from './dto/login.dto';
 
 import { Request } from 'express';
+import { USER_DATASTORE_REPOSITORY } from 'src/users/repository/user-datastore.repository';
 
 @Injectable()
 export class AuthService {
   private readonly logger = new Logger(AuthService.name);
 
   constructor(
-    @Inject(USER_REPOSITORY) private readonly usersRepository,
-    @Inject(AUTH_REPOSITORY) private readonly authRepository,
+    @Inject(USER_DATASTORE_REPOSITORY) private readonly userDatastoreRepository,
     @Inject(AUTH_DATASTORAGE_REPOSITORY)
     private readonly authDatastoreRepository,
     @Inject(CACHE_MANAGER) private readonly cacheManager: Cache,
@@ -34,8 +30,6 @@ export class AuthService {
 
   async login(loginDto: LoginDto) {
     this.logger.log('login Auth Service');
-    // TODO: Remenber using different REPOSITORY
-    // const loginProcess = await this.authRepository.login(loginDto);
     const loginProcess = await this.authDatastoreRepository.login(loginDto);
 
     if (!loginProcess)
@@ -43,16 +37,14 @@ export class AuthService {
         `this email ${loginDto.email} was not found or just password is incorrect, please check it`,
         HttpStatus.CONFLICT,
       );
-
-    // await this.cacheManager.set(`login-${loginProcess.id}`, loginProcess);
-    // const cacheResp = await this.cacheManager.get(`users-${loginProcess.id}`);
     return loginProcess;
   }
 
   async register(createUserDto: CreateUserDto) {
     this.logger.log('register Auth Service');
-    // const newUser = await this.usersRepository.createUser(createUserDto);
-    const newUser = await this.authDatastoreRepository.register(createUserDto);
+    const newUser = await this.userDatastoreRepository.createUser(
+      createUserDto,
+    );
 
     if (!newUser)
       throw new HttpException(

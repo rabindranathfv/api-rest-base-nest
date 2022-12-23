@@ -12,13 +12,11 @@ import { AuthService } from './auth.service';
 import { User } from 'src/users/entities/user.entity';
 import { UserSchema } from 'src/users/schemas/user.schema';
 
-import { USER_REPOSITORY } from 'src/users/repository/user.repository';
 import { BIG_QUERY_REPOSITORY } from 'src/bigquery/repository/big-query.repository';
-import { AUTH_REPOSITORY } from './repository/auth.repository';
 import { AUTH_DATASTORAGE_REPOSITORY } from './repository/auth-datastorage.repository';
 import { DatastorageAuthRepository } from './repository/datastorage-auth.repository';
-import { MongoUserRepository } from 'src/users/repository/mongo-user.repository';
-import { MongoAuthRepository } from './repository/mongo-auth.repository';
+import { USER_DATASTORE_REPOSITORY } from 'src/users/repository/user-datastore.repository';
+import { DatastoreUserRepository } from 'src/users/repository/datastore-user.repository';
 
 import { JwtStrategy } from './jwt.strategy';
 
@@ -53,12 +51,8 @@ import { JwtStrategy } from './jwt.strategy';
   providers: [
     AuthService,
     {
-      provide: USER_REPOSITORY,
-      useClass: MongoUserRepository,
-    },
-    {
-      provide: AUTH_REPOSITORY,
-      useClass: MongoAuthRepository,
+      provide: USER_DATASTORE_REPOSITORY,
+      useClass: DatastoreUserRepository,
     },
     {
       provide: BIG_QUERY_REPOSITORY,

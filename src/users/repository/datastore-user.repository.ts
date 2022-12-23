@@ -180,17 +180,13 @@ export class DatastoreUserRepository implements UsersDatastoreRepository {
 
     try {
       // TODO: this query get some erros with non specific behavior on datastore
-      // const queryResults = await instance
-      //   .createQuery(`${USER_DASHBOARD}`)
-      //   .filter('__key__', '>', userKey);
+      const queryResults = await instance
+        .createQuery(`${USER_DASHBOARD}`)
+        .filter('__key__', '=', userKey); // update operator = from >, based on https://cloud.google.com/datastore/docs/samples/datastore-key-filter
 
-      // const [existUser] = await instance.runQuery(queryResults);
-      // console.log(
-      //   '🚀 ~ file: datastore-user.repository.ts:171 ~ DatastoreUserRepository ~ existUser',
-      //   existUser,
-      // );
+      const [existUser] = await instance.runQuery(queryResults);
 
-      // if (!existUser) return null;
+      if (!existUser) return null;
 
       await transaction.run();
       let [user] = await transaction.get(userKey);
