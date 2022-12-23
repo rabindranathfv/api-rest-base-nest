@@ -11,8 +11,6 @@ import { UsersService } from './users.service';
 import { UserSchema } from './schemas/user.schema';
 import { User } from './entities/user.entity';
 
-import { MongoUserRepository } from './repository/mongo-user.repository';
-import { USER_REPOSITORY } from './repository/user.repository';
 import { DatastoreUserRepository } from './repository/datastore-user.repository';
 
 @Module({
@@ -32,10 +30,6 @@ import { DatastoreUserRepository } from './repository/datastore-user.repository'
   ],
   providers: [
     UsersService,
-    {
-      provide: USER_REPOSITORY,
-      useClass: MongoUserRepository,
-    },
     {
       provide: BIG_QUERY_REPOSITORY,
       useClass: BigQueryAdapterRepository,

@@ -2,14 +2,9 @@ import { USER_DASHBOARD } from 'src/users/repository/datastore-user.repository';
 import { Inject, Injectable } from '@nestjs/common';
 import { ExtractJwt, Strategy } from 'passport-jwt';
 import { PassportStrategy } from '@nestjs/passport';
-import { InjectModel } from '@nestjs/mongoose';
-
-import { verify } from 'jsonwebtoken';
 
 import { ConfigService } from '@nestjs/config';
 
-import { User } from 'src/users/entities/user.entity';
-import { UserModel } from 'src/users/schemas/user.schema';
 import { BIG_QUERY_REPOSITORY } from 'src/bigquery/repository/big-query.repository';
 import { Datastore } from '@google-cloud/datastore';
 
@@ -17,7 +12,6 @@ import { Datastore } from '@google-cloud/datastore';
 export class JwtStrategy extends PassportStrategy(Strategy) {
   constructor(
     private readonly configServ: ConfigService,
-    @InjectModel(User.name) private readonly userModel: UserModel,
     @Inject(BIG_QUERY_REPOSITORY) private readonly bigQueryRepository,
   ) {
     super({

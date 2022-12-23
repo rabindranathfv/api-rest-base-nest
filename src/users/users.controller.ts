@@ -1,8 +1,6 @@
 import {
   Body,
   CacheInterceptor,
-  CacheKey,
-  CacheTTL,
   Controller,
   Delete,
   Get,
@@ -42,53 +40,12 @@ export class UsersController {
   private readonly logger = new Logger(UsersController.name);
   constructor(private readonly userService: UsersService) {}
 
-  @Get()
-  @ApiResponse({
-    status: 200,
-    description: 'A get for all Users successfully fetched',
-    type: [User],
-  })
-  @ApiBody({ type: User })
-  async findAll() {
-    this.logger.log('FindAll Users Ctrl');
-    const userList = await this.userService.findAll();
-    return userList;
-  }
-
-  // TODO: only comments for testing datastore endpoins
-  // @Get(':id')
-  // @ApiParam({
-  //   name: 'id',
-  //   required: true,
-  //   description: 'Should be an id of user',
-  //   type: String,
+  // @ApiResponse({
+  //   status: 200,
+  //   description: 'A get for all Users successfully fetched',
+  //   type: [User],
   // })
-  // async findById(@Param('id') id: string) {
-  //   this.logger.log('findById Users Ctrl');
-  //   const user: User = await this.userService.findById(id);
-  //   return user;
-  // }
-
-  @Post()
-  async createUser(@Body() createUserDTO: CreateUserDto) {
-    this.logger.log('createUser Users Ctrl');
-    return await this.userService.createUser(createUserDTO);
-  }
-
-  // @Put(':id')
-  // @ApiParam({
-  //   name: 'id',
-  //   required: true,
-  //   description: 'Should be an id of user',
-  //   type: String,
-  // })
-  // async updateById(
-  //   @Body() updateUserDTO: UpdateUserDto,
-  //   @Param('id') id: string,
-  // ) {
-  //   this.logger.log('updateById Users Ctrl');
-  //   return await this.userService.updateById(updateUserDTO, id);
-  // }
+  // @ApiBody({ type: User })
 
   // @Delete(':id')
   // @ApiParam({
@@ -97,63 +54,58 @@ export class UsersController {
   //   description: 'Should be an id of user',
   //   type: String,
   // })
-  // async deleteById(@Param('id') id: string) {
-  //   this.logger.log('deleteById Users Ctrl');
-  //   return await this.userService.deleteById(id);
-  // }
 
   // ENDPOINTS WITH DATASTORE
-  @Get('v2')
-  // @UseGuards(JwtAuthGuard)
-  async findAllV2() {
+  @Get('')
+  async findAll() {
     this.logger.log('FindAll Users Ctrl with DATASTORE');
-    const userList = await this.userService.findAllV2();
+    const userList = await this.userService.findAll();
     return userList;
   }
 
-  @Get(':id/v2')
+  @Get(':id')
   @ApiParam({
     name: 'id',
     required: true,
     description: 'Should be an id of user',
     type: String,
   })
-  async findByIdV2(@Param('id') id: string) {
+  async findById(@Param('id') id: string) {
     this.logger.log('findById Users Ctrl');
-    const user: User = await this.userService.findByIdV2(id);
+    const user: User = await this.userService.findById(id);
     return user;
   }
 
-  @Post('v2')
-  async createUserV2(@Body() createUserDTO: CreateUserDto) {
-    this.logger.log('createUserV2 Users Ctrl');
-    return await this.userService.createUserV2(createUserDTO);
+  @Post('')
+  async createUser(@Body() createUserDTO: CreateUserDto) {
+    this.logger.log('createUser Users Ctrl');
+    return await this.userService.createUser(createUserDTO);
   }
 
-  @Put(':id/v2')
+  @Put(':id')
   @ApiParam({
     name: 'id',
     required: true,
     description: 'Should be an id of user',
     type: String,
   })
-  async updateByIdV2(
+  async updateById(
     @Body() updateUserDTO: UpdateUserDto,
     @Param('id') id: string,
   ) {
-    this.logger.log('updateByIdV2 Users Ctrl');
-    return await this.userService.updateByIdV2(updateUserDTO, id);
+    this.logger.log('updateById Users Ctrl');
+    return await this.userService.updateById(updateUserDTO, id);
   }
 
-  @Delete(':id/v2')
+  @Delete(':id')
   @ApiParam({
     name: 'id',
     required: true,
     description: 'Should be an id of user',
     type: String,
   })
-  async deleteByIdV2(@Param('id') id: string) {
-    this.logger.log('deleteByIdV2 Users Ctrl');
-    return await this.userService.deleteByIdV2(id);
+  async deleteById(@Param('id') id: string) {
+    this.logger.log('deleteById Users Ctrl');
+    return await this.userService.deleteById(id);
   }
 }
