@@ -10,7 +10,12 @@ import {
   UseInterceptors,
 } from '@nestjs/common';
 import { Response } from 'express';
-import { ApiBearerAuth, ApiHeader, ApiTags } from '@nestjs/swagger';
+import {
+  ApiBearerAuth,
+  ApiHeader,
+  ApiResponse,
+  ApiTags,
+} from '@nestjs/swagger';
 import { JwtAuthGuard } from 'src/auth/jwt-auth.guard';
 
 @ApiTags('artist')
@@ -28,6 +33,11 @@ export class ArtistController {
   constructor(private readonly artistService: ArtistService) {}
 
   @Get()
+  @ApiResponse({
+    status: 200,
+    description: 'get All Artist list',
+    // type: [User], ADD CLASS INTERFACE HERE
+  })
   async getAllArtists(@Res() res: Response) {
     this.logger.log(`${ArtistController.name} - getAllArtists`);
     const resp = await this.artistService.getAllArtists();
@@ -41,6 +51,11 @@ export class ArtistController {
   }
 
   @Get('/songs')
+  @ApiResponse({
+    status: 200,
+    description: 'get for all artist filter by song',
+    // type: [User], ADD CLASS INTERFACE HERE
+  })
   async getAllSongsByArtists(@Res() res: Response) {
     this.logger.log(`${ArtistController.name} - getAllSongsByArtists`);
     const resp = await this.artistService.getAllSongsByArtists();
@@ -54,6 +69,11 @@ export class ArtistController {
   }
 
   @Get('/summary')
+  @ApiResponse({
+    status: 200,
+    description: 'get artist summary info',
+    // type: [User], ADD CLASS INTERFACE HERE
+  })
   async getArtistSummary(@Res() res: Response) {
     this.logger.log(`${ArtistController.name} - getArtistSummary`);
     const resp = await this.artistService.getArtistSummary();
@@ -67,6 +87,11 @@ export class ArtistController {
   }
 
   @Get('/kpi')
+  @ApiResponse({
+    status: 200,
+    description: 'get Artist KPI info',
+    // type: [User], ADD CLASS INTERFACE HERE
+  })
   async getArtistKpi(@Res() res: Response) {
     this.logger.log(`${ArtistController.name} - getArtistKpi`);
     const resp = await this.artistService.getArtistKpi();
@@ -80,6 +105,11 @@ export class ArtistController {
   }
 
   @Get('/stationskpi')
+  @ApiResponse({
+    status: 200,
+    description: 'get Radio station kpi by artist info',
+    // type: [User], ADD CLASS INTERFACE HERE
+  })
   async getArtistRadioStationKpi(@Res() res: Response) {
     this.logger.log(`${ArtistController.name} - getArtistRadioStationKpi`);
     const resp = await this.artistService.getArtistRadioStationKpi();
