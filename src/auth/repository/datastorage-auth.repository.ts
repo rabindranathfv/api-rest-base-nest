@@ -14,7 +14,7 @@ import { USER_DASHBOARD } from 'src/users/repository/datastore-user.repository';
 import { ConfigService } from '@nestjs/config';
 
 import { LoginDto } from '../dto/login.dto';
-import { ITokenPayload } from '../interfaces/auth.interfaces';
+import { ITokenPayload } from '../interfaces/token-payload-auth.interfaces';
 
 @Injectable()
 export class DatastorageAuthRepository implements AuthDatastorageRepository {

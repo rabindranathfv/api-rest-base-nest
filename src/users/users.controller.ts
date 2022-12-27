@@ -40,8 +40,6 @@ export class UsersController {
   private readonly logger = new Logger(UsersController.name);
   constructor(private readonly userService: UsersService) {}
 
-  // @ApiBody({ type: User })
-
   // ENDPOINTS WITH DATASTORE
   @Get('')
   @ApiResponse({
@@ -51,7 +49,7 @@ export class UsersController {
   })
   @ApiResponse({
     status: 401,
-    description: 'Unauthorized',
+    description: 'Unauthorized, does not have a valid token o token is Expired',
   })
   @ApiResponse({
     status: 500,
@@ -71,7 +69,7 @@ export class UsersController {
   })
   @ApiResponse({
     status: 401,
-    description: 'Unauthorized',
+    description: 'Unauthorized, does not have a valid token o token is Expired',
   })
   @ApiResponse({
     status: 500,
@@ -105,7 +103,7 @@ export class UsersController {
   })
   @ApiResponse({
     status: 401,
-    description: 'Unauthorized',
+    description: 'Unauthorized, does not have a valid token o token is Expired',
   })
   @ApiResponse({
     status: 500,
@@ -124,7 +122,7 @@ export class UsersController {
   })
   @ApiResponse({
     status: 401,
-    description: 'Unauthorized',
+    description: 'Unauthorized, does not have a valid token o token is Expired',
   })
   @ApiResponse({
     status: 500,
@@ -156,7 +154,7 @@ export class UsersController {
   })
   @ApiResponse({
     status: 401,
-    description: 'Unauthorized',
+    description: 'Unauthorized, does not have a valid token o token is Expired',
   })
   @ApiResponse({
     status: 500,
