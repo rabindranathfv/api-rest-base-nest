@@ -112,26 +112,26 @@ export class BigQueryAdapterRepository implements BigQueryRepository {
       const instance = await this.connectWithDatastorage();
 
       const query = `${queryStr}`;
-      const taskKey = instance.key('Task');
-      const entity = {
-        key: taskKey,
-        data: [
-          {
-            name: 'created',
-            value: new Date().toJSON(),
-          },
-          {
-            name: 'description',
-            value: 'some description',
-            excludeFromIndexes: true,
-          },
-          {
-            name: 'done',
-            value: false,
-          },
-        ],
-      };
-      await instance.save(entity);
+      // const taskKey = instance.key('Task');
+      // const entity = {
+      //   key: taskKey,
+      //   data: [
+      //     {
+      //       name: 'created',
+      //       value: new Date().toJSON(),
+      //     },
+      //     {
+      //       name: 'description',
+      //       value: 'some description',
+      //       excludeFromIndexes: true,
+      //     },
+      //     {
+      //       name: 'done',
+      //       value: false,
+      //     },
+      //   ],
+      // };
+      // await instance.save(entity);
 
       const queryResults = await instance.createQuery('Task').order('created');
       const [tasks] = await instance.runQuery(queryResults);

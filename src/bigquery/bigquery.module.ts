@@ -1,13 +1,27 @@
 import { BigQueryAdapterRepository } from './repository/big-query-adapter.repository';
 import { BIG_QUERY_REPOSITORY } from './repository/big-query.repository';
-import { Module } from '@nestjs/common';
-import { ConfigModule } from '@nestjs/config';
+import { CacheModule, Module } from '@nestjs/common';
+import { ConfigModule, ConfigService } from '@nestjs/config';
 import { configuration } from 'src/config/configuration';
 import { BigqueryController } from './bigquery.controller';
 import { BigqueryService } from './bigquery.service';
 
 @Module({
-  imports: [ConfigModule.forFeature(configuration)],
+  imports: [
+    ConfigModule.forFeature(configuration),
+    CacheModule.registerAsync({
+      imports: [ConfigModule],
+      inject: [ConfigService],
+      useFactory: (configService: ConfigService) => {
+        const cacheConfig = configService.get('CACHE');
+        return {
+          isGlobal: true,
+          ttl: Number(cacheConfig.ttl),
+          max: Number(cacheConfig.storage),
+        };
+      },
+    }),
+  ],
   controllers: [BigqueryController],
   providers: [
     BigqueryService,
