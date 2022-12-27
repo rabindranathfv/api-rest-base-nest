@@ -14,6 +14,8 @@ export class LoginDto {
   @ApiProperty({
     description: 'should be a valid email expresion',
     example: 'validEmail@gmail.com',
+    uniqueItems: true,
+    required: true,
   })
   email: string;
 
@@ -24,6 +26,9 @@ export class LoginDto {
   @ApiProperty({
     description: 'should be a valid password between 6 and 20 characters',
     example: 'Hol4apinew',
+    minLength: 6,
+    maxLength: 20,
+    required: true,
   })
   password: string;
 }
