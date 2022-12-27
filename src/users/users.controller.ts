@@ -17,7 +17,6 @@ import {
   ApiHeader,
   ApiParam,
   ApiResponse,
-  ApiBody,
 } from '@nestjs/swagger';
 
 import { JwtAuthGuard } from './../auth/jwt-auth.guard';
@@ -26,6 +25,7 @@ import { UsersService } from './users.service';
 import { CreateUserDto } from './dtos/create-user.dto';
 import { UpdateUserDto } from './dtos/update-user.dto';
 import { User } from './entities/user.entity';
+import { DeleteUser } from './interface/delete-user.interface';
 
 @ApiBearerAuth()
 @ApiTags('user')
@@ -40,23 +40,23 @@ export class UsersController {
   private readonly logger = new Logger(UsersController.name);
   constructor(private readonly userService: UsersService) {}
 
-  // @ApiResponse({
-  //   status: 200,
-  //   description: 'A get for all Users successfully fetched',
-  //   type: [User],
-  // })
   // @ApiBody({ type: User })
-
-  // @Delete(':id')
-  // @ApiParam({
-  //   name: 'id',
-  //   required: true,
-  //   description: 'Should be an id of user',
-  //   type: String,
-  // })
 
   // ENDPOINTS WITH DATASTORE
   @Get('')
+  @ApiResponse({
+    status: 200,
+    description: 'A get for all Users successfully fetched',
+    type: [User],
+  })
+  @ApiResponse({
+    status: 401,
+    description: 'Unauthorized',
+  })
+  @ApiResponse({
+    status: 500,
+    description: 'Internal Server Error',
+  })
   async findAll() {
     this.logger.log('FindAll Users Ctrl with DATASTORE');
     const userList = await this.userService.findAll();
@@ -64,6 +64,27 @@ export class UsersController {
   }
 
   @Get(':id')
+  @ApiResponse({
+    status: 200,
+    description: 'A get for UsersById successfully fetched',
+    type: User,
+  })
+  @ApiResponse({
+    status: 401,
+    description: 'Unauthorized',
+  })
+  @ApiResponse({
+    status: 500,
+    description: 'Internal Server Error',
+  })
+  @ApiResponse({
+    status: 404,
+    description: 'user not found <id>',
+  })
+  @ApiResponse({
+    status: 403,
+    description: 'Unauthorized Request',
+  })
   @ApiParam({
     name: 'id',
     required: true,
@@ -77,12 +98,42 @@ export class UsersController {
   }
 
   @Post('')
+  @ApiResponse({
+    status: 200,
+    description: 'users updated successfully',
+    type: User,
+  })
+  @ApiResponse({
+    status: 401,
+    description: 'Unauthorized',
+  })
+  @ApiResponse({
+    status: 500,
+    description: 'Internal Server Error',
+  })
   async createUser(@Body() createUserDTO: CreateUserDto) {
     this.logger.log('createUser Users Ctrl');
     return await this.userService.createUser(createUserDTO);
   }
 
   @Put(':id')
+  @ApiResponse({
+    status: 200,
+    description: 'users created successfully',
+    type: User,
+  })
+  @ApiResponse({
+    status: 401,
+    description: 'Unauthorized',
+  })
+  @ApiResponse({
+    status: 500,
+    description: 'Internal Server Error',
+  })
+  @ApiResponse({
+    status: 404,
+    description: 'can not update user <id>',
+  })
   @ApiParam({
     name: 'id',
     required: true,
@@ -98,6 +149,27 @@ export class UsersController {
   }
 
   @Delete(':id')
+  @ApiResponse({
+    status: 200,
+    description: 'users deleted successfully',
+    type: DeleteUser,
+  })
+  @ApiResponse({
+    status: 401,
+    description: 'Unauthorized',
+  })
+  @ApiResponse({
+    status: 500,
+    description: 'Internal Server Error',
+  })
+  @ApiResponse({
+    status: 404,
+    description: 'can not delete user <id>',
+  })
+  @ApiResponse({
+    status: 403,
+    description: 'Unauthorized Request',
+  })
   @ApiParam({
     name: 'id',
     required: true,

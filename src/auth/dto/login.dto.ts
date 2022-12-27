@@ -16,6 +16,7 @@ export class LoginDto {
     example: 'validEmail@gmail.com',
     uniqueItems: true,
     required: true,
+    type: String,
   })
   email: string;
 
@@ -29,6 +30,7 @@ export class LoginDto {
     minLength: 6,
     maxLength: 20,
     required: true,
+    type: String,
   })
   password: string;
 }

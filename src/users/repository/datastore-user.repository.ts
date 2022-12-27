@@ -94,7 +94,12 @@ export class DatastoreUserRepository implements UsersDatastoreRepository {
       const [users] = await instance.runQuery(queryResults);
       const usersMapped = users.map((u) => {
         const uKey = u[instance.KEY];
-        return { id: uKey.id, ...u };
+        return {
+          id: uKey.id,
+          name: u.name,
+          email: u.email,
+          createdAt: u.createdAt,
+        };
       });
 
       return usersMapped;

@@ -52,7 +52,7 @@ export class UsersService {
     await this.cacheManager.set(`users-${findUser.id}`, findUser);
     const cacheResp = await this.cacheManager.get(`users-${findUser.id}`);
 
-    console.log('🚀 ~ CACHE IMPLEMENTED cacheResp', cacheResp);
+    this.logger.log('🚀 ~ Cache for findById', cacheResp);
     return findUser;
   }
 

@@ -8,6 +8,7 @@ export class CreateUserDto {
     description: "should be a user's full name",
     example: 'Adolfo Suarez',
     required: true,
+    type: String,
   })
   name: string;
 
@@ -19,6 +20,7 @@ export class CreateUserDto {
     example: 'validEmail@gmail.com',
     uniqueItems: true,
     required: true,
+    type: String,
   })
   email: string;
 
@@ -30,6 +32,7 @@ export class CreateUserDto {
     minLength: 6,
     maxLength: 20,
     required: true,
+    type: String,
   })
   password: string;
 }
