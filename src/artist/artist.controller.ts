@@ -1,8 +1,27 @@
 import { ArtistService } from './artist.service';
-import { Controller, Get, HttpStatus, Logger, Res } from '@nestjs/common';
+import {
+  CacheInterceptor,
+  Controller,
+  Get,
+  HttpStatus,
+  Logger,
+  Res,
+  UseGuards,
+  UseInterceptors,
+} from '@nestjs/common';
 import { Response } from 'express';
+import { ApiBearerAuth, ApiHeader, ApiTags } from '@nestjs/swagger';
+import { JwtAuthGuard } from 'src/auth/jwt-auth.guard';
 
-@Controller('artists')
+@ApiTags('artist')
+@ApiBearerAuth()
+@UseGuards(JwtAuthGuard)
+@UseInterceptors(CacheInterceptor)
+@ApiHeader({
+  name: 'X-Request-id',
+  description: 'Custom header for requestId generated automaticly',
+})
+@Controller('artist')
 export class ArtistController {
   private readonly logger = new Logger(ArtistController.name);
 

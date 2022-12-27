@@ -29,8 +29,9 @@ async function bootstrap() {
     .setTitle('API REST BASE NEST')
     .setDescription('Api Rest in Ts with repositories based')
     .setVersion('1.0')
-    .addTag('user')
     .addTag('auth')
+    .addTag('user')
+    .addTag('artist')
     .build();
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api/docs/', app, document);
