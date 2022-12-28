@@ -1,40 +1,129 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
-
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
-
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+# Dashboard Artist API
 
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+This backend is power by [Nest](https://github.com/nestjs/nest) framework.
 
-## Installation
+### Information Important
 
-```bash
-$ npm install
+1. [Project structure](#projectstructure)
+2. [Config-and-enviroments](#config-and-enviroments)
+3. [GCP-credentials](#gcp-credentials)
+4. [runing-app](#runing-app)
+5. [dockerized](#dockerized)
+6. [linter](#linter)
+7. [unit-test](#unit-test)
+8. [test-coverage](#test-coverage)
+
+### Project Structure
+
+<a name="projectstructure"/>
+
+The structure of this project defined by folders with specific purpose.
+
+each module is composed by Repository, dto, interfaces, controler, service, module and schemas and entities (if is necesary)
+
+```
+.
+├── auth-connection-bigquery.json
+├── coverage
+├── datastore-permission.json
+├── dist
+├── docker-compose.yml
+├── Dockerfile
+├── nest-cli.json
+├── package.json
+├── package-lock.json
+├── README.md
+├── src
+│   ├── app.controller.spec.ts
+│   ├── app.controller.ts
+│   ├── app.module.ts
+│   ├── app.service.ts
+│   ├── artist
+│   │   ├── dto
+│   │   ├── repository
+│   │   ├── interfaces
+│   │   ├── service
+│   │   ├── controller
+│   │   ├── module
+│   ├── auth
+│   │   ├── dto
+│   │   ├── repository
+│   │   ├── interfaces
+│   │   ├── service
+│   │   ├── controller
+│   │   ├── module
+│   ├── bigquery
+│   │   ├── dto
+│   │   ├── repository
+│   │   ├── interfaces
+│   │   ├── service
+│   │   ├── controller
+│   │   ├── module
+│   ├── config
+│   │   ├── env
+│   │   │   ├── sample.enviroment.env
+│   ├── main.ts
+│   ├── middlewares
+│   └── users
+│   │   ├── dto
+│   │   ├── repository
+│   │   ├── interfaces
+│   │   ├── service
+│   │   ├── controller
+│   │   ├── module
+├── test
+│   ├── app.e2e-spec.ts
+│   └── jest-e2e.json
+├── tsconfig.build.json
+└── tsconfig.json
 ```
 
-## Running the app
+### Config-and-enviroments
+
+<a name="config-and-enviroments"/>
+
+you need to at least one .env files acoording to the enviroments. you can create file follow this format name `.env.<enviromentName>.local`. this API supports 3 enviroments files (.env.development.local, .env.test.local and .env.production.local). You have a sample.enviroment.env config and looks in this way
+
+```
+NODE_ENV=development
+
+PORT=4000
+
+JWT_SECRET=secretSeed
+JWT_EXPIRES_IN=8h
+
+# PRO TIP Remenber use service name from mongo into docker compose file (you must use the same)
+# (should be mongodb://mongo:27017/db_dev)
+MONGO_URI=mongodb://localhost:27017/db_dev
+
+# TTL in segs, start 1 hour
+NEST_TTL_CACHE=3600
+NEST_MAX_CACHE_STORAGE=1000
+
+# GCP Vars
+PROJECT_ID=gcpProjectId
+```
+
+IMPORTANT: you should create this .env files in this path `src/config/env`
+
+### GCP-credentials
+
+<a name="gcp-credentials"/>
+
+you should have at least one credentials files to connect an consume GCP platform, at the same level of SRC. This specific scenario you have two files configuration and you should rename this follow for bigQuery connection based ib `auth-connection-bigquery.json` abd datastore conection `datastore-permission.json`.
+
+if you have just one file remenber to update path for those json files in `big-query-adapter.repository.ts`. You must see the following methods `connectWithBigquery` and `connectWithDatastorage`
+
+### Runing-app
+
+<a name="runing-app"/>
 
 ```bash
+# dependencies
+$ npm install
+
 # development
 $ npm run start
 
@@ -45,29 +134,54 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
-## Test
+### Dockerized
+
+<a name="dockerized"/>
+
+You can start the project at local but also you can do it via docker compose. you should have installed docker, and docker compose.
+
+for running the app using docker you can write on your terminal
+
+```bash
+# dockerized development
+$ docker compose up dev
+
+# dockerized production
+$ docker compose up prod
+```
+
+## Linter
+
+<a name="linter"/>
+
+this project have linter ready to use
+
+```bash
+
+$ npm run lint
+```
+
+## Tests
+
+<a name="unit-test"/>
+
+if you want to running unit test and e2e/functional test around the app, you can execute those commands
 
 ```bash
 # unit tests
 $ npm run test
 
-# e2e tests
+# e2e tests/Functional Tests
 $ npm run test:e2e
+```
 
+## Test coverage
+
+<a name="test-coverage"/>
+
+if you want to running coverage script, you can execute those commands
+
+```bash
 # test coverage
 $ npm run test:cov
 ```
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
