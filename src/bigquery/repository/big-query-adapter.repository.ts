@@ -49,6 +49,10 @@ export class BigQueryAdapterRepository implements BigQueryRepository {
 
       // Run the query as a job
       const [job] = await bgQueryAdapter.createQueryJob(options);
+      console.log(
+        '🚀 ~ file: big-query-adapter.repository.ts:52 ~ BigQueryAdapterRepository ~ query ~ job',
+        job,
+      );
       console.log(`Job ${job.id} started.`);
 
       // Wait for the query to finish

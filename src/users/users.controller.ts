@@ -38,6 +38,7 @@ import { DeleteUser } from './interface/delete-user.interface';
 @Controller('users')
 export class UsersController {
   private readonly logger = new Logger(UsersController.name);
+
   constructor(private readonly userService: UsersService) {}
 
   // ENDPOINTS WITH DATASTORE
