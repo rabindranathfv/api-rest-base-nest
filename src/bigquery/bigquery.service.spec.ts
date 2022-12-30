@@ -3,8 +3,13 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { BigqueryService } from './bigquery.service';
 import { BIG_QUERY_REPOSITORY } from './repository/big-query.repository';
 
+export type MockType<T> = {
+  [P in keyof T]?: jest.Mock<{}>;
+};
+
 describe('BigqueryService:::', () => {
   let service: BigqueryService;
+  let repository: MockType<any>;
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
@@ -12,12 +17,16 @@ describe('BigqueryService:::', () => {
         BigqueryService,
         {
           provide: BIG_QUERY_REPOSITORY,
-          useValue: {},
+          useFactory: () => ({
+            check: () => jest.fn(),
+            checkDs: () => jest.fn(),
+          }),
         },
       ],
     }).compile();
 
     service = module.get<BigqueryService>(BigqueryService);
+    repository = module.get(BIG_QUERY_REPOSITORY);
   });
 
   afterEach(() => {
@@ -77,27 +86,20 @@ describe('BigqueryService:::', () => {
         },
       },
     ];
-    const loggerMsj = `checkDatastore BigQuery Service`;
-
-    const loggerMock = jest
-      .spyOn((service as any).logger, 'log')
-      .mockReturnValueOnce(loggerMsj);
-    const checkSpy = jest.spyOn(service, 'check').mockImplementation(() => {
+    const checkSpy = jest.spyOn(repository, 'check').mockImplementation(() => {
       return Promise.resolve(queryResultMock);
     });
 
-    service['logger'].log(loggerMsj);
     const queryRes = await service.check();
 
     expect(service).toBeDefined();
     expect(checkSpy).toHaveBeenCalled();
-    expect(loggerMock).toBeCalledWith(loggerMsj);
     expect(queryRes).toEqual(queryResultMock);
   });
 
   it('should be call check and get ERROR with specific query from bigQuery', async () => {
     const errorMsg = 'Error make query';
-    const checkSpy = jest.spyOn(service, 'check').mockImplementation(() => {
+    const checkSpy = jest.spyOn(repository, 'check').mockImplementation(() => {
       throw new HttpException(errorMsg, HttpStatus.INTERNAL_SERVER_ERROR);
     });
 
@@ -126,8 +128,8 @@ describe('BigqueryService:::', () => {
       },
     ];
 
-    const checkDatastoreSpy = jest
-      .spyOn(service, 'checkDatastore')
+    const checkDsSpy = jest
+      .spyOn(repository, 'checkDs')
       .mockImplementation(() => {
         return Promise.resolve(queryResultMock);
       });
@@ -135,14 +137,14 @@ describe('BigqueryService:::', () => {
     const queryRes = await service.checkDatastore();
 
     expect(service).toBeDefined();
-    expect(checkDatastoreSpy).toHaveBeenCalled();
+    expect(checkDsSpy).toHaveBeenCalled();
     expect(queryRes).toEqual(queryResultMock);
   });
 
   it('should be call checkDatastore and get ERROR with specific query from bigQuery', async () => {
     const errorMsg = 'Error make query';
-    const checkDatastoreSpy = jest
-      .spyOn(service, 'checkDatastore')
+    const checkDsSpy = jest
+      .spyOn(repository, 'checkDs')
       .mockImplementation(() => {
         throw new HttpException(errorMsg, HttpStatus.INTERNAL_SERVER_ERROR);
       });
@@ -151,7 +153,7 @@ describe('BigqueryService:::', () => {
       await service.checkDatastore();
     } catch (error) {
       expect(service).toBeDefined();
-      expect(checkDatastoreSpy).toHaveBeenCalled();
+      expect(checkDsSpy).toHaveBeenCalled();
       expect(error).toBeInstanceOf(Error);
       expect(error['status']).toBe(HttpStatus.INTERNAL_SERVER_ERROR);
       expect(error['response']).toBe(errorMsg);
