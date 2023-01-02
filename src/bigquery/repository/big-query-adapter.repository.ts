@@ -42,7 +42,7 @@ export class BigQueryAdapterRepository implements BigQueryRepository {
 
       // For all options, see https://cloud.google.com/bigquery/docs/reference/rest/v2/jobs/query
       const options = {
-        query: query,
+        query,
         // Location must match that of the dataset(s) referenced in the query.
         location: 'EU',
       };
@@ -53,6 +53,7 @@ export class BigQueryAdapterRepository implements BigQueryRepository {
         '🚀 ~ file: big-query-adapter.repository.ts:52 ~ BigQueryAdapterRepository ~ query ~ job',
         job,
       );
+      if (!job.id) return null;
       console.log(`Job ${job.id} started.`);
 
       // Wait for the query to finish
@@ -146,6 +147,9 @@ export class BigQueryAdapterRepository implements BigQueryRepository {
 
       return tasks;
     } catch (error) {
+      this.logger.log(
+        `error on ${BigQueryAdapterRepository.name} - repository - method: checkDs, ${error}`,
+      );
       return null;
     }
   }

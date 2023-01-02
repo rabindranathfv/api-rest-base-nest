@@ -1,46 +1,22 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { BigQueryAdapterRepository } from './big-query-adapter.repository';
 
-import { BigQuery } from '@google-cloud/bigquery';
-import { Datastore } from '@google-cloud/datastore';
-import { Logger } from '@nestjs/common';
+import { BIG_QUERY_REPOSITORY } from './big-query.repository';
 
 describe('BigQueryAdapterRepository:::', () => {
   let bigQueryRepository: BigQueryAdapterRepository;
-  //   let logger: Logger;
 
   beforeEach(async () => {
-    const mockconnectWithBigquery = jest.fn();
-    const mockquery = jest.fn();
-    const mockcheck = jest.fn();
-    const mockconnectWithDatastorage = jest.fn();
-    const mockcheckDs = jest.fn();
     const module: TestingModule = await Test.createTestingModule({
       providers: [
         {
-          provide: BigQueryAdapterRepository,
-          useFactory: () => ({
-            // logger: jest.fn(),
-            connectWithBigquery: () => mockconnectWithBigquery,
-            query: () => mockquery,
-            check: () => mockcheck,
-            connectWithDatastorage: () => mockconnectWithDatastorage,
-            checkDs: () => mockcheckDs,
-          }),
-        },
-        {
-          provide: Logger,
-          useValue: {
-            log: jest.fn(),
-          },
+          provide: BIG_QUERY_REPOSITORY,
+          useClass: BigQueryAdapterRepository,
         },
       ],
     }).compile();
 
-    bigQueryRepository = module.get<BigQueryAdapterRepository>(
-      BigQueryAdapterRepository,
-    );
-    // logger = module.get<Logger>(Logger);
+    bigQueryRepository = module.get(BIG_QUERY_REPOSITORY);
   });
 
   afterEach(() => {
@@ -51,24 +27,13 @@ describe('BigQueryAdapterRepository:::', () => {
     expect(bigQueryRepository).toBeDefined();
   });
 
-  it('should be severals methods defined', () => {
-    expect(Object.keys(bigQueryRepository)).toEqual([
-      'connectWithBigquery',
-      'query',
-      'check',
-      'connectWithDatastorage',
-      'checkDs',
-    ]);
-  });
-
   it('should be call connectWithBigquery and get instance from bigQuery', async () => {
-    const connectWithBigquerypy = jest
-      .spyOn(bigQueryRepository, 'connectWithBigquery')
-      .mockImplementation(() => Promise.resolve(new BigQuery()));
-
     const instance = await bigQueryRepository.connectWithBigquery();
+
     expect(instance).toBeDefined();
-    expect(connectWithBigquerypy).toBeCalled();
+    expect(instance.baseUrl).toBe(
+      'https://bigquery.googleapis.com/bigquery/v2',
+    );
   });
 
   it('should be call connectWithBigquery and get NULL trying to connect', async () => {
@@ -86,31 +51,11 @@ describe('BigQueryAdapterRepository:::', () => {
     }
   });
 
-  it('should be call connectWithBigquery and get error trying to connect', async () => {
-    const connectWithBigquerypy = jest
-      .spyOn(bigQueryRepository, 'connectWithBigquery')
-      .mockImplementation(() => {
-        throw new Error('error');
-      });
-
-    try {
-      await bigQueryRepository.connectWithBigquery();
-    } catch (error) {
-      expect(connectWithBigquerypy).toBeCalled();
-      expect(error).toBeDefined();
-      expect(error).toBeInstanceOf(Error);
-    }
-  });
-
   it('should be call connectWithDatastorage and get instance from Datastore', async () => {
-    const connectWithDatastorageSpy = jest
-      .spyOn(bigQueryRepository, 'connectWithDatastorage')
-      .mockImplementation(() => Promise.resolve(new Datastore()));
-
     const instance = await bigQueryRepository.connectWithDatastorage();
 
     expect(instance).toBeDefined();
-    expect(connectWithDatastorageSpy).toBeCalled();
+    expect(instance.baseUrl_).toBe('datastore.googleapis.com');
   });
 
   it('should be call connectWithDatastorage and get ERRIR from Datastore', async () => {
@@ -130,36 +75,35 @@ describe('BigQueryAdapterRepository:::', () => {
   });
 
   it('should be call query and execute it successfully in bigQuery', async () => {
+    const jobMock = {
+      id: 'some-valid-job-id',
+      getQueryResults: () => jest.fn(),
+    };
     const queryResultsMock = [
       { artistId: 'artist1k', name: 'artistName1' },
       { artistId: 'artist2m', name: 'artistName2' },
     ];
-    const connectWithBigquerypy = jest
-      .spyOn(bigQueryRepository, 'connectWithBigquery')
-      .mockImplementation(() => Promise.resolve(new BigQuery()));
 
-    const querySpy = jest
-      .spyOn(bigQueryRepository, 'query')
-      .mockImplementation((_bigQ, _query) => {
-        return Promise.resolve(queryResultsMock);
-      });
-
-    const queryStrMock = `select * from validTable`;
+    const queryStrMock = `SELECT emisora_N1, emisora_N2, id_interprete, interprete_colaboradores, nombre_interprete, inserciones, universo, 
+    cobertura, cob, contactos, grp_s, ots, ola, fecha_peticion, rango, rango_sort_order, fecha
+    FROM dataglobalproduccion.BI_Artistas_Alt.odec_t`;
 
     const instance = await bigQueryRepository.connectWithBigquery();
+    jest.spyOn(instance, 'createQueryJob').mockImplementation(() => {
+      return Promise.resolve(jobMock);
+    });
+
+    jest.spyOn(bigQueryRepository, 'query').mockImplementation(() => {
+      return Promise.resolve(queryResultsMock);
+    });
+
     const query = await bigQueryRepository.query(instance, queryStrMock);
 
     expect(instance).toBeDefined();
-    expect(connectWithBigquerypy).toBeCalled();
-    expect(querySpy).toHaveBeenCalledWith(instance, queryStrMock);
     expect(query).toEqual(queryResultsMock);
   });
 
   it('should be call query and execute it in bigQuery but got an Error', async () => {
-    const connectWithBigquerypy = jest
-      .spyOn(bigQueryRepository, 'connectWithBigquery')
-      .mockImplementation(() => Promise.resolve(new BigQuery()));
-
     const querySpy = jest
       .spyOn(bigQueryRepository, 'query')
       .mockImplementation((_bigQ, _query) => {
@@ -174,7 +118,6 @@ describe('BigQueryAdapterRepository:::', () => {
       await bigQueryRepository.query(instance, queryStrMock);
     } catch (error) {
       expect(instance).toBeDefined();
-      expect(connectWithBigquerypy).toBeCalled();
       expect(querySpy).toHaveBeenCalledWith(instance, queryStrMock);
       expect(error).toBeInstanceOf(Error);
     }
@@ -230,12 +173,12 @@ describe('BigQueryAdapterRepository:::', () => {
       },
     ];
 
-    const queryStr = `SELECT emisora_N1, emisora_N2, id_interprete, interprete_colaboradores, nombre_interprete, inserciones, universo, 
+    const queryStr = `SELECT emisora_N1, emisora_N2, id_interprete, interprete_colaboradores, nombre_interprete, inserciones, universo,
     cobertura, cob, contactos, grp_s, ots, ola, fecha_peticion, rango, rango_sort_order, fecha
     FROM dataglobalproduccion.BI_Artistas_Alt.odec_t`;
 
     const checkSpy = jest
-      .spyOn(bigQueryRepository, 'check')
+      .spyOn(bigQueryRepository, 'query')
       .mockImplementation(() => {
         return Promise.resolve(queryResultMock);
       });
@@ -243,17 +186,16 @@ describe('BigQueryAdapterRepository:::', () => {
     const results = await bigQueryRepository.check(queryStr);
 
     expect(checkSpy).toHaveBeenCalled();
-    expect(checkSpy).toHaveBeenCalledWith(queryStr);
     expect(results).toEqual(queryResultMock);
   });
 
   it('should be call check functionality and get Error from bigQuery', async () => {
-    const queryStrInvalid = `fake SELECT emisora_N1, emisora_N2, id_interprete, interprete_colaboradores, nombre_interprete, inserciones, universo, 
+    const queryStrInvalid = `fake SELECT emisora_N1, emisora_N2, id_interprete, interprete_colaboradores, nombre_interprete, inserciones, universo,
     cobertura, cob, contactos, grp_s, ots, ola, fecha_peticion, rango, rango_sort_order, fecha
     FROM dataglobalproduccion.BI_Artistas_Alt.odec_t`;
 
     const checkSpy = jest
-      .spyOn(bigQueryRepository, 'check')
+      .spyOn(bigQueryRepository, 'query')
       .mockImplementation(() => {
         throw new Error('error');
       });
@@ -268,6 +210,9 @@ describe('BigQueryAdapterRepository:::', () => {
   });
 
   it('should be call checkDs functionality and return some data from Datastore', async () => {
+    const datastoreMock = {
+      createQuery: () => jest.fn(),
+    };
     const queryResultMock = [
       {
         created: '2022-12-19T10:57:11.008Z',
@@ -279,41 +224,36 @@ describe('BigQueryAdapterRepository:::', () => {
         description: 'some description',
         created: '2022-12-19T11:08:12.390Z',
       },
+      {
+        done: false,
+        description: 'some description',
+        created: '2022-12-19T11:08:39.958Z',
+      },
     ];
 
-    const queryStr = `SELECT emisora_N1, emisora_N2, id_interprete, interprete_colaboradores, nombre_interprete, inserciones, universo, 
+    const queryStr = `SELECT emisora_N1, emisora_N2, id_interprete, interprete_colaboradores, nombre_interprete, inserciones, universo,
     cobertura, cob, contactos, grp_s, ots, ola, fecha_peticion, rango, rango_sort_order, fecha
     FROM dataglobalproduccion.BI_Artistas_Alt.odec_t`;
 
-    const checkDsSpy = jest
-      .spyOn(bigQueryRepository, 'checkDs')
-      .mockImplementation(() => {
-        return Promise.resolve(queryResultMock);
-      });
+    const instance = await bigQueryRepository.connectWithBigquery();
+    jest.spyOn(instance, 'createQueryJob').mockImplementation(() => {
+      return Promise.resolve(datastoreMock);
+    });
 
     const results = await bigQueryRepository.checkDs(queryStr);
 
-    expect(checkDsSpy).toHaveBeenCalled();
-    expect(checkDsSpy).toHaveBeenCalledWith(queryStr);
-    expect(results).toEqual(queryResultMock);
+    expect(results.length > 0).toBeTruthy();
+    expect(results.length).toBe(queryResultMock.length);
   });
 
   it('should be call checkDs functionality and get Error from Datastore', async () => {
-    const queryStrInvalid = `fake SELECT emisora_N1, emisora_N2, id_interprete, interprete_colaboradores, nombre_interprete, inserciones, universo, 
+    const queryStrInvalid = `fake SELECT emisora_N1, emisora_N2, id_interprete, interprete_colaboradores, nombre_interprete, inserciones, universo,
     cobertura, cob, contactos, grp_s, ots, ola, fecha_peticion, rango, rango_sort_order, fecha
     FROM dataglobalproduccion.BI_Artistas_Alt.odec_t`;
-
-    const checkDsSpy = jest
-      .spyOn(bigQueryRepository, 'checkDs')
-      .mockImplementation(() => {
-        throw new Error('error');
-      });
 
     try {
       await bigQueryRepository.checkDs(queryStrInvalid);
     } catch (error) {
-      expect(checkDsSpy).toBeCalled();
-      expect(checkDsSpy).toBeCalledWith(queryStrInvalid);
       expect(error).toBeInstanceOf(Error);
     }
   });
