@@ -8,7 +8,7 @@ import { CreateUserDto } from '../dtos/create-user.dto';
 import { UpdateUserDto } from '../dtos/update-user.dto';
 
 import { hash } from 'bcrypt';
-import { BIG_QUERY_REPOSITORY } from 'src/bigquery/repository/big-query.repository';
+import { BIG_QUERY_REPOSITORY } from '../../bigquery/repository/big-query.repository';
 import { UsersDatastoreRepository } from './user-datastore.repository';
 
 export const USER_DASHBOARD = 'User_Dashboard';

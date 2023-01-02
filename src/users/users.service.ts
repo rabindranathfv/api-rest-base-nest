@@ -1,6 +1,5 @@
 import { USER_DATASTORE_REPOSITORY } from './repository/user-datastore.repository';
 import {
-  CACHE_MANAGER,
   HttpException,
   HttpStatus,
   Inject,
@@ -8,7 +7,6 @@ import {
   Logger,
   NotFoundException,
 } from '@nestjs/common';
-import { Cache } from 'cache-manager';
 
 import { CreateUserDto } from './dtos/create-user.dto';
 import { UpdateUserDto } from './dtos/update-user.dto';
@@ -19,13 +17,22 @@ export class UsersService {
 
   constructor(
     @Inject(USER_DATASTORE_REPOSITORY) private readonly userDatastoreRepository,
-    @Inject(CACHE_MANAGER) private readonly cacheManager: Cache,
   ) {}
 
   // DATASTORE SERVICE ENDPOINTS
   async findAll() {
     this.logger.log('FindAll Users Service with DATASTORE');
-    return await this.userDatastoreRepository.findAll();
+    let userList;
+    try {
+      userList = await this.userDatastoreRepository.findAll();
+      return userList;
+    } catch (error) {
+      this.logger.log(`FindAll Users Service ERROR`, error);
+      throw new HttpException(
+        `Error make query`,
+        HttpStatus.INTERNAL_SERVER_ERROR,
+      );
+    }
   }
 
   async createUser(createUserDto: CreateUserDto) {
@@ -49,10 +56,6 @@ export class UsersService {
 
     if (!findUser) throw new NotFoundException(`user not found ${id}`);
 
-    await this.cacheManager.set(`users-${findUser.id}`, findUser);
-    const cacheResp = await this.cacheManager.get(`users-${findUser.id}`);
-
-    this.logger.log('🚀 ~ Cache for findById', cacheResp);
     return findUser;
   }
 

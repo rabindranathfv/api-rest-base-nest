@@ -1,5 +1,4 @@
 import {
-  CACHE_MANAGER,
   HttpException,
   HttpStatus,
   Inject,
@@ -7,7 +6,6 @@ import {
   Logger,
   Req,
 } from '@nestjs/common';
-import { Cache } from 'cache-manager';
 
 import { AUTH_DATASTORAGE_REPOSITORY } from './repository/auth-datastorage.repository';
 
@@ -15,7 +13,7 @@ import { CreateUserDto } from './../users/dtos/create-user.dto';
 import { LoginDto } from './dto/login.dto';
 
 import { Request } from 'express';
-import { USER_DATASTORE_REPOSITORY } from 'src/users/repository/user-datastore.repository';
+import { USER_DATASTORE_REPOSITORY } from '../users/repository/user-datastore.repository';
 
 @Injectable()
 export class AuthService {
@@ -25,7 +23,6 @@ export class AuthService {
     @Inject(USER_DATASTORE_REPOSITORY) private readonly userDatastoreRepository,
     @Inject(AUTH_DATASTORAGE_REPOSITORY)
     private readonly authDatastoreRepository,
-    @Inject(CACHE_MANAGER) private readonly cacheManager: Cache,
   ) {}
 
   async login(loginDto: LoginDto) {

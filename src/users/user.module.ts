@@ -12,10 +12,12 @@ import { UserSchema } from './schemas/user.schema';
 import { User } from './entities/user.entity';
 
 import { DatastoreUserRepository } from './repository/datastore-user.repository';
+import { configuration } from 'src/config/configuration';
 
 @Module({
   imports: [
     MongooseModule.forFeature([{ name: User.name, schema: UserSchema }]),
+    ConfigModule.forFeature(configuration),
     CacheModule.registerAsync({
       imports: [ConfigModule],
       inject: [ConfigService],
@@ -38,7 +40,6 @@ import { DatastoreUserRepository } from './repository/datastore-user.repository'
       provide: USER_DATASTORE_REPOSITORY,
       useClass: DatastoreUserRepository,
     },
-    ConfigModule,
   ],
   controllers: [UsersController],
 })

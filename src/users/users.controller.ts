@@ -41,7 +41,6 @@ export class UsersController {
 
   constructor(private readonly userService: UsersService) {}
 
-  // ENDPOINTS WITH DATASTORE
   @Get('')
   @ApiResponse({
     status: 200,
