@@ -3,7 +3,7 @@ import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
 
 export class User {
   @ApiProperty({ title: 'userId', description: 'user Id' })
-  id: string;
+  id?: string;
   @ApiProperty({ title: 'name', description: 'user name' })
   name: string;
   @ApiProperty({ title: 'email', description: 'user email' })

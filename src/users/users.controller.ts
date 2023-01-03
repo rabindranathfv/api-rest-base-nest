@@ -111,6 +111,11 @@ export class UsersController {
   })
   async createUser(@Body() createUserDTO: CreateUserDto) {
     this.logger.log('createUser Users Ctrl');
+    // TODO: add response for an existing email
+    // throw new HttpException(
+    //   `this email ${createUserDto.email} already exist or have some errors`,
+    //   HttpStatus.CONFLICT,
+    // );
     return await this.userService.createUser(createUserDTO);
   }
 

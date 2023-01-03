@@ -35,8 +35,18 @@ export class DatastoreUserRepository implements UsersDatastoreRepository {
         .createQuery('User_Dashboard')
         .filter('email', '=', email);
       const [existUser] = await instance.runQuery(queryResults);
+      console.log(
+        '🚀 ~ file: datastore-user.repository.ts:38 ~ DatastoreUserRepository ~ createUser ~ existUser',
+        existUser,
+      );
 
-      if (!existUser || existUser[0]?.email) return null;
+      if (!existUser || existUser[0]?.email) {
+        return {
+          name: createUserDto.name,
+          email: createUserDto.email,
+          password: createUserDto.password,
+        };
+      }
 
       const hashedPassword = await hash(password, 10);
       const userKey = instance.key('User_Dashboard');

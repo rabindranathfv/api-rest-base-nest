@@ -19,7 +19,6 @@ export class UsersService {
     @Inject(USER_DATASTORE_REPOSITORY) private readonly userDatastoreRepository,
   ) {}
 
-  // DATASTORE SERVICE ENDPOINTS
   async findAll() {
     this.logger.log('FindAll Users Service with DATASTORE');
     let userList;
@@ -29,7 +28,7 @@ export class UsersService {
     } catch (error) {
       this.logger.log(`FindAll Users Service ERROR`, error);
       throw new HttpException(
-        `Error make query`,
+        `Error finding users`,
         HttpStatus.INTERNAL_SERVER_ERROR,
       );
     }
@@ -37,26 +36,45 @@ export class UsersService {
 
   async createUser(createUserDto: CreateUserDto) {
     this.logger.log('createUser Users Service with DATASTORE');
-    const newUser = await this.userDatastoreRepository.createUser(
-      createUserDto,
-    );
-
-    if (!newUser)
-      throw new HttpException(
-        `this email ${createUserDto.email} already exist or have some errors`,
-        HttpStatus.CONFLICT,
+    try {
+      const newUser = await this.userDatastoreRepository.createUser(
+        createUserDto,
+      );
+      console.log(
+        '🚀 ~ file: users.service.ts:43 ~ UsersService ~ createUser ~ newUser',
+        newUser,
       );
 
-    return newUser;
+      if (!newUser || Object.keys(newUser).length > 0) {
+        console.log('YA EXISTE EL USUARIO');
+        return newUser;
+      }
+
+      return newUser;
+    } catch (error) {
+      this.logger.log(`createUser Users Service ERROR`, error);
+      throw new HttpException(
+        `Error creating and user`,
+        HttpStatus.INTERNAL_SERVER_ERROR,
+      );
+    }
   }
 
   async findById(id: string) {
     this.logger.log('findById Users Service with DATASTORE');
-    const findUser = await this.userDatastoreRepository.findById(id);
+    try {
+      const findUser = await this.userDatastoreRepository.findById(id);
 
-    if (!findUser) throw new NotFoundException(`user not found ${id}`);
+      if (!findUser) throw new NotFoundException(`user not found ${id}`);
 
-    return findUser;
+      return findUser;
+    } catch (error) {
+      this.logger.log(`findById User Service ERROR`, error);
+      throw new HttpException(
+        `Error find user by id`,
+        HttpStatus.INTERNAL_SERVER_ERROR,
+      );
+    }
   }
 
   async updateById(UpdateUserDto: UpdateUserDto, id: string) {
