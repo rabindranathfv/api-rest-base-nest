@@ -1,6 +1,11 @@
 import { CreateUserDto } from 'src/users/dtos/create-user.dto';
 import { Test, TestingModule } from '@nestjs/testing';
-import { CacheModule, HttpStatus } from '@nestjs/common';
+import {
+  CacheModule,
+  HttpException,
+  HttpStatus,
+  NotFoundException,
+} from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 
 import { UsersService } from './users.service';
@@ -90,23 +95,6 @@ describe('UsersService', () => {
     expect(findAllSpy).toHaveBeenCalled();
   });
 
-  it('should call findAll and return Error', async () => {
-    const findAllSpy = jest
-      .spyOn(repository, 'findAll')
-      .mockImplementation(() => {
-        throw new Error('error');
-      });
-
-    try {
-      await service.findAll();
-    } catch (error) {
-      expect(findAllSpy).toHaveBeenCalled();
-      expect(error).toBeInstanceOf(Error);
-      expect(error['status']).toBe(HttpStatus.INTERNAL_SERVER_ERROR);
-      expect(error['response']).toBe(`Error finding users`);
-    }
-  });
-
   it('should call createdUser and return a new user', async () => {
     const createUserDtoMock = {
       name: 'rabindranath ferreira 3',
@@ -116,14 +104,14 @@ describe('UsersService', () => {
     const createUserSpy = jest
       .spyOn(repository, 'createUser')
       .mockImplementation(() =>
-        Promise.resolve({ ...createUserDtoMock, id: 'some-valid-id' }),
+        Promise.resolve({ ...createUserDtoMock, id: 'valid-id' }),
       );
 
-    const servResp = await service.createUser(createUserDtoMock);
+    const resServ = await service.createUser(createUserDtoMock);
 
+    expect(resServ).toEqual({ ...createUserDtoMock, id: 'valid-id' });
     expect(createUserSpy).toBeCalled();
     expect(createUserSpy).toBeCalledWith(createUserDtoMock);
-    expect(servResp).toEqual({ ...createUserDtoMock, id: 'some-valid-id' });
   });
 
   it('should call createdUser with an existing email and should responde same createUserDto', async () => {
@@ -135,40 +123,24 @@ describe('UsersService', () => {
     const createUserSpy = jest
       .spyOn(repository, 'createUser')
       .mockImplementation(() => {
-        return Promise.resolve(createUserDtoMock);
-      });
-
-    const servResp = await service.createUser(createUserDtoMock);
-    expect(createUserSpy).toBeCalled();
-    expect(createUserSpy).toBeCalledWith(createUserDtoMock);
-    expect(servResp).toEqual({ ...createUserDtoMock });
-  });
-
-  it('should call createdUser and get Error 500', async () => {
-    const createUserDtoMock = {
-      name: 'rabindranath ferreira 3',
-      email: 'rferreira3@hiberus.com',
-      password: '123456',
-    };
-    const createUserSpy = jest
-      .spyOn(repository, 'createUser')
-      .mockImplementation(() => {
-        throw new Error('error');
+        return Promise.resolve(false);
       });
 
     try {
       await service.createUser(createUserDtoMock);
     } catch (error) {
-      expect(createUserSpy).toHaveBeenCalled();
+      expect(createUserSpy).toBeCalled();
       expect(createUserSpy).toBeCalledWith(createUserDtoMock);
-      expect(error).toBeInstanceOf(Error);
-      expect(error['status']).toBe(HttpStatus.INTERNAL_SERVER_ERROR);
-      expect(error['response']).toBe(`Error creating and user`);
+      expect(error).toBeInstanceOf(HttpException);
+      expect(error['status']).toBe(409);
+      expect(error['message']).toBe(
+        `this email: ${createUserDtoMock.email} has been used`,
+      );
     }
   });
 
   it('should call findById and return an specific users', async () => {
-    const userIdMock = 'user-id-1';
+    const userIdMock = '5662792157757440';
     const userFindMock = {
       email: 'rferreira2@hiberus.com',
       password: '$2b$10$LQ/PYjRGdaH/E4bVn2hw3.vaxLVe5ITSbAr.WnvMTvXeEbjL5mlx6',
@@ -187,43 +159,30 @@ describe('UsersService', () => {
     expect(findByIdSpy).toHaveBeenCalled();
   });
 
-  // TODO: this test it's ok but depends if we use the validation here or not
-  // it('should call findById and return and error because the id does not exist or is invalid', async () => {
-  //   // TODO: Check error handle
-  //   const userIdMock = 'user-id-1';
-  //   const userFindMock = {
-  //     email: 'rferreira2@hiberus.com',
-  //     password: '$2b$10$LQ/PYjRGdaH/E4bVn2hw3.vaxLVe5ITSbAr.WnvMTvXeEbjL5mlx6',
-  //     name: 'rabindranath ferreira 2+1 GCLOUD UPD',
-  //     createdAt: '2022-12-23T12:10:17.426Z',
-  //     id: '5662792157757440',
-  //   };
-  //   const findByIdSpy = jest
-  //     .spyOn(repository, 'findAll')
-  //     .mockImplementation(() => Promise.resolve(userFindMock));
-
-  //   const serviceResp = await service.findById(userIdMock);
-
-  //   expect(serviceResp).toEqual(userFindMock);
-  //   expect(findByIdSpy).toHaveBeenCalled();
-  //   expect(findByIdSpy).toBeCalledWith(userIdMock);
-  // });
-
-  it('should call findById and return Error', async () => {
+  // TODO: This test is failling
+  it('should call findById and return and error because the id does not exist or is invalid', async () => {
     const userIdMock = 'user-id-1';
+    // const userFindMock = {
+    //   email: 'rferreira2@hiberus.com',
+    //   password: '$2b$10$LQ/PYjRGdaH/E4bVn2hw3.vaxLVe5ITSbAr.WnvMTvXeEbjL5mlx6',
+    //   name: 'rabindranath ferreira 2+1 GCLOUD UPD',
+    //   createdAt: '2022-12-23T12:10:17.426Z',
+    //   id: '5662792157757440',
+    // };
     const findByIdSpy = jest
-      .spyOn(repository, 'findAll')
-      .mockImplementation(() => {
-        throw new Error('error');
-      });
+      .spyOn(repository, 'findById')
+      .mockImplementation(() => Promise.resolve([]));
 
     try {
       await service.findById(userIdMock);
     } catch (error) {
       expect(findByIdSpy).toHaveBeenCalled();
-      expect(error).toBeInstanceOf(Error);
-      expect(error['status']).toBe(HttpStatus.INTERNAL_SERVER_ERROR);
-      expect(error['response']).toBe(`Error find user by id`);
+      expect(findByIdSpy).toBeCalledWith(userIdMock);
+      expect(error).toBeInstanceOf(NotFoundException);
+      expect(error['status']).toBe(404);
+      expect(error['message']).toBe(
+        `can not update because user not found ${userIdMock}`,
+      );
     }
   });
 
@@ -232,15 +191,48 @@ describe('UsersService', () => {
     const userFindMock = {
       id: userIdMock,
     };
-    const findByIdSpy = jest
+    const deleteByIdSpy = jest
       .spyOn(repository, 'deleteById')
       .mockImplementation(() => Promise.resolve(userFindMock));
 
     const serviceResp = await service.deleteById(userIdMock);
 
     expect(serviceResp).toEqual({ id: userFindMock.id });
-    expect(findByIdSpy).toBeCalledWith(userIdMock);
-    expect(findByIdSpy).toHaveBeenCalled();
+    expect(deleteByIdSpy).toBeCalledWith(userIdMock);
+    expect(deleteByIdSpy).toHaveBeenCalled();
+  });
+
+  it('should call deleteById and return 404 exception because the id is invalid or not found', async () => {
+    const userIdMock = '56627921.s';
+    const deleteByIdSpy = jest
+      .spyOn(repository, 'deleteById')
+      .mockImplementation(() => Promise.resolve(false));
+
+    try {
+      await service.deleteById(userIdMock);
+    } catch (error) {
+      expect(deleteByIdSpy).toHaveBeenCalled();
+      expect(deleteByIdSpy).toBeCalledWith(userIdMock);
+      expect(error).toBeInstanceOf(NotFoundException);
+      expect(error['status']).toBe(404);
+    }
+  });
+
+  it('should call deleteById and return throw error exception because the id is invalid or not found', async () => {
+    const userIdMock = '56627921.s';
+    const findByIdSpy = jest
+      .spyOn(repository, 'deleteById')
+      .mockImplementation(() => {
+        throw new Error('error');
+      });
+
+    try {
+      await service.deleteById(userIdMock);
+    } catch (error) {
+      expect(findByIdSpy).toHaveBeenCalled();
+      expect(findByIdSpy).toBeCalledWith(userIdMock);
+      expect(error).toBeInstanceOf(Error);
+    }
   });
 
   it('should call updateById and return an user updated', async () => {
@@ -251,14 +243,36 @@ describe('UsersService', () => {
       name: 'rabindranath ferreira 2+1 GCLOUD UPD AGAIN',
     };
 
-    const findByIdSpy = jest
+    const updateByIdSpy = jest
       .spyOn(repository, 'updateById')
       .mockImplementation(() => Promise.resolve(updateUserDtoMock));
 
     const serviceResp = await service.updateById(updateUserDtoMock, userIdMock);
 
     expect(serviceResp).toEqual(updateUserDtoMock);
-    expect(findByIdSpy).toBeCalledWith(updateUserDtoMock, userIdMock);
-    expect(findByIdSpy).toHaveBeenCalled();
+    expect(updateByIdSpy).toBeCalledWith(updateUserDtoMock, userIdMock);
+    expect(updateByIdSpy).toHaveBeenCalled();
+  });
+
+  it('should call updateById and return 404 exception because the id is invalid or not found', async () => {
+    const userIdMock = 'invalid-id';
+    const updateUserDtoMock = {
+      email: 'rferreira2UPD@hiberus.com',
+      password: '123456789',
+      name: 'rabindranath ferreira 2+1 GCLOUD UPD AGAIN',
+    };
+    const updateByIdSpy = jest
+      .spyOn(repository, 'updateById')
+      .mockImplementation(() => Promise.resolve(false));
+
+    try {
+      await service.updateById(updateUserDtoMock, userIdMock);
+    } catch (error) {
+      expect(updateByIdSpy).toHaveBeenCalled();
+      expect(updateByIdSpy).toBeCalledWith(updateUserDtoMock, userIdMock);
+      expect(error).toBeInstanceOf(NotFoundException);
+      expect(error['status']).toBe(404);
+      expect(error['message']).toBe(`can not update user ${userIdMock}`);
+    }
   });
 });

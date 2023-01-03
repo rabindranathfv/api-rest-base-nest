@@ -1,5 +1,12 @@
 import { Datastore, Entity } from '@google-cloud/datastore';
-import { Inject, Injectable, Logger } from '@nestjs/common';
+import {
+  Inject,
+  Injectable,
+  Logger,
+  NotFoundException,
+  HttpException,
+  HttpStatus,
+} from '@nestjs/common';
 
 import { User } from '../entities/user.entity';
 
@@ -21,7 +28,7 @@ export class DatastoreUserRepository implements UsersDatastoreRepository {
     @Inject(BIG_QUERY_REPOSITORY) private readonly bigQueryRepository,
   ) {}
 
-  async createUser(createUserDto: CreateUserDto): Promise<User> | null {
+  async createUser(createUserDto: CreateUserDto): Promise<Boolean | User> {
     this.logger.log(
       `using ${DatastoreUserRepository.name} - repository - method: createUser`,
     );
@@ -35,17 +42,9 @@ export class DatastoreUserRepository implements UsersDatastoreRepository {
         .createQuery('User_Dashboard')
         .filter('email', '=', email);
       const [existUser] = await instance.runQuery(queryResults);
-      console.log(
-        '🚀 ~ file: datastore-user.repository.ts:38 ~ DatastoreUserRepository ~ createUser ~ existUser',
-        existUser,
-      );
 
-      if (!existUser || existUser[0]?.email) {
-        return {
-          name: createUserDto.name,
-          email: createUserDto.email,
-          password: createUserDto.password,
-        };
+      if (existUser.length > 0) {
+        return !(existUser.length > 0);
       }
 
       const hashedPassword = await hash(password, 10);
@@ -86,7 +85,10 @@ export class DatastoreUserRepository implements UsersDatastoreRepository {
       };
     } catch (error) {
       console.log(error);
-      return null;
+      throw new HttpException(
+        `Error create an user, error: ${error}`,
+        HttpStatus.INTERNAL_SERVER_ERROR,
+      );
     }
   }
 
@@ -102,6 +104,7 @@ export class DatastoreUserRepository implements UsersDatastoreRepository {
         .createQuery(`${USER_DASHBOARD}`)
         .order('createdAt');
       const [users] = await instance.runQuery(queryResults);
+
       const usersMapped = users.map((u) => {
         const uKey = u[instance.KEY];
         return {
@@ -115,11 +118,14 @@ export class DatastoreUserRepository implements UsersDatastoreRepository {
       return usersMapped;
     } catch (error) {
       console.log(error);
-      return null;
+      throw new HttpException(
+        `Error finding all users, error: ${error}`,
+        HttpStatus.INTERNAL_SERVER_ERROR,
+      );
     }
   }
 
-  async findById(id: string): Promise<User> | null {
+  async findById(id: string): Promise<boolean | User> {
     this.logger.log(
       `using ${DatastoreUserRepository.name} - repository - method: findById`,
     );
@@ -127,27 +133,36 @@ export class DatastoreUserRepository implements UsersDatastoreRepository {
       const instance: Datastore =
         await this.bigQueryRepository.connectWithDatastorage();
 
-      const transaction = await instance.transaction();
       const userKey = await instance.key([
         `${USER_DASHBOARD}`,
         Datastore.int(id),
       ]);
 
-      await transaction.run();
-      const [user] = await transaction.get(userKey);
+      // TODO: this query get some erros with non specific behavior on datastore
+      const query = await instance
+        .createQuery(`${USER_DASHBOARD}`)
+        .filter('__key__', '=', userKey); // update operator = from >, based on https://cloud.google.com/datastore/docs/samples/datastore-key-filter
+      const [results] = await instance.runQuery(query);
 
-      if (!user) return null;
+      if (results.length === 0) {
+        return !(results.length === 0);
+      }
+
+      const user = results[0];
 
       const userMapped = { ...user, id: id || user[instance.KEY].id };
 
       return userMapped;
     } catch (error) {
       console.log(error);
-      return null;
+      throw new HttpException(
+        `Error finding an specific user :${id}, error: ${error}`,
+        HttpStatus.INTERNAL_SERVER_ERROR,
+      );
     }
   }
 
-  async deleteById(id: string): Promise<Partial<User>> | null {
+  async deleteById(id: string): Promise<boolean | Partial<User>> {
     this.logger.log(
       `using ${DatastoreUserRepository.name} - repository - method: deleteById`,
     );
@@ -159,26 +174,31 @@ export class DatastoreUserRepository implements UsersDatastoreRepository {
         `${USER_DASHBOARD}`,
         Datastore.int(id),
       ]);
-      console.log(
-        '🚀 ~ file: datastore-user.repository.ts:138 ~ DatastoreUserRepository ~ deleteById ~ userKey',
-        userKey,
-      );
+      const query = await instance
+        .createQuery(`${USER_DASHBOARD}`)
+        .filter('__key__', '=', userKey);
+      const [results] = await instance.runQuery(query);
 
-      if (!userKey) return null;
+      if (results.length === 0) {
+        return !(results.length === 0);
+      }
 
       await instance.delete(userKey);
 
       return { id };
     } catch (error) {
       console.log(error);
-      return null;
+      throw new HttpException(
+        'ERROR 500 BOOM',
+        HttpStatus.INTERNAL_SERVER_ERROR,
+      );
     }
   }
 
   async updateById(
     updateUserDto: UpdateUserDto,
     id: string,
-  ): Promise<User> | null {
+  ): Promise<boolean | Partial<User>> {
     this.logger.log(
       `using ${DatastoreUserRepository.name} - repository - method: updateById`,
     );
@@ -186,32 +206,30 @@ export class DatastoreUserRepository implements UsersDatastoreRepository {
       await this.bigQueryRepository.connectWithDatastorage();
     const transaction = await instance.transaction();
 
-    const userKey = await instance.key([
-      `${USER_DASHBOARD}`,
-      Datastore.int(id),
-    ]);
-
-    if (!userKey) return null;
-
     try {
+      const userKey = await instance.key([
+        `${USER_DASHBOARD}`,
+        Datastore.int(id),
+      ]);
+
       // TODO: this query get some erros with non specific behavior on datastore
-      const queryResults = await instance
+      const query = await instance
         .createQuery(`${USER_DASHBOARD}`)
         .filter('__key__', '=', userKey); // update operator = from >, based on https://cloud.google.com/datastore/docs/samples/datastore-key-filter
+      const [results] = await instance.runQuery(query);
 
-      const [existUser] = await instance.runQuery(queryResults);
-
-      if (!existUser) return null;
+      if (results.length === 0) {
+        return !(results.length === 0);
+      }
 
       await transaction.run();
       let [user] = await transaction.get(userKey);
       user = {
-        ...(updateUserDto.email && { email: updateUserDto.email }),
-        ...(updateUserDto.name && { name: updateUserDto.name }),
-        ...(updateUserDto.password && {
-          password:
-            updateUserDto.password && (await hash(updateUserDto?.password, 10)),
-        }),
+        email: updateUserDto.email ? updateUserDto.email : user.email,
+        name: updateUserDto.name ? updateUserDto.name : user.name,
+        password: updateUserDto.password
+          ? await hash(updateUserDto?.password, 10)
+          : user.password,
         createdAt: user.createdAt,
       };
 
@@ -225,7 +243,10 @@ export class DatastoreUserRepository implements UsersDatastoreRepository {
     } catch (error) {
       console.log(error);
       await transaction.rollback();
-      return null;
+      throw new HttpException(
+        `Error try to update an specific user :${id}, error: ${error}`,
+        HttpStatus.INTERNAL_SERVER_ERROR,
+      );
     }
   }
 }

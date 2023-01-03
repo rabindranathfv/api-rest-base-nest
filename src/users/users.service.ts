@@ -1,11 +1,11 @@
 import { USER_DATASTORE_REPOSITORY } from './repository/user-datastore.repository';
 import {
-  HttpException,
-  HttpStatus,
   Inject,
   Injectable,
   Logger,
   NotFoundException,
+  HttpException,
+  HttpStatus,
 } from '@nestjs/common';
 
 import { CreateUserDto } from './dtos/create-user.dto';
@@ -21,60 +21,36 @@ export class UsersService {
 
   async findAll() {
     this.logger.log('FindAll Users Service with DATASTORE');
-    let userList;
-    try {
-      userList = await this.userDatastoreRepository.findAll();
-      return userList;
-    } catch (error) {
-      this.logger.log(`FindAll Users Service ERROR`, error);
-      throw new HttpException(
-        `Error finding users`,
-        HttpStatus.INTERNAL_SERVER_ERROR,
-      );
-    }
+    return await this.userDatastoreRepository.findAll();
   }
 
   async createUser(createUserDto: CreateUserDto) {
     this.logger.log('createUser Users Service with DATASTORE');
-    try {
-      const newUser = await this.userDatastoreRepository.createUser(
-        createUserDto,
-      );
-      console.log(
-        '🚀 ~ file: users.service.ts:43 ~ UsersService ~ createUser ~ newUser',
-        newUser,
-      );
+    const newUser = await this.userDatastoreRepository.createUser(
+      createUserDto,
+    );
 
-      if (!newUser || Object.keys(newUser).length > 0) {
-        console.log('YA EXISTE EL USUARIO');
-        return newUser;
-      }
-
-      return newUser;
-    } catch (error) {
-      this.logger.log(`createUser Users Service ERROR`, error);
+    if (!newUser || Object.keys(newUser).length <= 0) {
       throw new HttpException(
-        `Error creating and user`,
-        HttpStatus.INTERNAL_SERVER_ERROR,
+        `this email: ${createUserDto.email} has been used`,
+        HttpStatus.CONFLICT,
       );
     }
+
+    return newUser;
   }
 
   async findById(id: string) {
     this.logger.log('findById Users Service with DATASTORE');
-    try {
-      const findUser = await this.userDatastoreRepository.findById(id);
+    const findUser = await this.userDatastoreRepository.findById(id);
 
-      if (!findUser) throw new NotFoundException(`user not found ${id}`);
-
-      return findUser;
-    } catch (error) {
-      this.logger.log(`findById User Service ERROR`, error);
-      throw new HttpException(
-        `Error find user by id`,
-        HttpStatus.INTERNAL_SERVER_ERROR,
+    if (!findUser || Object.keys(findUser).length <= 0) {
+      throw new NotFoundException(
+        `can not update because user not found ${id}`,
       );
     }
+
+    return findUser;
   }
 
   async updateById(UpdateUserDto: UpdateUserDto, id: string) {
@@ -84,7 +60,8 @@ export class UsersService {
       id,
     );
 
-    if (!user) throw new NotFoundException(`can not update user ${id}`);
+    if (!user || Object.keys(user).length <= 0)
+      throw new NotFoundException(`can not update user ${id}`);
 
     return user;
   }
@@ -93,7 +70,8 @@ export class UsersService {
     this.logger.log('deleteById Users Service with DATASTORE');
     const deleteUser = await this.userDatastoreRepository.deleteById(id);
 
-    if (!deleteUser) throw new NotFoundException(`can not delete user ${id}`);
+    if (!deleteUser || Object.keys(deleteUser).length <= 0)
+      throw new NotFoundException(`can not delete user ${id}`);
 
     return deleteUser;
   }
