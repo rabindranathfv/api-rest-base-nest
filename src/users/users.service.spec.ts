@@ -1,11 +1,5 @@
-import { CreateUserDto } from 'src/users/dtos/create-user.dto';
 import { Test, TestingModule } from '@nestjs/testing';
-import {
-  CacheModule,
-  HttpException,
-  HttpStatus,
-  NotFoundException,
-} from '@nestjs/common';
+import { CacheModule, HttpException, NotFoundException } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 
 import { UsersService } from './users.service';
@@ -14,7 +8,7 @@ import { USER_DATASTORE_REPOSITORY } from './repository/user-datastore.repositor
 import { configuration } from '../config/configuration';
 import { MockType } from 'src/bigquery/bigquery.service.spec';
 
-describe('UsersService', () => {
+describe('UsersService:::', () => {
   let service: UsersService;
   let repository: MockType<any>;
 
