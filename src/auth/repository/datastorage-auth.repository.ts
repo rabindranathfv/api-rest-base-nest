@@ -1,5 +1,11 @@
 import { Datastore } from '@google-cloud/datastore';
-import { Inject, Injectable, Logger } from '@nestjs/common';
+import {
+  HttpException,
+  HttpStatus,
+  Inject,
+  Injectable,
+  Logger,
+} from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 
 import { BIG_QUERY_REPOSITORY } from 'src/bigquery/repository/big-query.repository';
@@ -27,38 +33,58 @@ export class DatastorageAuthRepository implements AuthDatastorageRepository {
   ) {}
 
   async login(loginDto: LoginDto): Promise<User> {
-    const { email, password } = loginDto;
-    const instance: Datastore =
-      await this.bigQueryRepository.connectWithDatastorage();
+    this.logger.log(
+      `using ${DatastorageAuthRepository.name} - repository - method: login`,
+    );
+    try {
+      const { email, password } = loginDto;
+      const instance: Datastore =
+        await this.bigQueryRepository.connectWithDatastorage();
 
-    const queryResults = await instance
-      .createQuery(`${USER_DASHBOARD}`)
-      .filter('email', '=', email);
-    const [existUser] = await instance.runQuery(queryResults);
+      const queryResults = await instance
+        .createQuery(`${USER_DASHBOARD}`)
+        .filter('email', '=', email);
+      const [existUser] = await instance.runQuery(queryResults);
 
-    if (!existUser) return null;
+      if (!existUser) return null;
 
-    const isPasswordMatching = await compare(password, existUser[0].password);
+      const isPasswordMatching = await compare(password, existUser[0].password);
 
-    if (!isPasswordMatching) return null;
+      if (!isPasswordMatching) return null;
 
-    const token = await this.jwtService.sign({
-      email: existUser[0]?.email,
-      name: existUser[0]?.name,
-    });
-    return { ...existUser[0], token };
+      const token = await this.jwtService.sign({
+        email: existUser[0]?.email,
+        name: existUser[0]?.name,
+      });
+      return { ...existUser[0], token };
+    } catch (error) {
+      console.log(error);
+      throw new HttpException(
+        `Error at login repository, error: ${error}`,
+        HttpStatus.INTERNAL_SERVER_ERROR,
+      );
+    }
   }
 
   async logout(): Promise<any> {
+    this.logger.log(
+      `using ${DatastorageAuthRepository.name} - repository - method: logout`,
+    );
     try {
       return { message: 'Logout Successfully' };
     } catch (error) {
       console.log(error);
-      return null;
+      throw new HttpException(
+        `Error at logout repository, error: ${error}`,
+        HttpStatus.INTERNAL_SERVER_ERROR,
+      );
     }
   }
 
   async refresh(token: string): Promise<any> | null {
+    this.logger.log(
+      `using ${DatastorageAuthRepository.name} - repository - method: refresh`,
+    );
     try {
       const configJwt = this.configServ.get('JWT');
 
@@ -73,7 +99,10 @@ export class DatastorageAuthRepository implements AuthDatastorageRepository {
       return newToken;
     } catch (error) {
       console.log(error);
-      return null;
+      throw new HttpException(
+        `Error at refresh repository, error: ${error}`,
+        HttpStatus.INTERNAL_SERVER_ERROR,
+      );
     }
   }
 }

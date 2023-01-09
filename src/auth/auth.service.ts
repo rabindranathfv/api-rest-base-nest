@@ -45,7 +45,7 @@ export class AuthService {
 
     if (!newUser)
       throw new HttpException(
-        `this ${createUserDto.email} already exist or have some errors`,
+        `this email: ${createUserDto.email} has been used`,
         HttpStatus.CONFLICT,
       );
 
@@ -54,29 +54,13 @@ export class AuthService {
 
   async refresh(@Req() req: Request) {
     this.logger.log('refresh Auth Service');
-    try {
-      const [, token] = req.headers.authorization.split(' ');
-      const newToken = await this.authDatastoreRepository.refresh(token);
+    const [, token] = req.headers.authorization.split(' ');
 
-      if (!newToken) return null;
-
-      return newToken;
-    } catch (error) {
-      console.log(error);
-      return null;
-    }
+    return await this.authDatastoreRepository.refresh(token);
   }
 
   async logout() {
     this.logger.log('logout Auth Service');
-    try {
-      const logoutUser = await this.authDatastoreRepository.logout();
-      if (!logoutUser) return null;
-
-      return logoutUser;
-    } catch (error) {
-      console.log(error);
-      return null;
-    }
+    return await this.authDatastoreRepository.logout();
   }
 }
