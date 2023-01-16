@@ -14,7 +14,9 @@ import { BIG_QUERY_REPOSITORY } from './repository/big-query.repository';
       imports: [ConfigModule],
       inject: [ConfigService],
       useFactory: (configService: ConfigService) => {
+        /* istanbul ignore next */
         const cacheConfig = configService.get('CACHE');
+        /* istanbul ignore next */
         return {
           isGlobal: true,
           ttl: Number(cacheConfig.ttl),

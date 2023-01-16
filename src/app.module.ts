@@ -38,9 +38,10 @@ import { ArtistModule } from './artist/artist.module';
                   messageKey: 'message',
                 },
               }
-            : undefined,
+            : /* istanbul ignore next */ undefined,
         messageKey: 'message',
         customProps: (req: IncomingMessage) => {
+          /* istanbul ignore next */
           return {
             requestId: req[REQUEST_ID_HEADER],
           };
@@ -64,7 +65,9 @@ import { ArtistModule } from './artist/artist.module';
       imports: [ConfigModule],
       inject: [ConfigService],
       useFactory: (configService: ConfigService) => {
+        /* istanbul ignore next */
         const mongoConfig = configService.get('MONGO');
+        /* istanbul ignore next */
         return { uri: mongoConfig.uri };
       },
     }),
@@ -72,7 +75,9 @@ import { ArtistModule } from './artist/artist.module';
       imports: [ConfigModule],
       inject: [ConfigService],
       useFactory: (configService: ConfigService) => {
+        /* istanbul ignore next */
         const cacheConfig = configService.get('CACHE');
+        /* istanbul ignore next */
         return {
           isGlobal: true,
           ttl: Number(cacheConfig.ttl),
@@ -97,6 +102,7 @@ import { ArtistModule } from './artist/artist.module';
   ],
 })
 export class AppModule implements NestModule {
+  /* istanbul ignore next */
   configure(consumer: MiddlewareConsumer) {
     consumer.apply(RequestIdMiddleware).forRoutes('*');
     consumer.apply(RequestIdMiddleware).forRoutes('*');

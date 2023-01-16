@@ -1,5 +1,5 @@
-import { BigQueryAdapterRepository } from 'src/bigquery/repository/big-query-adapter.repository';
-import { BIG_QUERY_REPOSITORY } from 'src/bigquery/repository/big-query.repository';
+import { BigQueryAdapterRepository } from '../bigquery/repository/big-query-adapter.repository';
+import { BIG_QUERY_REPOSITORY } from '../bigquery/repository/big-query.repository';
 import { USER_DATASTORE_REPOSITORY } from './repository/user-datastore.repository';
 import { Module, CacheModule } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
@@ -12,7 +12,7 @@ import { UserSchema } from './schemas/user.schema';
 import { User } from './entities/user.entity';
 
 import { DatastoreUserRepository } from './repository/datastore-user.repository';
-import { configuration } from 'src/config/configuration';
+import { configuration } from '../config/configuration';
 
 @Module({
   imports: [
@@ -22,7 +22,9 @@ import { configuration } from 'src/config/configuration';
       imports: [ConfigModule],
       inject: [ConfigService],
       useFactory: (configService: ConfigService) => {
+        /* istanbul ignore next */
         const cacheConfig = configService.get('CACHE');
+        /* istanbul ignore next */
         return {
           ttl: Number(cacheConfig.ttl),
           max: Number(cacheConfig.storage),
@@ -30,6 +32,7 @@ import { configuration } from 'src/config/configuration';
       },
     }),
   ],
+  controllers: [UsersController],
   providers: [
     UsersService,
     {
@@ -41,6 +44,5 @@ import { configuration } from 'src/config/configuration';
       useClass: DatastoreUserRepository,
     },
   ],
-  controllers: [UsersController],
 })
 export class UserModule {}

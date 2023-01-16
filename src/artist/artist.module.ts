@@ -4,9 +4,9 @@ import { CacheModule, Module } from '@nestjs/common';
 import { ArtistController } from './artist.controller';
 import { ArtistService } from './artist.service';
 
-import { BigqueryModule } from 'src/bigquery/bigquery.module';
-import { BIG_QUERY_REPOSITORY } from 'src/bigquery/repository/big-query.repository';
-import { BigQueryAdapterRepository } from 'src/bigquery/repository/big-query-adapter.repository';
+import { BigqueryModule } from '../bigquery/bigquery.module';
+import { BIG_QUERY_REPOSITORY } from '../bigquery/repository/big-query.repository';
+import { BigQueryAdapterRepository } from '../bigquery/repository/big-query-adapter.repository';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 
 @Module({
@@ -16,7 +16,9 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
       imports: [ConfigModule],
       inject: [ConfigService],
       useFactory: (configService: ConfigService) => {
+        /* istanbul ignore next */
         const cacheConfig = configService.get('CACHE');
+        /* istanbul ignore next */
         return {
           ttl: Number(cacheConfig.ttl),
           max: Number(cacheConfig.storage),

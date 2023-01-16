@@ -7,7 +7,6 @@ import { Logger } from '@nestjs/common';
 
 describe('BigQueryAdapterRepository:::', () => {
   let bigQueryRepository: BigQueryAdapterRepository;
-  //   let logger: Logger;
 
   beforeEach(async () => {
     const mockconnectWithBigquery = jest.fn();
@@ -20,7 +19,6 @@ describe('BigQueryAdapterRepository:::', () => {
         {
           provide: BigQueryAdapterRepository,
           useFactory: () => ({
-            // logger: jest.fn(),
             connectWithBigquery: () => mockconnectWithBigquery,
             query: () => mockquery,
             check: () => mockcheck,
@@ -40,7 +38,6 @@ describe('BigQueryAdapterRepository:::', () => {
     bigQueryRepository = module.get<BigQueryAdapterRepository>(
       BigQueryAdapterRepository,
     );
-    // logger = module.get<Logger>(Logger);
   });
 
   afterEach(() => {

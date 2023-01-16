@@ -2,7 +2,7 @@
 import { Inject, Injectable, Logger } from '@nestjs/common';
 
 import { ArtistRepository } from './artist.repository';
-import { BIG_QUERY_REPOSITORY } from 'src/bigquery/repository/big-query.repository';
+import { BIG_QUERY_REPOSITORY } from '../../bigquery/repository/big-query.repository';
 
 import { radioStationStadistic } from './../mocks/radioStationKPI';
 import { artistKpiOverview } from './../mocks/artistKpiOverview';

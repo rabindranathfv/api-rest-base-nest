@@ -9,7 +9,7 @@ import {
 } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 
-import { BIG_QUERY_REPOSITORY } from 'src/bigquery/repository/big-query.repository';
+import { BIG_QUERY_REPOSITORY } from '../../bigquery/repository/big-query.repository';
 import { AuthDatastorageRepository } from './auth-datastorage.repository';
 
 import { compare } from 'bcrypt';
@@ -17,7 +17,7 @@ import { verify } from 'jsonwebtoken';
 
 import { User } from 'src/users/entities/user.entity';
 
-import { USER_DASHBOARD } from 'src/users/repository/datastore-user.repository';
+import { USER_DASHBOARD } from '../../users/repository/datastore-user.repository';
 import { ConfigService } from '@nestjs/config';
 
 import { LoginDto } from '../dto/login.dto';

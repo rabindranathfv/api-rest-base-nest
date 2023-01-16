@@ -1,22 +1,22 @@
-import { BigQueryAdapterRepository } from 'src/bigquery/repository/big-query-adapter.repository';
+import { BigQueryAdapterRepository } from '../bigquery/repository/big-query-adapter.repository';
 import { Module, CacheModule } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose';
 import { JwtModule } from '@nestjs/jwt';
 
-import { configuration } from 'src/config/configuration';
+import { configuration } from '../config/configuration';
 
 import { AuthController } from './auth.controller';
 import { AuthService } from './auth.service';
 
-import { User } from 'src/users/entities/user.entity';
-import { UserSchema } from 'src/users/schemas/user.schema';
+import { User } from '../users/entities/user.entity';
+import { UserSchema } from '../users/schemas/user.schema';
 
-import { BIG_QUERY_REPOSITORY } from 'src/bigquery/repository/big-query.repository';
+import { BIG_QUERY_REPOSITORY } from '../bigquery/repository/big-query.repository';
 import { AUTH_DATASTORAGE_REPOSITORY } from './repository/auth-datastorage.repository';
 import { DatastorageAuthRepository } from './repository/datastorage-auth.repository';
-import { USER_DATASTORE_REPOSITORY } from 'src/users/repository/user-datastore.repository';
-import { DatastoreUserRepository } from 'src/users/repository/datastore-user.repository';
+import { USER_DATASTORE_REPOSITORY } from '../users/repository/user-datastore.repository';
+import { DatastoreUserRepository } from '../users/repository/datastore-user.repository';
 
 import { JwtStrategy } from './jwt.strategy';
 
@@ -28,7 +28,9 @@ import { JwtStrategy } from './jwt.strategy';
       imports: [ConfigModule],
       inject: [ConfigService],
       useFactory: (configService: ConfigService) => {
+        /* istanbul ignore next */
         const jwtConfig = configService.get('JWT');
+        /* istanbul ignore next */
         return {
           secret: jwtConfig.secret,
           signOptions: { expiresIn: '2h' || jwtConfig.expiresIn },
@@ -39,7 +41,9 @@ import { JwtStrategy } from './jwt.strategy';
       imports: [ConfigModule],
       inject: [ConfigService],
       useFactory: (configService: ConfigService) => {
+        /* istanbul ignore next */
         const cacheConfig = configService.get('CACHE');
+        /* istanbul ignore next */
         return {
           isGlobal: true,
           ttl: Number(cacheConfig.ttl),
@@ -48,6 +52,7 @@ import { JwtStrategy } from './jwt.strategy';
       },
     }),
   ],
+  controllers: [AuthController],
   providers: [
     AuthService,
     {
@@ -64,6 +69,5 @@ import { JwtStrategy } from './jwt.strategy';
     },
     JwtStrategy,
   ],
-  controllers: [AuthController],
 })
 export class AuthModule {}

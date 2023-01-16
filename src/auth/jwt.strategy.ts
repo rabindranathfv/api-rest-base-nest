@@ -1,11 +1,11 @@
-import { USER_DASHBOARD } from 'src/users/repository/datastore-user.repository';
+import { USER_DASHBOARD } from '../users/repository/datastore-user.repository';
 import { Inject, Injectable } from '@nestjs/common';
 import { ExtractJwt, Strategy } from 'passport-jwt';
 import { PassportStrategy } from '@nestjs/passport';
 
 import { ConfigService } from '@nestjs/config';
 
-import { BIG_QUERY_REPOSITORY } from 'src/bigquery/repository/big-query.repository';
+import { BIG_QUERY_REPOSITORY } from '../bigquery/repository/big-query.repository';
 import { Datastore } from '@google-cloud/datastore';
 
 @Injectable()
