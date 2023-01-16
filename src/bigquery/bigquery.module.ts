@@ -1,10 +1,11 @@
 import { BigQueryAdapterRepository } from './repository/big-query-adapter.repository';
-import { BIG_QUERY_REPOSITORY } from './repository/big-query.repository';
 import { CacheModule, Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
-import { configuration } from 'src/config/configuration';
 import { BigqueryController } from './bigquery.controller';
 import { BigqueryService } from './bigquery.service';
+
+import { configuration } from '../config/configuration';
+import { BIG_QUERY_REPOSITORY } from './repository/big-query.repository';
 
 @Module({
   imports: [

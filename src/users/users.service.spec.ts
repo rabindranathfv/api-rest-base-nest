@@ -153,16 +153,8 @@ describe('UsersService:::', () => {
     expect(findByIdSpy).toHaveBeenCalled();
   });
 
-  // TODO: This test is failling
   it('should call findById and return and error because the id does not exist or is invalid', async () => {
     const userIdMock = 'user-id-1';
-    // const userFindMock = {
-    //   email: 'rferreira2@hiberus.com',
-    //   password: '$2b$10$LQ/PYjRGdaH/E4bVn2hw3.vaxLVe5ITSbAr.WnvMTvXeEbjL5mlx6',
-    //   name: 'rabindranath ferreira 2+1 GCLOUD UPD',
-    //   createdAt: '2022-12-23T12:10:17.426Z',
-    //   id: '5662792157757440',
-    // };
     const findByIdSpy = jest
       .spyOn(repository, 'findById')
       .mockImplementation(() => Promise.resolve([]));
