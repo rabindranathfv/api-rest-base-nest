@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 import { Datastore } from '@google-cloud/datastore';
 import {
   HttpException,

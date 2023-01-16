@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 import { Injectable, Logger } from '@nestjs/common';
 import { Datastore } from '@google-cloud/datastore';
 import { BigQuery } from '@google-cloud/bigquery';

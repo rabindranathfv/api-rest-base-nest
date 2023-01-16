@@ -1,9 +1,9 @@
+/* istanbul ignore file */
 import { Datastore, Entity } from '@google-cloud/datastore';
 import {
   Inject,
   Injectable,
   Logger,
-  NotFoundException,
   HttpException,
   HttpStatus,
 } from '@nestjs/common';

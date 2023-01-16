@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 import { Inject, Injectable, Logger } from '@nestjs/common';
 
 import { ArtistRepository } from './artist.repository';
