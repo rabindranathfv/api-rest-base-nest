@@ -77,6 +77,11 @@ describe('AuthService:::', () => {
     authRepository = module.get(AUTH_DATASTORAGE_REPOSITORY);
   });
 
+  afterEach(() => {
+    jest.resetAllMocks();
+    jest.clearAllMocks();
+  });
+
   it('should be defined', () => {
     expect(userRepository).toBeDefined();
     expect(authRepository).toBeDefined();
@@ -197,7 +202,7 @@ describe('AuthService:::', () => {
       token:
         'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJmZXJyZWlyYUBoaWJlcnVzLmNvbSIsIm5hbWUiOiJyYWJpbmRyYW5hdGggZmVycmVpcmEgMSsxIEdDTE9VRCIsImlhdCI6MTY3Mjg2MTg3OCwiZXhwIjoxNjcyODY5MDc4fQ.t5dkD_UJGl7-fzwkSUHQX8WRYuiqf8EcjeTZ2wIh0pA',
     };
-    const loginSpy = jest
+    const refreshSpy = jest
       .spyOn(authRepository, 'refresh')
       .mockImplementation(() => {
         return Promise.resolve(refreshRespMock);
@@ -205,7 +210,7 @@ describe('AuthService:::', () => {
 
     const servRes = await service.refresh(responseMock(validToken));
 
-    expect(loginSpy).toBeCalled();
+    expect(refreshSpy).toBeCalled();
     expect(servRes).toEqual(refreshRespMock);
   });
 });

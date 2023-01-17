@@ -96,10 +96,6 @@ describe('AppModule:::', () => {
   });
 
   it('should be defined', () => {
-    console.log(
-      '🚀 ~ file: app.module.spec.ts:100 ~ it ~ moduleInst',
-      moduleInst,
-    );
     expect(moduleInst).toBeDefined();
   });
 });
