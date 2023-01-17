@@ -14,7 +14,7 @@ import { UserSchema } from '../users/schemas/user.schema';
 
 import { BIG_QUERY_REPOSITORY } from '../bigquery/repository/big-query.repository';
 import { AUTH_DATASTORAGE_REPOSITORY } from './repository/auth-datastorage.repository';
-import { DatastorageAuthRepository } from './repository/datastorage-auth.repository';
+import { AuthDatastoragAdapterRepository } from './repository/auth-datastorage-adapter.repository';
 import { USER_DATASTORE_REPOSITORY } from '../users/repository/user-datastore.repository';
 import { DatastoreUserRepository } from '../users/repository/datastore-user.repository';
 
@@ -65,7 +65,7 @@ import { JwtStrategy } from './jwt.strategy';
     },
     {
       provide: AUTH_DATASTORAGE_REPOSITORY,
-      useClass: DatastorageAuthRepository,
+      useClass: AuthDatastoragAdapterRepository,
     },
     JwtStrategy,
   ],

@@ -24,8 +24,10 @@ import { LoginDto } from '../dto/login.dto';
 import { ITokenPayload } from '../interfaces/token-payload-auth.interfaces';
 
 @Injectable()
-export class DatastorageAuthRepository implements AuthDatastorageRepository {
-  private readonly logger = new Logger(DatastorageAuthRepository.name);
+export class AuthDatastoragAdapterRepository
+  implements AuthDatastorageRepository
+{
+  private readonly logger = new Logger(AuthDatastoragAdapterRepository.name);
 
   constructor(
     private readonly jwtService: JwtService,
@@ -35,7 +37,7 @@ export class DatastorageAuthRepository implements AuthDatastorageRepository {
 
   async login(loginDto: LoginDto): Promise<User> {
     this.logger.log(
-      `using ${DatastorageAuthRepository.name} - repository - method: login`,
+      `using ${AuthDatastoragAdapterRepository.name} - repository - method: login`,
     );
     try {
       const { email, password } = loginDto;
@@ -69,7 +71,7 @@ export class DatastorageAuthRepository implements AuthDatastorageRepository {
 
   async logout(): Promise<any> {
     this.logger.log(
-      `using ${DatastorageAuthRepository.name} - repository - method: logout`,
+      `using ${AuthDatastoragAdapterRepository.name} - repository - method: logout`,
     );
     try {
       return { message: 'Logout Successfully' };
@@ -84,7 +86,7 @@ export class DatastorageAuthRepository implements AuthDatastorageRepository {
 
   async refresh(token: string): Promise<any> | null {
     this.logger.log(
-      `using ${DatastorageAuthRepository.name} - repository - method: refresh`,
+      `using ${AuthDatastoragAdapterRepository.name} - repository - method: refresh`,
     );
     try {
       const configJwt = this.configServ.get('JWT');
