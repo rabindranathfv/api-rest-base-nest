@@ -18,6 +18,7 @@ import { configuration } from './config/configuration';
 
 import { REQUEST_ID_HEADER } from './middlewares/request-id/request-id.middleware';
 import { validationSchema } from './config/env-schema';
+import { DiscographicModule } from './discographics/discographic.module';
 
 describe('AppModule:::', () => {
   let moduleInst: AppModule;
@@ -80,6 +81,7 @@ describe('AppModule:::', () => {
         AuthModule,
         BigqueryModule,
         ArtistModule,
+        DiscographicModule,
       ],
       controllers: [AppController],
       providers: [
