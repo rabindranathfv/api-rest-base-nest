@@ -11,6 +11,8 @@ import { ApiTags, ApiHeader, ApiResponse } from '@nestjs/swagger';
 import { RecordCompanyService } from './record-company.service';
 
 @Controller('discograficas')
+// TODO: initial implementation for being compatible with offline mode
+// @Controller('record-company')
 @ApiTags('record-company')
 @ApiHeader({
   name: 'X-Request-id',
@@ -24,7 +26,7 @@ export class RecordCompanyController {
 
   @ApiResponse({
     status: 200,
-    description: 'A get for all Discographics successfully fetched',
+    description: 'A get for all record companies successfully fetched',
     // type: registerAuth,
   })
   @ApiResponse({
@@ -39,7 +41,7 @@ export class RecordCompanyController {
 
   @ApiResponse({
     status: 200,
-    description: 'A get for all Discographic by Id successfully fetched',
+    description: 'A get for a record company by Id successfully fetched',
     // type: registerAuth,
   })
   @ApiResponse({
