@@ -56,7 +56,7 @@ export class UsersController {
     description: 'Internal Server Error',
   })
   async findAll() {
-    this.logger.log('FindAll Users Ctrl with DATASTORE');
+    this.logger.log(`${UsersController.name} - findAll with DATASTORE`);
     const userList = await this.userService.findAll();
     return userList;
   }
@@ -90,7 +90,7 @@ export class UsersController {
     type: String,
   })
   async findById(@Param('id') id: string) {
-    this.logger.log('findById Users Ctrl');
+    this.logger.log(`${UsersController.name} - findById ${id} with DATASTORE`);
     const user: User = await this.userService.findById(id);
     return user;
   }
@@ -110,12 +110,7 @@ export class UsersController {
     description: 'Internal Server Error',
   })
   async createUser(@Body() createUserDTO: CreateUserDto) {
-    this.logger.log('createUser Users Ctrl');
-    // TODO: add response for an existing email
-    // throw new HttpException(
-    //   `this email ${createUserDto.email} already exist or have some errors`,
-    //   HttpStatus.CONFLICT,
-    // );
+    this.logger.log(`${UsersController.name} - createUser with DATASTORE`);
     return await this.userService.createUser(createUserDTO);
   }
 
@@ -147,7 +142,9 @@ export class UsersController {
     @Body() updateUserDTO: UpdateUserDto,
     @Param('id') id: string,
   ) {
-    this.logger.log('updateById Users Ctrl');
+    this.logger.log(
+      `${UsersController.name} - updateById with DATASTORE for id ${id}`,
+    );
     return await this.userService.updateById(updateUserDTO, id);
   }
 
@@ -180,7 +177,9 @@ export class UsersController {
     type: String,
   })
   async deleteById(@Param('id') id: string) {
-    this.logger.log('deleteById Users Ctrl');
+    this.logger.log(
+      `${UsersController.name} - deleteById with DATASTORE for id ${id}`,
+    );
     return await this.userService.deleteById(id);
   }
 }

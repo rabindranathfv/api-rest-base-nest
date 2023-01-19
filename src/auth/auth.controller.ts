@@ -60,7 +60,7 @@ export class AuthController {
     description: 'Internal Server Error',
   })
   async login(@Body() loginDto: LoginDto) {
-    this.logger.log('login in Auth Ctrl');
+    this.logger.log(`${AuthController.name} - login`);
     return await this.authService.login(loginDto);
   }
 
@@ -79,7 +79,7 @@ export class AuthController {
   })
   @Post('register')
   async register(@Body() createUserDto: CreateUserDto) {
-    this.logger.log('register in Auth Ctrl');
+    this.logger.log(`${AuthController.name} - register`);
     return await this.authService.register(createUserDto);
   }
 
@@ -100,7 +100,7 @@ export class AuthController {
     description: 'Internal Server Error',
   })
   async refresh(@Req() req: Request, @Res() res: Response) {
-    this.logger.log('refresh in Auth Ctrl');
+    this.logger.log(`${AuthController.name} - refresh`);
     const refreshToken = await this.authService.refresh(req);
     if (!refreshToken) {
       res.status(HttpStatus.UNAUTHORIZED).json({
@@ -124,7 +124,7 @@ export class AuthController {
     description: 'Unauthorized, does not have a valid token o token is Expired',
   })
   async logout() {
-    this.logger.log('logout in Auth Ctrl');
+    this.logger.log(`${AuthController.name} - logout`);
     const logoutRes = await this.authService.logout();
 
     return logoutRes;

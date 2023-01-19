@@ -4,6 +4,7 @@ import {
   Controller,
   Get,
   Logger,
+  Param,
   UseInterceptors,
 } from '@nestjs/common';
 import { ApiHeader, ApiResponse, ApiTags } from '@nestjs/swagger';
@@ -33,7 +34,24 @@ export class DiscographicController {
   })
   @Get()
   async findAllDiscographics() {
-    this.logger.log('findAllDiscographics in Discographic Ctrl');
+    this.logger.log(`${DiscographicController.name} - findAllDiscographics`);
     return await this.discographicService.findAllDiscographics();
+  }
+
+  @ApiResponse({
+    status: 200,
+    description: 'A get for all Discographic by Id successfully fetched',
+    // type: registerAuth,
+  })
+  @ApiResponse({
+    status: 500,
+    description: 'Internal Server Error',
+  })
+  @Get(':id')
+  async findDiscographicById(@Param('id') id: string) {
+    this.logger.log(
+      `${DiscographicController.name} - findDiscographicById for id ${id}`,
+    );
+    return await this.discographicService.findDiscographicById(id);
   }
 }

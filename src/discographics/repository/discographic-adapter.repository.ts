@@ -10,6 +10,7 @@ import { DiscographicRepository } from './discographic.repository';
 
 import { BIG_QUERY_REPOSITORY } from './../../bigquery/repository/big-query.repository';
 import { discographics } from '../mock/discographics';
+import { discographicBitMusic } from '../mock/discographic_1099889';
 
 @Injectable()
 export class DiscographicAdapterRepository implements DiscographicRepository {
@@ -44,10 +45,21 @@ export class DiscographicAdapterRepository implements DiscographicRepository {
     this.logger.log(
       `using ${DiscographicAdapterRepository.name} - repository - method: findDiscographicById`,
     );
-    console.log(
-      '🚀 ~ file: discographic-adapter.repository.ts:48 ~ DiscographicAdapterepository ~ findDiscographicById ~ queryStr',
-      queryStr,
-      id,
-    );
+
+    try {
+      const instance = await this.bigQueryRepository.connectWithBigquery();
+
+      const query = `${queryStr} - ${id}`;
+      // const queryResults = await this.bigQueryRepository.query(instance, query);
+      const queryResults = discographicBitMusic;
+
+      return queryResults;
+    } catch (error) {
+      console.log(error);
+      throw new HttpException(
+        `Error at findDiscographicById repository, error: ${error}`,
+        HttpStatus.INTERNAL_SERVER_ERROR,
+      );
+    }
   }
 }

@@ -38,7 +38,9 @@ export class BigqueryController {
     type: [RadioStation],
   })
   async checkBigQuery(@Res() res: Response) {
-    this.logger.log(`checkBigQuery bigQueryEndpoint bigQuery Ctrl`);
+    this.logger.log(
+      `${BigqueryController.name} - checkBigQuery - connection endpoint`,
+    );
     const resp = await this.bigQueryService.check();
 
     if (!resp)
@@ -56,7 +58,9 @@ export class BigqueryController {
     type: [TaskDS],
   })
   async checkDatastore(@Res() res: Response) {
-    this.logger.log(`checkDatastore bigQueryEndpoint bigQuery Ctrl`);
+    this.logger.log(
+      `${BigqueryController.name} - checkDatastore - connection endpoint`,
+    );
     const resp = await this.bigQueryService.checkDatastore();
 
     if (!resp)
