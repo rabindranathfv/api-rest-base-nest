@@ -10,7 +10,7 @@ import { ApiTags, ApiHeader, ApiResponse } from '@nestjs/swagger';
 
 import { RecordCompanyService } from './record-company.service';
 
-@Controller('record-company')
+@Controller('discograficas')
 @ApiTags('record-company')
 @ApiHeader({
   name: 'X-Request-id',

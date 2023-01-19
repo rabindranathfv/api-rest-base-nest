@@ -25,7 +25,6 @@ import { UserModule } from './users/user.module';
 import { AuthModule } from './auth/auth.module';
 import { BigqueryModule } from './bigquery/bigquery.module';
 import { ArtistModule } from './artist/artist.module';
-import { DiscographicModule } from './discographics/discographic.module';
 import { RecordCompanyModule } from './record-company/record-company.module';
 
 @Module({
@@ -91,7 +90,6 @@ import { RecordCompanyModule } from './record-company/record-company.module';
     AuthModule,
     BigqueryModule,
     ArtistModule,
-    DiscographicModule,
     RecordCompanyModule,
   ],
   controllers: [AppController],
