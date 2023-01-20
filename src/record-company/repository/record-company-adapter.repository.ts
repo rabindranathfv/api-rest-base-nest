@@ -9,8 +9,8 @@ import {
 import { BIG_QUERY_REPOSITORY } from './../../bigquery/repository/big-query.repository';
 import { RecordCompanyRepository } from './record-company.repository';
 
-import { discograficas } from '../mock/discograficas';
-import { discograficaBitMusic } from '../mock/discografica_1099889';
+import discograficas from '../mock/discograficas.json';
+import discografica_id from '../mock/discografica_id.json';
 
 @Injectable()
 export class RecordCompanyAdapterRepository implements RecordCompanyRepository {
@@ -51,7 +51,7 @@ export class RecordCompanyAdapterRepository implements RecordCompanyRepository {
 
       const query = `${queryStr} - ${id}`;
       // const queryResults = await this.bigQueryRepository.query(instance, query);
-      const queryResults = discograficaBitMusic;
+      const queryResults = discografica_id[id];
 
       return queryResults;
     } catch (error) {

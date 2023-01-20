@@ -1,0 +1,171 @@
+{
+  "1099": {
+    "nombre": "Sony Music FROM BACK",
+    "subtitle": "Sony Inc",
+    "id": 1099,
+    "image": "https://static.wikia.nocookie.net/sonywikiencastellano/images/0/00/Sony_Music.jpg/revision/latest?cb=20200908232932&path-prefix=es",
+    "streams": 4560000,
+    "tocadas": 1200344,
+    "numero_artistas": 2,
+    "canciones_nro": 3726,
+    "top": {
+      "nombre": "Camilo",
+      "image": "https://imagenes.elpais.com/resizer/vY8nQwaLv1PG3zg9U82yWiTvYAs=/980x980/cloudfront-eu-central-1.images.arcpublishing.com/prisa/W74XX3IZWVG4DLCC7XSCIASKYY.jpg",
+      "hours": 1500,
+      "mins": 5900,
+      "seg": 450000
+    },
+    "cobertura": {
+      "los_40": 100000,
+      "los40_urban": 150000,
+      "los40_classic": 99000,
+      "los40_dance": 56000,
+      "cadena_dial": 200000,
+      "cadena_dial_latino": 150000,
+      "cadena_dial_balada": 150000,
+      "cadena_dial_escencial": 0,
+      "cadena_dial_mini": 0,
+      "radiole": 0
+    },
+    "artistas": [
+      {
+        "title": "Camilo",
+        "image": "https://imagenes.elpais.com/resizer/vY8nQwaLv1PG3zg9U82yWiTvYAs=/980x980/cloudfront-eu-central-1.images.arcpublishing.com/prisa/W74XX3IZWVG4DLCC7XSCIASKYY.jpg",
+        "top_cancion": {
+          "nombre": "Vida de Rico",
+          "id_cancion": 10000635873,
+          "image": "https://cdn.smehost.net/sonymusices-45pressprod/wp-content/uploads/2020/09/645d0f4e-f619-44ef-bf4c-2b238def6434.jpg"
+        },
+        "discografica": {
+          "nombre": "Sony Music",
+          "id": "1099",
+          "image": "https://pbs.twimg.com/profile_images/1493672949748056067/VhOyEf0v_400x400.jpg"
+        },
+        "canciones": "2700",
+        "id": 10000081699,
+        "streams": 30000,
+        "tocadas": 14890,
+        "cobertura": 560990
+      },
+      {
+        "title": "Karol G",
+        "image": "https://media.allure.com/photos/6227cb8ba822ef47bff03b2f/4:3/w_1991,h_1493,c_limit/Karol%20G%20Allure%20Beauty%20Interview1.jpg",
+        "top_cancion": {
+          "nombre": "El Makinon",
+          "id_cancion": 10000643108,
+          "image": "https://i1.sndcdn.com/artworks-hlMu6BEt8CvVgjry-Y6EBQQ-t500x500.jpg"
+        },
+        "discografica": {
+          "nombre": "Sony Music",
+          "id": "1099",
+          "image": "https://pbs.twimg.com/profile_images/1493672949748056067/VhOyEf0v_400x400.jpg"
+        },
+        "canciones": "68",
+        "id": 10000074802,
+        "streams": 15900,
+        "tocadas": 10890,
+        "cobertura": 500990
+      }
+    ]
+  },
+  "1099866": {
+    "nombre": "Universal Music FROM BACK",
+    "subtitle": "Universal Music Inc",
+    "id": 1099866,
+    "image": "https://static.wikia.nocookie.net/sonywikiencastellano/images/0/00/Sony_Music.jpg/revision/latest?cb=20200908232932&path-prefix=es",
+    "streams": 45600,
+    "tocadas": 12003,
+    "numero_artistas": 1,
+    "canciones_nro": 346,
+    "top": {
+      "nombre": "Karol G",
+      "image": "https://imagenes.elpais.com/resizer/vY8nQwaLv1PG3zg9U82yWiTvYAs=/980x980/cloudfront-eu-central-1.images.arcpublishing.com/prisa/W74XX3IZWVG4DLCC7XSCIASKYY.jpg",
+      "hours": 1500,
+      "mins": 5900,
+      "seg": 450000
+    },
+    "cobertura": {
+      "los_40": 100000,
+      "los40_urban": 150000,
+      "los40_classic": 99000,
+      "los40_dance": 56000,
+      "cadena_dial": 200000,
+      "cadena_dial_latino": 150000,
+      "cadena_dial_balada": 150000,
+      "cadena_dial_escencial": 0,
+      "cadena_dial_mini": 0,
+      "radiole": 0
+    },
+    "artistas": [
+      {
+        "title": "Karol G",
+        "image": "https://media.allure.com/photos/62ed31b2e109c9f860c59498/1:1/w_2000,h_2000,c_limit/karol%20g%20red%20hair.jpg",
+        "top_cancion": {
+          "nombre": "El Makinon",
+          "id_cancion": 10000643108,
+          "image": "https://cdn.smehost.net/sonymusices-45pressprod/wp-content/uploads/2020/09/645d0f4e-f619-44ef-bf4c-2b238def6434.jpg"
+        },
+        "discografica": {
+          "nombre": "Universal Music",
+          "id": "1099866",
+          "image": "https://pbs.twimg.com/profile_images/1493672949748056067/VhOyEf0v_400x400.jpg"
+        },
+        "canciones": "349",
+        "id": 10000074802,
+        "streams": 30000,
+        "tocadas": 14890,
+        "cobertura": 560990
+      }
+    ]
+  },
+  "1099889": {
+    "nombre": "Bit Music FROM BACK",
+    "subtitle": "Bit Inc",
+    "id": 1099889,
+    "image": "https://static.wikia.nocookie.net/sonywikiencastellano/images/0/00/Sony_Music.jpg/revision/latest?cb=20200908232932&path-prefix=es",
+    "streams": 26000,
+    "tocadas": 5000,
+    "numero_artistas": 1,
+    "canciones_nro": 1,
+    "top": {
+      "nombre": "Channel",
+      "image": "https://imagenes.elpais.com/resizer/vY8nQwaLv1PG3zg9U82yWiTvYAs=/980x980/cloudfront-eu-central-1.images.arcpublishing.com/prisa/W74XX3IZWVG4DLCC7XSCIASKYY.jpg",
+      "hours": 300,
+      "mins": 58,
+      "seg": 450
+    },
+    "cobertura": {
+      "los_40": 100000,
+      "los40_urban": 100000,
+      "los40_classic": 99000,
+      "los40_dance": 56000,
+      "cadena_dial": 200000,
+      "cadena_dial_latino": 150000,
+      "cadena_dial_balada": 150000,
+      "cadena_dial_escencial": 0,
+      "cadena_dial_mini": 0,
+      "radiole": 0
+    },
+    "artistas": [
+      {
+        "title": "Channel",
+        "image": "https://imagenes.elpais.com/resizer/vY8nQwaLv1PG3zg9U82yWiTvYAs=/980x980/cloudfront-eu-central-1.images.arcpublishing.com/prisa/W74XX3IZWVG4DLCC7XSCIASKYY.jpg",
+        "top_cancion": {
+          "nombre": "Dance",
+          "id_cancion": 100000222,
+          "image": "https://pbs.twimg.com/profile_images/698227460870164480/PBwO2iw8_400x400.png"
+        },
+        "discografica": {
+          "nombre": "Bit Music",
+          "id": "1099889",
+          "image": "https://www.gran-turismo.com/gtsport/decal/7431036157351167488_1.png"
+        },
+        "canciones": "1",
+        "id": 10000039078,
+        "streams": 220,
+        "tocadas": 100,
+        "cobertura": 50000
+      }
+    ]
+  }
+}
