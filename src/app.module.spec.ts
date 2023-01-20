@@ -10,7 +10,9 @@ import { AppModule } from './app.module';
 import { BigqueryModule } from './bigquery/bigquery.module';
 import { UserModule } from './users/user.module';
 import { AuthModule } from './auth/auth.module';
+import { RecordCompanyModule } from './record-company/record-company.module';
 import { ArtistModule } from './artist/artist.module';
+import { SongModule } from './song/song.module';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 
@@ -18,7 +20,6 @@ import { configuration } from './config/configuration';
 
 import { REQUEST_ID_HEADER } from './middlewares/request-id/request-id.middleware';
 import { validationSchema } from './config/env-schema';
-import { DiscographicModule } from './discographics/discographic.module';
 
 describe('AppModule:::', () => {
   let moduleInst: AppModule;
@@ -81,7 +82,8 @@ describe('AppModule:::', () => {
         AuthModule,
         BigqueryModule,
         ArtistModule,
-        DiscographicModule,
+        RecordCompanyModule,
+        SongModule,
       ],
       controllers: [AppController],
       providers: [

@@ -3,13 +3,13 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 
 import { BigqueryModule } from '../bigquery/bigquery.module';
 
-import { RecordCompanyController } from './record-company.controller';
-import { RecordCompanyService } from './record-company.service';
+import { SongController } from './song.controller';
+import { SongService } from './song.service';
 
-import { RECORD_COMPANY_REPOSITORY } from './repository/record-company.repository';
-import { RecordCompanyAdapterRepository } from './repository/record-company-adapter.repository';
 import { BIG_QUERY_REPOSITORY } from './../bigquery/repository/big-query.repository';
-import { BigQueryAdapterRepository } from '../bigquery/repository/big-query-adapter.repository';
+import { BigQueryAdapterRepository } from './../bigquery/repository/big-query-adapter.repository';
+import { SONG_REPOSITORY } from './repository/song.repository';
+import { SongAdapterRepository } from './repository/song-adapter.repository';
 import { configuration } from '../config/configuration';
 
 @Module({
@@ -30,17 +30,17 @@ import { configuration } from '../config/configuration';
       },
     }),
   ],
-  controllers: [RecordCompanyController],
+  controllers: [SongController],
   providers: [
-    RecordCompanyService,
+    SongService,
     {
       provide: BIG_QUERY_REPOSITORY,
       useClass: BigQueryAdapterRepository,
     },
     {
-      provide: RECORD_COMPANY_REPOSITORY,
-      useClass: RecordCompanyAdapterRepository,
+      provide: SONG_REPOSITORY,
+      useClass: SongAdapterRepository,
     },
   ],
 })
-export class RecordCompanyModule {}
+export class SongModule {}

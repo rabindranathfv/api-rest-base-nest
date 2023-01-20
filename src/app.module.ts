@@ -26,6 +26,7 @@ import { AuthModule } from './auth/auth.module';
 import { BigqueryModule } from './bigquery/bigquery.module';
 import { ArtistModule } from './artist/artist.module';
 import { RecordCompanyModule } from './record-company/record-company.module';
+import { SongModule } from './song/song.module';
 
 @Module({
   imports: [
@@ -91,6 +92,7 @@ import { RecordCompanyModule } from './record-company/record-company.module';
     BigqueryModule,
     ArtistModule,
     RecordCompanyModule,
+    SongModule,
   ],
   controllers: [AppController],
   providers: [
