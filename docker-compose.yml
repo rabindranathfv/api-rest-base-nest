@@ -60,6 +60,8 @@ services:
 
 networks:
   nestjs-network:
+    name: nestjs-network
+    driver: bridge
 
 volumes:
   mongo:
