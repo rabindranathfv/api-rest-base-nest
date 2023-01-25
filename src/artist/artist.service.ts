@@ -38,14 +38,13 @@ export class ArtistService {
     }
   }
 
-  async getAllSongsByArtists(): Promise<any[]> {
-    this.logger.log(`${ArtistService.name} - getAllSongsByArtists`);
+  async getAllSongsByArtists(artistId: string): Promise<any[]> {
+    this.logger.log(
+      `${ArtistService.name} - getAllSongsByArtists with id ${artistId}`,
+    );
     try {
-      const query = `SELECT emisora_N1, emisora_N2, id_interprete, interprete_colaboradores, nombre_interprete, inserciones, universo, 
-        cobertura, cob, contactos, grp_s, ots, ola, fecha_peticion, rango, rango_sort_order, fecha
-        FROM dataglobalproduccion.BI_Artistas_Alt.odec_t`;
       const queryResults = await this.artistRepository.getAllSongsByArtists(
-        query,
+        artistId,
       );
 
       return queryResults;
@@ -61,13 +60,14 @@ export class ArtistService {
     }
   }
 
-  async getArtistSummary(): Promise<any> {
-    this.logger.log(`${ArtistService.name} - getArtistSummary`);
+  async getArtistSummary(artistId: string): Promise<any> {
+    this.logger.log(
+      `${ArtistService.name} - getArtistSummary with id ${artistId}`,
+    );
     try {
-      const query = `SELECT emisora_N1, emisora_N2, id_interprete, interprete_colaboradores, nombre_interprete, inserciones, universo, 
-        cobertura, cob, contactos, grp_s, ots, ola, fecha_peticion, rango, rango_sort_order, fecha
-        FROM dataglobalproduccion.BI_Artistas_Alt.odec_t`;
-      const queryResults = await this.artistRepository.getArtistSummary(query);
+      const queryResults = await this.artistRepository.getArtistSummary(
+        artistId,
+      );
 
       return queryResults;
     } catch (error) {
@@ -82,13 +82,10 @@ export class ArtistService {
     }
   }
 
-  async getArtistKpi(): Promise<any> {
-    this.logger.log(`${ArtistService.name} - getArtistKpi`);
+  async getArtistKpi(artistId: string): Promise<any> {
+    this.logger.log(`${ArtistService.name} - getArtistKpi with id ${artistId}`);
     try {
-      const query = `SELECT emisora_N1, emisora_N2, id_interprete, interprete_colaboradores, nombre_interprete, inserciones, universo, 
-        cobertura, cob, contactos, grp_s, ots, ola, fecha_peticion, rango, rango_sort_order, fecha
-        FROM dataglobalproduccion.BI_Artistas_Alt.odec_t`;
-      const queryResults = await this.artistRepository.getArtistKpi(query);
+      const queryResults = await this.artistRepository.getArtistKpi(artistId);
 
       return queryResults;
     } catch (error) {
@@ -100,14 +97,13 @@ export class ArtistService {
     }
   }
 
-  async getArtistRadioStationKpi(): Promise<any> {
-    this.logger.log(`${ArtistService.name} - getArtistRadioStationKpi`);
+  async getArtistRadioStationKpi(artistId: string): Promise<any> {
+    this.logger.log(
+      `${ArtistService.name} - getArtistRadioStationKpi with id ${artistId}`,
+    );
     try {
-      const query = `SELECT emisora_N1, emisora_N2, id_interprete, interprete_colaboradores, nombre_interprete, inserciones, universo, 
-        cobertura, cob, contactos, grp_s, ots, ola, fecha_peticion, rango, rango_sort_order, fecha
-        FROM dataglobalproduccion.BI_Artistas_Alt.odec_t`;
       const queryResults = await this.artistRepository.getArtistRadioStationKpi(
-        query,
+        artistId,
       );
 
       return queryResults;
@@ -116,6 +112,21 @@ export class ArtistService {
         `${ArtistService.name} - getArtistRadioStationKpi -  ERROR`,
         error,
       );
+      throw new HttpException(
+        `Error make query`,
+        HttpStatus.INTERNAL_SERVER_ERROR,
+      );
+    }
+  }
+
+  async getArtistById(artistId: string): Promise<any> {
+    this.logger.log(`${ArtistService.name} - getArtistById`);
+    try {
+      const queryResults = await this.artistRepository.getArtistById(artistId);
+
+      return queryResults;
+    } catch (error) {
+      this.logger.log(`${ArtistService.name} - getArtistById -  ERROR`, error);
       throw new HttpException(
         `Error make query`,
         HttpStatus.INTERNAL_SERVER_ERROR,

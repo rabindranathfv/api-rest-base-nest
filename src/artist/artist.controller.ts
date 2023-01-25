@@ -5,6 +5,7 @@ import {
   Get,
   HttpStatus,
   Logger,
+  Param,
   Res,
   UseGuards,
   UseInterceptors,
@@ -20,13 +21,13 @@ import { JwtAuthGuard } from '../auth/jwt-auth.guard';
 
 @ApiTags('artist')
 @ApiBearerAuth()
-@UseGuards(JwtAuthGuard)
+// @UseGuards(JwtAuthGuard)
 @UseInterceptors(CacheInterceptor)
 @ApiHeader({
   name: 'X-Request-id',
   description: 'Custom header for requestId generated automaticly',
 })
-@Controller('artist')
+@Controller('artistas')
 export class ArtistController {
   private readonly logger = new Logger(ArtistController.name);
 
@@ -37,6 +38,10 @@ export class ArtistController {
     status: 200,
     description: 'get All Artist list',
     // type: [User], ADD CLASS INTERFACE HERE
+  })
+  @ApiResponse({
+    status: 500,
+    description: 'Internal Server Error',
   })
   async getAllArtists(@Res() res: Response) {
     this.logger.log(`${ArtistController.name} - getAllArtists`);
@@ -50,15 +55,21 @@ export class ArtistController {
     return res.status(HttpStatus.OK).json(resp);
   }
 
-  @Get('/songs')
+  @Get('/canciones')
   @ApiResponse({
     status: 200,
     description: 'get for all artist filter by song',
     // type: [User], ADD CLASS INTERFACE HERE
   })
-  async getAllSongsByArtists(@Res() res: Response) {
-    this.logger.log(`${ArtistController.name} - getAllSongsByArtists`);
-    const resp = await this.artistService.getAllSongsByArtists();
+  @ApiResponse({
+    status: 500,
+    description: 'Internal Server Error',
+  })
+  async getAllSongsByArtists(@Res() res: Response, @Param('id') id: string) {
+    this.logger.log(
+      `${ArtistController.name} - getAllSongsByArtists with id ${id}`,
+    );
+    const resp = await this.artistService.getAllSongsByArtists(id);
 
     if (!resp)
       res
@@ -68,15 +79,21 @@ export class ArtistController {
     return res.status(HttpStatus.OK).json(resp);
   }
 
-  @Get('/summary')
+  @Get('/resumen')
   @ApiResponse({
     status: 200,
     description: 'get artist summary info',
     // type: [User], ADD CLASS INTERFACE HERE
   })
-  async getArtistSummary(@Res() res: Response) {
-    this.logger.log(`${ArtistController.name} - getArtistSummary`);
-    const resp = await this.artistService.getArtistSummary();
+  @ApiResponse({
+    status: 500,
+    description: 'Internal Server Error',
+  })
+  async getArtistSummary(@Res() res: Response, @Param('id') id: string) {
+    this.logger.log(
+      `${ArtistController.name} - getArtistSummary with id ${id}`,
+    );
+    const resp = await this.artistService.getArtistSummary(id);
 
     if (!resp)
       res
@@ -92,9 +109,13 @@ export class ArtistController {
     description: 'get Artist KPI info',
     // type: [User], ADD CLASS INTERFACE HERE
   })
-  async getArtistKpi(@Res() res: Response) {
-    this.logger.log(`${ArtistController.name} - getArtistKpi`);
-    const resp = await this.artistService.getArtistKpi();
+  @ApiResponse({
+    status: 500,
+    description: 'Internal Server Error',
+  })
+  async getArtistKpi(@Res() res: Response, @Param('id') id: string) {
+    this.logger.log(`${ArtistController.name} - getArtistKpi with id ${id}`);
+    const resp = await this.artistService.getArtistKpi(id);
 
     if (!resp)
       res
@@ -104,15 +125,48 @@ export class ArtistController {
     return res.status(HttpStatus.OK).json(resp);
   }
 
-  @Get('/stationskpi')
+  @Get('/radioskpi')
   @ApiResponse({
     status: 200,
     description: 'get Radio station kpi by artist info',
     // type: [User], ADD CLASS INTERFACE HERE
   })
-  async getArtistRadioStationKpi(@Res() res: Response) {
-    this.logger.log(`${ArtistController.name} - getArtistRadioStationKpi`);
-    const resp = await this.artistService.getArtistRadioStationKpi();
+  @ApiResponse({
+    status: 500,
+    description: 'Internal Server Error',
+  })
+  async getArtistRadioStationKpi(
+    @Res() res: Response,
+    @Param('id') id: string,
+  ) {
+    this.logger.log(
+      `${ArtistController.name} - getArtistRadioStationKpi with id ${id}`,
+    );
+    const resp = await this.artistService.getArtistRadioStationKpi(id);
+
+    if (!resp)
+      res.status(HttpStatus.NOT_FOUND).json({
+        message: `there is no artists radio stations kpi info available`,
+      });
+
+    return res.status(HttpStatus.OK).json(resp);
+  }
+
+  @Get(':id')
+  @ApiResponse({
+    status: 200,
+    description: 'get artist by Id',
+    // type: [User], ADD CLASS INTERFACE HERE
+  })
+  @ApiResponse({
+    status: 500,
+    description: 'Internal Server Error',
+  })
+  async getArtistById(@Res() res: Response, @Param('id') id: string) {
+    this.logger.log(
+      `${ArtistController.name} - getArtistRadioStationKpi with id ${id}`,
+    );
+    const resp = await this.artistService.getArtistById(id);
 
     if (!resp)
       res.status(HttpStatus.NOT_FOUND).json({

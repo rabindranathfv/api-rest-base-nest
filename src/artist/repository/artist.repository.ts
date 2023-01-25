@@ -1,9 +1,10 @@
 export const ARTIST_REPOSITORY = 'ArtistRepository';
 
 export interface ArtistRepository {
-  getAllArtists(queryStr: string): Promise<any[]> | null;
-  getAllSongsByArtists(queryStr: string): Promise<any[]> | null;
-  getArtistSummary(queryStr: string): Promise<any> | null;
-  getArtistKpi(queryStr: string): Promise<any> | null;
-  getArtistRadioStationKpi(queryStr: string): Promise<any> | null;
+  getAllArtists(): Promise<any[]> | null;
+  getAllSongsByArtists(id: string): Promise<any[]> | null;
+  getArtistSummary(id: string): Promise<any> | null;
+  getArtistKpi(id: string): Promise<any> | null;
+  getArtistRadioStationKpi(id: string): Promise<any> | null;
+  getArtistById(id: string): Promise<any>;
 }
