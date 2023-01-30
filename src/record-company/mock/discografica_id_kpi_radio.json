@@ -1,0 +1,45 @@
+{
+    "1099": {
+      "cobertura": {
+        "los_40": 100000,
+        "los40_urban": 150000,
+        "los40_classic": 99000,
+        "los40_dance": 56000,
+        "cadena_dial": 200000,
+        "cadena_dial_latino": 150000,
+        "cadena_dial_balada": 150000,
+        "cadena_dial_escencial": 0,
+        "cadena_dial_mini": 0,
+        "radiole": 0
+      }
+    },
+    "1099866": {
+      "cobertura": {
+        "los_40": 100000,
+        "los40_urban": 150000,
+        "los40_classic": 99000,
+        "los40_dance": 56000,
+        "cadena_dial": 200000,
+        "cadena_dial_latino": 150000,
+        "cadena_dial_balada": 150000,
+        "cadena_dial_escencial": 0,
+        "cadena_dial_mini": 0,
+        "radiole": 0
+      }
+    },
+    "1099889": {
+      "cobertura": {
+        "los_40": 100000,
+        "los40_urban": 100000,
+        "los40_classic": 99000,
+        "los40_dance": 56000,
+        "cadena_dial": 200000,
+        "cadena_dial_latino": 150000,
+        "cadena_dial_balada": 150000,
+        "cadena_dial_escencial": 0,
+        "cadena_dial_mini": 0,
+        "radiole": 0
+      }
+    }
+  }
+  

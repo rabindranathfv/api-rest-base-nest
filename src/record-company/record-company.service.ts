@@ -19,12 +19,8 @@ export class RecordCompanyService {
   async findAllRecordCompanies(): Promise<any> {
     this.logger.log(`${RecordCompanyService.name} - findAllDiscographics`);
     try {
-      // TODO: UPDATE THIS QUERY
-      const query = `SELECT emisora_N1, emisora_N2, id_interprete, interprete_colaboradores, nombre_interprete, inserciones, universo, 
-        cobertura, cob, contactos, grp_s, ots, ola, fecha_peticion, rango, rango_sort_order, fecha
-        FROM dataglobalproduccion.BI_Artistas_Alt.odec_t`;
       const queryResults =
-        await this.recordCompanyRepository.findAllRecordCompanies(query);
+        await this.recordCompanyRepository.findAllRecordCompanies();
 
       return queryResults;
     } catch (error) {
@@ -42,12 +38,8 @@ export class RecordCompanyService {
   async findRecordCompanyById(id: string): Promise<any> {
     this.logger.log(`${RecordCompanyService.name} - findDiscographicById`);
     try {
-      // TODO: UPDATE THIS QUERY
-      const query = `SELECT emisora_N1, emisora_N2, id_interprete, interprete_colaboradores, nombre_interprete, inserciones, universo, 
-        cobertura, cob, contactos, grp_s, ots, ola, fecha_peticion, rango, rango_sort_order, fecha
-        FROM dataglobalproduccion.BI_Artistas_Alt.odec_t`;
       const queryResults =
-        await this.recordCompanyRepository.findRecordCompanyById(query, id);
+        await this.recordCompanyRepository.findRecordCompanyById(id);
 
       return queryResults;
     } catch (error) {
@@ -57,6 +49,69 @@ export class RecordCompanyService {
       );
       throw new HttpException(
         `Error make query findRecordCompanyById`,
+        HttpStatus.INTERNAL_SERVER_ERROR,
+      );
+    }
+  }
+
+  async getResumeRecordCompanyById(id: string): Promise<any> {
+    this.logger.log(
+      `${RecordCompanyService.name} - getResumeRecordCompanyById`,
+    );
+    try {
+      const queryResults =
+        await this.recordCompanyRepository.getResumeRecordCompanyById(id);
+
+      return queryResults;
+    } catch (error) {
+      this.logger.log(
+        `${RecordCompanyService.name} - getResumeRecordCompanyById -  ERROR`,
+        error,
+      );
+      throw new HttpException(
+        `Error make query getResumeRecordCompanyById`,
+        HttpStatus.INTERNAL_SERVER_ERROR,
+      );
+    }
+  }
+
+  async getRecordCompanyByIdKpiRadio(id: string): Promise<any> {
+    this.logger.log(
+      `${RecordCompanyService.name} - getRecordCompanyByIdKpiRadio`,
+    );
+    try {
+      const queryResults =
+        await this.recordCompanyRepository.getRecordCompanyByIdKpiRadio(id);
+
+      return queryResults;
+    } catch (error) {
+      this.logger.log(
+        `${RecordCompanyService.name} - getRecordCompanyByIdKpiRadio -  ERROR`,
+        error,
+      );
+      throw new HttpException(
+        `Error make query getRecordCompanyByIdKpiRadio`,
+        HttpStatus.INTERNAL_SERVER_ERROR,
+      );
+    }
+  }
+
+  async getArtistsRecordCompanyById(id: string): Promise<any> {
+    this.logger.log(
+      `${RecordCompanyService.name} - getArtistsRecordCompanyById`,
+    );
+    try {
+      const queryResults =
+        await this.recordCompanyRepository.getArtistsRecordCompanyById(id);
+
+      return queryResults;
+    } catch (error) {
+      this.logger.log(
+        `${RecordCompanyService.name} - getArtistsRecordCompanyById -  ERROR`,
+        error,
+      );
+      throw new HttpException(
+        `Error make query getArtistsRecordCompanyById`,
         HttpStatus.INTERNAL_SERVER_ERROR,
       );
     }

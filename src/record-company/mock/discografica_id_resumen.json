@@ -1,0 +1,53 @@
+{
+    "1099": {
+      "nombre": "Sony Music FROM BACK",
+      "subtitle": "Sony Inc",
+      "id": 1099,
+      "image": "https://static.wikia.nocookie.net/sonywikiencastellano/images/0/00/Sony_Music.jpg/revision/latest?cb=20200908232932&path-prefix=es",
+      "streams": 4560000,
+      "tocadas": 1200344,
+      "numero_artistas": 2,
+      "canciones_nro": 3726,
+      "top": {
+        "nombre": "Camilo",
+        "image": "https://imagenes.elpais.com/resizer/vY8nQwaLv1PG3zg9U82yWiTvYAs=/980x980/cloudfront-eu-central-1.images.arcpublishing.com/prisa/W74XX3IZWVG4DLCC7XSCIASKYY.jpg",
+        "hours": 1500,
+        "mins": 5900,
+        "seg": 450000
+      }
+    },
+    "1099866": {
+      "nombre": "Universal Music FROM BACK",
+      "subtitle": "Universal Music Inc",
+      "id": 1099866,
+      "image": "https://static.wikia.nocookie.net/sonywikiencastellano/images/0/00/Sony_Music.jpg/revision/latest?cb=20200908232932&path-prefix=es",
+      "streams": 45600,
+      "tocadas": 12003,
+      "numero_artistas": 1,
+      "canciones_nro": 346,
+      "top": {
+        "nombre": "Karol G",
+        "image": "https://imagenes.elpais.com/resizer/vY8nQwaLv1PG3zg9U82yWiTvYAs=/980x980/cloudfront-eu-central-1.images.arcpublishing.com/prisa/W74XX3IZWVG4DLCC7XSCIASKYY.jpg",
+        "hours": 1500,
+        "mins": 5900,
+        "seg": 450000
+      }
+    },
+    "1099889": {
+      "nombre": "Bit Music FROM BACK",
+      "subtitle": "Bit Inc",
+      "id": 1099889,
+      "image": "https://static.wikia.nocookie.net/sonywikiencastellano/images/0/00/Sony_Music.jpg/revision/latest?cb=20200908232932&path-prefix=es",
+      "streams": 26000,
+      "tocadas": 5000,
+      "numero_artistas": 1,
+      "canciones_nro": 1,
+      "top": {
+        "nombre": "Channel",
+        "image": "https://imagenes.elpais.com/resizer/vY8nQwaLv1PG3zg9U82yWiTvYAs=/980x980/cloudfront-eu-central-1.images.arcpublishing.com/prisa/W74XX3IZWVG4DLCC7XSCIASKYY.jpg",
+        "hours": 300,
+        "mins": 58,
+        "seg": 450
+      }
+    }
+  }
