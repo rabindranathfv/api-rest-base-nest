@@ -54,22 +54,22 @@ export class RecordCompanyService {
     }
   }
 
-  async getResumeRecordCompanyById(id: string): Promise<any> {
+  async getSummaryRecordCompanyById(id: string): Promise<any> {
     this.logger.log(
-      `${RecordCompanyService.name} - getResumeRecordCompanyById`,
+      `${RecordCompanyService.name} - getSummaryRecordCompanyById`,
     );
     try {
       const queryResults =
-        await this.recordCompanyRepository.getResumeRecordCompanyById(id);
+        await this.recordCompanyRepository.getSummaryRecordCompanyById(id);
 
       return queryResults;
     } catch (error) {
       this.logger.log(
-        `${RecordCompanyService.name} - getResumeRecordCompanyById -  ERROR`,
+        `${RecordCompanyService.name} - getSummaryRecordCompanyById -  ERROR`,
         error,
       );
       throw new HttpException(
-        `Error make query getResumeRecordCompanyById`,
+        `Error make query getSummaryRecordCompanyById`,
         HttpStatus.INTERNAL_SERVER_ERROR,
       );
     }

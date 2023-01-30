@@ -1,0 +1,47 @@
+{
+    "10000118971": {
+      "fecha": "2022-07-23",
+      "fecha_lanzamiento": "2022",
+      "discografica": "Bit Music FROM BACK",
+      "id": 10000118971,
+      "nombre": "Dance FROM BACK",
+      "subtitle": "Channel",
+      "genero": "House",
+      "top": "6",
+      "id_interprete": 10000039078,
+      "interprete_colaboradores": "Channel",
+      "streams": 5668,
+      "tocadas": 1,
+      "total_cobertura": 150000
+    },
+    "10000635873": {
+      "fecha": "2022-08-17",
+      "fecha_lanzamiento": "2019",
+      "discografica": "Sony Music FROM BACK",
+      "id": 10000635873,
+      "nombre": "Vida de rico FROM BACK",
+      "subtitle": "Camilo",
+      "genero": "Pop",
+      "top": "7",
+      "id_interprete": 10000081699,
+      "interprete_colaboradores": "Camilo (+ Carlos Vives,El Alfa,Evaluna Montaner,Farruko,Reik,Manuel Turizo,Mau y Ricky,Pedro Capó,Pedro Capó,Shakira,Rauw Alejandro,Wisin)",
+      "streams": 253,
+      "tocadas": 2,
+      "total_cobertura": 150000
+    },
+    "10000643108": {
+      "fecha": "2022-07-23",
+      "fecha_lanzamiento": "2019",
+      "discografica": "Universal Music FROM BACK",
+      "id": 10000643108,
+      "nombre": "El Makinon FROM BACK",
+      "subtitle": "Karol G",
+      "genero": "Urban",
+      "top": "3",
+      "id_interprete": 10000074802,
+      "interprete_colaboradores": "Karol G (+ Bad Bunny,Maldy,Mariah Angeliq,Mau y Ricky,Myke Towers,Ozuna,Nicki Minaj,Tiësto)",
+      "streams": 1560,
+      "tocadas": 1,
+      "total_cobertura": 150000
+    }
+  }

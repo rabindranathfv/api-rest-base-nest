@@ -13,20 +13,67 @@ export class SongService {
 
   constructor(@Inject(SONG_REPOSITORY) private readonly songRepository) {}
 
-  async findSongById(id: string): Promise<any> {
+  async getSongById(id: string): Promise<any> {
     this.logger.log(`${SongService.name} - findDiscographicById`);
     try {
-      // TODO: UPDATE THIS QUERY
-      const query = `SELECT emisora_N1, emisora_N2, id_interprete, interprete_colaboradores, nombre_interprete, inserciones, universo, 
-        cobertura, cob, contactos, grp_s, ots, ola, fecha_peticion, rango, rango_sort_order, fecha
-        FROM dataglobalproduccion.BI_Artistas_Alt.odec_t`;
-      const queryResults = await this.songRepository.findSongById(query, id);
+      const queryResults = await this.songRepository.getSongById(id);
 
       return queryResults;
     } catch (error) {
-      this.logger.log(`${SongService.name} - findSongById -  ERROR`, error);
+      this.logger.log(`${SongService.name} - getSongById -  ERROR`, error);
       throw new HttpException(
-        `Error make query findSongById`,
+        `Error make query getSongById`,
+        HttpStatus.INTERNAL_SERVER_ERROR,
+      );
+    }
+  }
+
+  async getSummarySongById(id: string): Promise<any> {
+    this.logger.log(`${SongService.name} - getSummarySongById`);
+    try {
+      const queryResults = await this.songRepository.getSummarySongById(id);
+
+      return queryResults;
+    } catch (error) {
+      this.logger.log(
+        `${SongService.name} - getSummarySongById -  ERROR`,
+        error,
+      );
+      throw new HttpException(
+        `Error make query getSummarySongById`,
+        HttpStatus.INTERNAL_SERVER_ERROR,
+      );
+    }
+  }
+
+  async getKpiRadioSongById(id: string): Promise<any> {
+    this.logger.log(`${SongService.name} - getKpiRadioSongById`);
+    try {
+      const queryResults = await this.songRepository.getKpiRadioSongById(id);
+
+      return queryResults;
+    } catch (error) {
+      this.logger.log(
+        `${SongService.name} - getKpiRadioSongById -  ERROR`,
+        error,
+      );
+      throw new HttpException(
+        `Error make query getKpiRadioSongById`,
+        HttpStatus.INTERNAL_SERVER_ERROR,
+      );
+    }
+  }
+
+  async getKpisSongById(id: string): Promise<any> {
+    this.logger.log(`${SongService.name} - getKpisSongById`);
+    try {
+      const queryResults = await this.songRepository.getKpisSongById(id);
+
+      return queryResults;
+    } catch (error) {
+      this.logger.log(`${SongService.name} - getKpisSongById -  ERROR`, error);
+      throw new HttpException(
+        `Error make query getKpisSongById`,
         HttpStatus.INTERNAL_SERVER_ERROR,
       );
     }

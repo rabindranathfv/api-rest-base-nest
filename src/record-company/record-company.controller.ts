@@ -67,12 +67,12 @@ export class RecordCompanyController {
   })
   // TODO: This route is not working properly, FIX IT
   @Get(':id/resumen')
-  async getResumeRecordCompanyById(@Param('id') id: string) {
+  async getSummaryRecordCompanyById(@Param('id') id: string) {
     this.logger.log(
-      `${RecordCompanyController.name} - getResumeRecordCompanyById for id ${id}`,
+      `${RecordCompanyController.name} - getSummaryRecordCompanyById for id ${id}`,
     );
     // TODO: Update call service here
-    return await this.recordCompanyService.getResumeRecordCompanyById(id);
+    return await this.recordCompanyService.getSummaryRecordCompanyById(id);
   }
 
   @ApiResponse({

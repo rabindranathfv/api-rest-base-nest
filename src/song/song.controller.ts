@@ -31,10 +31,55 @@ export class SongController {
     description: 'Internal Server Error',
   })
   @Get(':id')
-  async findSongById(@Param('id') id: string) {
+  async getSongById(@Param('id') id: string) {
+    this.logger.log(`${SongController.name} - getSongById for id ${id}`);
+    return await this.songService.getSongById(id);
+  }
+
+  @ApiResponse({
+    status: 200,
+    description: 'A get for a song by Id successfully fetched',
+    // type: registerAuth,
+  })
+  @ApiResponse({
+    status: 500,
+    description: 'Internal Server Error',
+  })
+  @Get(':id')
+  async getSummarySongById(@Param('id') id: string) {
+    this.logger.log(`${SongController.name} - getSummarySongById for id ${id}`);
+    return await this.songService.getSummarySongById(id);
+  }
+
+  @ApiResponse({
+    status: 200,
+    description: 'A get for a song by Id successfully fetched',
+    // type: registerAuth,
+  })
+  @ApiResponse({
+    status: 500,
+    description: 'Internal Server Error',
+  })
+  @Get(':id')
+  async getKpiRadioSongById(@Param('id') id: string) {
     this.logger.log(
-      `${SongController.name} - findRecordCompanyById for id ${id}`,
+      `${SongController.name} - getKpiRadioSongById for id ${id}`,
     );
-    return await this.songService.findSongById(id);
+    return await this.songService.getKpiRadioSongById(id);
+  }
+
+  @ApiResponse({
+    status: 200,
+    description: 'A get for a song by Id successfully fetched',
+    // type: registerAuth,
+  })
+  @ApiResponse({
+    status: 500,
+    description: 'Internal Server Error',
+  })
+  @Get(':id')
+  async getKpisSongById(@Param('id') id: string) {
+    this.logger.log(`${SongController.name} - getKpisSongById for id ${id}`);
+    return await this.songService.getKpisSongById(id);
   }
 }

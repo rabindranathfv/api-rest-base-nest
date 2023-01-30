@@ -74,7 +74,7 @@ export class RecordCompanyAdapterRepository implements RecordCompanyRepository {
     }
   }
 
-  async getResumeRecordCompanyById(id: string): Promise<any> {
+  async getSummaryRecordCompanyById(id: string): Promise<any> {
     this.logger.log(
       `using ${RecordCompanyAdapterRepository.name} - repository - method: getResumeRecordCompanyById with id: ${id}`,
     );
@@ -95,7 +95,7 @@ export class RecordCompanyAdapterRepository implements RecordCompanyRepository {
     } catch (error) {
       console.log(error);
       throw new HttpException(
-        `Error at getResumeRecordCompanyById repository, error: ${error}`,
+        `Error at getSummaryRecordCompanyById repository, error: ${error}`,
         HttpStatus.INTERNAL_SERVER_ERROR,
       );
     }
@@ -103,7 +103,7 @@ export class RecordCompanyAdapterRepository implements RecordCompanyRepository {
 
   async getRecordCompanyByIdKpiRadio(id: string): Promise<any> {
     this.logger.log(
-      `using ${RecordCompanyAdapterRepository.name} - repository - method: getRecordCompanyByIdKpiRadio with id: ${id}`,
+      `using ${RecordCompanyAdapterRepository.name} - repository - method: getSummaryRecordCompanyById with id: ${id}`,
     );
 
     try {
