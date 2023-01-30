@@ -38,82 +38,67 @@ export class ArtistService {
     }
   }
 
-  async getAllSongsByArtists(artistId: string): Promise<any[]> {
+  async getAllSongsByArtistsById(artistId: string): Promise<any[]> {
     this.logger.log(
-      `${ArtistService.name} - getAllSongsByArtists with id ${artistId}`,
+      `${ArtistService.name} - getAllSongsByArtistsById with id ${artistId}`,
     );
     try {
-      const queryResults = await this.artistRepository.getAllSongsByArtists(
+      const queryResults = await this.artistRepository.getAllSongsByArtistsById(
         artistId,
       );
 
       return queryResults;
     } catch (error) {
       this.logger.log(
-        `${ArtistService.name} - getAllSongsByArtists -  ERROR`,
+        `${ArtistService.name} - getAllSongsByArtistsById -  ERROR`,
         error,
       );
       throw new HttpException(
-        `Error make query`,
+        `Error make query in getAllSongsByArtistsById`,
         HttpStatus.INTERNAL_SERVER_ERROR,
       );
     }
   }
 
-  async getArtistSummary(artistId: string): Promise<any> {
+  async getSummaryArtistById(artistId: string): Promise<any> {
     this.logger.log(
-      `${ArtistService.name} - getArtistSummary with id ${artistId}`,
+      `${ArtistService.name} - getSummaryArtistById with id ${artistId}`,
     );
     try {
-      const queryResults = await this.artistRepository.getArtistSummary(
+      const queryResults = await this.artistRepository.getSummaryArtistById(
         artistId,
       );
 
       return queryResults;
     } catch (error) {
       this.logger.log(
-        `${ArtistService.name} - getArtistSummary -  ERROR`,
+        `${ArtistService.name} - getSummaryArtistById -  ERROR`,
         error,
       );
       throw new HttpException(
-        `Error make query`,
+        `Error make query in getSummaryArtistById`,
         HttpStatus.INTERNAL_SERVER_ERROR,
       );
     }
   }
 
-  async getArtistKpi(artistId: string): Promise<any> {
-    this.logger.log(`${ArtistService.name} - getArtistKpi with id ${artistId}`);
-    try {
-      const queryResults = await this.artistRepository.getArtistKpi(artistId);
-
-      return queryResults;
-    } catch (error) {
-      this.logger.log(`${ArtistService.name} - getArtistKpi -  ERROR`, error);
-      throw new HttpException(
-        `Error make query`,
-        HttpStatus.INTERNAL_SERVER_ERROR,
-      );
-    }
-  }
-
-  async getArtistRadioStationKpi(artistId: string): Promise<any> {
+  async getKpiRadioArtistById(artistId: string): Promise<any> {
     this.logger.log(
-      `${ArtistService.name} - getArtistRadioStationKpi with id ${artistId}`,
+      `${ArtistService.name} - getKpiRadioArtistById with id ${artistId}`,
     );
     try {
-      const queryResults = await this.artistRepository.getArtistRadioStationKpi(
+      const queryResults = await this.artistRepository.getKpiRadioArtistById(
         artistId,
       );
 
       return queryResults;
     } catch (error) {
       this.logger.log(
-        `${ArtistService.name} - getArtistRadioStationKpi -  ERROR`,
+        `${ArtistService.name} - getKpiRadioArtistById -  ERROR`,
         error,
       );
       throw new HttpException(
-        `Error make query`,
+        `Error make query in getKpiRadioArtistById`,
         HttpStatus.INTERNAL_SERVER_ERROR,
       );
     }

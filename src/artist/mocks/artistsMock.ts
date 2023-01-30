@@ -1,7 +1,7 @@
 export const artistsMockData = [
   {
     id: 1,
-    songName: 'Blinding Lights',
+    songName: 'Blinding Lights FROM BACK',
     albumName: 'After Hours',
     launchYear: 2019,
     playTimeValue: 36.568,
@@ -11,7 +11,7 @@ export const artistsMockData = [
   },
   {
     id: 2,
-    songName: 'Blinding Lights 2',
+    songName: 'Blinding Lights 2 FROM BACK',
     albumName: 'After Hours 2',
     launchYear: 2020,
     playTimeValue: 39.568,
@@ -21,7 +21,7 @@ export const artistsMockData = [
   },
   {
     id: 3,
-    songName: 'Blinding Lights 3',
+    songName: 'Blinding Lights 3 FROM BACK',
     albumName: 'After Hours 3',
     launchYear: 2021,
     playTimeValue: 46.568,

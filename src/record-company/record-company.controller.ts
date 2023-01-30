@@ -65,13 +65,11 @@ export class RecordCompanyController {
     status: 500,
     description: 'Internal Server Error',
   })
-  // TODO: This route is not working properly, FIX IT
   @Get(':id/resumen')
   async getSummaryRecordCompanyById(@Param('id') id: string) {
     this.logger.log(
       `${RecordCompanyController.name} - getSummaryRecordCompanyById for id ${id}`,
     );
-    // TODO: Update call service here
     return await this.recordCompanyService.getSummaryRecordCompanyById(id);
   }
 
@@ -85,13 +83,11 @@ export class RecordCompanyController {
     status: 500,
     description: 'Internal Server Error',
   })
-  // TODO: This route is not working properly, FIX IT
   @Get(':id/kpiradio')
   async getRecordCompanyByIdKpiRadio(@Param('id') id: string) {
     this.logger.log(
       `${RecordCompanyController.name} - getRecordCompanyByIdKpiRadio for id ${id}`,
     );
-    // TODO: Update call service here
     return await this.recordCompanyService.getRecordCompanyByIdKpiRadio(id);
   }
 
@@ -105,13 +101,11 @@ export class RecordCompanyController {
     status: 500,
     description: 'Internal Server Error',
   })
-  // TODO: This route is not working properly, FIX IT
   @Get(':id/artistas')
   async getArtistsRecordCompanyById(@Param('id') id: string) {
     this.logger.log(
       `${RecordCompanyController.name} - getArtistsRecordCompanyById for id ${id}`,
     );
-    // TODO: Update call service here
     return await this.recordCompanyService.getArtistsRecordCompanyById(id);
   }
 }

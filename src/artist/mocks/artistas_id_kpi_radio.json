@@ -1,0 +1,59 @@
+{
+    "10000039078": {
+        "cobertura": {
+            "los_40": 0,
+            "los40_urban": 0,
+            "los40_classic": 0,
+            "los40_dance": 0,
+            "cadena_dial": 20000,
+            "cadena_dial_latino": 0,
+            "cadena_dial_balada": 0,
+            "cadena_dial_escencial": 0,
+            "cadena_dial_mini": 0,
+            "radiole": 0
+        }
+    },
+    "10000074802": {
+        "cobertura": {
+            "los_40": 70000,
+            "los40_urban": 70000,
+            "los40_classic": 20000,
+            "los40_dance": 0,
+            "cadena_dial": 0,
+            "cadena_dial_latino": 10000,
+            "cadena_dial_balada": 0,
+            "cadena_dial_escencial": 0,
+            "cadena_dial_mini": 10000,
+            "radiole": 50000
+        }
+    },
+    "10000081699": {
+        "cobertura": {
+            "los_40": 50000,
+            "los40_urban": 29000,
+            "los40_classic": 12000,
+            "los40_dance": 4000,
+            "cadena_dial": 4000,
+            "cadena_dial_latino": 59000,
+            "cadena_dial_balada": 6000,
+            "cadena_dial_escencial": 25000,
+            "cadena_dial_mini": 19000,
+            "radiole": 10000
+        }
+
+    },
+    "10000790164": {
+        "cobertura": {
+            "los_40": 0,
+            "los40_urban": 0,
+            "los40_classic": 0,
+            "los40_dance": 0,
+            "cadena_dial": 0,
+            "cadena_dial_latino": 0,
+            "cadena_dial_balada": 0,
+            "cadena_dial_escencial": 0,
+            "cadena_dial_mini": 0,
+            "radiole": 0
+        }
+    }
+}

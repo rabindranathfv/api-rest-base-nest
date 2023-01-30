@@ -10,11 +10,13 @@ import {
 import { ArtistRepository } from './artist.repository';
 import { BIG_QUERY_REPOSITORY } from '../../bigquery/repository/big-query.repository';
 
+// TODO: Check this mock for graphics
 import { radioStationStadistic } from './../mocks/radioStationKPI';
-import { artistKpiOverview } from './../mocks/artistKpiOverview';
+
 import { artistsMockData } from '../mocks/artistsMock';
-import { songsByartistsMockData } from '../mocks/songsByArtist';
-import { artistDetailMockData } from '../mocks/artistDetailMock';
+import artistas_id_resumen from '../mocks/artistas_id_resumen.json';
+import artistas_id_canciones from '../mocks/artistas_id_canciones.json';
+import artistas_id_kpi_radio from '../mocks/artistas_id_kpi_radio.json';
 
 import artist_id from '../mocks/artists_id.json';
 
@@ -47,9 +49,9 @@ export class ArtistAdapterRepository implements ArtistRepository {
     }
   }
 
-  async getArtistRadioStationKpi(artistId: string): Promise<any> {
+  async getKpiRadioArtistById(artistId: string): Promise<any> {
     this.logger.log(
-      `using ${ArtistAdapterRepository.name} - repository - method: getArtistRadioStationKpi with id: ${artistId}`,
+      `using ${ArtistAdapterRepository.name} - repository - method: getKpiRadioArtistById with id: ${artistId}`,
     );
     try {
       const instance = await this.bigQueryRepository.connectWithBigquery();
@@ -60,7 +62,10 @@ export class ArtistAdapterRepository implements ArtistRepository {
         FROM dataglobalproduccion.BI_Artistas_Alt.odec_t`;
       const query = `${queryStr}-${artistId}`;
       // const queryResults = await this.bigQueryRepository.query(instance, query);
-      const queryResults = radioStationStadistic;
+
+      // TODO: Check fistMock for charts on radioStationStadistics
+      // const queryResults = radioStationStadistic;
+      const queryResults = artistas_id_kpi_radio[artistId];
 
       return queryResults;
     } catch (error) {
@@ -68,9 +73,9 @@ export class ArtistAdapterRepository implements ArtistRepository {
     }
   }
 
-  async getArtistKpi(artistId: string): Promise<any> {
+  async getSummaryArtistById(artistId: string): Promise<any> {
     this.logger.log(
-      `using ${ArtistAdapterRepository.name} - repository - method: getArtistKpi with id: ${artistId}`,
+      `using ${ArtistAdapterRepository.name} - repository - method: getSummaryArtistById with id: ${artistId}`,
     );
     try {
       const instance = await this.bigQueryRepository.connectWithBigquery();
@@ -81,36 +86,19 @@ export class ArtistAdapterRepository implements ArtistRepository {
         FROM dataglobalproduccion.BI_Artistas_Alt.odec_t`;
       const query = `${queryStr}-${artistId}`;
       // const queryResults = await this.bigQueryRepository.query(instance, query);
-      const queryResults = artistKpiOverview;
+      const queryResults = artistas_id_resumen[artistId];
 
       return queryResults;
     } catch (error) {
-      return null;
+      console.log(error);
+      throw new HttpException(
+        `Error at getSummaryArtistById repository, error: ${error}`,
+        HttpStatus.INTERNAL_SERVER_ERROR,
+      );
     }
   }
 
-  async getArtistSummary(artistId: string): Promise<any> {
-    this.logger.log(
-      `using ${ArtistAdapterRepository.name} - repository - method: getArtistSummary with id: ${artistId}`,
-    );
-    try {
-      const instance = await this.bigQueryRepository.connectWithBigquery();
-
-      // TODO: UPDATE THIS QUERY
-      const queryStr = `SELECT emisora_N1, emisora_N2, id_interprete, interprete_colaboradores, nombre_interprete, inserciones, universo, 
-        cobertura, cob, contactos, grp_s, ots, ola, fecha_peticion, rango, rango_sort_order, fecha
-        FROM dataglobalproduccion.BI_Artistas_Alt.odec_t`;
-      const query = `${queryStr}-${artistId}`;
-      // const queryResults = await this.bigQueryRepository.query(instance, query);
-      const queryResults = artistDetailMockData;
-
-      return queryResults;
-    } catch (error) {
-      return null;
-    }
-  }
-
-  async getAllSongsByArtists(artistId: string): Promise<any[]> {
+  async getAllSongsByArtistsById(artistId: string): Promise<any[]> {
     this.logger.log(
       `using ${ArtistAdapterRepository.name} - repository - method: getAllSongsByArtists with id: ${artistId}`,
     );
@@ -123,11 +111,15 @@ export class ArtistAdapterRepository implements ArtistRepository {
         FROM dataglobalproduccion.BI_Artistas_Alt.odec_t`;
       const query = `${queryStr}-${artistId}`;
       // const queryResults = await this.bigQueryRepository.query(instance, query);
-      const queryResults = songsByartistsMockData;
+      const queryResults = artistas_id_canciones[artistId];
 
       return queryResults;
     } catch (error) {
-      return null;
+      console.log(error);
+      throw new HttpException(
+        `Error at getAllSongsByArtistsById repository, error: ${error}`,
+        HttpStatus.INTERNAL_SERVER_ERROR,
+      );
     }
   }
 
@@ -151,7 +143,7 @@ export class ArtistAdapterRepository implements ArtistRepository {
     } catch (error) {
       console.log(error);
       throw new HttpException(
-        `Error at findSongById repository, error: ${error}`,
+        `Error at getArtistById repository, error: ${error}`,
         HttpStatus.INTERNAL_SERVER_ERROR,
       );
     }

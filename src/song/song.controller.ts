@@ -45,7 +45,7 @@ export class SongController {
     status: 500,
     description: 'Internal Server Error',
   })
-  @Get(':id')
+  @Get(':id/resumen')
   async getSummarySongById(@Param('id') id: string) {
     this.logger.log(`${SongController.name} - getSummarySongById for id ${id}`);
     return await this.songService.getSummarySongById(id);
@@ -60,7 +60,7 @@ export class SongController {
     status: 500,
     description: 'Internal Server Error',
   })
-  @Get(':id')
+  @Get(':id/kpiradio')
   async getKpiRadioSongById(@Param('id') id: string) {
     this.logger.log(
       `${SongController.name} - getKpiRadioSongById for id ${id}`,
@@ -77,7 +77,7 @@ export class SongController {
     status: 500,
     description: 'Internal Server Error',
   })
-  @Get(':id')
+  @Get(':id/kpis')
   async getKpisSongById(@Param('id') id: string) {
     this.logger.log(`${SongController.name} - getKpisSongById for id ${id}`);
     return await this.songService.getKpisSongById(id);

@@ -63,10 +63,14 @@ export class SongAdapterRepository implements SongRepository {
       const query = `${queryStr} - ${id}`;
       // const queryResults = await this.bigQueryRepository.query(instance, query);
       const queryResults = canciones_id_resumen[id];
+      console.log(
+        '🚀 ~ file: song-adapter.repository.ts:66 ~ SongAdapterRepository ~ getSummarySongById ~ queryResults',
+        queryResults,
+      );
 
       return queryResults;
     } catch (error) {
-      console.log(error);
+      console.log('here~~~~~~', error);
       throw new HttpException(
         `Error at getSummarySongById repository, error: ${error}`,
         HttpStatus.INTERNAL_SERVER_ERROR,
