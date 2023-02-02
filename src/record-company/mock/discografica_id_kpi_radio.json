@@ -1,44 +1,35 @@
 {
     "1099": {
       "cobertura": {
-        "los_40": 100000,
-        "los40_urban": 150000,
-        "los40_classic": 99000,
-        "los40_dance": 56000,
-        "cadena_dial": 200000,
-        "cadena_dial_latino": 150000,
-        "cadena_dial_balada": 150000,
-        "cadena_dial_escencial": 0,
-        "cadena_dial_mini": 0,
-        "radiole": 0
+        "categories": ["LOS40 Dance", "LOS40", "LOS40 Classic", "LOS40 Urban", "Cadena Dial", "Cadena Dial Latino", "Cadena Dial Baladas", "Cadena Dial Esencial", "Cadena Dial Mini", "Radiolé"],
+        "dataSet": [
+          {
+            "name": "cobertura",
+            "data": [100000, 150000, 99000, 56000, 200000, 150000, 150000, 0, 0, 0]
+          }
+        ]
       }
     },
     "1099866": {
       "cobertura": {
-        "los_40": 100000,
-        "los40_urban": 150000,
-        "los40_classic": 99000,
-        "los40_dance": 56000,
-        "cadena_dial": 200000,
-        "cadena_dial_latino": 150000,
-        "cadena_dial_balada": 150000,
-        "cadena_dial_escencial": 0,
-        "cadena_dial_mini": 0,
-        "radiole": 0
+        "categories": ["LOS40 Dance", "LOS40", "LOS40 Classic", "LOS40 Urban", "Cadena Dial", "Cadena Dial Latino", "Cadena Dial Baladas", "Cadena Dial Esencial", "Cadena Dial Mini", "Radiolé"],
+        "dataSet": [
+          {
+            "name": "cobertura",
+            "data": [100000, 150000, 199000, 56000, 200000, 150000, 150000, 0, 0, 0]
+          }
+        ]
       }
     },
     "1099889": {
       "cobertura": {
-        "los_40": 100000,
-        "los40_urban": 100000,
-        "los40_classic": 99000,
-        "los40_dance": 56000,
-        "cadena_dial": 200000,
-        "cadena_dial_latino": 150000,
-        "cadena_dial_balada": 150000,
-        "cadena_dial_escencial": 0,
-        "cadena_dial_mini": 0,
-        "radiole": 0
+        "categories": ["LOS40 Dance", "LOS40", "LOS40 Classic", "LOS40 Urban", "Cadena Dial", "Cadena Dial Latino", "Cadena Dial Baladas", "Cadena Dial Esencial", "Cadena Dial Mini", "Radiolé"],
+        "dataSet": [
+          {
+            "name": "cobertura",
+            "data": [100000, 150000, 99000, 56000, 200000, 150000, 150000, 0, 0, 0]
+          }
+        ]
       }
     }
   }

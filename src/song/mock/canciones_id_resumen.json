@@ -12,7 +12,30 @@
       "interprete_colaboradores": "Channel",
       "streams": 5668,
       "tocadas": 1,
-      "total_cobertura": 150000
+      "total_cobertura": 150000,
+      "kpisBasicos": {
+        "tocadas": {
+          "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+          "dataSet":
+            {
+              "data": [240, 160, 671, 414, 555, 257, 901, 613, 727, 414, 555, 257]
+            }
+        },
+        "streams": {
+          "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+          "dataSet":
+            {
+              "data": [240, 160, 671, 414, 555, 257, 901, 613, 727, 414, 555, 257]
+            }
+        },
+        "cobertura": {
+          "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+          "dataSet":
+            {
+              "data": [240, 160, 671, 414, 555, 257, 901, 613, 727, 414, 555, 257]
+            }
+        }
+      }
     },
     "10000635873": {
       "fecha": "2022-08-17",
@@ -27,7 +50,30 @@
       "interprete_colaboradores": "Camilo (+ Carlos Vives,El Alfa,Evaluna Montaner,Farruko,Reik,Manuel Turizo,Mau y Ricky,Pedro Capó,Pedro Capó,Shakira,Rauw Alejandro,Wisin)",
       "streams": 253,
       "tocadas": 2,
-      "total_cobertura": 150000
+      "total_cobertura": 150000,
+      "kpisBasicos": {
+        "tocadas": {
+          "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+          "dataSet":
+            {
+              "data": [240, 160, 671, 414, 555, 257, 901, 613, 727, 414, 555, 257]
+            }
+        },
+        "streams": {
+          "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+          "dataSet":
+            {
+              "data": [240, 160, 671, 414, 555, 257, 901, 613, 727, 414, 555, 257]
+            }
+        },
+        "cobertura": {
+          "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+          "dataSet":
+            {
+              "data": [240, 160, 671, 414, 555, 257, 901, 613, 727, 414, 555, 257]
+            }
+        }
+      }
     },
     "10000643108": {
       "fecha": "2022-07-23",
@@ -42,6 +88,29 @@
       "interprete_colaboradores": "Karol G (+ Bad Bunny,Maldy,Mariah Angeliq,Mau y Ricky,Myke Towers,Ozuna,Nicki Minaj,Tiësto)",
       "streams": 1560,
       "tocadas": 1,
-      "total_cobertura": 150000
+      "total_cobertura": 150000,
+      "kpisBasicos": {
+        "tocadas": {
+          "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+          "dataSet":
+            {
+              "data": [240, 160, 671, 414, 555, 257, 901, 613, 727, 414, 555, 257]
+            }
+        },
+        "streams": {
+          "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+          "dataSet":
+            {
+              "data": [240, 160, 671, 414, 555, 257, 901, 613, 727, 414, 555, 257]
+            }
+        },
+        "cobertura": {
+          "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+          "dataSet":
+            {
+              "data": [240, 160, 671, 414, 555, 257, 901, 613, 727, 414, 555, 257]
+            }
+        }
+      }
     }
   }

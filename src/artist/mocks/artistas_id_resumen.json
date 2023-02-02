@@ -5,7 +5,23 @@
         "id_interprete": 10000039078,
         "streams": 5668,
         "tocadas": 1,
-        "canciones_nro": 1
+        "canciones_nro": 1,
+        "kpisBasicos": {
+            "tocadas": {
+              "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+              "dataSet":
+                {
+                  "data": [240, 160, 671, 414, 555, 257, 901, 613, 727, 414, 555, 257]
+                }
+            },
+            "streams": {
+              "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+              "dataSet":
+                {
+                  "data": [240, 160, 671, 414, 555, 257, 901, 613, 727, 414, 555, 257]
+                }
+            }
+          }
     },
     "10000074802": {
         "nombre": "Karol G FROM BACK",
@@ -20,7 +36,23 @@
             "hours": 2,
             "mins": 5900,
             "seg": 69
-        }
+        },
+        "kpisBasicos": {
+            "tocadas": {
+              "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+              "dataSet":
+                {
+                  "data": [240, 160, 671, 414, 555, 257, 901, 613, 727, 414, 555, 257]
+                }
+            },
+            "streams": {
+              "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+              "dataSet":
+                {
+                  "data": [240, 160, 671, 414, 555, 257, 901, 613, 727, 414, 555, 257]
+                }
+            }
+          }
     },
     "10000081699": {
         "nombre": "Camilo FROM BACK",
@@ -35,7 +67,23 @@
             "hours": 2,
             "mins": 5900,
             "seg": 69
-        }
+        },
+        "kpisBasicos": {
+            "tocadas": {
+              "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+              "dataSet":
+                {
+                  "data": [240, 160, 671, 414, 555, 257, 901, 613, 727, 414, 555, 257]
+                }
+            },
+            "streams": {
+              "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+              "dataSet":
+                {
+                  "data": [240, 160, 671, 414, 555, 257, 901, 613, 727, 414, 555, 257]
+                }
+            }
+          }
     },
     "10000790164": {
         "nombre": "Chanel FROM BACK",
@@ -44,17 +92,21 @@
         "streams": 0,
         "tocadas": 0,
         "canciones_nro": 0,
-        "cobertura": {
-        "los_40": 0,
-        "los40_urban": 0,
-        "los40_classic": 0,
-        "los40_dance": 0,
-        "cadena_dial": 0,
-        "cadena_dial_latino": 0,
-        "cadena_dial_balada": 0,
-        "cadena_dial_escencial": 0,
-        "cadena_dial_mini": 0,
-        "radiole": 0
-        }
+        "kpisBasicos": {
+            "tocadas": {
+              "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+              "dataSet":
+                {
+                  "data": [240, 160, 671, 414, 555, 257, 901, 613, 727, 414, 555, 257]
+                }
+            },
+            "streams": {
+              "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+              "dataSet":
+                {
+                  "data": [240, 160, 671, 414, 555, 257, 901, 613, 727, 414, 555, 257]
+                }
+            }
+          }
     }
 }

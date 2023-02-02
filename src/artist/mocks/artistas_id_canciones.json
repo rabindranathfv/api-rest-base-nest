@@ -740,6 +740,21 @@
         ]
     },
     "10000790164": {
-        "canciones": []
+        "canciones": [
+            {
+                "emisora_N1": "Cadena Dial",
+                "emisora_N2": "Cadena Dial",
+                "id_emisora": 1004,
+                "fecha": "2022-07-23",
+                "discografica": "Bit Music",
+                "id": 10000118971,
+                "title": "Dance",
+                "id_interprete": 10000039078,
+                "interprete_colaboradores": "Chanel",
+                "nombre_interprete": "Chanel",
+                "streams": 5668,
+                "tocadas": 1
+              }
+        ]
     }
 }

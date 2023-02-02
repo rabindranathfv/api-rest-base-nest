@@ -1,83 +1,373 @@
 {
-    "10000118971": {
-      "fecha": "2022-07-23",
-      "fecha_lanzamiento": "2022",
-      "discografica": "Bit Music FROM BACK",
-      "id": 10000118971,
-      "nombre": "Dance FROM BACK",
-      "subtitle": "Channel",
-      "genero": "House",
-      "top": "6",
-      "id_interprete": 10000039078,
-      "interprete_colaboradores": "Channel",
-      "streams": 5668,
-      "tocadas": 1,
-      "total_cobertura": 150000,
-      "cobertura": {
-        "los_40": 10000,
-        "los40_urban": 65000,
-        "los40_classic": 35000,
-        "los40_dance": 56000,
-        "cadena_dial": 150000,
-        "cadena_dial_latino": 160000,
-        "cadena_dial_balada": 50000,
-        "cadena_dial_escencial": 60000,
-        "cadena_dial_mini": 10000,
-        "radiole": 0
+  "10000118971": {
+    "overview": {
+      "lineOverview": {
+        "categories": ["SEMANA 1", "SEMANA 2", "SEMANA 3", "SEMANA 4", "SEMANA 5", "SEMANA 6", "SEMANA 7", "SEMANA 8", "SEMANA 9", "SEMANA 10", "SEMANA 11"],
+        "dataSet": [
+          {
+            "name": "Stream",
+            "data": [190000, 200000, 220000, 225000, 224000, 224000, 223000, 227000, 230000, 240000, 249000]
+          },
+          {
+            "name": "Cobertura",
+            "data": [170000, 174000, 174000, 175000, 176000, 200000, 220000, 200000, 195000, 195000, 225000]
+          },
+          {
+            "name": "Tocadas",
+            "data": [100000, 90000, 75000, 50000, 80000, 110000, 140000, 150000, 160000, 180000, 200000]
+          }
+        ]
       }
     },
-    "10000635873": {
-      "fecha": "2022-08-17",
-      "fecha_lanzamiento": "2019",
-      "discografica": "Sony Music FROM BACK",
-      "id": 10000635873,
-      "nombre": "Vida de rico FROM BACK",
-      "subtitle": "Camilo",
-      "genero": "Pop",
-      "top": "7",
-      "id_interprete": 10000081699,
-      "interprete_colaboradores": "Camilo (+ Carlos Vives,El Alfa,Evaluna Montaner,Farruko,Reik,Manuel Turizo,Mau y Ricky,Pedro Capó,Pedro Capó,Shakira,Rauw Alejandro,Wisin)",
-      "streams": 253,
-      "tocadas": 2,
-      "total_cobertura": 150000,
-      "cobertura": {
-        "los_40": 100000,
-        "los40_urban": 150000,
-        "los40_classic": 99000,
-        "los40_dance": 56000,
-        "cadena_dial": 200000,
-        "cadena_dial_latino": 150000,
-        "cadena_dial_balada": 50000,
-        "cadena_dial_escencial": 0,
-        "cadena_dial_mini": 0,
-        "radiole": 0
+    "impact": {
+      "barImpact": {
+        "dataSet": [
+          {
+            "name": "Impacto",
+            "data": [
+              {
+                "x": "14-24",
+                "y": 40,
+                "goals": [
+                  {
+                    "value": 40,
+                    "strokeWidth": 8,
+                    "strokeHeight": 0,
+                    "strokeLineCap": "round",
+                    "strokeColor": "#7CB8F0"
+                  }
+                ]
+              },
+              {
+                "x": "25-34",
+                "y": 50,
+                "goals": [
+                  {
+                    "value": 50,
+                    "strokeWidth": 8,
+                    "strokeHeight": 0,
+                    "strokeLineCap": "round",
+                    "strokeColor": "#CDF1A9"
+                  }
+                ]
+              },
+              {
+                "x": "35-44",
+                "y": 35,
+                "goals": [
+                  {
+                    "value": 35,
+                    "strokeWidth": 8,
+                    "strokeHeight": 0,
+                    "strokeLineCap": "round",
+                    "strokeColor": "#DE97FF"
+                  }
+                ]
+              },
+              {
+                "x": "45-54",
+                "y": 15,
+                "goals": [
+                  {
+                    "value": 15,
+                    "strokeWidth": 8,
+                    "strokeHeight": 0,
+                    "strokeLineCap": "round",
+                    "strokeColor": "#FFEE97"
+                  }
+                ]
+              },
+              {
+                "x": "+55",
+                "y": 20,
+                "goals": [
+                  {
+                    "value": 20,
+                    "strokeWidth": 8,
+                    "strokeHeight": 0,
+                    "strokeLineCap": "round",
+                    "strokeColor": "#FFB4B4"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "lineImpact": {
+        "categories": ["SEMANA 1", "SEMANA 2", "SEMANA 3", "SEMANA 4", "SEMANA 5", "SEMANA 6", "SEMANA 7", "SEMANA 8", "SEMANA 9", "SEMANA 10", "SEMANA 11"],
+        "dataSet": [
+          {
+            "name": "14-24",
+            "data": [190000, 200000, 220000, 225000, 224000, 224000, 223000, 227000, 230000, 240000, 249000]
+          },
+          {
+            "name": "25-34",
+            "data": [170000, 174000, 174000, 175000, 176000, 200000, 220000, 200000, 195000, 195000, 225000]
+          },
+          {
+            "name": "35-44",
+            "data": [100000, 90000, 75000, 50000, 80000, 110000, 140000, 150000, 160000, 180000, 200000]
+          },
+          {
+            "name": "45-54",
+            "data": [120000, 140000, 100000, 65000, 90000, 125000, 160000, 160000, 180000, 175000, 210000]
+          },
+          {
+            "name": "+55",
+            "data": [50000, 45000, 30000, 35000, 42000, 35000, 32000, 30000, 40000, 45000, 55000]
+          }
+        ]
+      }
+    }
+  },
+  "10000635873": {
+    "overview": {
+      "lineOverview": {
+        "categories": ["SEMANA 1", "SEMANA 2", "SEMANA 3", "SEMANA 4", "SEMANA 5", "SEMANA 6", "SEMANA 7", "SEMANA 8", "SEMANA 9", "SEMANA 10", "SEMANA 11"],
+        "dataSet": [
+          {
+            "name": "Stream",
+            "data": [190000, 200000, 220000, 225000, 224000, 224000, 223000, 227000, 230000, 240000, 249000]
+          },
+          {
+            "name": "Cobertura",
+            "data": [170000, 174000, 174000, 175000, 176000, 200000, 220000, 200000, 195000, 195000, 225000]
+          },
+          {
+            "name": "Tocadas",
+            "data": [100000, 90000, 75000, 50000, 80000, 110000, 140000, 150000, 160000, 180000, 200000]
+          }
+        ]
       }
     },
-    "10000643108": {
-      "fecha": "2022-07-23",
-      "fecha_lanzamiento": "2019",
-      "discografica": "Universal Music FROM BACK",
-      "id": 10000643108,
-      "nombre": "El Makinon FROM BACK",
-      "subtitle": "Karol G",
-      "genero": "Urban",
-      "top": "3",
-      "id_interprete": 10000074802,
-      "interprete_colaboradores": "Karol G (+ Bad Bunny,Maldy,Mariah Angeliq,Mau y Ricky,Myke Towers,Ozuna,Nicki Minaj,Tiësto)",
-      "streams": 1560,
-      "tocadas": 1,
-      "total_cobertura": 150000,
-      "cobertura": {
-        "los_40": 100000,
-        "los40_urban": 150000,
-        "los40_classic": 99000,
-        "los40_dance": 56000,
-        "cadena_dial": 200000,
-        "cadena_dial_latino": 160000,
-        "cadena_dial_balada": 50000,
-        "cadena_dial_escencial": 60000,
-        "cadena_dial_mini": 0,
-        "radiole": 0
+    "impact": {
+      "barImpact": {
+        "dataSet": [
+          {
+            "name": "Impacto",
+            "data": [
+              {
+                "x": "14-24",
+                "y": 40,
+                "goals": [
+                  {
+                    "value": 40,
+                    "strokeWidth": 8,
+                    "strokeHeight": 0,
+                    "strokeLineCap": "round",
+                    "strokeColor": "#7CB8F0"
+                  }
+                ]
+              },
+              {
+                "x": "25-34",
+                "y": 50,
+                "goals": [
+                  {
+                    "value": 50,
+                    "strokeWidth": 8,
+                    "strokeHeight": 0,
+                    "strokeLineCap": "round",
+                    "strokeColor": "#CDF1A9"
+                  }
+                ]
+              },
+              {
+                "x": "35-44",
+                "y": 35,
+                "goals": [
+                  {
+                    "value": 35,
+                    "strokeWidth": 8,
+                    "strokeHeight": 0,
+                    "strokeLineCap": "round",
+                    "strokeColor": "#DE97FF"
+                  }
+                ]
+              },
+              {
+                "x": "45-54",
+                "y": 15,
+                "goals": [
+                  {
+                    "value": 15,
+                    "strokeWidth": 8,
+                    "strokeHeight": 0,
+                    "strokeLineCap": "round",
+                    "strokeColor": "#FFEE97"
+                  }
+                ]
+              },
+              {
+                "x": "+55",
+                "y": 20,
+                "goals": [
+                  {
+                    "value": 20,
+                    "strokeWidth": 8,
+                    "strokeHeight": 0,
+                    "strokeLineCap": "round",
+                    "strokeColor": "#FFB4B4"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "lineImpact": {
+        "categories": ["SEMANA 1", "SEMANA 2", "SEMANA 3", "SEMANA 4", "SEMANA 5", "SEMANA 6", "SEMANA 7", "SEMANA 8", "SEMANA 9", "SEMANA 10", "SEMANA 11"],
+        "dataSet": [
+          {
+            "name": "14-24",
+            "data": [190000, 200000, 220000, 225000, 224000, 224000, 223000, 227000, 230000, 240000, 249000]
+          },
+          {
+            "name": "25-34",
+            "data": [170000, 174000, 174000, 175000, 176000, 200000, 220000, 200000, 195000, 195000, 225000]
+          },
+          {
+            "name": "35-44",
+            "data": [100000, 90000, 75000, 50000, 80000, 110000, 140000, 150000, 160000, 180000, 200000]
+          },
+          {
+            "name": "45-54",
+            "data": [120000, 140000, 100000, 65000, 90000, 125000, 160000, 160000, 180000, 175000, 210000]
+          },
+          {
+            "name": "+55",
+            "data": [50000, 45000, 30000, 35000, 42000, 35000, 32000, 30000, 40000, 45000, 55000]
+          }
+        ]
+      }
+    }
+  },
+  "10000643108": {
+    "overview": {
+      "lineOverview": {
+        "categories": ["SEMANA 1", "SEMANA 2", "SEMANA 3", "SEMANA 4", "SEMANA 5", "SEMANA 6", "SEMANA 7", "SEMANA 8", "SEMANA 9", "SEMANA 10", "SEMANA 11"],
+        "dataSet": [
+          {
+            "name": "Stream",
+            "data": [190000, 200000, 220000, 225000, 224000, 224000, 223000, 227000, 230000, 240000, 249000]
+          },
+          {
+            "name": "Cobertura",
+            "data": [170000, 174000, 174000, 175000, 176000, 200000, 220000, 200000, 195000, 195000, 225000]
+          },
+          {
+            "name": "Tocadas",
+            "data": [100000, 90000, 75000, 50000, 80000, 110000, 140000, 150000, 160000, 180000, 200000]
+          }
+        ]
+      }
+    },
+    "impact": {
+      "barImpact": {
+        "dataSet": [
+          {
+            "name": "Impacto",
+            "data": [
+              {
+                "x": "14-24",
+                "y": 40,
+                "goals": [
+                  {
+                    // "name": "E"x"pected",
+                    "value": 40,
+                    "strokeWidth": 8,
+                    "strokeHeight": 0,
+                    "strokeLineCap": "round",
+                    "strokeColor": "#7CB8F0",
+                  }
+                ],
+              },
+              {
+                "x": "25-34",
+                "y": 50,
+                "goals": [
+                  {
+                    // "name": "E"x"pected",
+                    "value": 50,
+                    "strokeWidth": 8,
+                    "strokeHeight": 0,
+                    "strokeLineCap": "round",
+                    "strokeColor": "#CDF1A9",
+                  }
+                ],
+              },
+              {
+                "x": "35-44",
+                "y": 35,
+                "goals": [
+                  {
+                    // "name": "E"x"pected",
+                    "value": 35,
+                    "strokeWidth": 8,
+                    "strokeHeight": 0,
+                    "strokeLineCap": "round",
+                    "strokeColor": "#DE97FF",
+                  }
+                ],
+              },
+              {
+                "x": "45-54",
+                "y": 15,
+                "goals": [
+                  {
+                    // "name": "E"x"pected",
+                    "value": 15,
+                    "strokeWidth": 8,
+                    "strokeHeight": 0,
+                    "strokeLineCap": "round",
+                    "strokeColor": "#FFEE97",
+                  }
+                ],
+              },
+              {
+                "x": "+55",
+                "y": 20,
+                "goals": [
+                  {
+                    // "name": "E"x"pected",
+                    "value": 20,
+                    "strokeWidth": 8,
+                    "strokeHeight": 0,
+                    "strokeLineCap": "round",
+                    "strokeColor": "#FFB4B4",
+                  }
+                ],
+              }
+            ],
+          }
+        ]
+      },
+      "lineImpact": {
+        "categories": ["SEMANA 1", "SEMANA 2", "SEMANA 3", "SEMANA 4", "SEMANA 5", "SEMANA 6", "SEMANA 7", "SEMANA 8", "SEMANA 9", "SEMANA 10", "SEMANA 11"],
+        "dataSet": [
+          {
+            "name": "14-24",
+            "data": [190000, 200000, 220000, 225000, 224000, 224000, 223000, 227000, 230000, 240000, 249000]
+          },
+          {
+            "name": "25-34",
+            "data": [170000, 174000, 174000, 175000, 176000, 200000, 220000, 200000, 195000, 195000, 225000]
+          },
+          {
+            "name": "35-44",
+            "data": [100000, 90000, 75000, 50000, 80000, 110000, 140000, 150000, 160000, 180000, 200000]
+          },
+          {
+            "name": "45-54",
+            "data": [120000, 140000, 100000, 65000, 90000, 125000, 160000, 160000, 180000, 175000, 210000]
+          },
+          {
+            "name": "+55",
+            "data": [50000, 45000, 30000, 35000, 42000, 35000, 32000, 30000, 40000, 45000, 55000]
+          }
+        ]
       }
     }
   }
+}
