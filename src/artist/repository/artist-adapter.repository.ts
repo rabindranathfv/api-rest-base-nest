@@ -10,9 +10,6 @@ import {
 import { ArtistRepository } from './artist.repository';
 import { BIG_QUERY_REPOSITORY } from '../../bigquery/repository/big-query.repository';
 
-// TODO: Check this mock for graphics
-import { radioStationStadistic } from './../mocks/radioStationKPI';
-
 import { artistsMockData } from '../mocks/artistsMock';
 import artistas_id_resumen from '../mocks/artistas_id_resumen.json';
 import artistas_id_canciones from '../mocks/artistas_id_canciones.json';
