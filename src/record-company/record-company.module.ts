@@ -5,6 +5,7 @@ import { BigqueryModule } from '../bigquery/bigquery.module';
 
 import { RecordCompanyController } from './record-company.controller';
 import { RecordCompanyService } from './record-company.service';
+import { JwtStrategy } from './../auth/jwt.strategy';
 
 import { RECORD_COMPANY_REPOSITORY } from './repository/record-company.repository';
 import { RecordCompanyAdapterRepository } from './repository/record-company-adapter.repository';
@@ -41,6 +42,7 @@ import { configuration } from '../config/configuration';
       provide: RECORD_COMPANY_REPOSITORY,
       useClass: RecordCompanyAdapterRepository,
     },
+    JwtStrategy,
   ],
 })
 export class RecordCompanyModule {}

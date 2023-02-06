@@ -1,4 +1,3 @@
-import { ArtistService } from './artist.service';
 import {
   CacheInterceptor,
   Controller,
@@ -17,11 +16,14 @@ import {
   ApiResponse,
   ApiTags,
 } from '@nestjs/swagger';
+
+import { ArtistService } from './artist.service';
+
 import { JwtAuthGuard } from '../auth/jwt-auth.guard';
 
 @ApiTags('artist')
 @ApiBearerAuth()
-// @UseGuards(JwtAuthGuard)
+@UseGuards(JwtAuthGuard)
 @UseInterceptors(CacheInterceptor)
 @ApiHeader({
   name: 'X-Request-id',

@@ -3,6 +3,7 @@ import { ARTIST_REPOSITORY } from './repository/artist.repository';
 import { CacheModule, Module } from '@nestjs/common';
 import { ArtistController } from './artist.controller';
 import { ArtistService } from './artist.service';
+import { JwtStrategy } from './../auth/jwt.strategy';
 
 import { BigqueryModule } from '../bigquery/bigquery.module';
 import { BIG_QUERY_REPOSITORY } from '../bigquery/repository/big-query.repository';
@@ -37,6 +38,7 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
       provide: ARTIST_REPOSITORY,
       useClass: ArtistAdapterRepository,
     },
+    JwtStrategy,
   ],
 })
 export class ArtistModule {}

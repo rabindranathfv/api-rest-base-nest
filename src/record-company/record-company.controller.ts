@@ -4,21 +4,24 @@ import {
   Get,
   Logger,
   Param,
+  UseGuards,
   UseInterceptors,
 } from '@nestjs/common';
 import { ApiTags, ApiHeader, ApiResponse } from '@nestjs/swagger';
 
 import { RecordCompanyService } from './record-company.service';
 
-@Controller('discograficas')
-// TODO: initial implementation for being compatible with offline mode
-// @Controller('record-company')
+import { JwtAuthGuard } from './../auth/jwt-auth.guard';
+
 @ApiTags('record-company')
+@UseInterceptors(CacheInterceptor)
+@UseGuards(JwtAuthGuard)
 @ApiHeader({
   name: 'X-Request-id',
   description: 'Custom header for requestId generated automaticly',
 })
-@UseInterceptors(CacheInterceptor)
+// @Controller('record-company')
+@Controller('discograficas')
 export class RecordCompanyController {
   private readonly logger = new Logger(RecordCompanyController.name);
 

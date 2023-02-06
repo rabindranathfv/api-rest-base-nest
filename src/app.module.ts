@@ -98,7 +98,7 @@ import { SongModule } from './song/song.module';
   providers: [
     AppService,
     ConfigModule,
-    // cache all endpoints with this config
+    // cache all get endpoints with this config
     {
       provide: APP_INTERCEPTOR,
       useClass: CacheInterceptor,

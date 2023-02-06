@@ -4,18 +4,23 @@ import {
   Get,
   Logger,
   Param,
+  UseGuards,
   UseInterceptors,
 } from '@nestjs/common';
 import { ApiTags, ApiHeader, ApiResponse } from '@nestjs/swagger';
+
 import { SongService } from './song.service';
 
-@Controller('cancion')
+import { JwtAuthGuard } from './../auth/jwt-auth.guard';
+
 @ApiTags('song')
+@UseInterceptors(CacheInterceptor)
+@UseGuards(JwtAuthGuard)
 @ApiHeader({
   name: 'X-Request-id',
   description: 'Custom header for requestId generated automaticly',
 })
-@UseInterceptors(CacheInterceptor)
+@Controller('cancion')
 export class SongController {
   private readonly logger = new Logger(SongController.name);
 

@@ -5,6 +5,7 @@ import { BigqueryModule } from '../bigquery/bigquery.module';
 
 import { SongController } from './song.controller';
 import { SongService } from './song.service';
+import { JwtStrategy } from './../auth/jwt.strategy';
 
 import { BIG_QUERY_REPOSITORY } from './../bigquery/repository/big-query.repository';
 import { BigQueryAdapterRepository } from './../bigquery/repository/big-query-adapter.repository';
@@ -41,6 +42,7 @@ import { configuration } from '../config/configuration';
       provide: SONG_REPOSITORY,
       useClass: SongAdapterRepository,
     },
+    JwtStrategy,
   ],
 })
 export class SongModule {}
