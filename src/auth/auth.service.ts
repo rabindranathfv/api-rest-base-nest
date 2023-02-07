@@ -31,8 +31,8 @@ export class AuthService {
 
     if (!loginProcess)
       throw new HttpException(
-        `this email ${loginDto.email} was not found or just password is incorrect, please check it`,
-        HttpStatus.CONFLICT,
+        `this email ${loginDto.email} was not found or just password is incorrect, please check your credentials`,
+        HttpStatus.UNAUTHORIZED,
       );
     return loginProcess;
   }

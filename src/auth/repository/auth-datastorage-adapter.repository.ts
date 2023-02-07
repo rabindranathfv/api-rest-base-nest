@@ -22,6 +22,7 @@ import { ConfigService } from '@nestjs/config';
 
 import { LoginDto } from '../dto/login.dto';
 import { ITokenPayload } from '../interfaces/token-payload-auth.interfaces';
+import { LoginAuth } from '../interfaces/login-auth.interface';
 
 @Injectable()
 export class AuthDatastoragAdapterRepository
@@ -35,7 +36,7 @@ export class AuthDatastoragAdapterRepository
     @Inject(BIG_QUERY_REPOSITORY) private readonly bigQueryRepository,
   ) {}
 
-  async login(loginDto: LoginDto): Promise<User> {
+  async login(loginDto: LoginDto): Promise<Partial<LoginAuth>> {
     this.logger.log(
       `using ${AuthDatastoragAdapterRepository.name} - repository - method: login`,
     );
@@ -49,17 +50,21 @@ export class AuthDatastoragAdapterRepository
         .filter('email', '=', email);
       const [existUser] = await instance.runQuery(queryResults);
 
-      if (!existUser) return null;
+      if (existUser.length === 0) return null;
 
       const isPasswordMatching = await compare(password, existUser[0].password);
 
       if (!isPasswordMatching) return null;
 
+      const mapExistUser = existUser.map((u) => ({
+        name: u.name,
+        email: u.email,
+      }));
       const token = await this.jwtService.sign({
-        email: existUser[0]?.email,
-        name: existUser[0]?.name,
+        email: mapExistUser[0].email,
+        name: mapExistUser[0].name,
       });
-      return { ...existUser[0], token };
+      return { ...mapExistUser[0], token };
     } catch (error) {
       console.log(error);
       throw new HttpException(
