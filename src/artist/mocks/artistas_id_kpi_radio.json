@@ -1,7 +1,7 @@
 {
     "10000039078": {
         "cobertura": {
-            "ategories": ["LOS40 Dance", "LOS40", "LOS40 Classic", "LOS40 Urban", "Cadena Dial", "Cadena Dial Latino", "Cadena Dial Baladas", "Cadena Dial Esencial", "Cadena Dial Mini", "Radiolé"],
+            "categories": ["LOS40 Dance", "LOS40", "LOS40 Classic", "LOS40 Urban", "Cadena Dial", "Cadena Dial Latino", "Cadena Dial Baladas", "Cadena Dial Esencial", "Cadena Dial Mini", "Radiolé"],
             "dataSet": [
                 {
                 "name": "cobertura",

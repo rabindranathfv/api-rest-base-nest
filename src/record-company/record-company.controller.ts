@@ -44,23 +44,6 @@ export class RecordCompanyController {
 
   @ApiResponse({
     status: 200,
-    description: 'A get for a record company by Id successfully fetched',
-    // type: registerAuth,
-  })
-  @ApiResponse({
-    status: 500,
-    description: 'Internal Server Error',
-  })
-  @Get(':id')
-  async findRecordCompanyById(@Param('id') id: string) {
-    this.logger.log(
-      `${RecordCompanyController.name} - findRecordCompanyById for id ${id}`,
-    );
-    return await this.recordCompanyService.findRecordCompanyById(id);
-  }
-
-  @ApiResponse({
-    status: 200,
     description: 'A get summary of a record company by Id successfully fetched',
     // type: registerAuth,
   })

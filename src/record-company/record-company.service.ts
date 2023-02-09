@@ -35,25 +35,6 @@ export class RecordCompanyService {
     }
   }
 
-  async findRecordCompanyById(id: string): Promise<any> {
-    this.logger.log(`${RecordCompanyService.name} - findDiscographicById`);
-    try {
-      const queryResults =
-        await this.recordCompanyRepository.findRecordCompanyById(id);
-
-      return queryResults;
-    } catch (error) {
-      this.logger.log(
-        `${RecordCompanyService.name} - findRecordCompanyById -  ERROR`,
-        error,
-      );
-      throw new HttpException(
-        `Error make query findRecordCompanyById`,
-        HttpStatus.INTERNAL_SERVER_ERROR,
-      );
-    }
-  }
-
   async getSummaryRecordCompanyById(id: string): Promise<any> {
     this.logger.log(
       `${RecordCompanyService.name} - getSummaryRecordCompanyById`,
