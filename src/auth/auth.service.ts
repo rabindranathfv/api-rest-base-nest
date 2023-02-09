@@ -14,6 +14,7 @@ import { LoginDto } from './dto/login.dto';
 
 import { Request } from 'express';
 import { USER_DATASTORE_REPOSITORY } from '../users/repository/user-datastore.repository';
+import { NewRefreshTokenDto } from './dto/new-refresh-token.dto';
 
 @Injectable()
 export class AuthService {
@@ -26,7 +27,7 @@ export class AuthService {
   ) {}
 
   async login(loginDto: LoginDto) {
-    this.logger.log('login Auth Service');
+    this.logger.log(`${AuthService.name} - login`);
     const loginProcess = await this.authDatastoreRepository.login(loginDto);
 
     if (!loginProcess)
@@ -38,7 +39,7 @@ export class AuthService {
   }
 
   async register(createUserDto: CreateUserDto) {
-    this.logger.log('register Auth Service');
+    this.logger.log(`${AuthService.name} - register`);
     const newUser = await this.userDatastoreRepository.createUser(
       createUserDto,
     );
@@ -53,14 +54,29 @@ export class AuthService {
   }
 
   async refresh(@Req() req: Request) {
-    this.logger.log('refresh Auth Service');
+    this.logger.log(`${AuthService.name} - refresh`);
     const [, token] = req.headers.authorization.split(' ');
 
     return await this.authDatastoreRepository.refresh(token);
   }
 
+  async newRefresh(newRefreshTokenDto: NewRefreshTokenDto) {
+    this.logger.log(`${AuthService.name} - newRefresh`);
+    const newRefreshToken = await this.authDatastoreRepository.newRefresh(
+      newRefreshTokenDto,
+    );
+
+    if (!newRefreshToken) {
+      throw new HttpException(
+        `this email ${newRefreshTokenDto.email} was not found or just password is incorrect, please check your credentials`,
+        HttpStatus.UNAUTHORIZED,
+      );
+    }
+    return newRefreshToken;
+  }
+
   async logout() {
-    this.logger.log('logout Auth Service');
+    this.logger.log(`${AuthService.name} - logout`);
     return await this.authDatastoreRepository.logout();
   }
 }

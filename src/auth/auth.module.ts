@@ -33,7 +33,7 @@ import { JwtStrategy } from './jwt.strategy';
         /* istanbul ignore next */
         return {
           secret: jwtConfig.secret,
-          signOptions: { expiresIn: '2h' || jwtConfig.expiresIn },
+          signOptions: { expiresIn: jwtConfig.expiresIn || '1h' },
         };
       },
     }),

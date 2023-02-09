@@ -4,7 +4,6 @@ import {
   Logger,
   Post,
   UseGuards,
-  CacheKey,
   Get,
   Req,
   Res,
@@ -30,6 +29,7 @@ import { Request, Response } from 'express';
 import { LoginAuth } from './interfaces/login-auth.interface';
 import { registerAuth } from './interfaces/register-auth.interface';
 import { Token } from './interfaces/token-auth.interface';
+import { NewRefreshTokenDto } from './dto/new-refresh-token.dto';
 
 @ApiTags('auth')
 @ApiHeader({
@@ -44,7 +44,6 @@ export class AuthController {
   constructor(private readonly authService: AuthService) {}
 
   @Post('login')
-  @CacheKey('login')
   @ApiResponse({
     status: 200,
     description: 'Login successfully',
@@ -110,6 +109,25 @@ export class AuthController {
     return res.status(200).json({
       token: refreshToken,
     });
+  }
+
+  @Post('/refresh')
+  @ApiResponse({
+    status: 200,
+    description: 'refresh token session for auth users',
+    type: Token,
+  })
+  @ApiResponse({
+    status: 401,
+    description: 'Unauthorized, does not have a valid token o token is Expired',
+  })
+  @ApiResponse({
+    status: 500,
+    description: 'Internal Server Error',
+  })
+  async newRefresh(@Body() newRefreshTokenDto: NewRefreshTokenDto) {
+    this.logger.log(`${AuthController.name} - newRefresh`);
+    return await this.authService.newRefresh(newRefreshTokenDto);
   }
 
   @UseGuards(JwtAuthGuard)

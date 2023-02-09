@@ -23,6 +23,7 @@ import { ConfigService } from '@nestjs/config';
 import { LoginDto } from '../dto/login.dto';
 import { ITokenPayload } from '../interfaces/token-payload-auth.interfaces';
 import { LoginAuth } from '../interfaces/login-auth.interface';
+import { NewRefreshTokenDto } from '../dto/new-refresh-token.dto';
 
 @Injectable()
 export class AuthDatastoragAdapterRepository
@@ -109,6 +110,39 @@ export class AuthDatastoragAdapterRepository
       console.log(error);
       throw new HttpException(
         `Error at refresh repository, error: ${error}`,
+        HttpStatus.INTERNAL_SERVER_ERROR,
+      );
+    }
+  }
+
+  async newRefresh(
+    newRefreshTokenDto: NewRefreshTokenDto,
+  ): Promise<any> | null {
+    this.logger.log(
+      `using ${AuthDatastoragAdapterRepository.name} - repository - method: newRefresh`,
+    );
+    try {
+      const { name, email } = newRefreshTokenDto;
+      const instance: Datastore =
+        await this.bigQueryRepository.connectWithDatastorage();
+
+      const queryResults = await instance
+        .createQuery(`${USER_DASHBOARD}`)
+        .filter('email', '=', email);
+      const [existUser] = await instance.runQuery(queryResults);
+
+      if (existUser.length === 0) return null;
+
+      const newRefreshToken = await this.jwtService.sign({
+        email: email,
+        name: name,
+      });
+
+      return { token: newRefreshToken };
+    } catch (error) {
+      console.log(error);
+      throw new HttpException(
+        `Error at newRefresh repository, error: ${error}`,
         HttpStatus.INTERNAL_SERVER_ERROR,
       );
     }

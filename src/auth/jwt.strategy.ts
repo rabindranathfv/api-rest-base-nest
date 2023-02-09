@@ -22,6 +22,10 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
   }
 
   async validate(payload: { email: string; name: string }) {
+    console.log(
+      '🚀 ~ file: jwt.strategy.ts:25 ~ JwtStrategy ~ validate ~ payload',
+      payload,
+    );
     const { email, name } = payload;
 
     const instance: Datastore =
@@ -31,6 +35,10 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
       .createQuery(`${USER_DASHBOARD}`)
       .filter('email', '=', email);
     const [existUser] = await instance.runQuery(queryResults);
+    console.log(
+      '🚀 ~ file: jwt.strategy.ts:38 ~ JwtStrategy ~ validate ~ existUser',
+      existUser,
+    );
 
     if (!existUser || Object.keys(existUser[0]).length < 0) return null;
 

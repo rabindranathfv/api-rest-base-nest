@@ -35,7 +35,30 @@
           "id": "10000074802",
           "image": "https://media.allure.com/photos/6227cb8ba822ef47bff03b2f/4:3/w_1991,h_1493,c_limit/Karol%20G%20Allure%20Beauty%20Interview1.jpg"
         }
-      ]
+      ],
+      "kpis": {
+        "compactKpi": {
+          "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+          "dataSet":[
+            {
+              "name": "label",
+              "data": [840, 660, 671, 414, 555, 857, 901, 613, 727, 414, 555, 257]
+            }
+          ]
+        },
+        "generalKpi": {
+          "dataSet": [
+            {
+              "name": "cobertura",
+              "data": [190000, 200000, 220000, 225000]
+            },
+            {
+              "name": "Stream",
+              "data": [170000, 174000, 174000, 175000]
+            }
+          ]
+        }
+      }
     },
     {
       "id": 1099889,
@@ -56,7 +79,30 @@
           "id": "1000039078",
           "image": "https://imagenes.elpais.com/resizer/CyJOtQ6tT0naBUVJetUUyyvxPmQ=/1200x0/filters:focal(1692x1074:1702x1084)/cloudfront-eu-central-1.images.arcpublishing.com/prisa/6ZC6MJKMYJC3JPPL2DA3IIA7OE.jpg"
         }
-      ]
+      ],
+      "kpis": {
+        "compactKpi": {
+          "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+          "dataSet": [
+            {
+              "name": "label",
+              "data": [540, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+            }
+          ]
+        },
+        "generalKpi": {
+          "dataSet": [
+            {
+              "name": "cobertura",
+              "data": [170000, 200000, 230000, 245000]
+            },
+            {
+              "name": "Stream",
+              "data": [120000, 144000, 124000, 185000]
+            }
+          ]
+        }
+      }
     },
     {
       "id": 1099866,
@@ -72,7 +118,30 @@
           "id": "10000074802",
           "image": "https://media.allure.com/photos/62ed31b2e109c9f860c59498/1:1/w_2000,h_2000,c_limit/karol%20g%20red%20hair.jpg"
         }
-      ]
+      ],
+      "kpis": {
+        "compactKpi": {
+          "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+          "dataSet": [
+            {
+              "name": "label",
+              "data": [190, 150, 671, 414, 555, 207, 901, 693, 777, 414, 555, 157]
+            }
+          ]
+        },
+        "generalKpi": {
+          "dataSet": [
+            {
+              "name": "cobertura",
+              "data": [200000, 210000, 230000, 225000]
+            },
+            {
+              "name": "Stream",
+              "data": [150000, 194000, 174000, 195000]
+            }
+          ]
+        }
+      }
     }
   ]
 }
