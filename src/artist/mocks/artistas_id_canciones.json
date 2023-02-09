@@ -13,7 +13,30 @@
             "interprete_colaboradores": "Chanel",
             "nombre_interprete": "Chanel",
             "streams": 5668,
-            "tocadas": 1
+            "tocadas": 1,
+            "kpis": {
+                "compactKpi": {
+                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                  "dataSet": [
+                    {
+                      "name": "label",
+                      "data": [575, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 475]
+                    }
+                  ]
+                },
+                "generalKpi": {
+                  "dataSet": [
+                    {
+                      "name": "cobertura",
+                      "data": [170750, 200000, 230000, 245000]
+                    },
+                    {
+                      "name": "Stream",
+                      "data": [120750, 144000, 124000, 185000]
+                    }
+                  ]
+                }
+              }
         }
         ]
     },
@@ -31,7 +54,30 @@
             "interprete_colaboradores": "Karol G (+ Bad Bunny,Maldy,Mariah Angeliq,Mau y Ricky,Myke Towers,Ozuna,Nicki Minaj,Tiësto)",
             "nombre_interprete": "Karol G",
             "streams": 1560,
-            "tocadas": 1
+            "tocadas": 1,
+            "kpis": {
+                "compactKpi": {
+                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                  "dataSet": [
+                    {
+                      "name": "label",
+                      "data": [775, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                    }
+                  ]
+                },
+                "generalKpi": {
+                  "dataSet": [
+                    {
+                      "name": "cobertura",
+                      "data": [140750, 200000, 230000, 245000]
+                    },
+                    {
+                      "name": "Stream",
+                      "data": [120750, 144000, 124000, 185000]
+                    }
+                  ]
+                }
+              }
         },
         {
             "emisora_N1": "Los 40",
@@ -45,7 +91,30 @@
             "interprete_colaboradores": "Karol G (+ Bad Bunny,Maldy,Mariah Angeliq,Mau y Ricky,Myke Towers,Ozuna,Nicki Minaj,Tiësto)",
             "nombre_interprete": "Karol G",
             "streams": 3277,
-            "tocadas": 1
+            "tocadas": 1,
+            "kpis": {
+                "compactKpi": {
+                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                  "dataSet": [
+                    {
+                      "name": "label",
+                      "data": [540, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                    }
+                  ]
+                },
+                "generalKpi": {
+                  "dataSet": [
+                    {
+                      "name": "cobertura",
+                      "data": [170000, 200000, 230000, 245000]
+                    },
+                    {
+                      "name": "Stream",
+                      "data": [120000, 144000, 124000, 185000]
+                    }
+                  ]
+                }
+              }
         },
         {
             "emisora_N1": "Los 40",
@@ -59,7 +128,30 @@
             "interprete_colaboradores": "Karol G (+ Bad Bunny,Maldy,Mariah Angeliq,Mau y Ricky,Myke Towers,Ozuna,Nicki Minaj,Tiësto)",
             "nombre_interprete": "Karol G",
             "streams": 14202,
-            "tocadas": 5
+            "tocadas": 5,
+            "kpis": {
+                "compactKpi": {
+                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                  "dataSet": [
+                    {
+                      "name": "label",
+                      "data": [540, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                    }
+                  ]
+                },
+                "generalKpi": {
+                  "dataSet": [
+                    {
+                      "name": "cobertura",
+                      "data": [170000, 200000, 230000, 245000]
+                    },
+                    {
+                      "name": "Stream",
+                      "data": [120000, 144000, 124000, 185000]
+                    }
+                  ]
+                }
+              }
         },
         {
             "emisora_N1": "Los 40",
@@ -73,7 +165,30 @@
             "interprete_colaboradores": "Karol G (+ Bad Bunny,Maldy,Mariah Angeliq,Mau y Ricky,Myke Towers,Ozuna,Nicki Minaj,Tiësto)",
             "nombre_interprete": "Karol G",
             "streams": 107919,
-            "tocadas": 7
+            "tocadas": 7,
+            "kpis": {
+                "compactKpi": {
+                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                  "dataSet": [
+                    {
+                      "name": "label",
+                      "data": [540, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                    }
+                  ]
+                },
+                "generalKpi": {
+                  "dataSet": [
+                    {
+                      "name": "cobertura",
+                      "data": [170000, 200000, 230000, 245000]
+                    },
+                    {
+                      "name": "Stream",
+                      "data": [120000, 144000, 124000, 185000]
+                    }
+                  ]
+                }
+              }
         },
         {
             "emisora_N1": "Los 40",
@@ -87,7 +202,30 @@
             "interprete_colaboradores": "Karol G (+ Bad Bunny,Maldy,Mariah Angeliq,Mau y Ricky,Myke Towers,Ozuna,Nicki Minaj,Tiësto)",
             "nombre_interprete": "Karol G",
             "streams": 24506,
-            "tocadas": 2
+            "tocadas": 2,
+            "kpis": {
+                "compactKpi": {
+                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                  "dataSet": [
+                    {
+                      "name": "label",
+                      "data": [540, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                    }
+                  ]
+                },
+                "generalKpi": {
+                  "dataSet": [
+                    {
+                      "name": "cobertura",
+                      "data": [170000, 200000, 230000, 245000]
+                    },
+                    {
+                      "name": "Stream",
+                      "data": [120000, 144000, 124000, 185000]
+                    }
+                  ]
+                }
+              }
         },
         {
             "emisora_N1": "Los 40",
@@ -101,7 +239,30 @@
             "interprete_colaboradores": "Karol G (+ Bad Bunny,Maldy,Mariah Angeliq,Mau y Ricky,Myke Towers,Ozuna,Nicki Minaj,Tiësto)",
             "nombre_interprete": "Karol G",
             "streams": 1525,
-            "tocadas": 1
+            "tocadas": 1,
+            "kpis": {
+                "compactKpi": {
+                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                  "dataSet": [
+                    {
+                      "name": "label",
+                      "data": [540, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                    }
+                  ]
+                },
+                "generalKpi": {
+                  "dataSet": [
+                    {
+                      "name": "cobertura",
+                      "data": [170000, 200000, 230000, 245000]
+                    },
+                    {
+                      "name": "Stream",
+                      "data": [120000, 144000, 124000, 185000]
+                    }
+                  ]
+                }
+              }
         },
         {
             "emisora_N1": "Los 40",
@@ -115,7 +276,30 @@
             "interprete_colaboradores": "Karol G (+ Bad Bunny,Maldy,Mariah Angeliq,Mau y Ricky,Myke Towers,Ozuna,Nicki Minaj,Tiësto)",
             "nombre_interprete": "Karol G",
             "streams": 5069,
-            "tocadas": 1
+            "tocadas": 1,
+            "kpis": {
+                "compactKpi": {
+                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                  "dataSet": [
+                    {
+                      "name": "label",
+                      "data": [540, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                    }
+                  ]
+                },
+                "generalKpi": {
+                  "dataSet": [
+                    {
+                      "name": "cobertura",
+                      "data": [170000, 200000, 230000, 245000]
+                    },
+                    {
+                      "name": "Stream",
+                      "data": [120000, 144000, 124000, 185000]
+                    }
+                  ]
+                }
+              }
         },
         {
             "emisora_N1": "Los 40",
@@ -129,7 +313,30 @@
             "interprete_colaboradores": "Karol G (+ Bad Bunny,Maldy,Mariah Angeliq,Mau y Ricky,Myke Towers,Ozuna,Nicki Minaj,Tiësto)",
             "nombre_interprete": "Karol G",
             "streams": 4538,
-            "tocadas": 1
+            "tocadas": 1,
+            "kpis": {
+                "compactKpi": {
+                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                  "dataSet": [
+                    {
+                      "name": "label",
+                      "data": [540, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                    }
+                  ]
+                },
+                "generalKpi": {
+                  "dataSet": [
+                    {
+                      "name": "cobertura",
+                      "data": [170000, 200000, 230000, 245000]
+                    },
+                    {
+                      "name": "Stream",
+                      "data": [120000, 144000, 124000, 185000]
+                    }
+                  ]
+                }
+              }
         },
         {
             "emisora_N1": "Los 40",
@@ -143,7 +350,30 @@
             "interprete_colaboradores": "Karol G (+ Bad Bunny,Maldy,Mariah Angeliq,Mau y Ricky,Myke Towers,Ozuna,Nicki Minaj,Tiësto)",
             "nombre_interprete": "Karol G",
             "streams": 27129,
-            "tocadas": 8
+            "tocadas": 8,
+            "kpis": {
+                "compactKpi": {
+                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                  "dataSet": [
+                    {
+                      "name": "label",
+                      "data": [540, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                    }
+                  ]
+                },
+                "generalKpi": {
+                  "dataSet": [
+                    {
+                      "name": "cobertura",
+                      "data": [170000, 200000, 230000, 245000]
+                    },
+                    {
+                      "name": "Stream",
+                      "data": [120000, 144000, 124000, 185000]
+                    }
+                  ]
+                }
+              }
         },
         {
             "emisora_N1": "Los 40",
@@ -157,7 +387,30 @@
             "interprete_colaboradores": "Karol G (+ Bad Bunny,Maldy,Mariah Angeliq,Mau y Ricky,Myke Towers,Ozuna,Nicki Minaj,Tiësto)",
             "nombre_interprete": "Karol G",
             "streams": 1777,
-            "tocadas": 1
+            "tocadas": 1,
+            "kpis": {
+                "compactKpi": {
+                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                  "dataSet": [
+                    {
+                      "name": "label",
+                      "data": [540, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                    }
+                  ]
+                },
+                "generalKpi": {
+                  "dataSet": [
+                    {
+                      "name": "cobertura",
+                      "data": [170000, 200000, 230000, 245000]
+                    },
+                    {
+                      "name": "Stream",
+                      "data": [120000, 144000, 124000, 185000]
+                    }
+                  ]
+                }
+              }
         },
         {
             "emisora_N1": "Los 40",
@@ -171,7 +424,30 @@
             "interprete_colaboradores": "Karol G (+ Bad Bunny,Maldy,Mariah Angeliq,Mau y Ricky,Myke Towers,Ozuna,Nicki Minaj,Tiësto)",
             "nombre_interprete": "Karol G",
             "streams": 432,
-            "tocadas": 1
+            "tocadas": 1,
+            "kpis": {
+                "compactKpi": {
+                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                  "dataSet": [
+                    {
+                      "name": "label",
+                      "data": [540, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                    }
+                  ]
+                },
+                "generalKpi": {
+                  "dataSet": [
+                    {
+                      "name": "cobertura",
+                      "data": [170000, 200000, 230000, 245000]
+                    },
+                    {
+                      "name": "Stream",
+                      "data": [120000, 144000, 124000, 185000]
+                    }
+                  ]
+                }
+              }
         },
         {
             "emisora_N1": "Los 40",
@@ -185,7 +461,30 @@
             "interprete_colaboradores": "Karol G (+ Bad Bunny,Maldy,Mariah Angeliq,Mau y Ricky,Myke Towers,Ozuna,Nicki Minaj,Tiësto)",
             "nombre_interprete": "Karol G",
             "streams": 849,
-            "tocadas": 1
+            "tocadas": 1,
+            "kpis": {
+                "compactKpi": {
+                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                  "dataSet": [
+                    {
+                      "name": "label",
+                      "data": [540, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                    }
+                  ]
+                },
+                "generalKpi": {
+                  "dataSet": [
+                    {
+                      "name": "cobertura",
+                      "data": [170000, 200000, 230000, 245000]
+                    },
+                    {
+                      "name": "Stream",
+                      "data": [120000, 144000, 124000, 185000]
+                    }
+                  ]
+                }
+              }
         },
         {
             "emisora_N1": "Los 40",
@@ -199,7 +498,30 @@
             "interprete_colaboradores": "Karol G (+ Bad Bunny,Maldy,Mariah Angeliq,Mau y Ricky,Myke Towers,Ozuna,Nicki Minaj,Tiësto)",
             "nombre_interprete": "Karol G",
             "streams": 5241,
-            "tocadas": 1
+            "tocadas": 1,
+            "kpis": {
+                "compactKpi": {
+                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                  "dataSet": [
+                    {
+                      "name": "label",
+                      "data": [540, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                    }
+                  ]
+                },
+                "generalKpi": {
+                  "dataSet": [
+                    {
+                      "name": "cobertura",
+                      "data": [170000, 200000, 230000, 245000]
+                    },
+                    {
+                      "name": "Stream",
+                      "data": [120000, 144000, 124000, 185000]
+                    }
+                  ]
+                }
+              }
         },
         {
             "emisora_N1": "Los 40",
@@ -213,7 +535,30 @@
             "interprete_colaboradores": "Karol G (+ Bad Bunny,Maldy,Mariah Angeliq,Mau y Ricky,Myke Towers,Ozuna,Nicki Minaj,Tiësto)",
             "nombre_interprete": "Karol G",
             "streams": 3904,
-            "tocadas": 5
+            "tocadas": 5,
+            "kpis": {
+                "compactKpi": {
+                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                  "dataSet": [
+                    {
+                      "name": "label",
+                      "data": [540, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                    }
+                  ]
+                },
+                "generalKpi": {
+                  "dataSet": [
+                    {
+                      "name": "cobertura",
+                      "data": [170000, 200000, 230000, 245000]
+                    },
+                    {
+                      "name": "Stream",
+                      "data": [120000, 144000, 124000, 185000]
+                    }
+                  ]
+                }
+              }
         },
         {
             "emisora_N1": "Los 40",
@@ -227,7 +572,30 @@
             "interprete_colaboradores": "Karol G (+ Bad Bunny,Maldy,Mariah Angeliq,Mau y Ricky,Myke Towers,Ozuna,Nicki Minaj,Tiësto)",
             "nombre_interprete": "Karol G",
             "streams": 27893,
-            "tocadas": 1
+            "tocadas": 1,
+            "kpis": {
+                "compactKpi": {
+                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                  "dataSet": [
+                    {
+                      "name": "label",
+                      "data": [540, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                    }
+                  ]
+                },
+                "generalKpi": {
+                  "dataSet": [
+                    {
+                      "name": "cobertura",
+                      "data": [170000, 200000, 230000, 245000]
+                    },
+                    {
+                      "name": "Stream",
+                      "data": [120000, 144000, 124000, 185000]
+                    }
+                  ]
+                }
+              }
         },
         {
             "emisora_N1": "Los 40",
@@ -241,7 +609,30 @@
             "interprete_colaboradores": "Karol G (+ Bad Bunny,Maldy,Mariah Angeliq,Mau y Ricky,Myke Towers,Ozuna,Nicki Minaj,Tiësto)",
             "nombre_interprete": "Karol G",
             "streams": 72063,
-            "tocadas": 5
+            "tocadas": 5,
+            "kpis": {
+                "compactKpi": {
+                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                  "dataSet": [
+                    {
+                      "name": "label",
+                      "data": [540, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                    }
+                  ]
+                },
+                "generalKpi": {
+                  "dataSet": [
+                    {
+                      "name": "cobertura",
+                      "data": [170000, 200000, 230000, 245000]
+                    },
+                    {
+                      "name": "Stream",
+                      "data": [120000, 144000, 124000, 185000]
+                    }
+                  ]
+                }
+              }
         },
         {
             "emisora_N1": "Los 40",
@@ -255,7 +646,30 @@
             "interprete_colaboradores": "Karol G (+ Bad Bunny,Maldy,Mariah Angeliq,Mau y Ricky,Myke Towers,Ozuna,Nicki Minaj,Tiësto)",
             "nombre_interprete": "Karol G",
             "streams": 986,
-            "tocadas": 1
+            "tocadas": 1,
+            "kpis": {
+                "compactKpi": {
+                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                  "dataSet": [
+                    {
+                      "name": "label",
+                      "data": [540, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                    }
+                  ]
+                },
+                "generalKpi": {
+                  "dataSet": [
+                    {
+                      "name": "cobertura",
+                      "data": [170000, 200000, 230000, 245000]
+                    },
+                    {
+                      "name": "Stream",
+                      "data": [120000, 144000, 124000, 185000]
+                    }
+                  ]
+                }
+              }
         },
         {
             "emisora_N1": "Los 40",
@@ -269,7 +683,30 @@
             "interprete_colaboradores": "Karol G (+ Bad Bunny,Maldy,Mariah Angeliq,Mau y Ricky,Myke Towers,Ozuna,Nicki Minaj,Tiësto)",
             "nombre_interprete": "Karol G",
             "streams": 1638,
-            "tocadas": 1
+            "tocadas": 1,
+            "kpis": {
+                "compactKpi": {
+                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                  "dataSet": [
+                    {
+                      "name": "label",
+                      "data": [540, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                    }
+                  ]
+                },
+                "generalKpi": {
+                  "dataSet": [
+                    {
+                      "name": "cobertura",
+                      "data": [170000, 200000, 230000, 245000]
+                    },
+                    {
+                      "name": "Stream",
+                      "data": [120000, 144000, 124000, 185000]
+                    }
+                  ]
+                }
+              }
         },
         {
             "emisora_N1": "Los 40",
@@ -283,7 +720,30 @@
             "interprete_colaboradores": "Karol G (+ Bad Bunny,Maldy,Mariah Angeliq,Mau y Ricky,Myke Towers,Ozuna,Nicki Minaj,Tiësto)",
             "nombre_interprete": "Karol G",
             "streams": 10823,
-            "tocadas": 5
+            "tocadas": 5,
+            "kpis": {
+                "compactKpi": {
+                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                  "dataSet": [
+                    {
+                      "name": "label",
+                      "data": [540, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                    }
+                  ]
+                },
+                "generalKpi": {
+                  "dataSet": [
+                    {
+                      "name": "cobertura",
+                      "data": [170000, 200000, 230000, 245000]
+                    },
+                    {
+                      "name": "Stream",
+                      "data": [120000, 144000, 124000, 185000]
+                    }
+                  ]
+                }
+              }
         },
         {
             "emisora_N1": "Los 40",
@@ -297,7 +757,30 @@
             "interprete_colaboradores": "Karol G (+ Bad Bunny,Maldy,Mariah Angeliq,Mau y Ricky,Myke Towers,Ozuna,Nicki Minaj,Tiësto)",
             "nombre_interprete": "Karol G",
             "streams": 17698,
-            "tocadas": 8
+            "tocadas": 8,
+            "kpis": {
+                "compactKpi": {
+                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                  "dataSet": [
+                    {
+                      "name": "label",
+                      "data": [540, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                    }
+                  ]
+                },
+                "generalKpi": {
+                  "dataSet": [
+                    {
+                      "name": "cobertura",
+                      "data": [170000, 200000, 230000, 245000]
+                    },
+                    {
+                      "name": "Stream",
+                      "data": [120000, 144000, 124000, 185000]
+                    }
+                  ]
+                }
+              }
         },
         {
             "emisora_N1": "Los 40",
@@ -311,7 +794,30 @@
             "interprete_colaboradores": "Karol G (+ Bad Bunny,Maldy,Mariah Angeliq,Mau y Ricky,Myke Towers,Ozuna,Nicki Minaj,Tiësto)",
             "nombre_interprete": "Karol G",
             "streams": 2802,
-            "tocadas": 1
+            "tocadas": 1,
+            "kpis": {
+                "compactKpi": {
+                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                  "dataSet": [
+                    {
+                      "name": "label",
+                      "data": [540, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                    }
+                  ]
+                },
+                "generalKpi": {
+                  "dataSet": [
+                    {
+                      "name": "cobertura",
+                      "data": [170000, 200000, 230000, 245000]
+                    },
+                    {
+                      "name": "Stream",
+                      "data": [120000, 144000, 124000, 185000]
+                    }
+                  ]
+                }
+              }
         },
         {
             "emisora_N1": "Los 40",
@@ -325,7 +831,30 @@
             "interprete_colaboradores": "Karol G (+ Bad Bunny,Maldy,Mariah Angeliq,Mau y Ricky,Myke Towers,Ozuna,Nicki Minaj,Tiësto)",
             "nombre_interprete": "Karol G",
             "streams": 1933,
-            "tocadas": 1
+            "tocadas": 1,
+            "kpis": {
+                "compactKpi": {
+                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                  "dataSet": [
+                    {
+                      "name": "label",
+                      "data": [540, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                    }
+                  ]
+                },
+                "generalKpi": {
+                  "dataSet": [
+                    {
+                      "name": "cobertura",
+                      "data": [170000, 200000, 230000, 245000]
+                    },
+                    {
+                      "name": "Stream",
+                      "data": [120000, 144000, 124000, 185000]
+                    }
+                  ]
+                }
+              }
         }
         ]
     },
@@ -343,7 +872,30 @@
             "interprete_colaboradores": "Camilo (+ Carlos Vives,El Alfa,Evaluna Montaner,Farruko,Reik,Manuel Turizo,Mau y Ricky,Pedro Capó,Pedro Capó,Shakira,Rauw Alejandro,Wisin)",
             "nombre_interprete": "Camilo",
             "streams": 253,
-            "tocadas": 2
+            "tocadas": 2,
+            "kpis": {
+                "compactKpi": {
+                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                  "dataSet": [
+                    {
+                      "name": "label",
+                      "data": [540, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                    }
+                  ]
+                },
+                "generalKpi": {
+                  "dataSet": [
+                    {
+                      "name": "cobertura",
+                      "data": [190750, 200000, 230000, 245000]
+                    },
+                    {
+                      "name": "Stream",
+                      "data": [150750, 144000, 124000, 185000]
+                    }
+                  ]
+                }
+              }
         },
         {
             "emisora_N1": "Cadena Dial",
@@ -357,7 +909,30 @@
             "interprete_colaboradores": "Camilo (+ Carlos Vives,El Alfa,Evaluna Montaner,Farruko,Reik,Manuel Turizo,Mau y Ricky,Pedro Capó,Pedro Capó,Shakira,Rauw Alejandro,Wisin)",
             "nombre_interprete": "Camilo",
             "streams": 359,
-            "tocadas": 1
+            "tocadas": 1,
+            "kpis": {
+                "compactKpi": {
+                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                  "dataSet": [
+                    {
+                      "name": "label",
+                      "data": [540, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                    }
+                  ]
+                },
+                "generalKpi": {
+                  "dataSet": [
+                    {
+                      "name": "cobertura",
+                      "data": [190750, 200000, 230000, 245000]
+                    },
+                    {
+                      "name": "Stream",
+                      "data": [150750, 144000, 124000, 185000]
+                    }
+                  ]
+                }
+              }
         },
         {
             "emisora_N1": "Cadena Dial",
@@ -371,7 +946,30 @@
             "interprete_colaboradores": "Camilo (+ Carlos Vives,El Alfa,Evaluna Montaner,Farruko,Reik,Manuel Turizo,Mau y Ricky,Pedro Capó,Pedro Capó,Shakira,Rauw Alejandro,Wisin)",
             "nombre_interprete": "Camilo",
             "streams": 417,
-            "tocadas": 3
+            "tocadas": 3,
+            "kpis": {
+                "compactKpi": {
+                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                  "dataSet": [
+                    {
+                      "name": "label",
+                      "data": [540, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                    }
+                  ]
+                },
+                "generalKpi": {
+                  "dataSet": [
+                    {
+                      "name": "cobertura",
+                      "data": [190750, 200000, 230000, 245000]
+                    },
+                    {
+                      "name": "Stream",
+                      "data": [150750, 144000, 124000, 185000]
+                    }
+                  ]
+                }
+              }
         },
         {
             "emisora_N1": "Los 40",
@@ -385,7 +983,30 @@
             "interprete_colaboradores": "Camilo (+ Carlos Vives,El Alfa,Evaluna Montaner,Farruko,Reik,Manuel Turizo,Mau y Ricky,Pedro Capó,Pedro Capó,Shakira,Rauw Alejandro,Wisin)",
             "nombre_interprete": "Camilo",
             "streams": 13984,
-            "tocadas": 1
+            "tocadas": 1,
+            "kpis": {
+                "compactKpi": {
+                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                  "dataSet": [
+                    {
+                      "name": "label",
+                      "data": [540, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                    }
+                  ]
+                },
+                "generalKpi": {
+                  "dataSet": [
+                    {
+                      "name": "cobertura",
+                      "data": [190750, 200000, 230000, 245000]
+                    },
+                    {
+                      "name": "Stream",
+                      "data": [150750, 144000, 124000, 185000]
+                    }
+                  ]
+                }
+              }
         },
         {
             "emisora_N1": "Los 40",
@@ -399,7 +1020,30 @@
             "interprete_colaboradores": "Camilo (+ Carlos Vives,El Alfa,Evaluna Montaner,Farruko,Reik,Manuel Turizo,Mau y Ricky,Pedro Capó,Pedro Capó,Shakira,Rauw Alejandro,Wisin)",
             "nombre_interprete": "Camilo",
             "streams": 12363,
-            "tocadas": 1
+            "tocadas": 1,
+            "kpis": {
+                "compactKpi": {
+                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                  "dataSet": [
+                    {
+                      "name": "label",
+                      "data": [540, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                    }
+                  ]
+                },
+                "generalKpi": {
+                  "dataSet": [
+                    {
+                      "name": "cobertura",
+                      "data": [190750, 200000, 230000, 245000]
+                    },
+                    {
+                      "name": "Stream",
+                      "data": [150750, 144000, 124000, 185000]
+                    }
+                  ]
+                }
+              }
         },
         {
             "emisora_N1": "Los 40",
@@ -413,7 +1057,30 @@
             "interprete_colaboradores": "Camilo (+ Carlos Vives,El Alfa,Evaluna Montaner,Farruko,Reik,Manuel Turizo,Mau y Ricky,Pedro Capó,Pedro Capó,Shakira,Rauw Alejandro,Wisin)",
             "nombre_interprete": "Camilo",
             "streams": 26892,
-            "tocadas": 1
+            "tocadas": 1,
+            "kpis": {
+                "compactKpi": {
+                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                  "dataSet": [
+                    {
+                      "name": "label",
+                      "data": [540, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                    }
+                  ]
+                },
+                "generalKpi": {
+                  "dataSet": [
+                    {
+                      "name": "cobertura",
+                      "data": [190750, 200000, 230000, 245000]
+                    },
+                    {
+                      "name": "Stream",
+                      "data": [150750, 144000, 124000, 185000]
+                    }
+                  ]
+                }
+              }
         },
         {
             "emisora_N1": "Los 40",
@@ -427,7 +1094,30 @@
             "interprete_colaboradores": "Camilo (+ Carlos Vives,El Alfa,Evaluna Montaner,Farruko,Reik,Manuel Turizo,Mau y Ricky,Pedro Capó,Pedro Capó,Shakira,Rauw Alejandro,Wisin)",
             "nombre_interprete": "Camilo",
             "streams": 13572,
-            "tocadas": 1
+            "tocadas": 1,
+            "kpis": {
+                "compactKpi": {
+                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                  "dataSet": [
+                    {
+                      "name": "label",
+                      "data": [540, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                    }
+                  ]
+                },
+                "generalKpi": {
+                  "dataSet": [
+                    {
+                      "name": "cobertura",
+                      "data": [190750, 200000, 230000, 245000]
+                    },
+                    {
+                      "name": "Stream",
+                      "data": [150750, 144000, 124000, 185000]
+                    }
+                  ]
+                }
+              }
         },
         {
             "emisora_N1": "Los 40",
@@ -441,7 +1131,30 @@
             "interprete_colaboradores": "Camilo (+ Carlos Vives,El Alfa,Evaluna Montaner,Farruko,Reik,Manuel Turizo,Mau y Ricky,Pedro Capó,Pedro Capó,Shakira,Rauw Alejandro,Wisin)",
             "nombre_interprete": "Camilo",
             "streams": 5051,
-            "tocadas": 2
+            "tocadas": 2,
+            "kpis": {
+                "compactKpi": {
+                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                  "dataSet": [
+                    {
+                      "name": "label",
+                      "data": [540, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                    }
+                  ]
+                },
+                "generalKpi": {
+                  "dataSet": [
+                    {
+                      "name": "cobertura",
+                      "data": [190750, 200000, 230000, 245000]
+                    },
+                    {
+                      "name": "Stream",
+                      "data": [150750, 144000, 124000, 185000]
+                    }
+                  ]
+                }
+              }
         },
         {
             "emisora_N1": "Los 40",
@@ -455,7 +1168,30 @@
             "interprete_colaboradores": "Camilo (+ Carlos Vives,El Alfa,Evaluna Montaner,Farruko,Reik,Manuel Turizo,Mau y Ricky,Pedro Capó,Pedro Capó,Shakira,Rauw Alejandro,Wisin)",
             "nombre_interprete": "Camilo",
             "streams": 3900,
-            "tocadas": 1
+            "tocadas": 1,
+            "kpis": {
+                "compactKpi": {
+                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                  "dataSet": [
+                    {
+                      "name": "label",
+                      "data": [540, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                    }
+                  ]
+                },
+                "generalKpi": {
+                  "dataSet": [
+                    {
+                      "name": "cobertura",
+                      "data": [190750, 200000, 230000, 245000]
+                    },
+                    {
+                      "name": "Stream",
+                      "data": [150750, 144000, 124000, 185000]
+                    }
+                  ]
+                }
+              }
         },
         {
             "emisora_N1": "Los 40",
@@ -469,7 +1205,30 @@
             "interprete_colaboradores": "Camilo (+ Carlos Vives,El Alfa,Evaluna Montaner,Farruko,Reik,Manuel Turizo,Mau y Ricky,Pedro Capó,Pedro Capó,Shakira,Rauw Alejandro,Wisin)",
             "nombre_interprete": "Camilo",
             "streams": 2552,
-            "tocadas": 1
+            "tocadas": 1,
+            "kpis": {
+                "compactKpi": {
+                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                  "dataSet": [
+                    {
+                      "name": "label",
+                      "data": [540, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                    }
+                  ]
+                },
+                "generalKpi": {
+                  "dataSet": [
+                    {
+                      "name": "cobertura",
+                      "data": [190750, 200000, 230000, 245000]
+                    },
+                    {
+                      "name": "Stream",
+                      "data": [150750, 144000, 124000, 185000]
+                    }
+                  ]
+                }
+              }
         },
         {
             "emisora_N1": "Los 40",
@@ -483,7 +1242,30 @@
             "interprete_colaboradores": "Camilo (+ Carlos Vives,El Alfa,Evaluna Montaner,Farruko,Reik,Manuel Turizo,Mau y Ricky,Pedro Capó,Pedro Capó,Shakira,Rauw Alejandro,Wisin)",
             "nombre_interprete": "Camilo",
             "streams": 9814,
-            "tocadas": 3
+            "tocadas": 3,
+            "kpis": {
+                "compactKpi": {
+                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                  "dataSet": [
+                    {
+                      "name": "label",
+                      "data": [540, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                    }
+                  ]
+                },
+                "generalKpi": {
+                  "dataSet": [
+                    {
+                      "name": "cobertura",
+                      "data": [190750, 200000, 230000, 245000]
+                    },
+                    {
+                      "name": "Stream",
+                      "data": [150750, 144000, 124000, 185000]
+                    }
+                  ]
+                }
+              }
         },
         {
             "emisora_N1": "Cadena Dial",
@@ -497,7 +1279,30 @@
             "interprete_colaboradores": "Camilo (+ Carlos Vives,El Alfa,Evaluna Montaner,Farruko,Reik,Manuel Turizo,Mau y Ricky,Pedro Capó,Pedro Capó,Shakira,Rauw Alejandro,Wisin)",
             "nombre_interprete": "Camilo",
             "streams": 5532,
-            "tocadas": 1
+            "tocadas": 1,
+            "kpis": {
+                "compactKpi": {
+                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                  "dataSet": [
+                    {
+                      "name": "label",
+                      "data": [540, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                    }
+                  ]
+                },
+                "generalKpi": {
+                  "dataSet": [
+                    {
+                      "name": "cobertura",
+                      "data": [190750, 200000, 230000, 245000]
+                    },
+                    {
+                      "name": "Stream",
+                      "data": [150750, 144000, 124000, 185000]
+                    }
+                  ]
+                }
+              }
         },
         {
             "emisora_N1": "Cadena Dial",
@@ -511,7 +1316,30 @@
             "interprete_colaboradores": "Camilo (+ Carlos Vives,El Alfa,Evaluna Montaner,Farruko,Reik,Manuel Turizo,Mau y Ricky,Pedro Capó,Pedro Capó,Shakira,Rauw Alejandro,Wisin)",
             "nombre_interprete": "Camilo",
             "streams": 19658,
-            "tocadas": 1
+            "tocadas": 1,
+            "kpis": {
+                "compactKpi": {
+                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                  "dataSet": [
+                    {
+                      "name": "label",
+                      "data": [540, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                    }
+                  ]
+                },
+                "generalKpi": {
+                  "dataSet": [
+                    {
+                      "name": "cobertura",
+                      "data": [190750, 200000, 230000, 245000]
+                    },
+                    {
+                      "name": "Stream",
+                      "data": [150750, 144000, 124000, 185000]
+                    }
+                  ]
+                }
+              }
         },
         {
             "emisora_N1": "Cadena Dial",
@@ -525,7 +1353,30 @@
             "interprete_colaboradores": "Camilo (+ Carlos Vives,El Alfa,Evaluna Montaner,Farruko,Reik,Manuel Turizo,Mau y Ricky,Pedro Capó,Pedro Capó,Shakira,Rauw Alejandro,Wisin)",
             "nombre_interprete": "Camilo",
             "streams": 51,
-            "tocadas": 1
+            "tocadas": 1,
+            "kpis": {
+                "compactKpi": {
+                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                  "dataSet": [
+                    {
+                      "name": "label",
+                      "data": [540, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                    }
+                  ]
+                },
+                "generalKpi": {
+                  "dataSet": [
+                    {
+                      "name": "cobertura",
+                      "data": [190750, 200000, 230000, 245000]
+                    },
+                    {
+                      "name": "Stream",
+                      "data": [150750, 144000, 124000, 185000]
+                    }
+                  ]
+                }
+              }
         },
         {
             "emisora_N1": "Cadena Dial",
@@ -539,7 +1390,30 @@
             "interprete_colaboradores": "Camilo (+ Carlos Vives,El Alfa,Evaluna Montaner,Farruko,Reik,Manuel Turizo,Mau y Ricky,Pedro Capó,Pedro Capó,Shakira,Rauw Alejandro,Wisin)",
             "nombre_interprete": "Camilo",
             "streams": 2359,
-            "tocadas": 1
+            "tocadas": 1,
+            "kpis": {
+                "compactKpi": {
+                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                  "dataSet": [
+                    {
+                      "name": "label",
+                      "data": [540, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                    }
+                  ]
+                },
+                "generalKpi": {
+                  "dataSet": [
+                    {
+                      "name": "cobertura",
+                      "data": [190750, 200000, 230000, 245000]
+                    },
+                    {
+                      "name": "Stream",
+                      "data": [150750, 144000, 124000, 185000]
+                    }
+                  ]
+                }
+              }
         },
         {
             "emisora_N1": "Los 40",
@@ -553,7 +1427,30 @@
             "interprete_colaboradores": "Camilo (+ Carlos Vives,El Alfa,Evaluna Montaner,Farruko,Reik,Manuel Turizo,Mau y Ricky,Pedro Capó,Pedro Capó,Shakira,Rauw Alejandro,Wisin)",
             "nombre_interprete": "Camilo",
             "streams": 3445,
-            "tocadas": 1
+            "tocadas": 1,
+            "kpis": {
+                "compactKpi": {
+                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                  "dataSet": [
+                    {
+                      "name": "label",
+                      "data": [540, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                    }
+                  ]
+                },
+                "generalKpi": {
+                  "dataSet": [
+                    {
+                      "name": "cobertura",
+                      "data": [190750, 200000, 230000, 245000]
+                    },
+                    {
+                      "name": "Stream",
+                      "data": [150750, 144000, 124000, 185000]
+                    }
+                  ]
+                }
+              }
         },
         {
             "emisora_N1": "Los 40",
@@ -567,7 +1464,30 @@
             "interprete_colaboradores": "Camilo (+ Carlos Vives,El Alfa,Evaluna Montaner,Farruko,Reik,Manuel Turizo,Mau y Ricky,Pedro Capó,Pedro Capó,Shakira,Rauw Alejandro,Wisin)",
             "nombre_interprete": "Camilo",
             "streams": 2260,
-            "tocadas": 1
+            "tocadas": 1,
+            "kpis": {
+                "compactKpi": {
+                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                  "dataSet": [
+                    {
+                      "name": "label",
+                      "data": [540, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                    }
+                  ]
+                },
+                "generalKpi": {
+                  "dataSet": [
+                    {
+                      "name": "cobertura",
+                      "data": [190750, 200000, 230000, 245000]
+                    },
+                    {
+                      "name": "Stream",
+                      "data": [150750, 144000, 124000, 185000]
+                    }
+                  ]
+                }
+              }
         },
         {
             "emisora_N1": "Los 40",
@@ -581,7 +1501,30 @@
             "interprete_colaboradores": "Camilo (+ Carlos Vives,El Alfa,Evaluna Montaner,Farruko,Reik,Manuel Turizo,Mau y Ricky,Pedro Capó,Pedro Capó,Shakira,Rauw Alejandro,Wisin)",
             "nombre_interprete": "Camilo",
             "streams": 4594,
-            "tocadas": 2
+            "tocadas": 2,
+            "kpis": {
+                "compactKpi": {
+                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                  "dataSet": [
+                    {
+                      "name": "label",
+                      "data": [540, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                    }
+                  ]
+                },
+                "generalKpi": {
+                  "dataSet": [
+                    {
+                      "name": "cobertura",
+                      "data": [190750, 200000, 230000, 245000]
+                    },
+                    {
+                      "name": "Stream",
+                      "data": [150750, 144000, 124000, 185000]
+                    }
+                  ]
+                }
+              }
         },
         {
             "emisora_N1": "Los 40",
@@ -595,7 +1538,30 @@
             "interprete_colaboradores": "Camilo (+ Carlos Vives,El Alfa,Evaluna Montaner,Farruko,Reik,Manuel Turizo,Mau y Ricky,Pedro Capó,Pedro Capó,Shakira,Rauw Alejandro,Wisin)",
             "nombre_interprete": "Camilo",
             "streams": 41722,
-            "tocadas": 2
+            "tocadas": 2,
+            "kpis": {
+                "compactKpi": {
+                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                  "dataSet": [
+                    {
+                      "name": "label",
+                      "data": [540, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                    }
+                  ]
+                },
+                "generalKpi": {
+                  "dataSet": [
+                    {
+                      "name": "cobertura",
+                      "data": [190750, 200000, 230000, 245000]
+                    },
+                    {
+                      "name": "Stream",
+                      "data": [150750, 144000, 124000, 185000]
+                    }
+                  ]
+                }
+              }
         },
         {
             "emisora_N1": "Los 40",
@@ -609,7 +1575,30 @@
             "interprete_colaboradores": "Camilo (+ Carlos Vives,El Alfa,Evaluna Montaner,Farruko,Reik,Manuel Turizo,Mau y Ricky,Pedro Capó,Pedro Capó,Shakira,Rauw Alejandro,Wisin)",
             "nombre_interprete": "Camilo",
             "streams": 1216,
-            "tocadas": 1
+            "tocadas": 1,
+            "kpis": {
+                "compactKpi": {
+                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                  "dataSet": [
+                    {
+                      "name": "label",
+                      "data": [540, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                    }
+                  ]
+                },
+                "generalKpi": {
+                  "dataSet": [
+                    {
+                      "name": "cobertura",
+                      "data": [190750, 200000, 230000, 245000]
+                    },
+                    {
+                      "name": "Stream",
+                      "data": [150750, 144000, 124000, 185000]
+                    }
+                  ]
+                }
+              }
         },
         {
             "emisora_N1": "Cadena Dial",
@@ -623,7 +1612,30 @@
             "interprete_colaboradores": "Camilo (+ Carlos Vives,El Alfa,Evaluna Montaner,Farruko,Reik,Manuel Turizo,Mau y Ricky,Pedro Capó,Pedro Capó,Shakira,Rauw Alejandro,Wisin)",
             "nombre_interprete": "Camilo",
             "streams": 2568,
-            "tocadas": 1
+            "tocadas": 1,
+            "kpis": {
+                "compactKpi": {
+                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                  "dataSet": [
+                    {
+                      "name": "label",
+                      "data": [540, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                    }
+                  ]
+                },
+                "generalKpi": {
+                  "dataSet": [
+                    {
+                      "name": "cobertura",
+                      "data": [190750, 200000, 230000, 245000]
+                    },
+                    {
+                      "name": "Stream",
+                      "data": [150750, 144000, 124000, 185000]
+                    }
+                  ]
+                }
+              }
         },
         {
             "emisora_N1": "Los 40",
@@ -637,7 +1649,30 @@
             "interprete_colaboradores": "Camilo (+ Carlos Vives,El Alfa,Evaluna Montaner,Farruko,Reik,Manuel Turizo,Mau y Ricky,Pedro Capó,Pedro Capó,Shakira,Rauw Alejandro,Wisin)",
             "nombre_interprete": "Camilo",
             "streams": 40029,
-            "tocadas": 3
+            "tocadas": 3,
+            "kpis": {
+                "compactKpi": {
+                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                  "dataSet": [
+                    {
+                      "name": "label",
+                      "data": [540, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                    }
+                  ]
+                },
+                "generalKpi": {
+                  "dataSet": [
+                    {
+                      "name": "cobertura",
+                      "data": [190750, 200000, 230000, 245000]
+                    },
+                    {
+                      "name": "Stream",
+                      "data": [150750, 144000, 124000, 185000]
+                    }
+                  ]
+                }
+              }
         },
         {
             "emisora_N1": "Cadena Dial",
@@ -651,7 +1686,30 @@
             "interprete_colaboradores": "Camilo (+ Carlos Vives,El Alfa,Evaluna Montaner,Farruko,Reik,Manuel Turizo,Mau y Ricky,Pedro Capó,Pedro Capó,Shakira,Rauw Alejandro,Wisin)",
             "nombre_interprete": "Camilo",
             "streams": 19456,
-            "tocadas": 2
+            "tocadas": 2,
+            "kpis": {
+                "compactKpi": {
+                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                  "dataSet": [
+                    {
+                      "name": "label",
+                      "data": [540, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                    }
+                  ]
+                },
+                "generalKpi": {
+                  "dataSet": [
+                    {
+                      "name": "cobertura",
+                      "data": [190750, 200000, 230000, 245000]
+                    },
+                    {
+                      "name": "Stream",
+                      "data": [150750, 144000, 124000, 185000]
+                    }
+                  ]
+                }
+              }
         },
         {
             "emisora_N1": "Cadena Dial",
@@ -665,7 +1723,30 @@
             "interprete_colaboradores": "Camilo (+ Carlos Vives,El Alfa,Evaluna Montaner,Farruko,Reik,Manuel Turizo,Mau y Ricky,Pedro Capó,Pedro Capó,Shakira,Rauw Alejandro,Wisin)",
             "nombre_interprete": "Camilo",
             "streams": 19685,
-            "tocadas": 2
+            "tocadas": 2,
+            "kpis": {
+                "compactKpi": {
+                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                  "dataSet": [
+                    {
+                      "name": "label",
+                      "data": [540, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                    }
+                  ]
+                },
+                "generalKpi": {
+                  "dataSet": [
+                    {
+                      "name": "cobertura",
+                      "data": [190750, 200000, 230000, 245000]
+                    },
+                    {
+                      "name": "Stream",
+                      "data": [150750, 144000, 124000, 185000]
+                    }
+                  ]
+                }
+              }
         },
         {
             "emisora_N1": "Cadena Dial",
@@ -679,7 +1760,30 @@
             "interprete_colaboradores": "Camilo (+ Carlos Vives,El Alfa,Evaluna Montaner,Farruko,Reik,Manuel Turizo,Mau y Ricky,Pedro Capó,Pedro Capó,Shakira,Rauw Alejandro,Wisin)",
             "nombre_interprete": "Camilo",
             "streams": 366,
-            "tocadas": 3
+            "tocadas": 3,
+            "kpis": {
+                "compactKpi": {
+                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                  "dataSet": [
+                    {
+                      "name": "label",
+                      "data": [540, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                    }
+                  ]
+                },
+                "generalKpi": {
+                  "dataSet": [
+                    {
+                      "name": "cobertura",
+                      "data": [190750, 200000, 230000, 245000]
+                    },
+                    {
+                      "name": "Stream",
+                      "data": [150750, 144000, 124000, 185000]
+                    }
+                  ]
+                }
+              }
         },
         {
             "emisora_N1": "Cadena Dial",
@@ -693,7 +1797,30 @@
             "interprete_colaboradores": "Camilo (+ Carlos Vives,El Alfa,Evaluna Montaner,Farruko,Reik,Manuel Turizo,Mau y Ricky,Pedro Capó,Pedro Capó,Shakira,Rauw Alejandro,Wisin)",
             "nombre_interprete": "Camilo",
             "streams": 14372,
-            "tocadas": 2
+            "tocadas": 2,
+            "kpis": {
+                "compactKpi": {
+                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                  "dataSet": [
+                    {
+                      "name": "label",
+                      "data": [540, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                    }
+                  ]
+                },
+                "generalKpi": {
+                  "dataSet": [
+                    {
+                      "name": "cobertura",
+                      "data": [190750, 200000, 230000, 245000]
+                    },
+                    {
+                      "name": "Stream",
+                      "data": [150750, 144000, 124000, 185000]
+                    }
+                  ]
+                }
+              }
         },
         {
             "emisora_N1": "Los 40",
@@ -707,7 +1834,30 @@
             "interprete_colaboradores": "Camilo (+ Carlos Vives,El Alfa,Evaluna Montaner,Farruko,Reik,Manuel Turizo,Mau y Ricky,Pedro Capó,Pedro Capó,Shakira,Rauw Alejandro,Wisin)",
             "nombre_interprete": "Camilo",
             "streams": 6673,
-            "tocadas": 3
+            "tocadas": 3,
+            "kpis": {
+                "compactKpi": {
+                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                  "dataSet": [
+                    {
+                      "name": "label",
+                      "data": [540, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                    }
+                  ]
+                },
+                "generalKpi": {
+                  "dataSet": [
+                    {
+                      "name": "cobertura",
+                      "data": [190750, 200000, 230000, 245000]
+                    },
+                    {
+                      "name": "Stream",
+                      "data": [150750, 144000, 124000, 185000]
+                    }
+                  ]
+                }
+              }
         },
         {
             "emisora_N1": "Los 40",
@@ -721,7 +1871,30 @@
             "interprete_colaboradores": "Camilo (+ Carlos Vives,El Alfa,Evaluna Montaner,Farruko,Reik,Manuel Turizo,Mau y Ricky,Pedro Capó,Pedro Capó,Shakira,Rauw Alejandro,Wisin)",
             "nombre_interprete": "Camilo",
             "streams": 47365,
-            "tocadas": 3
+            "tocadas": 3,
+            "kpis": {
+                "compactKpi": {
+                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                  "dataSet": [
+                    {
+                      "name": "label",
+                      "data": [540, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                    }
+                  ]
+                },
+                "generalKpi": {
+                  "dataSet": [
+                    {
+                      "name": "cobertura",
+                      "data": [190750, 200000, 230000, 245000]
+                    },
+                    {
+                      "name": "Stream",
+                      "data": [150750, 144000, 124000, 185000]
+                    }
+                  ]
+                }
+              }
         },
         {
             "emisora_N1": "Los 40",
@@ -735,7 +1908,30 @@
             "interprete_colaboradores": "Camilo (+ Carlos Vives,El Alfa,Evaluna Montaner,Farruko,Reik,Manuel Turizo,Mau y Ricky,Pedro Capó,Pedro Capó,Shakira,Rauw Alejandro,Wisin)",
             "nombre_interprete": "Camilo",
             "streams": 17205,
-            "tocadas": 1
+            "tocadas": 1,
+            "kpis": {
+                "compactKpi": {
+                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                  "dataSet": [
+                    {
+                      "name": "label",
+                      "data": [540, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                    }
+                  ]
+                },
+                "generalKpi": {
+                  "dataSet": [
+                    {
+                      "name": "cobertura",
+                      "data": [190750, 200000, 230000, 245000]
+                    },
+                    {
+                      "name": "Stream",
+                      "data": [150750, 144000, 124000, 185000]
+                    }
+                  ]
+                }
+              }
         }
         ]
     },
@@ -753,7 +1949,30 @@
                 "interprete_colaboradores": "Chanel",
                 "nombre_interprete": "Chanel",
                 "streams": 5668,
-                "tocadas": 1
+                "tocadas": 1,
+                "kpis": {
+                    "compactKpi": {
+                      "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                      "dataSet": [
+                        {
+                          "name": "label",
+                          "data": [540, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                        }
+                      ]
+                    },
+                    "generalKpi": {
+                      "dataSet": [
+                        {
+                          "name": "cobertura",
+                          "data": [200750, 200000, 230000, 245000]
+                        },
+                        {
+                          "name": "Stream",
+                          "data": [110750, 144000, 124000, 185000]
+                        }
+                      ]
+                    }
+                  }
               }
         ]
     }
