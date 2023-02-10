@@ -3,6 +3,7 @@ import { Module, CacheModule } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose';
 import { JwtModule } from '@nestjs/jwt';
+import { ThrottlerGuard, ThrottlerModule } from '@nestjs/throttler';
 
 import { configuration } from '../config/configuration';
 
@@ -17,6 +18,8 @@ import { AUTH_DATASTORAGE_REPOSITORY } from './repository/auth-datastorage.repos
 import { AuthDatastoragAdapterRepository } from './repository/auth-datastorage-adapter.repository';
 import { USER_DATASTORE_REPOSITORY } from '../users/repository/user-datastore.repository';
 import { DatastoreUserRepository } from '../users/repository/datastore-user.repository';
+
+import { APP_GUARD } from '@nestjs/core';
 
 import { JwtStrategy } from './jwt.strategy';
 
@@ -51,6 +54,10 @@ import { JwtStrategy } from './jwt.strategy';
         };
       },
     }),
+    ThrottlerModule.forRoot({
+      ttl: 60,
+      limit: 10,
+    }),
   ],
   controllers: [AuthController],
   providers: [
@@ -68,6 +75,10 @@ import { JwtStrategy } from './jwt.strategy';
       useClass: AuthDatastoragAdapterRepository,
     },
     JwtStrategy,
+    {
+      provide: APP_GUARD,
+      useClass: ThrottlerGuard,
+    },
   ],
 })
 export class AuthModule {}

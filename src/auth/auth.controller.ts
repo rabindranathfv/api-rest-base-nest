@@ -30,6 +30,7 @@ import { LoginAuth } from './interfaces/login-auth.interface';
 import { registerAuth } from './interfaces/register-auth.interface';
 import { Token } from './interfaces/token-auth.interface';
 import { NewRefreshTokenDto } from './dto/new-refresh-token.dto';
+import { SkipThrottle, Throttle } from '@nestjs/throttler';
 
 @ApiTags('auth')
 @ApiHeader({
@@ -43,6 +44,7 @@ export class AuthController {
 
   constructor(private readonly authService: AuthService) {}
 
+  @Throttle(30, 60)
   @Post('login')
   @ApiResponse({
     status: 200,
@@ -63,6 +65,7 @@ export class AuthController {
     return await this.authService.login(loginDto);
   }
 
+  @Throttle(20, 60)
   @ApiResponse({
     status: 200,
     description: 'A get for all Users successfully fetched',
@@ -83,6 +86,7 @@ export class AuthController {
   }
 
   @UseGuards(JwtAuthGuard)
+  @SkipThrottle()
   @ApiBearerAuth()
   @Get('/refresh')
   @ApiResponse({
@@ -111,6 +115,7 @@ export class AuthController {
     });
   }
 
+  @Throttle(10, 60)
   @Post('/refresh')
   @ApiResponse({
     status: 200,
@@ -131,6 +136,7 @@ export class AuthController {
   }
 
   @UseGuards(JwtAuthGuard)
+  @SkipThrottle()
   @ApiBearerAuth()
   @Post('logout')
   @ApiResponse({

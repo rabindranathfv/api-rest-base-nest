@@ -37,28 +37,6 @@ export class ArtistController {
 
   @ApiResponse({
     status: 200,
-    description: 'get All Artist list',
-    // type: [User], ADD CLASS INTERFACE HERE
-  })
-  @ApiResponse({
-    status: 500,
-    description: 'Internal Server Error',
-  })
-  @Get()
-  async getAllArtists(@Res() res: Response) {
-    this.logger.log(`${ArtistController.name} - getAllArtists`);
-    const resp = await this.artistService.getAllArtists();
-
-    if (!resp)
-      res
-        .status(HttpStatus.NOT_FOUND)
-        .json({ message: `there is no artists info available` });
-
-    return res.status(HttpStatus.OK).json(resp);
-  }
-
-  @ApiResponse({
-    status: 200,
     description: 'get artist by id with all songs',
     // type: [User], ADD CLASS INTERFACE HERE
   })

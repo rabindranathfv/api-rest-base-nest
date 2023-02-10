@@ -10,7 +10,6 @@ import {
 import { ArtistRepository } from './artist.repository';
 import { BIG_QUERY_REPOSITORY } from '../../bigquery/repository/big-query.repository';
 
-import { artistsMockData } from '../mocks/artistsMock';
 import artistas_id_resumen from '../mocks/artistas_id_resumen.json';
 import artistas_id_canciones from '../mocks/artistas_id_canciones.json';
 import artistas_id_kpi_radio from '../mocks/artistas_id_kpi_radio.json';
@@ -22,27 +21,6 @@ export class ArtistAdapterRepository implements ArtistRepository {
   constructor(
     @Inject(BIG_QUERY_REPOSITORY) private readonly bigQueryRepository,
   ) {}
-
-  async getAllArtists(): Promise<any[]> {
-    this.logger.log(
-      `using ${ArtistAdapterRepository.name} - repository - method: getAllArtists`,
-    );
-    try {
-      const instance = await this.bigQueryRepository.connectWithBigquery();
-
-      // TODO: UPDATE THIS QUERY
-      const queryStr = `SELECT emisora_N1, emisora_N2, id_interprete, interprete_colaboradores, nombre_interprete, inserciones, universo, 
-        cobertura, cob, contactos, grp_s, ots, ola, fecha_peticion, rango, rango_sort_order, fecha
-        FROM dataglobalproduccion.BI_Artistas_Alt.odec_t`;
-      const query = `${queryStr}`;
-      // const queryResults = await this.bigQueryRepository.query(instance, query);
-      const queryResults = artistsMockData;
-
-      return queryResults;
-    } catch (error) {
-      return null;
-    }
-  }
 
   async getKpiRadioArtistById(artistId: string): Promise<any> {
     this.logger.log(
