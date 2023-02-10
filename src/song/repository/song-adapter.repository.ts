@@ -9,7 +9,6 @@ import { SongRepository } from './song.repository';
 
 import { BIG_QUERY_REPOSITORY } from './../../bigquery/repository/big-query.repository';
 
-import canciones_id from '../mock/canciones_id.json';
 import canciones_id_resumen from '../mock/canciones_id_resumen.json';
 import canciones_id_kpi_radio from '../mock/canciones_id_kpi_radio.json';
 import canciones_id_kpis from '../mock/canciones_id_kpis.json';
@@ -21,32 +20,6 @@ export class SongAdapterRepository implements SongRepository {
   constructor(
     @Inject(BIG_QUERY_REPOSITORY) private readonly bigQueryRepository,
   ) {}
-
-  async getSongById(id: string): Promise<any> {
-    this.logger.log(
-      `using ${SongAdapterRepository.name} - repository - method: getSongById with id: ${id}`,
-    );
-
-    try {
-      const instance = await this.bigQueryRepository.connectWithBigquery();
-
-      // TODO: UPDATE THIS QUERY
-      const queryStr = `SELECT emisora_N1, emisora_N2, id_interprete, interprete_colaboradores, nombre_interprete, inserciones, universo, 
-        cobertura, cob, contactos, grp_s, ots, ola, fecha_peticion, rango, rango_sort_order, fecha
-        FROM dataglobalproduccion.BI_Artistas_Alt.odec_t`;
-      const query = `${queryStr} - ${id}`;
-      // const queryResults = await this.bigQueryRepository.query(instance, query);
-      const queryResults = canciones_id[id];
-
-      return queryResults;
-    } catch (error) {
-      console.log(error);
-      throw new HttpException(
-        `Error at getSongById repository, error: ${error}`,
-        HttpStatus.INTERNAL_SERVER_ERROR,
-      );
-    }
-  }
 
   async getSummarySongById(id: string): Promise<any> {
     this.logger.log(

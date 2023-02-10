@@ -13,21 +13,6 @@ export class SongService {
 
   constructor(@Inject(SONG_REPOSITORY) private readonly songRepository) {}
 
-  async getSongById(id: string): Promise<any> {
-    this.logger.log(`${SongService.name} - findDiscographicById`);
-    try {
-      const queryResults = await this.songRepository.getSongById(id);
-
-      return queryResults;
-    } catch (error) {
-      this.logger.log(`${SongService.name} - getSongById -  ERROR`, error);
-      throw new HttpException(
-        `Error make query getSongById`,
-        HttpStatus.INTERNAL_SERVER_ERROR,
-      );
-    }
-  }
-
   async getSummarySongById(id: string): Promise<any> {
     this.logger.log(`${SongService.name} - getSummarySongById`);
     try {

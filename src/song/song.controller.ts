@@ -35,21 +35,6 @@ export class SongController {
     status: 500,
     description: 'Internal Server Error',
   })
-  @Get(':id')
-  async getSongById(@Param('id') id: string) {
-    this.logger.log(`${SongController.name} - getSongById for id ${id}`);
-    return await this.songService.getSongById(id);
-  }
-
-  @ApiResponse({
-    status: 200,
-    description: 'A get for a song by Id successfully fetched',
-    // type: registerAuth,
-  })
-  @ApiResponse({
-    status: 500,
-    description: 'Internal Server Error',
-  })
   @Get(':id/resumen')
   async getSummarySongById(@Param('id') id: string) {
     this.logger.log(`${SongController.name} - getSummarySongById for id ${id}`);
