@@ -103,19 +103,4 @@ export class ArtistService {
       );
     }
   }
-
-  async getArtistById(artistId: string): Promise<any> {
-    this.logger.log(`${ArtistService.name} - getArtistById`);
-    try {
-      const queryResults = await this.artistRepository.getArtistById(artistId);
-
-      return queryResults;
-    } catch (error) {
-      this.logger.log(`${ArtistService.name} - getArtistById -  ERROR`, error);
-      throw new HttpException(
-        `Error make query`,
-        HttpStatus.INTERNAL_SERVER_ERROR,
-      );
-    }
-  }
 }

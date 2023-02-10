@@ -57,30 +57,6 @@ export class ArtistController {
     return res.status(HttpStatus.OK).json(resp);
   }
 
-  @Get(':id')
-  @ApiResponse({
-    status: 200,
-    description: 'get artist by Id',
-    // type: [User], ADD CLASS INTERFACE HERE
-  })
-  @ApiResponse({
-    status: 500,
-    description: 'Internal Server Error',
-  })
-  async getArtistById(@Res() res: Response, @Param('id') id: string) {
-    this.logger.log(
-      `${ArtistController.name} - getArtistRadioStationKpi with id ${id}`,
-    );
-    const resp = await this.artistService.getArtistById(id);
-
-    if (!resp)
-      res.status(HttpStatus.NOT_FOUND).json({
-        message: `there is no artists radio stations kpi info available`,
-      });
-
-    return res.status(HttpStatus.OK).json(resp);
-  }
-
   @ApiResponse({
     status: 200,
     description: 'get artist by id with all songs',
