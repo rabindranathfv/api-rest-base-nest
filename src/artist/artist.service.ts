@@ -20,7 +20,7 @@ export class ArtistService {
     private readonly artistRepository: ArtistRepository,
   ) {}
 
-  async getAllSongsByArtistsById(artistId: string): Promise<any[]> {
+  async getAllSongsByArtistsById(artistId: string): Promise<any> {
     this.logger.log(
       `${ArtistService.name} - getAllSongsByArtistsById with id ${artistId}`,
     );

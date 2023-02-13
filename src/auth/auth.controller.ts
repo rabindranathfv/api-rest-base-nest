@@ -44,8 +44,6 @@ export class AuthController {
 
   constructor(private readonly authService: AuthService) {}
 
-  @Throttle(30, 60)
-  @Post('login')
   @ApiResponse({
     status: 200,
     description: 'Login successfully',
@@ -60,12 +58,17 @@ export class AuthController {
     status: 500,
     description: 'Internal Server Error',
   })
+  @ApiResponse({
+    status: 429,
+    description: 'to Many requests',
+  })
+  @Throttle(30, 60)
+  @Post('login')
   async login(@Body() loginDto: LoginDto) {
     this.logger.log(`${AuthController.name} - login`);
     return await this.authService.login(loginDto);
   }
 
-  @Throttle(20, 60)
   @ApiResponse({
     status: 200,
     description: 'A get for all Users successfully fetched',
@@ -79,16 +82,17 @@ export class AuthController {
     status: 500,
     description: 'Internal Server Error',
   })
+  @ApiResponse({
+    status: 429,
+    description: 'to Many requests',
+  })
+  @Throttle(20, 60)
   @Post('register')
   async register(@Body() createUserDto: CreateUserDto) {
     this.logger.log(`${AuthController.name} - register`);
     return await this.authService.register(createUserDto);
   }
 
-  @UseGuards(JwtAuthGuard)
-  @SkipThrottle()
-  @ApiBearerAuth()
-  @Get('/refresh')
   @ApiResponse({
     status: 200,
     description: 'refresh token session for auth users',
@@ -102,6 +106,10 @@ export class AuthController {
     status: 500,
     description: 'Internal Server Error',
   })
+  @UseGuards(JwtAuthGuard)
+  @SkipThrottle()
+  @ApiBearerAuth()
+  @Get('/refresh')
   async refresh(@Req() req: Request, @Res() res: Response) {
     this.logger.log(`${AuthController.name} - refresh`);
     const refreshToken = await this.authService.refresh(req);
@@ -115,8 +123,6 @@ export class AuthController {
     });
   }
 
-  @Throttle(10, 60)
-  @Post('/refresh')
   @ApiResponse({
     status: 200,
     description: 'refresh token session for auth users',
@@ -130,15 +136,17 @@ export class AuthController {
     status: 500,
     description: 'Internal Server Error',
   })
+  @ApiResponse({
+    status: 429,
+    description: 'to Many requests',
+  })
+  @Throttle(10, 60)
+  @Post('/refresh')
   async newRefresh(@Body() newRefreshTokenDto: NewRefreshTokenDto) {
     this.logger.log(`${AuthController.name} - newRefresh`);
     return await this.authService.newRefresh(newRefreshTokenDto);
   }
 
-  @UseGuards(JwtAuthGuard)
-  @SkipThrottle()
-  @ApiBearerAuth()
-  @Post('logout')
   @ApiResponse({
     status: 200,
     description: 'logout for users authenticated',
@@ -147,6 +155,10 @@ export class AuthController {
     status: 401,
     description: 'Unauthorized, does not have a valid token o token is Expired',
   })
+  @UseGuards(JwtAuthGuard)
+  @SkipThrottle()
+  @ApiBearerAuth()
+  @Post('logout')
   async logout() {
     this.logger.log(`${AuthController.name} - logout`);
     const logoutRes = await this.authService.logout();

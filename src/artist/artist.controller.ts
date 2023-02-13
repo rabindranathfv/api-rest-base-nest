@@ -44,6 +44,10 @@ export class ArtistController {
     status: 500,
     description: 'Internal Server Error',
   })
+  @ApiResponse({
+    status: HttpStatus.NOT_FOUND,
+    description: 'there is no artists info available',
+  })
   @Get(':id/canciones')
   async getAllSongsByArtistsById(
     @Res() res: Response,
@@ -71,6 +75,10 @@ export class ArtistController {
     status: 500,
     description: 'Internal Server Error',
   })
+  @ApiResponse({
+    status: HttpStatus.NOT_FOUND,
+    description: 'there is no artists summary info available',
+  })
   @Get(':id/resumen')
   async getSummaryArtistById(@Res() res: Response, @Param('id') id: string) {
     this.logger.log(
@@ -94,6 +102,10 @@ export class ArtistController {
   @ApiResponse({
     status: 500,
     description: 'Internal Server Error',
+  })
+  @ApiResponse({
+    status: HttpStatus.NOT_FOUND,
+    description: 'there is no artists radio stations kpi info available',
   })
   @Get(':id/kpiradio')
   async getKpiRadioArtistById(@Res() res: Response, @Param('id') id: string) {

@@ -1,7 +1,9 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { ConfigModule, ConfigService } from '@nestjs/config';
 import { CacheModule, HttpStatus } from '@nestjs/common';
+import { ConfigModule, ConfigService } from '@nestjs/config';
 import { Response } from 'express';
+import { PassportModule } from '@nestjs/passport';
+import { JwtModule } from '@nestjs/jwt';
 
 import { ArtistController } from './artist.controller';
 import { ArtistService } from './artist.service';
@@ -10,6 +12,10 @@ import { BIG_QUERY_REPOSITORY } from './../bigquery/repository/big-query.reposit
 import { BigQueryAdapterRepository } from '../bigquery/repository/big-query-adapter.repository';
 import { ARTIST_REPOSITORY } from './repository/artist.repository';
 import { configuration } from '../config/configuration';
+
+import artistas_id_resumen from './mocks/artistas_id_resumen.json';
+import artistas_id_canciones from './mocks/artistas_id_canciones.json';
+import artistas_id_kpi_radio from './mocks/artistas_id_kpi_radio.json';
 
 describe('ArtistController', () => {
   let controller: ArtistController;
@@ -30,6 +36,8 @@ describe('ArtistController', () => {
     return res;
   };
 
+  const passportModule = PassportModule.register({ defaultStrategy: 'jwt' });
+
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
       imports: [
@@ -42,6 +50,20 @@ describe('ArtistController', () => {
             return {
               ttl: Number(cacheConfig.ttl),
               max: Number(cacheConfig.storage),
+            };
+          },
+        }),
+        passportModule,
+        JwtModule.registerAsync({
+          imports: [ConfigModule],
+          inject: [ConfigService],
+          useFactory: (configService: ConfigService) => {
+            /* istanbul ignore next */
+            const jwtConfig = configService.get('JWT');
+            /* istanbul ignore next */
+            return {
+              secret: jwtConfig.secret,
+              signOptions: { expiresIn: jwtConfig.expiresIn || '1h' },
             };
           },
         }),
@@ -60,10 +82,17 @@ describe('ArtistController', () => {
           }),
         },
         {
+          provide: 'JwtStrategy',
+          useFactory: () => ({
+            validate: () => jest.fn(),
+          }),
+        },
+        {
           provide: BIG_QUERY_REPOSITORY,
           useClass: BigQueryAdapterRepository,
         },
       ],
+      exports: [passportModule],
     }).compile();
 
     controller = module.get<ArtistController>(ArtistController);
@@ -80,138 +109,148 @@ describe('ArtistController', () => {
     expect(service).toBeDefined();
   });
 
-  it('should call getAllArtists and return all the artists', async () => {
-    const getAllArtistsSpy = jest
-      .spyOn(service, 'getAllArtists')
-      .mockImplementation(() => Promise.resolve(artistsMockData));
+  it('should call getAllSongsByArtistsById and return the songs of this artist', async () => {
+    const idArtistsMock = '10000039078';
+    const mockServResp = artistas_id_kpi_radio[idArtistsMock];
+    const getAllSongsByArtistsByIdSpy = jest
+      .spyOn(service, 'getAllSongsByArtistsById')
+      .mockImplementation(async () => Promise.resolve(mockServResp));
 
     const res = responseMock() as unknown as Response;
-    const ctrlResp = await controller.getAllArtists(res);
+    const ctrlResp = await controller.getAllSongsByArtistsById(
+      res,
+      idArtistsMock,
+    );
 
     expect(ctrlResp).toBeDefined();
-    expect(getAllArtistsSpy).toHaveBeenCalled();
+    expect(getAllSongsByArtistsByIdSpy).toHaveBeenCalled();
+    // await expect(ctrlResp).resolves.toEqual(mockServResp);
     expect(res.status).toHaveBeenCalled();
     expect(res.status).toHaveBeenCalledWith(HttpStatus.OK);
   });
 
-  it('should call getAllArtists and return error 404 because the service response empty', async () => {
-    const getAllArtistsSpy = jest
-      .spyOn(service, 'getAllArtists')
+  it('should call getAllSongsByArtistsByIdSpy and return error 404 because the service response empty', async () => {
+    const idArtistsMock = '10000039078';
+    const getAllSongsByArtistsByIdSpy = jest
+      .spyOn(service, 'getAllSongsByArtistsById')
       .mockImplementation(() => Promise.resolve(null));
 
     const res = responseMock() as unknown as Response;
-    await controller.getAllArtists(res);
+    await controller.getAllSongsByArtistsById(res, idArtistsMock);
 
-    expect(getAllArtistsSpy).toHaveBeenCalled();
+    expect(getAllSongsByArtistsByIdSpy).toHaveBeenCalled();
     expect(res.status).toHaveBeenCalled();
     expect(res.status).toHaveBeenCalledWith(HttpStatus.NOT_FOUND);
   });
 
-  it('should call getAllSongsByArtists and return all the artists', async () => {
-    const getAllSongsByArtistsSpy = jest
-      .spyOn(service, 'getAllSongsByArtists')
-      .mockImplementation(() => Promise.resolve(songsByartistsMockData));
+  it('should call getAllSongsByArtistsByIdSpy and return error 500 because something wrong happen in the service', async () => {
+    const idArtistsMock = '10000039078';
+    const getAllSongsByArtistsByIdSpy = jest
+      .spyOn(service, 'getAllSongsByArtistsById')
+      .mockImplementation(() => Promise.reject(new Error('error 500')));
 
     const res = responseMock() as unknown as Response;
-    const ctrlResp = await controller.getAllSongsByArtists(res);
+    try {
+      await controller.getAllSongsByArtistsById(res, idArtistsMock);
+    } catch (error) {
+      expect(getAllSongsByArtistsByIdSpy).toHaveBeenCalled();
+      await expect(
+        controller.getAllSongsByArtistsById(res, idArtistsMock),
+      ).rejects.toThrowError(Error);
+    }
+  });
+
+  it('should call getSummaryArtistById and return the summary of an specific artists', async () => {
+    const idArtistsMock = '10000039078';
+    const mockServResp = artistas_id_resumen[idArtistsMock];
+    const getSummaryArtistByIdSpy = jest
+      .spyOn(service, 'getSummaryArtistById')
+      .mockImplementation(() => Promise.resolve(mockServResp));
+
+    const res = responseMock() as unknown as Response;
+    const ctrlResp = await controller.getSummaryArtistById(res, idArtistsMock);
 
     expect(ctrlResp).toBeDefined();
+    expect(getSummaryArtistByIdSpy).toHaveBeenCalled();
+    expect(res.status).toHaveBeenCalled();
+    expect(res.status).toHaveBeenCalledWith(HttpStatus.OK);
+  });
+
+  it('should call getSummaryArtistById and return error 404 because the service response empty', async () => {
+    const idArtistsMock = '10000039078';
+    const getAllSongsByArtistsSpy = jest
+      .spyOn(service, 'getSummaryArtistById')
+      .mockImplementation(() => Promise.resolve(null));
+
+    const res = responseMock() as unknown as Response;
+    await controller.getSummaryArtistById(res, idArtistsMock);
+
     expect(getAllSongsByArtistsSpy).toHaveBeenCalled();
     expect(res.status).toHaveBeenCalled();
-    expect(res.status).toHaveBeenCalledWith(HttpStatus.OK);
+    expect(res.status).toHaveBeenCalledWith(HttpStatus.NOT_FOUND);
   });
 
-  it('should call getAllSongsByArtists and return error 404 because the service response empty', async () => {
+  it('should call getSummaryArtistById and return error 500 because because something wrong happen in the service', async () => {
+    const idArtistsMock = '10000039078';
     const getAllSongsByArtistsSpy = jest
-      .spyOn(service, 'getAllSongsByArtists')
-      .mockImplementation(() => Promise.resolve(null));
+      .spyOn(service, 'getSummaryArtistById')
+      .mockImplementation(() => Promise.resolve(new Error('error 500')));
 
     const res = responseMock() as unknown as Response;
-    await controller.getAllSongsByArtists(res);
-
-    expect(getAllSongsByArtistsSpy).toHaveBeenCalled();
-    expect(res.status).toHaveBeenCalled();
-    expect(res.status).toHaveBeenCalledWith(HttpStatus.NOT_FOUND);
+    try {
+      await controller.getSummaryArtistById(res, idArtistsMock);
+    } catch (error) {
+      expect(getAllSongsByArtistsSpy).toHaveBeenCalled();
+      await expect(
+        controller.getSummaryArtistById(res, idArtistsMock),
+      ).rejects.toThrowError(Error);
+    }
   });
 
-  it('should call getArtistSummary and return all the artists', async () => {
-    const getArtistSummarySpy = jest
-      .spyOn(service, 'getArtistSummary')
-      .mockImplementation(() => Promise.resolve(artistDetailMockData));
+  it('should call getKpiRadioArtistById and return the KpiRadio of specific artist', async () => {
+    const idArtistsMock = '10000039078';
+    const mockServResp = artistas_id_kpi_radio[idArtistsMock];
+    const getKpiRadioArtistByIdSpy = jest
+      .spyOn(service, 'getKpiRadioArtistById')
+      .mockImplementation(() => Promise.resolve(mockServResp));
 
     const res = responseMock() as unknown as Response;
-    const ctrlResp = await controller.getArtistSummary(res);
+    const ctrlResp = await controller.getKpiRadioArtistById(res, idArtistsMock);
 
     expect(ctrlResp).toBeDefined();
-    expect(getArtistSummarySpy).toHaveBeenCalled();
-    expect(res.status).toHaveBeenCalled();
-    expect(res.status).toHaveBeenCalledWith(HttpStatus.OK);
-  });
-
-  it('should call getArtistSummary and return error 404 because the service response empty', async () => {
-    const getArtistSummarySpy = jest
-      .spyOn(service, 'getArtistSummary')
-      .mockImplementation(() => Promise.resolve(null));
-
-    const res = responseMock() as unknown as Response;
-    await controller.getArtistSummary(res);
-
-    expect(getArtistSummarySpy).toHaveBeenCalled();
-    expect(res.status).toHaveBeenCalled();
-    expect(res.status).toHaveBeenCalledWith(HttpStatus.NOT_FOUND);
-  });
-
-  it('should call getArtistKpi and return all the artists', async () => {
-    const getArtistKpiSpy = jest
-      .spyOn(service, 'getArtistKpi')
-      .mockImplementation(() => Promise.resolve(artistKpiOverview));
-
-    const res = responseMock() as unknown as Response;
-    const ctrlResp = await controller.getArtistKpi(res);
-
-    expect(ctrlResp).toBeDefined();
-    expect(getArtistKpiSpy).toHaveBeenCalled();
-    expect(res.status).toHaveBeenCalled();
-    expect(res.status).toHaveBeenCalledWith(HttpStatus.OK);
-  });
-
-  it('should call getArtistKpi and return error 404 because the service response empty', async () => {
-    const getArtistKpiSpy = jest
-      .spyOn(service, 'getArtistKpi')
-      .mockImplementation(() => Promise.resolve(null));
-
-    const res = responseMock() as unknown as Response;
-    await controller.getArtistKpi(res);
-
-    expect(getArtistKpiSpy).toHaveBeenCalled();
-    expect(res.status).toHaveBeenCalled();
-    expect(res.status).toHaveBeenCalledWith(HttpStatus.NOT_FOUND);
-  });
-
-  it('should call getArtistRadioStationKpi and return all the artists', async () => {
-    const getArtistRadioStationKpiSpy = jest
-      .spyOn(service, 'getArtistRadioStationKpi')
-      .mockImplementation(() => Promise.resolve(radioStationStadistic));
-
-    const res = responseMock() as unknown as Response;
-    const ctrlResp = await controller.getArtistRadioStationKpi(res);
-
-    expect(ctrlResp).toBeDefined();
-    expect(getArtistRadioStationKpiSpy).toHaveBeenCalled();
+    expect(getKpiRadioArtistByIdSpy).toHaveBeenCalled();
     expect(res.status).toHaveBeenCalled();
     expect(res.status).toHaveBeenCalledWith(HttpStatus.OK);
   });
 
   it('should call getArtistRadioStationKpi and return error 404 because the service response empty', async () => {
-    const getArtistRadioStationKpiSpy = jest
-      .spyOn(service, 'getArtistRadioStationKpi')
+    const idArtistsMock = '10000039078';
+    const getKpiRadioArtistByIdSpy = jest
+      .spyOn(service, 'getKpiRadioArtistById')
       .mockImplementation(() => Promise.resolve(null));
 
     const res = responseMock() as unknown as Response;
-    await controller.getArtistRadioStationKpi(res);
+    await controller.getKpiRadioArtistById(res, idArtistsMock);
 
-    expect(getArtistRadioStationKpiSpy).toHaveBeenCalled();
+    expect(getKpiRadioArtistByIdSpy).toHaveBeenCalled();
     expect(res.status).toHaveBeenCalled();
     expect(res.status).toHaveBeenCalledWith(HttpStatus.NOT_FOUND);
+  });
+
+  it('should call getKpiRadioArtistById and return error 500 because because something wrong happen in the service', async () => {
+    const idArtistsMock = '10000039078';
+    const getKpiRadioArtistByIdSpy = jest
+      .spyOn(service, 'getKpiRadioArtistById')
+      .mockImplementation(() => Promise.resolve(new Error('error 500')));
+
+    const res = responseMock() as unknown as Response;
+    try {
+      await controller.getKpiRadioArtistById(res, idArtistsMock);
+    } catch (error) {
+      expect(getKpiRadioArtistByIdSpy).toHaveBeenCalled();
+      await expect(
+        controller.getKpiRadioArtistById(res, idArtistsMock),
+      ).rejects.toThrowError(Error);
+    }
   });
 });
