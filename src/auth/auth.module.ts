@@ -4,6 +4,7 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose';
 import { JwtModule } from '@nestjs/jwt';
 import { ThrottlerGuard, ThrottlerModule } from '@nestjs/throttler';
+import { PassportModule } from '@nestjs/passport';
 
 import { configuration } from '../config/configuration';
 
@@ -23,10 +24,12 @@ import { APP_GUARD } from '@nestjs/core';
 
 import { JwtStrategy } from './jwt.strategy';
 
+const passportModule = PassportModule.register({ defaultStrategy: 'jwt' });
 @Module({
   imports: [
     ConfigModule.forFeature(configuration),
     MongooseModule.forFeature([{ name: User.name, schema: UserSchema }]),
+    passportModule,
     JwtModule.registerAsync({
       imports: [ConfigModule],
       inject: [ConfigService],
@@ -80,5 +83,6 @@ import { JwtStrategy } from './jwt.strategy';
       useClass: ThrottlerGuard,
     },
   ],
+  exports: [passportModule],
 })
 export class AuthModule {}

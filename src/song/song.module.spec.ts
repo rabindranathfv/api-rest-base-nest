@@ -1,35 +1,36 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { CacheModule } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
-import { ThrottlerModule } from '@nestjs/throttler';
 import { JwtModule } from '@nestjs/jwt';
 import { PassportModule } from '@nestjs/passport';
 
-import { AuthModule } from './auth.module';
-import { AuthService } from './auth.service';
-import { AuthController } from './auth.controller';
+import { SongModule } from './song.module';
+import { SongController } from './song.controller';
+import { SongService } from './song.service';
+import { BigqueryModule } from '../bigquery/bigquery.module';
 
 import { configuration } from '../config/configuration';
-import { USER_DATASTORE_REPOSITORY } from '../users/repository/user-datastore.repository';
 import { BIG_QUERY_REPOSITORY } from '../bigquery/repository/big-query.repository';
-import { AUTH_DATASTORAGE_REPOSITORY } from './repository/auth-datastorage.repository';
+import { SONG_REPOSITORY } from './repository/song.repository';
 
 const passportModule = PassportModule.register({ defaultStrategy: 'jwt' });
-describe('AuthModule:::', () => {
-  let moduleInst: AuthModule;
+
+describe('SongModule:::', () => {
+  let moduleInst: SongModule;
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
       imports: [
+        BigqueryModule,
         ConfigModule.forFeature(configuration),
         CacheModule.registerAsync({
           imports: [ConfigModule],
           inject: [ConfigService],
           useFactory: (configService: ConfigService) => {
-            const jwtConfig = configService.get('JWT');
+            const cacheConfig = configService.get('CACHE');
             return {
-              secret: jwtConfig.secret,
-              signOptions: { expiresIn: jwtConfig.expiresIn },
+              ttl: Number(cacheConfig.ttl),
+              max: Number(cacheConfig.storage),
             };
           },
         }),
@@ -47,25 +48,11 @@ describe('AuthModule:::', () => {
             };
           },
         }),
-        ThrottlerModule.forRoot({
-          ttl: 60,
-          limit: 10,
-        }),
       ],
-      controllers: [AuthController],
+      controllers: [SongController],
       providers: [
-        AuthModule,
-        AuthService,
-        {
-          provide: USER_DATASTORE_REPOSITORY,
-          useFactory: () => ({
-            createUser: () => jest.fn(),
-            findAll: () => jest.fn(),
-            findById: () => jest.fn(),
-            deleteById: () => jest.fn(),
-            updateById: () => jest.fn(),
-          }),
-        },
+        SongModule,
+        SongService,
         {
           provide: BIG_QUERY_REPOSITORY,
           useFactory: () => ({
@@ -77,11 +64,11 @@ describe('AuthModule:::', () => {
           }),
         },
         {
-          provide: AUTH_DATASTORAGE_REPOSITORY,
+          provide: SONG_REPOSITORY,
           useFactory: () => ({
-            login: () => jest.fn(),
-            logout: () => jest.fn(),
-            refresh: () => jest.fn(),
+            getSummarySongById: () => jest.fn(),
+            getKpiRadioSongById: () => jest.fn(),
+            getKpisSongById: () => jest.fn(),
           }),
         },
         {
@@ -91,9 +78,10 @@ describe('AuthModule:::', () => {
           }),
         },
       ],
+      exports: [passportModule],
     }).compile();
 
-    moduleInst = module.get(AuthModule);
+    moduleInst = module.get(SongModule);
   });
 
   it('should be defined', () => {

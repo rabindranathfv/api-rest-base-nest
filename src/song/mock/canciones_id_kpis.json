@@ -274,72 +274,67 @@
                 "y": 40,
                 "goals": [
                   {
-                    // "name": "E"x"pected",
                     "value": 40,
                     "strokeWidth": 8,
                     "strokeHeight": 0,
                     "strokeLineCap": "round",
-                    "strokeColor": "#7CB8F0",
+                    "strokeColor": "#7CB8F0"
                   }
-                ],
+                ]
               },
               {
                 "x": "25-34",
                 "y": 50,
                 "goals": [
                   {
-                    // "name": "E"x"pected",
                     "value": 50,
                     "strokeWidth": 8,
                     "strokeHeight": 0,
                     "strokeLineCap": "round",
-                    "strokeColor": "#CDF1A9",
+                    "strokeColor": "#CDF1A9"
                   }
-                ],
+                ]
               },
               {
                 "x": "35-44",
                 "y": 35,
                 "goals": [
                   {
-                    // "name": "E"x"pected",
                     "value": 35,
                     "strokeWidth": 8,
                     "strokeHeight": 0,
                     "strokeLineCap": "round",
-                    "strokeColor": "#DE97FF",
+                    "strokeColor": "#DE97FF"
                   }
-                ],
+                ]
               },
               {
                 "x": "45-54",
                 "y": 15,
                 "goals": [
                   {
-                    // "name": "E"x"pected",
                     "value": 15,
                     "strokeWidth": 8,
                     "strokeHeight": 0,
                     "strokeLineCap": "round",
-                    "strokeColor": "#FFEE97",
+                    "strokeColor": "#FFEE97"
                   }
-                ],
+                ]
               },
               {
                 "x": "+55",
                 "y": 20,
                 "goals": [
                   {
-                    // "name": "E"x"pected",
                     "value": 20,
                     "strokeWidth": 8,
                     "strokeHeight": 0,
                     "strokeLineCap": "round",
-                    "strokeColor": "#FFB4B4",
+                    "strokeColor": "#FFB4B4"
                   }
-                ],
+                ]
               }
-            ],
+            ]
           }
         ]
       },

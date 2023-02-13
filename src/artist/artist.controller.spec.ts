@@ -1,4 +1,3 @@
-import { songsByartistsMockData } from './mocks/songsByArtist';
 import { Test, TestingModule } from '@nestjs/testing';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { CacheModule, HttpStatus } from '@nestjs/common';
@@ -11,11 +10,6 @@ import { BIG_QUERY_REPOSITORY } from './../bigquery/repository/big-query.reposit
 import { BigQueryAdapterRepository } from '../bigquery/repository/big-query-adapter.repository';
 import { ARTIST_REPOSITORY } from './repository/artist.repository';
 import { configuration } from '../config/configuration';
-
-import { artistsMockData } from './mocks/artistsMock';
-import { artistDetailMockData } from './mocks/artistDetailMock';
-import { artistKpiOverview } from './mocks/artistKpiOverview';
-import { radioStationStadistic } from './mocks/radioStationKPI';
 
 describe('ArtistController', () => {
   let controller: ArtistController;

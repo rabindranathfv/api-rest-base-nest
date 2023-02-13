@@ -1,5 +1,6 @@
 import { CacheModule, Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
+import { PassportModule } from '@nestjs/passport';
 
 import { BigqueryModule } from '../bigquery/bigquery.module';
 
@@ -12,7 +13,9 @@ import { BigQueryAdapterRepository } from './../bigquery/repository/big-query-ad
 import { SONG_REPOSITORY } from './repository/song.repository';
 import { SongAdapterRepository } from './repository/song-adapter.repository';
 import { configuration } from '../config/configuration';
+import { JwtModule } from '@nestjs/jwt';
 
+const passportModule = PassportModule.register({ defaultStrategy: 'jwt' });
 @Module({
   imports: [
     BigqueryModule,
@@ -30,6 +33,20 @@ import { configuration } from '../config/configuration';
         };
       },
     }),
+    passportModule,
+    JwtModule.registerAsync({
+      imports: [ConfigModule],
+      inject: [ConfigService],
+      useFactory: (configService: ConfigService) => {
+        /* istanbul ignore next */
+        const jwtConfig = configService.get('JWT');
+        /* istanbul ignore next */
+        return {
+          secret: jwtConfig.secret,
+          signOptions: { expiresIn: jwtConfig.expiresIn || '1h' },
+        };
+      },
+    }),
   ],
   controllers: [SongController],
   providers: [
@@ -44,5 +61,6 @@ import { configuration } from '../config/configuration';
     },
     JwtStrategy,
   ],
+  exports: [passportModule],
 })
 export class SongModule {}
