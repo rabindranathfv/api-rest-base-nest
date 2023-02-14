@@ -74,11 +74,9 @@ describe('ArtistController', () => {
         {
           provide: ARTIST_REPOSITORY,
           useFactory: () => ({
-            getArtistRadioStationKpi: () => jest.fn(),
-            getArtistKpi: () => jest.fn(),
-            getArtistSummary: () => jest.fn(),
-            getAllArtists: () => jest.fn(),
-            getAllSongsByArtists: () => jest.fn(),
+            getKpiRadioArtistById: () => jest.fn(),
+            getSummaryArtistById: () => jest.fn(),
+            getAllSongsByArtistsById: () => jest.fn(),
           }),
         },
         {
