@@ -192,7 +192,7 @@ describe('ArtistController', () => {
     const idArtistsMock = '10000039078';
     const getAllSongsByArtistsSpy = jest
       .spyOn(service, 'getSummaryArtistById')
-      .mockImplementation(() => Promise.resolve(new Error('error 500')));
+      .mockImplementation(() => Promise.reject(new Error('error 500')));
 
     const res = responseMock() as unknown as Response;
     try {
@@ -239,7 +239,7 @@ describe('ArtistController', () => {
     const idArtistsMock = '10000039078';
     const getKpiRadioArtistByIdSpy = jest
       .spyOn(service, 'getKpiRadioArtistById')
-      .mockImplementation(() => Promise.resolve(new Error('error 500')));
+      .mockImplementation(() => Promise.reject(new Error('error 500')));
 
     const res = responseMock() as unknown as Response;
     try {

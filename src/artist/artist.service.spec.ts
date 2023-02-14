@@ -120,57 +120,89 @@ describe('ArtistService:::', () => {
     }
   });
 
-  // it('should call getArtistKpi and return kpi of the artist', async () => {
-  //   const getArtistKpiSpy = jest
-  //     .spyOn(repository, 'getArtistKpi')
-  //     .mockImplementation(() => Promise.resolve(artistKpiOverview));
+  it('should call getAllSongsByArtistsById and return the songs by an specific artist', async () => {
+    const artistIdMock = '10000039078';
+    const mockServResp = artistas_id_canciones[artistIdMock];
+    const getAllSongsByArtistsByIdSpy = jest
+      .spyOn(repository, 'getAllSongsByArtistsById')
+      .mockImplementation(() => Promise.resolve(mockServResp));
 
-  //   const serviceResp = await service.getArtistKpi();
+    const serviceResp = await service.getAllSongsByArtistsById(artistIdMock);
 
-  //   expect(serviceResp).toEqual(artistKpiOverview);
-  //   expect(getArtistKpiSpy).toHaveBeenCalled();
-  // });
+    expect(serviceResp).toEqual(mockServResp);
+    expect(getAllSongsByArtistsByIdSpy).toHaveBeenCalled();
+  });
 
-  // it('should call getArtistKpi and return 500 exception because some error happens after repository response', async () => {
-  //   const getArtistKpiSpy = jest
-  //     .spyOn(repository, 'getArtistKpi')
-  //     .mockImplementation(() => {
-  //       throw new Error('error');
-  //     });
+  it('should call getAllSongsByArtistsById and return 500 exception because some error happens after repository response', async () => {
+    const artistIdMock = '10000039078';
+    const getAllSongsByArtistsByIdSpy = jest
+      .spyOn(repository, 'getAllSongsByArtistsById')
+      .mockImplementation(() => {
+        throw new Error('error 500');
+      });
 
-  //   try {
-  //     await service.getArtistKpi();
-  //   } catch (error) {
-  //     expect(getArtistKpiSpy).toHaveBeenCalled();
-  //     expect(error).toBeInstanceOf(Error);
-  //     expect(error['status']).toBe(500);
-  //   }
-  // });
+    try {
+      await service.getAllSongsByArtistsById(artistIdMock);
+    } catch (error) {
+      expect(getAllSongsByArtistsByIdSpy).toHaveBeenCalled();
+      expect(error).toBeInstanceOf(Error);
+      expect(error['status']).toBe(500);
+    }
+  });
 
-  // it('should call getArtistRadioStationKpi and return kpi of the artist', async () => {
-  //   const getArtistRadioStationKpiSpy = jest
-  //     .spyOn(repository, 'getArtistRadioStationKpi')
-  //     .mockImplementation(() => Promise.resolve(radioStationStadistic));
+  it('should call getAllSongsByArtistsById and return the empty songs array by an specific artist', async () => {
+    const artistIdMock = '10000039078';
+    const mockServResp = { canciones: [] };
+    const getAllSongsByArtistsByIdSpy = jest
+      .spyOn(repository, 'getAllSongsByArtistsById')
+      .mockImplementation(() => Promise.resolve({ canciones: [] }));
 
-  //   const serviceResp = await service.getArtistRadioStationKpi();
+    const serviceResp = await service.getAllSongsByArtistsById(artistIdMock);
 
-  //   expect(serviceResp).toEqual(radioStationStadistic);
-  //   expect(getArtistRadioStationKpiSpy).toHaveBeenCalled();
-  // });
+    expect(serviceResp).toEqual(mockServResp);
+    expect(getAllSongsByArtistsByIdSpy).toHaveBeenCalled();
+  });
 
-  // it('should call getArtistRadioStationKpi and return 500 exception because some error happens after repository response', async () => {
-  //   const getArtistRadioStationKpiSpy = jest
-  //     .spyOn(repository, 'getArtistRadioStationKpi')
-  //     .mockImplementation(() => {
-  //       throw new Error('error');
-  //     });
+  it('should call getKpiRadioArtistById and return the kpi radio of an specific artist', async () => {
+    const artistIdMock = '10000039078';
+    const mockServResp = artistas_id_kpi_radio[artistIdMock];
+    const getKpiRadioArtistByIdSpy = jest
+      .spyOn(repository, 'getKpiRadioArtistById')
+      .mockImplementation(() => Promise.resolve(mockServResp));
 
-  //   try {
-  //     await service.getArtistRadioStationKpi();
-  //   } catch (error) {
-  //     expect(getArtistRadioStationKpiSpy).toHaveBeenCalled();
-  //     expect(error).toBeInstanceOf(Error);
-  //     expect(error['status']).toBe(500);
-  //   }
-  // });
+    const serviceResp = await service.getKpiRadioArtistById(artistIdMock);
+
+    expect(serviceResp).toEqual(mockServResp);
+    expect(getKpiRadioArtistByIdSpy).toHaveBeenCalled();
+  });
+
+  it('should call getKpiRadioArtistById and return 500 exception because some error happens after repository response', async () => {
+    const artistIdMock = '10000039078';
+    const getKpiRadioArtistByIdSpy = jest
+      .spyOn(repository, 'getKpiRadioArtistById')
+      .mockImplementation(() => {
+        throw new Error('error 500');
+      });
+
+    try {
+      await service.getKpiRadioArtistById(artistIdMock);
+    } catch (error) {
+      expect(getKpiRadioArtistByIdSpy).toHaveBeenCalled();
+      expect(error).toBeInstanceOf(Error);
+      expect(error['status']).toBe(500);
+    }
+  });
+
+  it('should call getKpiRadioArtistById and return empty kpi radio of an specific artist', async () => {
+    const artistIdMock = '10000039078';
+    const mockServResp = { cobertura: {} };
+    const getKpiRadioArtistByIdSpy = jest
+      .spyOn(repository, 'getKpiRadioArtistById')
+      .mockImplementation(() => Promise.resolve(mockServResp));
+
+    const serviceResp = await service.getKpiRadioArtistById(artistIdMock);
+
+    expect(serviceResp).toEqual(mockServResp);
+    expect(getKpiRadioArtistByIdSpy).toHaveBeenCalled();
+  });
 });

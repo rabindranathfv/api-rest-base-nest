@@ -9,14 +9,16 @@ import { AuthModule } from './auth.module';
 import { AuthService } from './auth.service';
 import { AuthController } from './auth.controller';
 
-import { configuration } from '../config/configuration';
 import { USER_DATASTORE_REPOSITORY } from '../users/repository/user-datastore.repository';
 import { BIG_QUERY_REPOSITORY } from '../bigquery/repository/big-query.repository';
 import { AUTH_DATASTORAGE_REPOSITORY } from './repository/auth-datastorage.repository';
 
-const passportModule = PassportModule.register({ defaultStrategy: 'jwt' });
+import { configuration } from '../config/configuration';
+
 describe('AuthModule:::', () => {
   let moduleInst: AuthModule;
+
+  const passportModule = PassportModule.register({ defaultStrategy: 'jwt' });
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
@@ -29,7 +31,7 @@ describe('AuthModule:::', () => {
             const jwtConfig = configService.get('JWT');
             return {
               secret: jwtConfig.secret,
-              signOptions: { expiresIn: jwtConfig.expiresIn },
+              signOptions: { expiresIn: jwtConfig.expiresIn || '1h' },
             };
           },
         }),

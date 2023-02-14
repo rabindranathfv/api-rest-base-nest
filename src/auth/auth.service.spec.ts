@@ -2,13 +2,17 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { CacheModule, HttpException, HttpStatus } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { JwtModule } from '@nestjs/jwt';
-import { configuration } from '../config/configuration';
+import { PassportModule } from '@nestjs/passport';
+import { ThrottlerGuard, ThrottlerModule } from '@nestjs/throttler';
+import { APP_GUARD } from '@nestjs/core';
 
 import { AuthService } from './auth.service';
 
 import { USER_DATASTORE_REPOSITORY } from '../users/repository/user-datastore.repository';
 import { AUTH_DATASTORAGE_REPOSITORY } from './repository/auth-datastorage.repository';
 import { MockType } from 'src/bigquery/bigquery.service.spec';
+
+import { configuration } from '../config/configuration';
 
 describe('AuthService:::', () => {
   let service: AuthService;
@@ -25,10 +29,13 @@ describe('AuthService:::', () => {
     return res;
   };
 
+  const passportModule = PassportModule.register({ defaultStrategy: 'jwt' });
+
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
       imports: [
         ConfigModule.forFeature(configuration),
+        passportModule,
         JwtModule.registerAsync({
           imports: [ConfigModule],
           inject: [ConfigService],
@@ -36,7 +43,7 @@ describe('AuthService:::', () => {
             const jwtConfig = configService.get('JWT');
             return {
               secret: jwtConfig.secret,
-              signOptions: { expiresIn: '2h' || jwtConfig.expiresIn },
+              signOptions: { expiresIn: jwtConfig.expiresIn || '1h' },
             };
           },
         }),
@@ -51,6 +58,10 @@ describe('AuthService:::', () => {
               max: Number(cacheConfig.storage),
             };
           },
+        }),
+        ThrottlerModule.forRoot({
+          ttl: 60,
+          limit: 10,
         }),
       ],
       providers: [
@@ -67,7 +78,18 @@ describe('AuthService:::', () => {
             login: () => jest.fn(),
             logout: () => jest.fn(),
             refresh: () => jest.fn(),
+            newRefresh: () => jest.fn(),
           }),
+        },
+        {
+          provide: 'JwtStrategy',
+          useFactory: () => ({
+            validate: () => jest.fn(),
+          }),
+        },
+        {
+          provide: APP_GUARD,
+          useClass: ThrottlerGuard,
         },
       ],
     }).compile();
@@ -119,7 +141,7 @@ describe('AuthService:::', () => {
     expect(createUserSpy).toBeCalledWith(createUserDtoMock);
   });
 
-  it('should call register method with an existing email and should responde same createUserDto', async () => {
+  it('should call register method with an existing email and should responde Error 400', async () => {
     const createUserDtoMock = {
       name: 'rabindranath ferreira 3',
       email: 'rferreira3@hiberus.com',
@@ -137,9 +159,33 @@ describe('AuthService:::', () => {
       expect(createUserSpy).toBeCalled();
       expect(createUserSpy).toBeCalledWith(createUserDtoMock);
       expect(error).toBeInstanceOf(HttpException);
-      expect(error['status']).toBe(409);
+      expect(error['status']).toBe(HttpStatus.BAD_REQUEST);
       expect(error['message']).toBe(
         `this email: ${createUserDtoMock.email} has been used`,
+      );
+    }
+  });
+
+  it('should call register method and return Error 500', async () => {
+    const createUserDtoMock = {
+      name: 'rabindranath ferreira 3',
+      email: 'rferreira3@hiberus.com',
+      password: '123456',
+    };
+    const createUserSpy = jest
+      .spyOn(userRepository, 'createUser')
+      .mockImplementation(() => {
+        throw new Error('error 500');
+      });
+
+    try {
+      await service.register(createUserDtoMock);
+    } catch (error) {
+      expect(createUserSpy).toBeCalled();
+      expect(createUserSpy).toBeCalledWith(createUserDtoMock);
+      expect(error).toBeInstanceOf(Error);
+      await expect(service.register(createUserDtoMock)).rejects.toThrowError(
+        Error,
       );
     }
   });
@@ -170,7 +216,7 @@ describe('AuthService:::', () => {
     expect(servRes).toEqual(loginRespMock);
   });
 
-  it('should call login method and get error 409', async () => {
+  it('should call login method and get error 401 UNAUTHORIZED', async () => {
     const loginDtoMock = {
       email: 'rferreira@hiberus.com',
       password: '123456',
@@ -188,10 +234,31 @@ describe('AuthService:::', () => {
       expect(loginSpy).toBeCalled();
       expect(loginSpy).toHaveBeenCalledWith(loginDtoMock);
       expect(error).toBeInstanceOf(Error);
-      expect(error['status']).toBe(HttpStatus.CONFLICT);
+      expect(error['status']).toBe(HttpStatus.UNAUTHORIZED);
       expect(error['message']).toBe(
         `this email ${loginDtoMock.email} was not found or just password is incorrect, please check it`,
       );
+    }
+  });
+
+  it('should call login method and get error 500', async () => {
+    const loginDtoMock = {
+      email: 'rferreira@hiberus.com',
+      password: '123456',
+    };
+    const loginSpy = jest
+      .spyOn(authRepository, 'login')
+      .mockImplementation(() => {
+        throw new Error('error 500');
+      });
+
+    try {
+      await service.login(loginDtoMock);
+    } catch (error) {
+      expect(loginSpy).toBeCalled();
+      expect(loginSpy).toHaveBeenCalledWith(loginDtoMock);
+      expect(error).toBeInstanceOf(Error);
+      await expect(service.login(loginDtoMock)).rejects.toThrowError(Error);
     }
   });
 
@@ -212,5 +279,94 @@ describe('AuthService:::', () => {
 
     expect(refreshSpy).toBeCalled();
     expect(servRes).toEqual(refreshRespMock);
+  });
+
+  it('should call refresh method and get response error 500', async () => {
+    const validToken = `some-valid-token`;
+    const refreshSpy = jest
+      .spyOn(authRepository, 'refresh')
+      .mockImplementation(() => {
+        return Promise.reject(new Error('error 500'));
+      });
+
+    try {
+      await service.refresh(responseMock(validToken));
+    } catch (error) {
+      expect(refreshSpy).toBeCalled();
+      expect(error).toBeInstanceOf(Error);
+      await expect(
+        service.refresh(responseMock(validToken)),
+      ).rejects.toThrowError(Error);
+    }
+  });
+
+  it('should call newRefresh method and get response successfully', async () => {
+    const newRefreshTokenDtoMOck = {
+      email: 'rferreira3@hiberus.com',
+      name: 'rabindranath ferreira 3',
+    };
+    const refreshRespMock = {
+      token:
+        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJmZXJyZWlyYUBoaWJlcnVzLmNvbSIsIm5hbWUiOiJyYWJpbmRyYW5hdGggZmVycmVpcmEgMSsxIEdDTE9VRCIsImlhdCI6MTY3Mjg2MTg3OCwiZXhwIjoxNjcyODY5MDc4fQ.t5dkD_UJGl7-fzwkSUHQX8WRYuiqf8EcjeTZ2wIh0pA',
+    };
+    const newRefreshSpy = jest
+      .spyOn(authRepository, 'newRefresh')
+      .mockImplementation(() => {
+        return Promise.resolve(refreshRespMock);
+      });
+
+    const servRes = await service.newRefresh(newRefreshTokenDtoMOck);
+
+    expect(newRefreshSpy).toBeCalled();
+    expect(servRes).toEqual(refreshRespMock);
+  });
+
+  it('should call newRefresh method and get response error 401 UNAUTHORIZED', async () => {
+    const newRefreshTokenDtoMOck = {
+      email: 'rferreira3@hiberus.com',
+      name: 'rabindranath ferreira 3',
+    };
+    const loginRespMock = null;
+    const newRefreshSpy = jest
+      .spyOn(authRepository, 'newRefresh')
+      .mockImplementation(() => {
+        return Promise.resolve(loginRespMock);
+      });
+
+    try {
+      await service.newRefresh(newRefreshTokenDtoMOck);
+    } catch (error) {
+      expect(newRefreshSpy).toBeCalled();
+      expect(error).toBeInstanceOf(Error);
+      expect(error['status']).toBe(HttpStatus.UNAUTHORIZED);
+      expect(error['message']).toBe(
+        `this email ${newRefreshTokenDtoMOck.email} was not found or just password is incorrect, please check your credentials`,
+      );
+      await expect(
+        service.newRefresh(newRefreshTokenDtoMOck),
+      ).rejects.toThrowError(Error);
+    }
+  });
+
+  it('should call newRefresh method and get response error 500', async () => {
+    const newRefreshTokenDtoMOck = {
+      email: 'rferreira3@hiberus.com',
+      name: 'rabindranath ferreira 3',
+    };
+    const newRefreshSpy = jest
+      .spyOn(authRepository, 'newRefresh')
+      .mockImplementation(() => {
+        return Promise.reject(new Error('error 500'));
+      });
+
+    try {
+      await service.newRefresh(newRefreshTokenDtoMOck);
+    } catch (error) {
+      expect(newRefreshSpy).toBeCalled();
+      expect(error).toBeInstanceOf(Error);
+      await expect(
+        service.newRefresh(newRefreshTokenDtoMOck),
+      ).rejects.toThrowError(Error);
+    }
   });
 });

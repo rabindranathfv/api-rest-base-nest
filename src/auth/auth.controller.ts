@@ -50,7 +50,7 @@ export class AuthController {
     type: LoginAuth,
   })
   @ApiResponse({
-    status: 409,
+    status: 401,
     description:
       'this email was not found or just password is incorrect, please check it',
   })
@@ -75,7 +75,7 @@ export class AuthController {
     type: registerAuth,
   })
   @ApiResponse({
-    status: 409,
+    status: 400,
     description: 'this email already exist or have some errors',
   })
   @ApiResponse({
