@@ -79,6 +79,11 @@ describe('RecordCompanyService', () => {
     repository = module.get(RECORD_COMPANY_REPOSITORY);
   });
 
+  afterEach(() => {
+    jest.resetAllMocks();
+    jest.clearAllMocks();
+  });
+
   it('should be defined', () => {
     expect(repository).toBeDefined();
     expect(service).toBeDefined();
