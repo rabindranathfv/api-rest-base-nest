@@ -158,6 +158,24 @@ describe('AuthController:::', () => {
     expect(loginSpy).toHaveBeenCalledWith(loginDtoMock);
   });
 
+  it('should call login method and error 500', async () => {
+    const loginDtoMock = {
+      email: 'rferreira@hiberus.com',
+      password: '123456',
+    };
+    const loginSpy = jest.spyOn(service, 'login').mockImplementation(() => {
+      return Promise.reject(new Error('error 500'));
+    });
+
+    try {
+      await controller.login(loginDtoMock);
+    } catch (error) {
+      expect(loginSpy).toBeCalled();
+      expect(error).toBeInstanceOf(Error);
+      await expect(controller.login(loginDtoMock)).rejects.toThrowError();
+    }
+  });
+
   it('should call register method and return a new user', async () => {
     const createUserDtoMock = {
       name: 'rabindranath ferreira 3',

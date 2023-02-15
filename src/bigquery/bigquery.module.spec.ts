@@ -48,6 +48,11 @@ describe('BigqueryModule:::', () => {
     moduleInst = module.get(BigqueryModule);
   });
 
+  afterEach(() => {
+    jest.resetAllMocks();
+    jest.clearAllMocks();
+  });
+
   it('should be defined', () => {
     expect(moduleInst).toBeDefined();
   });

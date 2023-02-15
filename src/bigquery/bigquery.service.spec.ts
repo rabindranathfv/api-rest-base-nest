@@ -30,6 +30,7 @@ describe('BigqueryService:::', () => {
   });
 
   afterEach(() => {
+    jest.resetAllMocks();
     jest.clearAllMocks();
   });
 

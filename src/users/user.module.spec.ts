@@ -59,6 +59,11 @@ describe('UserModule:::', () => {
     moduleInst = module.get(UserModule);
   });
 
+  afterEach(() => {
+    jest.resetAllMocks();
+    jest.clearAllMocks();
+  });
+
   it('should be defined', () => {
     expect(moduleInst).toBeDefined();
   });

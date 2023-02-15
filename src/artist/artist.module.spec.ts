@@ -86,6 +86,11 @@ describe('ArtistModule:::', () => {
     moduleInst = module.get(ArtistModule);
   });
 
+  afterEach(() => {
+    jest.resetAllMocks();
+    jest.clearAllMocks();
+  });
+
   it('should be defined', () => {
     expect(moduleInst).toBeDefined();
   });

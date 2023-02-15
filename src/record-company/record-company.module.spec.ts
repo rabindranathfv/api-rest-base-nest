@@ -85,6 +85,11 @@ describe('RecordCompanyModule:::', () => {
     moduleInst = module.get(RecordCompanyModule);
   });
 
+  afterEach(() => {
+    jest.resetAllMocks();
+    jest.clearAllMocks();
+  });
+
   it('should be defined', () => {
     expect(moduleInst).toBeDefined();
   });

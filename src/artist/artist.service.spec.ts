@@ -73,6 +73,11 @@ describe('ArtistService:::', () => {
     repository = module.get(ARTIST_REPOSITORY);
   });
 
+  afterEach(() => {
+    jest.resetAllMocks();
+    jest.clearAllMocks();
+  });
+
   it('should be defined', () => {
     expect(repository).toBeDefined();
     expect(service).toBeDefined();

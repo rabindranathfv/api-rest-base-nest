@@ -47,6 +47,11 @@ describe('UsersService:::', () => {
     repository = module.get(USER_DATASTORE_REPOSITORY);
   });
 
+  afterEach(() => {
+    jest.resetAllMocks();
+    jest.clearAllMocks();
+  });
+
   it('should be defined', () => {
     expect(repository).toBeDefined();
     expect(service).toBeDefined();

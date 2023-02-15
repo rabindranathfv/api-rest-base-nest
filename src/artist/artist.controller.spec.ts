@@ -152,6 +152,7 @@ describe('ArtistController', () => {
       await controller.getAllSongsByArtistsById(res, idArtistsMock);
     } catch (error) {
       expect(getAllSongsByArtistsByIdSpy).toHaveBeenCalled();
+      expect(error).toBeInstanceOf(Error);
       await expect(
         controller.getAllSongsByArtistsById(res, idArtistsMock),
       ).rejects.toThrowError(Error);
@@ -199,6 +200,7 @@ describe('ArtistController', () => {
       await controller.getSummaryArtistById(res, idArtistsMock);
     } catch (error) {
       expect(getAllSongsByArtistsSpy).toHaveBeenCalled();
+      expect(error).toBeInstanceOf(Error);
       await expect(
         controller.getSummaryArtistById(res, idArtistsMock),
       ).rejects.toThrowError(Error);
@@ -246,6 +248,7 @@ describe('ArtistController', () => {
       await controller.getKpiRadioArtistById(res, idArtistsMock);
     } catch (error) {
       expect(getKpiRadioArtistByIdSpy).toHaveBeenCalled();
+      expect(error).toBeInstanceOf(Error);
       await expect(
         controller.getKpiRadioArtistById(res, idArtistsMock),
       ).rejects.toThrowError(Error);
