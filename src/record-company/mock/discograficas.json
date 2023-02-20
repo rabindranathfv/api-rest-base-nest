@@ -1,6 +1,6 @@
 {
   "tocadas": 66000000,
-  "streams": 25000000,
+  "streams": "25M",
   "total_cobertura": 75000000,
   "cobertura": {
     "los_40": 100000,
@@ -20,8 +20,10 @@
       "title": "Columbia Records FROM BACK",
       "subtitle": "Sony Music Entretainment FROM BACK",
       "artistas": "2",
-      "tocadas": 1650000,
-      "streams": 25000000,
+      "tocadas": "1.65M",
+      "porcentajeTocadas": 8.29,
+      "streams": "25M",
+      "porcentajeStream": 12.29,
       "cobertura": 14660000,
       "image": "https://cdn.smehost.net/2019sonymusiccom-smeprod/wp-content/uploads/2020/06/sony-music-large-logo.jpg",
       "lista_artistas": [
@@ -37,15 +39,26 @@
         }
       ],
       "kpis": {
-        "compactKpi": {
-          "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-          "dataSet":[
-            {
-              "name": "label",
-              "data": [840, 660, 671, 414, 555, 857, 901, 613, 727, 414, 555, 257]
-            }
-          ]
-        },
+        "compactKpi": [
+          {
+            "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+            "dataSet": [
+              {
+                "name": "tocadas",
+                "data": [840, 660, 671, 414, 555, 857, 901, 613, 727, 414, 555, 257]
+              }
+            ]
+          },
+          {
+            "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+            "dataSet": [
+              {
+                "name": "streams",
+                "data": [300, 250, 671, 414, 555, 207, 901, 693, 777, 414, 555, 157]
+              }
+            ]
+          }
+        ],
         "generalKpi": {
           "dataSet": [
             {
@@ -65,8 +78,10 @@
       "title": "BMG Ring FROM BACK",
       "subtitle": "Bit Music Group",
       "artistas": "2",
-      "tocadas": 1650000,
-      "streams": 25000000,
+      "tocadas": "1.65M",
+      "porcentajeTocadas": 9.29,
+      "streams": "25M",
+      "porcentajeStream": 13.29,
       "cobertura": 14660000,
       "lista_artistas": [
         {
@@ -81,15 +96,26 @@
         }
       ],
       "kpis": {
-        "compactKpi": {
-          "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-          "dataSet": [
-            {
-              "name": "label",
-              "data": [540, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-            }
-          ]
-        },
+        "compactKpi": [
+          {
+            "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+            "dataSet": [
+              {
+                "name": "tocadas",
+                "data": [640, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+              }
+            ]
+          },
+          {
+            "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+            "dataSet": [
+              {
+                "name": "streams",
+                "data": [900, 450, 671, 414, 555, 207, 901, 693, 777, 414, 555, 157]
+              }
+            ]
+          }
+        ],
         "generalKpi": {
           "dataSet": [
             {
@@ -109,8 +135,10 @@
       "title": "Republic Records FROM BACK",
       "subtitle": "Universal Music Group",
       "artistas": "1",
-      "tocadas": 1650000,
-      "streams": 25000000,
+      "tocadas": "1.65M",
+      "porcentajeTocadas": 10.29,
+      "streams": "25M",
+      "porcentajeStream": 14.29,
       "cobertura": 14660000,
       "lista_artistas": [
         {
@@ -120,15 +148,26 @@
         }
       ],
       "kpis": {
-        "compactKpi": {
-          "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-          "dataSet": [
-            {
-              "name": "label",
-              "data": [190, 150, 671, 414, 555, 207, 901, 693, 777, 414, 555, 157]
-            }
-          ]
-        },
+        "compactKpi": [
+          {
+            "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+            "dataSet": [
+              {
+                "name": "tocadas",
+                "data": [190, 150, 671, 414, 555, 207, 901, 693, 777, 414, 555, 157]
+              }
+            ]
+          },
+          {
+            "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+            "dataSet": [
+              {
+                "name": "streams",
+                "data": [900, 950, 671, 414, 555, 207, 901, 693, 777, 414, 555, 157]
+              }
+            ]
+          }
+        ],
         "generalKpi": {
           "dataSet": [
             {

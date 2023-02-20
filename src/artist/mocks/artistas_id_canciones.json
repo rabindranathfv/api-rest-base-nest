@@ -15,15 +15,25 @@
             "streams": 5668,
             "tocadas": 1,
             "kpis": {
-                "compactKpi": {
+                "compactKpi": [{
                   "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
                   "dataSet": [
                     {
-                      "name": "label",
+                      "name": "tocadas",
                       "data": [575, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 475]
                     }
                   ]
                 },
+                {
+                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                  "dataSet": [
+                    {
+                      "name": "streams",
+                      "data": [100, 250, 671, 414, 555, 207, 901, 693, 777, 414, 555, 157]
+                    }
+                  ]
+                }
+              ],
                 "generalKpi": {
                   "dataSet": [
                     {
@@ -56,15 +66,25 @@
             "streams": 1560,
             "tocadas": 1,
             "kpis": {
-                "compactKpi": {
+                "compactKpi": [{
                   "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
                   "dataSet": [
                     {
-                      "name": "label",
+                      "name": "tocadas",
                       "data": [775, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
                     }
                   ]
                 },
+                {
+                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                  "dataSet": [
+                    {
+                      "name": "streams",
+                      "data": [975, 1160, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                    }
+                  ]
+                }
+              ],
                 "generalKpi": {
                   "dataSet": [
                     {
@@ -93,15 +113,26 @@
             "streams": 3277,
             "tocadas": 1,
             "kpis": {
-                "compactKpi": {
-                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                  "dataSet": [
-                    {
-                      "name": "label",
-                      "data": [540, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                    }
-                  ]
-                },
+              "compactKpi": [
+                  {
+                    "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                    "dataSet": [
+                      {
+                        "name": "tocadas",
+                        "data": [575, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                      }
+                    ]
+                  },
+                  {
+                    "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                    "dataSet": [
+                      {
+                        "name": "streams",
+                        "data": [675, 960, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                      }
+                    ]
+                  }
+                ],
                 "generalKpi": {
                   "dataSet": [
                     {
@@ -130,15 +161,26 @@
             "streams": 14202,
             "tocadas": 5,
             "kpis": {
-                "compactKpi": {
+              "compactKpi": [
+                {
                   "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
                   "dataSet": [
                     {
-                      "name": "label",
+                      "name": "tocadas",
                       "data": [540, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
                     }
                   ]
                 },
+                {
+                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                  "dataSet": [
+                    {
+                      "name": "streams",
+                      "data": [640, 960, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                    }
+                  ]
+                }
+              ],
                 "generalKpi": {
                   "dataSet": [
                     {
@@ -167,15 +209,26 @@
             "streams": 107919,
             "tocadas": 7,
             "kpis": {
-                "compactKpi": {
+              "compactKpi": [
+                {
                   "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
                   "dataSet": [
                     {
-                      "name": "label",
-                      "data": [540, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                      "name": "tocadas",
+                      "data": [545, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
                     }
                   ]
                 },
+                {
+                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                  "dataSet": [
+                    {
+                      "name": "streams",
+                      "data": [645, 960, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                    }
+                  ]
+                }
+              ],
                 "generalKpi": {
                   "dataSet": [
                     {
@@ -204,15 +257,26 @@
             "streams": 24506,
             "tocadas": 2,
             "kpis": {
-                "compactKpi": {
+              "compactKpi": [
+                {
                   "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
                   "dataSet": [
                     {
-                      "name": "label",
-                      "data": [540, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                      "name": "tocadas",
+                      "data": [550, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
                     }
                   ]
                 },
+                {
+                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                  "dataSet": [
+                    {
+                      "name": "streams",
+                      "data": [650, 960, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                    }
+                  ]
+                }
+              ],
                 "generalKpi": {
                   "dataSet": [
                     {
@@ -241,15 +305,26 @@
             "streams": 1525,
             "tocadas": 1,
             "kpis": {
-                "compactKpi": {
+              "compactKpi": [
+                {
                   "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
                   "dataSet": [
                     {
-                      "name": "label",
-                      "data": [540, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                      "name": "tocadas",
+                      "data": [555, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
                     }
                   ]
                 },
+                {
+                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                  "dataSet": [
+                    {
+                      "name": "streams",
+                      "data": [655, 960, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                    }
+                  ]
+                }
+              ],
                 "generalKpi": {
                   "dataSet": [
                     {
@@ -278,15 +353,26 @@
             "streams": 5069,
             "tocadas": 1,
             "kpis": {
-                "compactKpi": {
+              "compactKpi": [
+                {
                   "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
                   "dataSet": [
                     {
-                      "name": "label",
-                      "data": [540, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                      "name": "tocadas",
+                      "data": [570, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
                     }
                   ]
                 },
+                {
+                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                  "dataSet": [
+                    {
+                      "name": "streams",
+                      "data": [670, 960, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                    }
+                  ]
+                }
+              ],
                 "generalKpi": {
                   "dataSet": [
                     {
@@ -315,15 +401,26 @@
             "streams": 4538,
             "tocadas": 1,
             "kpis": {
-                "compactKpi": {
+              "compactKpi": [
+                {
                   "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
                   "dataSet": [
                     {
-                      "name": "label",
-                      "data": [540, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                      "name": "tocadas",
+                      "data": [575, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
                     }
                   ]
                 },
+                {
+                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                  "dataSet": [
+                    {
+                      "name": "streams",
+                      "data": [675, 960, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                    }
+                  ]
+                }
+              ],
                 "generalKpi": {
                   "dataSet": [
                     {
@@ -352,15 +449,26 @@
             "streams": 27129,
             "tocadas": 8,
             "kpis": {
-                "compactKpi": {
+              "compactKpi": [
+                {
                   "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
                   "dataSet": [
                     {
-                      "name": "label",
-                      "data": [540, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                      "name": "tocadas",
+                      "data": [580, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
                     }
                   ]
                 },
+                {
+                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                  "dataSet": [
+                    {
+                      "name": "streams",
+                      "data": [680, 960, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                    }
+                  ]
+                }
+              ],
                 "generalKpi": {
                   "dataSet": [
                     {
@@ -389,15 +497,26 @@
             "streams": 1777,
             "tocadas": 1,
             "kpis": {
-                "compactKpi": {
+              "compactKpi": [
+                {
                   "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
                   "dataSet": [
                     {
-                      "name": "label",
-                      "data": [540, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                      "name": "tocadas",
+                      "data": [585, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
                     }
                   ]
                 },
+                {
+                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                  "dataSet": [
+                    {
+                      "name": "streams",
+                      "data": [685, 960, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                    }
+                  ]
+                }
+              ],
                 "generalKpi": {
                   "dataSet": [
                     {
@@ -426,15 +545,26 @@
             "streams": 432,
             "tocadas": 1,
             "kpis": {
-                "compactKpi": {
+              "compactKpi": [
+                {
                   "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
                   "dataSet": [
                     {
-                      "name": "label",
-                      "data": [540, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                      "name": "tocadas",
+                      "data": [590, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
                     }
                   ]
                 },
+                {
+                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                  "dataSet": [
+                    {
+                      "name": "streams",
+                      "data": [690, 960, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                    }
+                  ]
+                }
+              ],
                 "generalKpi": {
                   "dataSet": [
                     {
@@ -463,15 +593,26 @@
             "streams": 849,
             "tocadas": 1,
             "kpis": {
-                "compactKpi": {
+              "compactKpi": [
+                {
                   "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
                   "dataSet": [
                     {
-                      "name": "label",
-                      "data": [540, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                      "name": "tocadas",
+                      "data": [595, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
                     }
                   ]
                 },
+                {
+                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                  "dataSet": [
+                    {
+                      "name": "streams",
+                      "data": [695, 960, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                    }
+                  ]
+                }
+              ],
                 "generalKpi": {
                   "dataSet": [
                     {
@@ -500,15 +641,26 @@
             "streams": 5241,
             "tocadas": 1,
             "kpis": {
-                "compactKpi": {
+              "compactKpi": [
+                {
                   "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
                   "dataSet": [
                     {
-                      "name": "label",
-                      "data": [540, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                      "name": "tocadas",
+                      "data": [600, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
                     }
                   ]
                 },
+                {
+                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                  "dataSet": [
+                    {
+                      "name": "streams",
+                      "data": [710, 960, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                    }
+                  ]
+                }
+              ],
                 "generalKpi": {
                   "dataSet": [
                     {
@@ -537,15 +689,26 @@
             "streams": 3904,
             "tocadas": 5,
             "kpis": {
-                "compactKpi": {
+              "compactKpi": [
+                {
                   "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
                   "dataSet": [
                     {
-                      "name": "label",
-                      "data": [540, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                      "name": "tocadas",
+                      "data": [605, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
                     }
                   ]
                 },
+                {
+                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                  "dataSet": [
+                    {
+                      "name": "streams",
+                      "data": [715, 960, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                    }
+                  ]
+                }
+              ],
                 "generalKpi": {
                   "dataSet": [
                     {
@@ -574,15 +737,26 @@
             "streams": 27893,
             "tocadas": 1,
             "kpis": {
-                "compactKpi": {
-                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                  "dataSet": [
-                    {
-                      "name": "label",
-                      "data": [540, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                    }
-                  ]
-                },
+                "compactKpi": [
+                  {
+                    "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                    "dataSet": [
+                      {
+                        "name": "tocadas",
+                        "data": [610, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                      }
+                    ]
+                  },
+                  {
+                    "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                    "dataSet": [
+                      {
+                        "name": "streams",
+                        "data": [710, 960, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                      }
+                    ]
+                  }
+                ],
                 "generalKpi": {
                   "dataSet": [
                     {
@@ -611,15 +785,26 @@
             "streams": 72063,
             "tocadas": 5,
             "kpis": {
-                "compactKpi": {
-                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                  "dataSet": [
-                    {
-                      "name": "label",
-                      "data": [540, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                    }
-                  ]
-                },
+                "compactKpi": [
+                  {
+                    "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                    "dataSet": [
+                      {
+                        "name": "tocadas",
+                        "data": [620, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                      }
+                    ]
+                  },
+                  {
+                    "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                    "dataSet": [
+                      {
+                        "name": "streams",
+                        "data": [720, 960, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                      }
+                    ]
+                  }
+                ],
                 "generalKpi": {
                   "dataSet": [
                     {
@@ -648,15 +833,26 @@
             "streams": 986,
             "tocadas": 1,
             "kpis": {
-                "compactKpi": {
-                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                  "dataSet": [
-                    {
-                      "name": "label",
-                      "data": [540, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                    }
-                  ]
-                },
+                "compactKpi": [
+                  {
+                    "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                    "dataSet": [
+                      {
+                        "name": "tocadas",
+                        "data": [625, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                      }
+                    ]
+                  },
+                  {
+                    "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                    "dataSet": [
+                      {
+                        "name": "streams",
+                        "data": [725, 960, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                      }
+                    ]
+                  }
+                ],
                 "generalKpi": {
                   "dataSet": [
                     {
@@ -685,15 +881,26 @@
             "streams": 1638,
             "tocadas": 1,
             "kpis": {
-                "compactKpi": {
-                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                  "dataSet": [
-                    {
-                      "name": "label",
-                      "data": [540, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                    }
-                  ]
-                },
+                "compactKpi": [
+                  {
+                    "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                    "dataSet": [
+                      {
+                        "name": "tocadas",
+                        "data": [630, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                      }
+                    ]
+                  },
+                  {
+                    "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                    "dataSet": [
+                      {
+                        "name": "streams",
+                        "data": [730, 960, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                      }
+                    ]
+                  }
+                ],
                 "generalKpi": {
                   "dataSet": [
                     {
@@ -722,15 +929,26 @@
             "streams": 10823,
             "tocadas": 5,
             "kpis": {
-                "compactKpi": {
-                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                  "dataSet": [
-                    {
-                      "name": "label",
-                      "data": [540, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                    }
-                  ]
-                },
+                "compactKpi": [
+                  {
+                    "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                    "dataSet": [
+                      {
+                        "name": "tocadas",
+                        "data": [635, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                      }
+                    ]
+                  },
+                  {
+                    "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                    "dataSet": [
+                      {
+                        "name": "streams",
+                        "data": [735, 960, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                      }
+                    ]
+                  }
+                ],
                 "generalKpi": {
                   "dataSet": [
                     {
@@ -759,15 +977,26 @@
             "streams": 17698,
             "tocadas": 8,
             "kpis": {
-                "compactKpi": {
-                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                  "dataSet": [
-                    {
-                      "name": "label",
-                      "data": [540, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                    }
-                  ]
-                },
+                "compactKpi": [
+                  {
+                    "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                    "dataSet": [
+                      {
+                        "name": "tocadas",
+                        "data": [640, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                      }
+                    ]
+                  },
+                  {
+                    "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                    "dataSet": [
+                      {
+                        "name": "streams",
+                        "data": [740, 960, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                      }
+                    ]
+                  }
+                ],
                 "generalKpi": {
                   "dataSet": [
                     {
@@ -796,15 +1025,26 @@
             "streams": 2802,
             "tocadas": 1,
             "kpis": {
-                "compactKpi": {
+              "compactKpi": [
+                {
                   "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
                   "dataSet": [
                     {
-                      "name": "label",
-                      "data": [540, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                      "name": "tocadas",
+                      "data": [645, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
                     }
                   ]
                 },
+                {
+                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                  "dataSet": [
+                    {
+                      "name": "streams",
+                      "data": [745, 960, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                    }
+                  ]
+                }
+              ],
                 "generalKpi": {
                   "dataSet": [
                     {
@@ -833,15 +1073,26 @@
             "streams": 1933,
             "tocadas": 1,
             "kpis": {
-                "compactKpi": {
-                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                  "dataSet": [
-                    {
-                      "name": "label",
-                      "data": [540, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                    }
-                  ]
-                },
+                "compactKpi": [
+                  {
+                    "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                    "dataSet": [
+                      {
+                        "name": "tocadas",
+                        "data": [650, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                      }
+                    ]
+                  },
+                  {
+                    "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                    "dataSet": [
+                      {
+                        "name": "streams",
+                        "data": [750, 960, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                      }
+                    ]
+                  }
+                ],
                 "generalKpi": {
                   "dataSet": [
                     {
@@ -874,15 +1125,26 @@
             "streams": 253,
             "tocadas": 2,
             "kpis": {
-                "compactKpi": {
-                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                  "dataSet": [
-                    {
-                      "name": "label",
-                      "data": [540, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                    }
-                  ]
-                },
+                "compactKpi": [
+                  {
+                    "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                    "dataSet": [
+                      {
+                        "name": "tocadas",
+                        "data": [655, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                      }
+                    ]
+                  },
+                  {
+                    "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                    "dataSet": [
+                      {
+                        "name": "streams",
+                        "data": [755, 960, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                      }
+                    ]
+                  }
+                ],
                 "generalKpi": {
                   "dataSet": [
                     {
@@ -911,15 +1173,26 @@
             "streams": 359,
             "tocadas": 1,
             "kpis": {
-                "compactKpi": {
+              "compactKpi": [
+                {
                   "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
                   "dataSet": [
                     {
-                      "name": "label",
-                      "data": [540, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                      "name": "tocadas",
+                      "data": [660, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
                     }
                   ]
                 },
+                {
+                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                  "dataSet": [
+                    {
+                      "name": "streams",
+                      "data": [760, 960, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                    }
+                  ]
+                }
+              ],
                 "generalKpi": {
                   "dataSet": [
                     {
@@ -948,15 +1221,26 @@
             "streams": 417,
             "tocadas": 3,
             "kpis": {
-                "compactKpi": {
-                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                  "dataSet": [
-                    {
-                      "name": "label",
-                      "data": [540, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                    }
-                  ]
-                },
+                "compactKpi": [
+                  {
+                    "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                    "dataSet": [
+                      {
+                        "name": "tocadas",
+                        "data": [665, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                      }
+                    ]
+                  },
+                  {
+                    "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                    "dataSet": [
+                      {
+                        "name": "streams",
+                        "data": [765, 960, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                      }
+                    ]
+                  }
+                ],
                 "generalKpi": {
                   "dataSet": [
                     {
@@ -985,15 +1269,26 @@
             "streams": 13984,
             "tocadas": 1,
             "kpis": {
-                "compactKpi": {
-                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                  "dataSet": [
-                    {
-                      "name": "label",
-                      "data": [540, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                    }
-                  ]
-                },
+                "compactKpi": [
+                  {
+                    "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                    "dataSet": [
+                      {
+                        "name": "tocadas",
+                        "data": [670, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                      }
+                    ]
+                  },
+                  {
+                    "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                    "dataSet": [
+                      {
+                        "name": "streams",
+                        "data": [770, 960, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                      }
+                    ]
+                  }
+                ],
                 "generalKpi": {
                   "dataSet": [
                     {
@@ -1022,15 +1317,26 @@
             "streams": 12363,
             "tocadas": 1,
             "kpis": {
-                "compactKpi": {
-                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                  "dataSet": [
-                    {
-                      "name": "label",
-                      "data": [540, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                    }
-                  ]
-                },
+                "compactKpi": [
+                  {
+                    "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                    "dataSet": [
+                      {
+                        "name": "tocadas",
+                        "data": [675, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                      }
+                    ]
+                  },
+                  {
+                    "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                    "dataSet": [
+                      {
+                        "name": "streams",
+                        "data": [775, 960, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                      }
+                    ]
+                  }
+                ],
                 "generalKpi": {
                   "dataSet": [
                     {
@@ -1059,15 +1365,26 @@
             "streams": 26892,
             "tocadas": 1,
             "kpis": {
-                "compactKpi": {
-                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                  "dataSet": [
-                    {
-                      "name": "label",
-                      "data": [540, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                    }
-                  ]
-                },
+                "compactKpi": [
+                  {
+                    "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                    "dataSet": [
+                      {
+                        "name": "tocadas",
+                        "data": [680, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                      }
+                    ]
+                  },
+                  {
+                    "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                    "dataSet": [
+                      {
+                        "name": "streams",
+                        "data": [780, 960, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                      }
+                    ]
+                  }
+                ],
                 "generalKpi": {
                   "dataSet": [
                     {
@@ -1096,15 +1413,26 @@
             "streams": 13572,
             "tocadas": 1,
             "kpis": {
-                "compactKpi": {
-                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                  "dataSet": [
-                    {
-                      "name": "label",
-                      "data": [540, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                    }
-                  ]
-                },
+                "compactKpi": [
+                  {
+                    "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                    "dataSet": [
+                      {
+                        "name": "tocadas",
+                        "data": [685, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                      }
+                    ]
+                  },
+                  {
+                    "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                    "dataSet": [
+                      {
+                        "name": "streams",
+                        "data": [785, 960, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                      }
+                    ]
+                  }
+                ],
                 "generalKpi": {
                   "dataSet": [
                     {
@@ -1133,15 +1461,26 @@
             "streams": 5051,
             "tocadas": 2,
             "kpis": {
-                "compactKpi": {
-                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                  "dataSet": [
-                    {
-                      "name": "label",
-                      "data": [540, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                    }
-                  ]
-                },
+                "compactKpi": [
+                  {
+                    "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                    "dataSet": [
+                      {
+                        "name": "tocadas",
+                        "data": [690, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                      }
+                    ]
+                  },
+                  {
+                    "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                    "dataSet": [
+                      {
+                        "name": "streams",
+                        "data": [790, 960, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                      }
+                    ]
+                  }
+                ],
                 "generalKpi": {
                   "dataSet": [
                     {
@@ -1170,15 +1509,26 @@
             "streams": 3900,
             "tocadas": 1,
             "kpis": {
-                "compactKpi": {
-                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                  "dataSet": [
-                    {
-                      "name": "label",
-                      "data": [540, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                    }
-                  ]
-                },
+                "compactKpi": [
+                  {
+                    "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                    "dataSet": [
+                      {
+                        "name": "tocadas",
+                        "data": [710, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                      }
+                    ]
+                  },
+                  {
+                    "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                    "dataSet": [
+                      {
+                        "name": "streams",
+                        "data": [810, 960, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                      }
+                    ]
+                  }
+                ],
                 "generalKpi": {
                   "dataSet": [
                     {
@@ -1207,15 +1557,26 @@
             "streams": 2552,
             "tocadas": 1,
             "kpis": {
-                "compactKpi": {
+              "compactKpi": [
+                {
                   "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
                   "dataSet": [
                     {
-                      "name": "label",
-                      "data": [540, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                      "name": "tocadas",
+                      "data": [715, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
                     }
                   ]
                 },
+                {
+                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                  "dataSet": [
+                    {
+                      "name": "streams",
+                      "data": [815, 960, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                    }
+                  ]
+                }
+              ],
                 "generalKpi": {
                   "dataSet": [
                     {
@@ -1244,15 +1605,26 @@
             "streams": 9814,
             "tocadas": 3,
             "kpis": {
-                "compactKpi": {
+              "compactKpi": [
+                {
                   "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
                   "dataSet": [
                     {
-                      "name": "label",
-                      "data": [540, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                      "name": "tocadas",
+                      "data": [720, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
                     }
                   ]
                 },
+                {
+                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                  "dataSet": [
+                    {
+                      "name": "streams",
+                      "data": [820, 960, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                    }
+                  ]
+                }
+              ],
                 "generalKpi": {
                   "dataSet": [
                     {
@@ -1281,15 +1653,26 @@
             "streams": 5532,
             "tocadas": 1,
             "kpis": {
-                "compactKpi": {
-                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                  "dataSet": [
-                    {
-                      "name": "label",
-                      "data": [540, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                    }
-                  ]
-                },
+                "compactKpi": [
+                  {
+                    "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                    "dataSet": [
+                      {
+                        "name": "tocadas",
+                        "data": [720, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                      }
+                    ]
+                  },
+                  {
+                    "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                    "dataSet": [
+                      {
+                        "name": "streams",
+                        "data": [820, 960, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                      }
+                    ]
+                  }
+                ],
                 "generalKpi": {
                   "dataSet": [
                     {
@@ -1318,15 +1701,26 @@
             "streams": 19658,
             "tocadas": 1,
             "kpis": {
-                "compactKpi": {
-                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                  "dataSet": [
-                    {
-                      "name": "label",
-                      "data": [540, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                    }
-                  ]
-                },
+                "compactKpi": [
+                  {
+                    "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                    "dataSet": [
+                      {
+                        "name": "tocadas",
+                        "data": [725, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                      }
+                    ]
+                  },
+                  {
+                    "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                    "dataSet": [
+                      {
+                        "name": "streams",
+                        "data": [825, 960, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                      }
+                    ]
+                  }
+                ],
                 "generalKpi": {
                   "dataSet": [
                     {
@@ -1355,15 +1749,26 @@
             "streams": 51,
             "tocadas": 1,
             "kpis": {
-                "compactKpi": {
-                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                  "dataSet": [
-                    {
-                      "name": "label",
-                      "data": [540, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                    }
-                  ]
-                },
+                "compactKpi": [
+                  {
+                    "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                    "dataSet": [
+                      {
+                        "name": "tocadas",
+                        "data": [730, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                      }
+                    ]
+                  },
+                  {
+                    "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                    "dataSet": [
+                      {
+                        "name": "streams",
+                        "data": [830, 960, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                      }
+                    ]
+                  }
+                ],
                 "generalKpi": {
                   "dataSet": [
                     {
@@ -1392,15 +1797,26 @@
             "streams": 2359,
             "tocadas": 1,
             "kpis": {
-                "compactKpi": {
-                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                  "dataSet": [
-                    {
-                      "name": "label",
-                      "data": [540, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                    }
-                  ]
-                },
+                "compactKpi": [
+                  {
+                    "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                    "dataSet": [
+                      {
+                        "name": "tocadas",
+                        "data": [735, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                      }
+                    ]
+                  },
+                  {
+                    "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                    "dataSet": [
+                      {
+                        "name": "streams",
+                        "data": [835, 960, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                      }
+                    ]
+                  }
+                ],
                 "generalKpi": {
                   "dataSet": [
                     {
@@ -1429,15 +1845,26 @@
             "streams": 3445,
             "tocadas": 1,
             "kpis": {
-                "compactKpi": {
+              "compactKpi": [
+                {
                   "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
                   "dataSet": [
                     {
-                      "name": "label",
-                      "data": [540, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                      "name": "tocadas",
+                      "data": [740, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
                     }
                   ]
                 },
+                {
+                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                  "dataSet": [
+                    {
+                      "name": "streams",
+                      "data": [840, 960, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                    }
+                  ]
+                }
+              ],
                 "generalKpi": {
                   "dataSet": [
                     {
@@ -1466,459 +1893,26 @@
             "streams": 2260,
             "tocadas": 1,
             "kpis": {
-                "compactKpi": {
+              "compactKpi": [
+                {
                   "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
                   "dataSet": [
                     {
-                      "name": "label",
-                      "data": [540, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                      "name": "tocadas",
+                      "data": [715, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
                     }
                   ]
                 },
-                "generalKpi": {
+                {
+                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
                   "dataSet": [
                     {
-                      "name": "cobertura",
-                      "data": [190750, 200000, 230000, 245000]
-                    },
-                    {
-                      "name": "Stream",
-                      "data": [150750, 144000, 124000, 185000]
+                      "name": "streams",
+                      "data": [845, 960, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
                     }
                   ]
                 }
-              }
-        },
-        {
-            "emisora_N1": "Los 40",
-            "emisora_N2": "LOS40 Urban",
-            "id_emisora": 383002,
-            "fecha": "2022-01-17",
-            "discografica": "Sony Music",
-            "id": 10000634175,
-            "title": "Tattoo",
-            "id_interprete": 10000081699,
-            "interprete_colaboradores": "Camilo (+ Carlos Vives,El Alfa,Evaluna Montaner,Farruko,Reik,Manuel Turizo,Mau y Ricky,Pedro Capó,Pedro Capó,Shakira,Rauw Alejandro,Wisin)",
-            "nombre_interprete": "Camilo",
-            "streams": 4594,
-            "tocadas": 2,
-            "kpis": {
-                "compactKpi": {
-                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                  "dataSet": [
-                    {
-                      "name": "label",
-                      "data": [540, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                    }
-                  ]
-                },
-                "generalKpi": {
-                  "dataSet": [
-                    {
-                      "name": "cobertura",
-                      "data": [190750, 200000, 230000, 245000]
-                    },
-                    {
-                      "name": "Stream",
-                      "data": [150750, 144000, 124000, 185000]
-                    }
-                  ]
-                }
-              }
-        },
-        {
-            "emisora_N1": "Los 40",
-            "emisora_N2": "Los 40",
-            "id_emisora": 1002,
-            "fecha": "2022-01-17",
-            "discografica": "Sony Music",
-            "id": 10000634175,
-            "title": "Tattoo",
-            "id_interprete": 10000081699,
-            "interprete_colaboradores": "Camilo (+ Carlos Vives,El Alfa,Evaluna Montaner,Farruko,Reik,Manuel Turizo,Mau y Ricky,Pedro Capó,Pedro Capó,Shakira,Rauw Alejandro,Wisin)",
-            "nombre_interprete": "Camilo",
-            "streams": 41722,
-            "tocadas": 2,
-            "kpis": {
-                "compactKpi": {
-                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                  "dataSet": [
-                    {
-                      "name": "label",
-                      "data": [540, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                    }
-                  ]
-                },
-                "generalKpi": {
-                  "dataSet": [
-                    {
-                      "name": "cobertura",
-                      "data": [190750, 200000, 230000, 245000]
-                    },
-                    {
-                      "name": "Stream",
-                      "data": [150750, 144000, 124000, 185000]
-                    }
-                  ]
-                }
-              }
-        },
-        {
-            "emisora_N1": "Los 40",
-            "emisora_N2": "LOS40 Urban",
-            "id_emisora": 383002,
-            "fecha": "2022-01-17",
-            "discografica": "Sony Music",
-            "id": 10000631428,
-            "title": "Favorito",
-            "id_interprete": 10000081699,
-            "interprete_colaboradores": "Camilo (+ Carlos Vives,El Alfa,Evaluna Montaner,Farruko,Reik,Manuel Turizo,Mau y Ricky,Pedro Capó,Pedro Capó,Shakira,Rauw Alejandro,Wisin)",
-            "nombre_interprete": "Camilo",
-            "streams": 1216,
-            "tocadas": 1,
-            "kpis": {
-                "compactKpi": {
-                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                  "dataSet": [
-                    {
-                      "name": "label",
-                      "data": [540, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                    }
-                  ]
-                },
-                "generalKpi": {
-                  "dataSet": [
-                    {
-                      "name": "cobertura",
-                      "data": [190750, 200000, 230000, 245000]
-                    },
-                    {
-                      "name": "Stream",
-                      "data": [150750, 144000, 124000, 185000]
-                    }
-                  ]
-                }
-              }
-        },
-        {
-            "emisora_N1": "Cadena Dial",
-            "emisora_N2": "Cadena Dial",
-            "id_emisora": 1004,
-            "fecha": "2022-01-17",
-            "discografica": "Sony Music",
-            "id": 10000631428,
-            "title": "Favorito",
-            "id_interprete": 10000081699,
-            "interprete_colaboradores": "Camilo (+ Carlos Vives,El Alfa,Evaluna Montaner,Farruko,Reik,Manuel Turizo,Mau y Ricky,Pedro Capó,Pedro Capó,Shakira,Rauw Alejandro,Wisin)",
-            "nombre_interprete": "Camilo",
-            "streams": 2568,
-            "tocadas": 1,
-            "kpis": {
-                "compactKpi": {
-                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                  "dataSet": [
-                    {
-                      "name": "label",
-                      "data": [540, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                    }
-                  ]
-                },
-                "generalKpi": {
-                  "dataSet": [
-                    {
-                      "name": "cobertura",
-                      "data": [190750, 200000, 230000, 245000]
-                    },
-                    {
-                      "name": "Stream",
-                      "data": [150750, 144000, 124000, 185000]
-                    }
-                  ]
-                }
-              }
-        },
-        {
-            "emisora_N1": "Los 40",
-            "emisora_N2": "Los 40",
-            "id_emisora": 1002,
-            "fecha": "2022-01-17",
-            "discografica": "Sony Music",
-            "id": 10000651213,
-            "title": "Índigo",
-            "id_interprete": 10000081699,
-            "interprete_colaboradores": "Camilo (+ Carlos Vives,El Alfa,Evaluna Montaner,Farruko,Reik,Manuel Turizo,Mau y Ricky,Pedro Capó,Pedro Capó,Shakira,Rauw Alejandro,Wisin)",
-            "nombre_interprete": "Camilo",
-            "streams": 40029,
-            "tocadas": 3,
-            "kpis": {
-                "compactKpi": {
-                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                  "dataSet": [
-                    {
-                      "name": "label",
-                      "data": [540, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                    }
-                  ]
-                },
-                "generalKpi": {
-                  "dataSet": [
-                    {
-                      "name": "cobertura",
-                      "data": [190750, 200000, 230000, 245000]
-                    },
-                    {
-                      "name": "Stream",
-                      "data": [150750, 144000, 124000, 185000]
-                    }
-                  ]
-                }
-              }
-        },
-        {
-            "emisora_N1": "Cadena Dial",
-            "emisora_N2": "Cadena Dial",
-            "id_emisora": 1004,
-            "fecha": "2022-01-17",
-            "discografica": "Sony Music",
-            "id": 10000651213,
-            "title": "Índigo",
-            "id_interprete": 10000081699,
-            "interprete_colaboradores": "Camilo (+ Carlos Vives,El Alfa,Evaluna Montaner,Farruko,Reik,Manuel Turizo,Mau y Ricky,Pedro Capó,Pedro Capó,Shakira,Rauw Alejandro,Wisin)",
-            "nombre_interprete": "Camilo",
-            "streams": 19456,
-            "tocadas": 2,
-            "kpis": {
-                "compactKpi": {
-                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                  "dataSet": [
-                    {
-                      "name": "label",
-                      "data": [540, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                    }
-                  ]
-                },
-                "generalKpi": {
-                  "dataSet": [
-                    {
-                      "name": "cobertura",
-                      "data": [190750, 200000, 230000, 245000]
-                    },
-                    {
-                      "name": "Stream",
-                      "data": [150750, 144000, 124000, 185000]
-                    }
-                  ]
-                }
-              }
-        },
-        {
-            "emisora_N1": "Cadena Dial",
-            "emisora_N2": "Cadena Dial",
-            "id_emisora": 1004,
-            "fecha": "2022-01-17",
-            "discografica": "Sony Music",
-            "id": 10000642784,
-            "title": "Millones",
-            "id_interprete": 10000081699,
-            "interprete_colaboradores": "Camilo (+ Carlos Vives,El Alfa,Evaluna Montaner,Farruko,Reik,Manuel Turizo,Mau y Ricky,Pedro Capó,Pedro Capó,Shakira,Rauw Alejandro,Wisin)",
-            "nombre_interprete": "Camilo",
-            "streams": 19685,
-            "tocadas": 2,
-            "kpis": {
-                "compactKpi": {
-                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                  "dataSet": [
-                    {
-                      "name": "label",
-                      "data": [540, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                    }
-                  ]
-                },
-                "generalKpi": {
-                  "dataSet": [
-                    {
-                      "name": "cobertura",
-                      "data": [190750, 200000, 230000, 245000]
-                    },
-                    {
-                      "name": "Stream",
-                      "data": [150750, 144000, 124000, 185000]
-                    }
-                  ]
-                }
-              }
-        },
-        {
-            "emisora_N1": "Cadena Dial",
-            "emisora_N2": "Cadena Dial Latino",
-            "id_emisora": 376004,
-            "fecha": "2022-01-17",
-            "discografica": "Sony Music",
-            "id": 10000635873,
-            "title": "Vida de rico",
-            "id_interprete": 10000081699,
-            "interprete_colaboradores": "Camilo (+ Carlos Vives,El Alfa,Evaluna Montaner,Farruko,Reik,Manuel Turizo,Mau y Ricky,Pedro Capó,Pedro Capó,Shakira,Rauw Alejandro,Wisin)",
-            "nombre_interprete": "Camilo",
-            "streams": 366,
-            "tocadas": 3,
-            "kpis": {
-                "compactKpi": {
-                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                  "dataSet": [
-                    {
-                      "name": "label",
-                      "data": [540, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                    }
-                  ]
-                },
-                "generalKpi": {
-                  "dataSet": [
-                    {
-                      "name": "cobertura",
-                      "data": [190750, 200000, 230000, 245000]
-                    },
-                    {
-                      "name": "Stream",
-                      "data": [150750, 144000, 124000, 185000]
-                    }
-                  ]
-                }
-              }
-        },
-        {
-            "emisora_N1": "Cadena Dial",
-            "emisora_N2": "Cadena Dial",
-            "id_emisora": 1004,
-            "fecha": "2022-01-17",
-            "discografica": "Sony Music",
-            "id": 10000635873,
-            "title": "Vida de rico",
-            "id_interprete": 10000081699,
-            "interprete_colaboradores": "Camilo (+ Carlos Vives,El Alfa,Evaluna Montaner,Farruko,Reik,Manuel Turizo,Mau y Ricky,Pedro Capó,Pedro Capó,Shakira,Rauw Alejandro,Wisin)",
-            "nombre_interprete": "Camilo",
-            "streams": 14372,
-            "tocadas": 2,
-            "kpis": {
-                "compactKpi": {
-                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                  "dataSet": [
-                    {
-                      "name": "label",
-                      "data": [540, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                    }
-                  ]
-                },
-                "generalKpi": {
-                  "dataSet": [
-                    {
-                      "name": "cobertura",
-                      "data": [190750, 200000, 230000, 245000]
-                    },
-                    {
-                      "name": "Stream",
-                      "data": [150750, 144000, 124000, 185000]
-                    }
-                  ]
-                }
-              }
-        },
-        {
-            "emisora_N1": "Los 40",
-            "emisora_N2": "LOS40 Urban",
-            "id_emisora": 383002,
-            "fecha": "2022-01-17",
-            "discografica": "Sony Music",
-            "id": 10000642785,
-            "title": "KESI",
-            "id_interprete": 10000081699,
-            "interprete_colaboradores": "Camilo (+ Carlos Vives,El Alfa,Evaluna Montaner,Farruko,Reik,Manuel Turizo,Mau y Ricky,Pedro Capó,Pedro Capó,Shakira,Rauw Alejandro,Wisin)",
-            "nombre_interprete": "Camilo",
-            "streams": 6673,
-            "tocadas": 3,
-            "kpis": {
-                "compactKpi": {
-                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                  "dataSet": [
-                    {
-                      "name": "label",
-                      "data": [540, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                    }
-                  ]
-                },
-                "generalKpi": {
-                  "dataSet": [
-                    {
-                      "name": "cobertura",
-                      "data": [190750, 200000, 230000, 245000]
-                    },
-                    {
-                      "name": "Stream",
-                      "data": [150750, 144000, 124000, 185000]
-                    }
-                  ]
-                }
-              }
-        },
-        {
-            "emisora_N1": "Los 40",
-            "emisora_N2": "Los 40",
-            "id_emisora": 1002,
-            "fecha": "2022-06-29",
-            "discografica": "Sony Music",
-            "id": 10000661014,
-            "title": "Pegao",
-            "id_interprete": 10000081699,
-            "interprete_colaboradores": "Camilo (+ Carlos Vives,El Alfa,Evaluna Montaner,Farruko,Reik,Manuel Turizo,Mau y Ricky,Pedro Capó,Pedro Capó,Shakira,Rauw Alejandro,Wisin)",
-            "nombre_interprete": "Camilo",
-            "streams": 47365,
-            "tocadas": 3,
-            "kpis": {
-                "compactKpi": {
-                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                  "dataSet": [
-                    {
-                      "name": "label",
-                      "data": [540, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                    }
-                  ]
-                },
-                "generalKpi": {
-                  "dataSet": [
-                    {
-                      "name": "cobertura",
-                      "data": [190750, 200000, 230000, 245000]
-                    },
-                    {
-                      "name": "Stream",
-                      "data": [150750, 144000, 124000, 185000]
-                    }
-                  ]
-                }
-              }
-        },
-        {
-            "emisora_N1": "Los 40",
-            "emisora_N2": "Los 40",
-            "id_emisora": 1002,
-            "fecha": "2022-06-29",
-            "discografica": "Sony Music",
-            "id": 10000642784,
-            "title": "Millones",
-            "id_interprete": 10000081699,
-            "interprete_colaboradores": "Camilo (+ Carlos Vives,El Alfa,Evaluna Montaner,Farruko,Reik,Manuel Turizo,Mau y Ricky,Pedro Capó,Pedro Capó,Shakira,Rauw Alejandro,Wisin)",
-            "nombre_interprete": "Camilo",
-            "streams": 17205,
-            "tocadas": 1,
-            "kpis": {
-                "compactKpi": {
-                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                  "dataSet": [
-                    {
-                      "name": "label",
-                      "data": [540, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                    }
-                  ]
-                },
+              ],
                 "generalKpi": {
                   "dataSet": [
                     {
@@ -1951,15 +1945,26 @@
                 "streams": 5668,
                 "tocadas": 1,
                 "kpis": {
-                    "compactKpi": {
-                      "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                      "dataSet": [
-                        {
-                          "name": "label",
-                          "data": [540, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                        }
-                      ]
-                    },
+                    "compactKpi": [
+                      {
+                        "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                        "dataSet": [
+                          {
+                            "name": "tocadas",
+                            "data": [910, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                          }
+                        ]
+                      },
+                      {
+                        "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                        "dataSet": [
+                          {
+                            "name": "streams",
+                            "data": [1010, 960, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                          }
+                        ]
+                      }
+                    ],
                     "generalKpi": {
                       "dataSet": [
                         {
