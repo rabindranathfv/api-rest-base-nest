@@ -1,112 +1,314 @@
 {
-    "10000039078": {
-        "nombre": "Chanel FROM BACK",
-        "subtitle": "Bit Music",
-        "id_interprete": 10000039078,
-        "streams": 5668,
-        "tocadas": 1,
-        "canciones_nro": 1,
-        "kpisBasicos": {
-            "tocadas": {
-              "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-              "dataSet":
-                {
-                  "data": [240, 160, 671, 414, 555, 257, 901, 613, 727, 414, 555, 257]
-                }
-            },
-            "streams": {
-              "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-              "dataSet":
-                {
-                  "data": [240, 160, 671, 414, 555, 257, 901, 613, 727, 414, 555, 257]
-                }
-            }
-          }
-    },
-    "10000074802": {
-        "nombre": "Karol G FROM BACK",
-        "subtitle": "Universal Music",
-        "id": 10000074802,
-        "streams": 176331,
-        "tocadas": 11,
-        "canciones_nro": 349,
-        "top": {
-            "nombre": "El Makinon",
-            "image": "https://cdn.smehost.net/sonymusices-45pressprod/wp-content/uploads/2020/09/645d0f4e-f619-44ef-bf4c-2b238def6434.jpg",
-            "hours": 2,
-            "mins": 5900,
-            "seg": 69
-        },
-        "kpisBasicos": {
-            "tocadas": {
-              "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-              "dataSet":
-                {
-                  "data": [240, 160, 671, 414, 555, 257, 901, 613, 727, 414, 555, 257]
-                }
-            },
-            "streams": {
-              "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-              "dataSet":
-                {
-                  "data": [240, 160, 671, 414, 555, 257, 901, 613, 727, 414, 555, 257]
-                }
-            }
-          }
-    },
-    "10000081699": {
-        "nombre": "Camilo FROM BACK",
-        "subtitle": "Sony Music",
-        "id": 10000081699,
-        "streams": 122462,
-        "tocadas": 23,
-        "canciones_nro": 2700,
-        "top": {
-            "nombre": "Vida de Rico",
-            "image": "https://cdn.smehost.net/sonymusices-45pressprod/wp-content/uploads/2020/09/645d0f4e-f619-44ef-bf4c-2b238def6434.jpg",
-            "hours": 2,
-            "mins": 5900,
-            "seg": 69
-        },
-        "kpisBasicos": {
-            "tocadas": {
-              "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-              "dataSet":
-                {
-                  "data": [240, 160, 671, 414, 555, 257, 901, 613, 727, 414, 555, 257]
-                }
-            },
-            "streams": {
-              "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-              "dataSet":
-                {
-                  "data": [240, 160, 671, 414, 555, 257, 901, 613, 727, 414, 555, 257]
-                }
-            }
-          }
-    },
-    "10000790164": {
-        "nombre": "Chanel FROM BACK",
-        "subtitle": "Bit Music",
-        "id": 10000790164,
-        "streams": 0,
-        "tocadas": 0,
-        "canciones_nro": 0,
-        "kpisBasicos": {
-            "tocadas": {
-              "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-              "dataSet":
-                {
-                  "data": [240, 160, 671, 414, 555, 257, 901, 613, 727, 414, 555, 257]
-                }
-            },
-            "streams": {
-              "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-              "dataSet":
-                {
-                  "data": [240, 160, 671, 414, 555, 257, 901, 613, 727, 414, 555, 257]
-                }
-            }
-          }
+  "10000039078": {
+    "nombre": "Chanel FROM BACK",
+    "subtitle": "Bit Music",
+    "id_interprete": 10000039078,
+    "streams": 5668,
+    "tocadas": 1,
+    "canciones_nro": 1,
+    "kpisBasicos": {
+      "tocadas": {
+        "categories": [
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr",
+          "May",
+          "Jun",
+          "Jul",
+          "Aug",
+          "Sep",
+          "Oct",
+          "Nov",
+          "Dec"
+        ],
+        "dataSet": {
+          "data": [
+            240,
+            160,
+            671,
+            414,
+            555,
+            257,
+            901,
+            613,
+            727,
+            414,
+            555,
+            257
+          ]
+        }
+      },
+      "streams": {
+        "categories": [
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr",
+          "May",
+          "Jun",
+          "Jul",
+          "Aug",
+          "Sep",
+          "Oct",
+          "Nov",
+          "Dec"
+        ],
+        "dataSet": {
+          "data": [
+            240,
+            160,
+            671,
+            414,
+            555,
+            257,
+            901,
+            613,
+            727,
+            414,
+            555,
+            257
+          ]
+        }
+      }
     }
+  },
+  "10000074802": {
+    "nombre": "Karol G FROM BACK",
+    "subtitle": "Universal Music",
+    "id": 10000074802,
+    "streams": 176331,
+    "tocadas": 11,
+    "canciones_nro": 349,
+    "top": {
+      "nombre": "El Makinon",
+      "id": "10000643108",
+      "image": "https://cdn.smehost.net/sonymusices-45pressprod/wp-content/uploads/2020/09/645d0f4e-f619-44ef-bf4c-2b238def6434.jpg",
+      "hours": 2,
+      "mins": 5900,
+      "seg": 69
+    },
+    "kpisBasicos": {
+      "tocadas": {
+        "categories": [
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr",
+          "May",
+          "Jun",
+          "Jul",
+          "Aug",
+          "Sep",
+          "Oct",
+          "Nov",
+          "Dec"
+        ],
+        "dataSet": {
+          "data": [
+            240,
+            160,
+            671,
+            414,
+            555,
+            257,
+            901,
+            613,
+            727,
+            414,
+            555,
+            257
+          ]
+        }
+      },
+      "streams": {
+        "categories": [
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr",
+          "May",
+          "Jun",
+          "Jul",
+          "Aug",
+          "Sep",
+          "Oct",
+          "Nov",
+          "Dec"
+        ],
+        "dataSet": {
+          "data": [
+            240,
+            160,
+            671,
+            414,
+            555,
+            257,
+            901,
+            613,
+            727,
+            414,
+            555,
+            257
+          ]
+        }
+      }
+    }
+  },
+  "10000081699": {
+    "nombre": "Camilo FROM BACK",
+    "subtitle": "Sony Music",
+    "id": 10000081699,
+    "streams": 122462,
+    "tocadas": 23,
+    "canciones_nro": 2700,
+    "top": {
+      "nombre": "Vida de Rico",
+      "id": "10000635873",
+      "image": "https://cdn.smehost.net/sonymusices-45pressprod/wp-content/uploads/2020/09/645d0f4e-f619-44ef-bf4c-2b238def6434.jpg",
+      "hours": 2,
+      "mins": 5900,
+      "seg": 69
+    },
+    "kpisBasicos": {
+      "tocadas": {
+        "categories": [
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr",
+          "May",
+          "Jun",
+          "Jul",
+          "Aug",
+          "Sep",
+          "Oct",
+          "Nov",
+          "Dec"
+        ],
+        "dataSet": {
+          "data": [
+            240,
+            160,
+            671,
+            414,
+            555,
+            257,
+            901,
+            613,
+            727,
+            414,
+            555,
+            257
+          ]
+        }
+      },
+      "streams": {
+        "categories": [
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr",
+          "May",
+          "Jun",
+          "Jul",
+          "Aug",
+          "Sep",
+          "Oct",
+          "Nov",
+          "Dec"
+        ],
+        "dataSet": {
+          "data": [
+            240,
+            160,
+            671,
+            414,
+            555,
+            257,
+            901,
+            613,
+            727,
+            414,
+            555,
+            257
+          ]
+        }
+      }
+    }
+  },
+  "10000790164": {
+    "nombre": "Chanel FROM BACK",
+    "subtitle": "Bit Music",
+    "id": 10000790164,
+    "streams": 0,
+    "tocadas": 0,
+    "canciones_nro": 0,
+    "kpisBasicos": {
+      "tocadas": {
+        "categories": [
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr",
+          "May",
+          "Jun",
+          "Jul",
+          "Aug",
+          "Sep",
+          "Oct",
+          "Nov",
+          "Dec"
+        ],
+        "dataSet": {
+          "data": [
+            240,
+            160,
+            671,
+            414,
+            555,
+            257,
+            901,
+            613,
+            727,
+            414,
+            555,
+            257
+          ]
+        }
+      },
+      "streams": {
+        "categories": [
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr",
+          "May",
+          "Jun",
+          "Jul",
+          "Aug",
+          "Sep",
+          "Oct",
+          "Nov",
+          "Dec"
+        ],
+        "dataSet": {
+          "data": [
+            240,
+            160,
+            671,
+            414,
+            555,
+            257,
+            901,
+            613,
+            727,
+            414,
+            555,
+            257
+          ]
+        }
+      }
+    }
+  }
 }

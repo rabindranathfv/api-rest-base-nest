@@ -85,4 +85,19 @@ export class ArtistService {
       );
     }
   }
+
+  async getAllSongs(): Promise<any> {
+    this.logger.log(`${ArtistService.name} - getAllSongs`);
+    try {
+      const queryResults = await this.artistRepository.getAllSongs();
+
+      return queryResults;
+    } catch (error) {
+      this.logger.log(`${ArtistService.name} - getAllSongs -  ERROR`, error);
+      throw new HttpException(
+        `Error make query in getAllSongs`,
+        HttpStatus.INTERNAL_SERVER_ERROR,
+      );
+    }
+  }
 }

@@ -121,4 +121,19 @@ export class ArtistController {
 
     return res.status(HttpStatus.OK).json(resp);
   }
+
+  @ApiResponse({
+    status: 200,
+    description: 'get all artist',
+    // type: [User], ADD CLASS INTERFACE HERE
+  })
+  @ApiResponse({
+    status: 500,
+    description: 'Internal Server Error',
+  })
+  @Get('')
+  async getAllSongs() {
+    this.logger.log(`${ArtistController.name} - getAllSongs`);
+    return await this.artistService.getAllSongs();
+  }
 }

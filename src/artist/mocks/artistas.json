@@ -1,0 +1,328 @@
+{
+    "artistas": [
+        {
+            "title": "Karol G",
+            "subtitle": "Universal Musc Group",
+            "image": "https://media.allure.com/photos/6227cb8ba822ef47bff03b2f/4:3/w_1991,h_1493,c_limit/Karol%20G%20Allure%20Beauty%20Interview1.jpg",
+            "canciones": "68",
+            "id": 10000074802,
+            "streams": 15900,
+            "porcentajeStream": 12.29,
+            "tocadas": 10890,
+            "porcentajeTocadas": 8.29,
+            "cobertura": 500990,
+            "kpis": {
+                "compactKpi": [
+                    {
+                        "categories": [
+                            "Jan",
+                            "Feb",
+                            "Mar",
+                            "Apr",
+                            "May",
+                            "Jun",
+                            "Jul",
+                            "Aug",
+                            "Sep",
+                            "Oct",
+                            "Nov",
+                            "Dec"
+                        ],
+                        "dataSet": [
+                            {
+                                "name": "tocadas",
+                                "data": [
+                                    200,
+                                    450,
+                                    671,
+                                    414,
+                                    555,
+                                    207,
+                                    901,
+                                    693,
+                                    777,
+                                    414,
+                                    555,
+                                    457
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "categories": [
+                            "Jan",
+                            "Feb",
+                            "Mar",
+                            "Apr",
+                            "May",
+                            "Jun",
+                            "Jul",
+                            "Aug",
+                            "Sep",
+                            "Oct",
+                            "Nov",
+                            "Dec"
+                        ],
+                        "dataSet": [
+                            {
+                                "name": "streams",
+                                "data": [
+                                    300,
+                                    250,
+                                    671,
+                                    414,
+                                    555,
+                                    207,
+                                    901,
+                                    693,
+                                    777,
+                                    414,
+                                    555,
+                                    157
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "generalKpi": {
+                    "dataSet": [
+                        {
+                            "name": "cobertura",
+                            "data": [
+                                200500,
+                                210000,
+                                230000,
+                                265000
+                            ]
+                        },
+                        {
+                            "name": "Stream",
+                            "data": [
+                                150500,
+                                194000,
+                                174000,
+                                175000
+                            ]
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "title": "Camilo",
+            "subtitle": "Sony Music Entretainment",
+            "image": "https://imagenes.elpais.com/resizer/vY8nQwaLv1PG3zg9U82yWiTvYAs=/980x980/cloudfront-eu-central-1.images.arcpublishing.com/prisa/W74XX3IZWVG4DLCC7XSCIASKYY.jpg",
+            "canciones": "2700",
+            "id": 10000081699,
+            "streams": 30000,
+            "porcentajeStream": 13.29,
+            "tocadas": 14890,
+            "porcentajeTocadas": 9.29,
+            "cobertura": 560990,
+            "kpis": {
+                "compactKpi": [
+                    {
+                        "categories": [
+                            "Jan",
+                            "Feb",
+                            "Mar",
+                            "Apr",
+                            "May",
+                            "Jun",
+                            "Jul",
+                            "Aug",
+                            "Sep",
+                            "Oct",
+                            "Nov",
+                            "Dec"
+                        ],
+                        "dataSet": [
+                            {
+                                "name": "tocadas",
+                                "data": [
+                                    445,
+                                    760,
+                                    671,
+                                    414,
+                                    555,
+                                    857,
+                                    901,
+                                    613,
+                                    727,
+                                    414,
+                                    555,
+                                    157
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "categories": [
+                            "Jan",
+                            "Feb",
+                            "Mar",
+                            "Apr",
+                            "May",
+                            "Jun",
+                            "Jul",
+                            "Aug",
+                            "Sep",
+                            "Oct",
+                            "Nov",
+                            "Dec"
+                        ],
+                        "dataSet": [
+                            {
+                                "name": "streams",
+                                "data": [
+                                    900,
+                                    850,
+                                    671,
+                                    414,
+                                    555,
+                                    207,
+                                    901,
+                                    693,
+                                    777,
+                                    414,
+                                    555,
+                                    157
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "generalKpi": {
+                    "dataSet": [
+                        {
+                            "name": "cobertura",
+                            "data": [
+                                190500,
+                                200000,
+                                220000,
+                                225000
+                            ]
+                        },
+                        {
+                            "name": "Stream",
+                            "data": [
+                                170500,
+                                174000,
+                                174000,
+                                175000
+                            ]
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "title": "Channel",
+            "subtitle": "Sony Music Entretainment",
+            "image": "https://imagenes.elpais.com/resizer/vY8nQwaLv1PG3zg9U82yWiTvYAs=/980x980/cloudfront-eu-central-1.images.arcpublishing.com/prisa/W74XX3IZWVG4DLCC7XSCIASKYY.jpg",
+            "canciones": "1",
+            "id": 10000039078,
+            "streams": 220,
+            "porcentajeStream": 14.29,
+            "tocadas": 100,
+            "porcentajeTocadas": 10.29,
+            "cobertura": 50000,
+            "kpis": {
+                "compactKpi": [
+                    {
+                        "categories": [
+                            "Jan",
+                            "Feb",
+                            "Mar",
+                            "Apr",
+                            "May",
+                            "Jun",
+                            "Jul",
+                            "Aug",
+                            "Sep",
+                            "Oct",
+                            "Nov",
+                            "Dec"
+                        ],
+                        "dataSet": [
+                            {
+                                "name": "tocadas",
+                                "data": [
+                                    1040,
+                                    660,
+                                    571,
+                                    414,
+                                    555,
+                                    657,
+                                    201,
+                                    913,
+                                    727,
+                                    614,
+                                    555,
+                                    857
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "categories": [
+                            "Jan",
+                            "Feb",
+                            "Mar",
+                            "Apr",
+                            "May",
+                            "Jun",
+                            "Jul",
+                            "Aug",
+                            "Sep",
+                            "Oct",
+                            "Nov",
+                            "Dec"
+                        ],
+                        "dataSet": [
+                            {
+                                "name": "streams",
+                                "data": [
+                                    100,
+                                    250,
+                                    671,
+                                    414,
+                                    555,
+                                    207,
+                                    901,
+                                    693,
+                                    777,
+                                    414,
+                                    555,
+                                    157
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "generalKpi": {
+                    "dataSet": [
+                        {
+                            "name": "cobertura",
+                            "data": [
+                                190500,
+                                200000,
+                                230000,
+                                225000
+                            ]
+                        },
+                        {
+                            "name": "Stream",
+                            "data": [
+                                120500,
+                                144000,
+                                124000,
+                                135000
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}
