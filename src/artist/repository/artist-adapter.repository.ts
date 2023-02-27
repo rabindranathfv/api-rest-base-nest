@@ -97,9 +97,9 @@ export class ArtistAdapterRepository implements ArtistRepository {
     }
   }
 
-  async getAllSongs(): Promise<any> {
+  async getAllArtists(): Promise<any> {
     this.logger.log(
-      `using ${ArtistAdapterRepository.name} - repository - method: getAllSongs`,
+      `using ${ArtistAdapterRepository.name} - repository - method: getAllArtists`,
     );
     try {
       const instance = await this.bigQueryRepository.connectWithBigquery();
@@ -116,7 +116,7 @@ export class ArtistAdapterRepository implements ArtistRepository {
     } catch (error) {
       console.log(error);
       throw new HttpException(
-        `Error at getAllSongs repository, error: ${error}`,
+        `Error at getAllArtists repository, error: ${error}`,
         HttpStatus.INTERNAL_SERVER_ERROR,
       );
     }

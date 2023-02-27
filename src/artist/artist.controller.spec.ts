@@ -16,6 +16,7 @@ import { configuration } from '../config/configuration';
 import artistas_id_resumen from './mocks/artistas_id_resumen.json';
 import artistas_id_canciones from './mocks/artistas_id_canciones.json';
 import artistas_id_kpi_radio from './mocks/artistas_id_kpi_radio.json';
+import artistas from './mocks/artistas.json';
 
 describe('ArtistController', () => {
   let controller: ArtistController;
@@ -77,6 +78,7 @@ describe('ArtistController', () => {
             getKpiRadioArtistById: () => jest.fn(),
             getSummaryArtistById: () => jest.fn(),
             getAllSongsByArtistsById: () => jest.fn(),
+            getAllArtists: () => jest.fn(),
           }),
         },
         {
@@ -109,7 +111,7 @@ describe('ArtistController', () => {
 
   it('should call getAllSongsByArtistsById and return the songs of this artist', async () => {
     const idArtistsMock = '10000039078';
-    const mockServResp = artistas_id_kpi_radio[idArtistsMock];
+    const mockServResp = artistas_id_canciones[idArtistsMock];
     const getAllSongsByArtistsByIdSpy = jest
       .spyOn(service, 'getAllSongsByArtistsById')
       .mockImplementation(async () => Promise.resolve(mockServResp));
@@ -252,6 +254,32 @@ describe('ArtistController', () => {
       await expect(
         controller.getKpiRadioArtistById(res, idArtistsMock),
       ).rejects.toThrowError(Error);
+    }
+  });
+
+  it('should call getAllArtists and return the KpiRadio of specific artist', async () => {
+    const mockServResp = artistas;
+    const getAllArtistsSpy = jest
+      .spyOn(service, 'getAllArtists')
+      .mockImplementation(() => Promise.resolve(mockServResp));
+
+    const ctrlResp = await controller.getAllArtists();
+
+    expect(ctrlResp).toBeDefined();
+    expect(getAllArtistsSpy).toHaveBeenCalled();
+  });
+
+  it('should call getAllArtists and return error 500 because because something wrong happen in the service', async () => {
+    const getAllArtistsSpy = jest
+      .spyOn(service, 'getAllArtists')
+      .mockImplementation(() => Promise.reject(new Error('error 500')));
+
+    try {
+      await controller.getAllArtists();
+    } catch (error) {
+      expect(getAllArtistsSpy).toHaveBeenCalled();
+      expect(error).toBeInstanceOf(Error);
+      await expect(controller.getAllArtists()).rejects.toThrowError(Error);
     }
   });
 });

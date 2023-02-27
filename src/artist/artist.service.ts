@@ -86,16 +86,16 @@ export class ArtistService {
     }
   }
 
-  async getAllSongs(): Promise<any> {
-    this.logger.log(`${ArtistService.name} - getAllSongs`);
+  async getAllArtists(): Promise<any> {
+    this.logger.log(`${ArtistService.name} - getAllArtists`);
     try {
-      const queryResults = await this.artistRepository.getAllSongs();
+      const queryResults = await this.artistRepository.getAllArtists();
 
       return queryResults;
     } catch (error) {
-      this.logger.log(`${ArtistService.name} - getAllSongs -  ERROR`, error);
+      this.logger.log(`${ArtistService.name} - getAllArtists -  ERROR`, error);
       throw new HttpException(
-        `Error make query in getAllSongs`,
+        `Error make query in getAllArtists`,
         HttpStatus.INTERNAL_SERVER_ERROR,
       );
     }

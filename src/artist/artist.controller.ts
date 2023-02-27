@@ -132,8 +132,8 @@ export class ArtistController {
     description: 'Internal Server Error',
   })
   @Get('')
-  async getAllSongs() {
-    this.logger.log(`${ArtistController.name} - getAllSongs`);
-    return await this.artistService.getAllSongs();
+  async getAllArtists() {
+    this.logger.log(`${ArtistController.name} - getAllArtists`);
+    return await this.artistService.getAllArtists();
   }
 }

@@ -13,6 +13,7 @@ import { ARTIST_REPOSITORY } from './repository/artist.repository';
 import artistas_id_resumen from './mocks/artistas_id_resumen.json';
 import artistas_id_canciones from './mocks/artistas_id_canciones.json';
 import artistas_id_kpi_radio from './mocks/artistas_id_kpi_radio.json';
+import artistas from './mocks/artistas.json';
 
 describe('ArtistService:::', () => {
   let service: ArtistService;
@@ -58,6 +59,7 @@ describe('ArtistService:::', () => {
             getKpiRadioArtistById: () => jest.fn(),
             getSummaryArtistById: () => jest.fn(),
             getAllSongsByArtistsById: () => jest.fn(),
+            getAllArtists: () => jest.fn(),
           }),
         },
         {
@@ -209,5 +211,45 @@ describe('ArtistService:::', () => {
 
     expect(serviceResp).toEqual(mockServResp);
     expect(getKpiRadioArtistByIdSpy).toHaveBeenCalled();
+  });
+
+  it('should call getAllArtists and return an artists list', async () => {
+    const mockServResp = artistas;
+    const getAllArtistsSpy = jest
+      .spyOn(repository, 'getAllArtists')
+      .mockImplementation(() => Promise.resolve(mockServResp));
+
+    const serviceResp = await service.getAllArtists();
+
+    expect(serviceResp).toEqual(mockServResp);
+    expect(getAllArtistsSpy).toHaveBeenCalled();
+  });
+
+  it('should call getAllArtists and return 500 exception because some error happens after repository response', async () => {
+    const getAllArtistsSpy = jest
+      .spyOn(repository, 'getAllArtists')
+      .mockImplementation(() => {
+        throw new Error('error 500');
+      });
+
+    try {
+      await service.getAllArtists();
+    } catch (error) {
+      expect(getAllArtistsSpy).toHaveBeenCalled();
+      expect(error).toBeInstanceOf(Error);
+      expect(error['status']).toBe(500);
+    }
+  });
+
+  it('should call getAllArtists and return an empty artists list', async () => {
+    const mockServResp = [];
+    const getAllArtistsSpy = jest
+      .spyOn(repository, 'getAllArtists')
+      .mockImplementation(() => Promise.resolve(mockServResp));
+
+    const serviceResp = await service.getAllArtists();
+
+    expect(serviceResp).toEqual(mockServResp);
+    expect(getAllArtistsSpy).toHaveBeenCalled();
   });
 });
