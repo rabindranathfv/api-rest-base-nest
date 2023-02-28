@@ -23,7 +23,11 @@ export class ArtistAdapterRepository implements ArtistRepository {
     @Inject(BIG_QUERY_REPOSITORY) private readonly bigQueryRepository,
   ) {}
 
-  async getKpiRadioArtistById(artistId: string): Promise<any> {
+  async getKpiRadioArtistById(
+    artistId: string,
+    filter = '',
+    searchText = '',
+  ): Promise<any> {
     this.logger.log(
       `using ${ArtistAdapterRepository.name} - repository - method: getKpiRadioArtistById with id: ${artistId}`,
     );
@@ -34,7 +38,7 @@ export class ArtistAdapterRepository implements ArtistRepository {
       const queryStr = `SELECT emisora_N1, emisora_N2, id_interprete, interprete_colaboradores, nombre_interprete, inserciones, universo, 
         cobertura, cob, contactos, grp_s, ots, ola, fecha_peticion, rango, rango_sort_order, fecha
         FROM dataglobalproduccion.BI_Artistas_Alt.odec_t`;
-      const query = `${queryStr}-${artistId}`;
+      const query = `${queryStr}-${artistId}-${filter}-${searchText}`;
       // const queryResults = await this.bigQueryRepository.query(instance, query);
 
       // TODO: Check fistMock for charts on radioStationStadistics
@@ -97,7 +101,7 @@ export class ArtistAdapterRepository implements ArtistRepository {
     }
   }
 
-  async getAllArtists(): Promise<any> {
+  async getAllArtists(filter = '', searchText = ''): Promise<any> {
     this.logger.log(
       `using ${ArtistAdapterRepository.name} - repository - method: getAllArtists`,
     );
@@ -108,7 +112,7 @@ export class ArtistAdapterRepository implements ArtistRepository {
       const queryStr = `SELECT emisora_N1, emisora_N2, id_interprete, interprete_colaboradores, nombre_interprete, inserciones, universo, 
         cobertura, cob, contactos, grp_s, ots, ola, fecha_peticion, rango, rango_sort_order, fecha
         FROM dataglobalproduccion.BI_Artistas_Alt.odec_t`;
-      const query = `${queryStr}`;
+      const query = `${queryStr}-${filter}-${searchText}`;
       // const queryResults = await this.bigQueryRepository.query(instance, query);
       const queryResults = artistas;
 

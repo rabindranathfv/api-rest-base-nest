@@ -2,8 +2,10 @@ import {
   CacheInterceptor,
   Controller,
   Get,
+  HttpStatus,
   Logger,
   Param,
+  Query,
   UseGuards,
   UseInterceptors,
 } from '@nestjs/common';
@@ -27,13 +29,17 @@ export class SongController {
   constructor(private readonly songService: SongService) {}
 
   @ApiResponse({
-    status: 200,
+    status: HttpStatus.OK,
     description: 'A get for a song by Id successfully fetched',
     // type: registerAuth,
   })
   @ApiResponse({
-    status: 500,
+    status: HttpStatus.INTERNAL_SERVER_ERROR,
     description: 'Internal Server Error',
+  })
+  @ApiResponse({
+    status: HttpStatus.UNAUTHORIZED,
+    description: 'Unauthorized, does not have a valid token o token is Expired',
   })
   @Get(':id/resumen')
   async getSummarySongById(@Param('id') id: string) {
@@ -42,13 +48,17 @@ export class SongController {
   }
 
   @ApiResponse({
-    status: 200,
+    status: HttpStatus.OK,
     description: 'A get for a song by Id successfully fetched',
     // type: registerAuth,
   })
   @ApiResponse({
-    status: 500,
+    status: HttpStatus.INTERNAL_SERVER_ERROR,
     description: 'Internal Server Error',
+  })
+  @ApiResponse({
+    status: HttpStatus.UNAUTHORIZED,
+    description: 'Unauthorized, does not have a valid token o token is Expired',
   })
   @Get(':id/kpiradio')
   async getKpiRadioSongById(@Param('id') id: string) {
@@ -59,17 +69,29 @@ export class SongController {
   }
 
   @ApiResponse({
-    status: 200,
+    status: HttpStatus.OK,
     description: 'A get for a song by Id successfully fetched',
     // type: registerAuth,
   })
   @ApiResponse({
-    status: 500,
+    status: HttpStatus.INTERNAL_SERVER_ERROR,
     description: 'Internal Server Error',
   })
+  @ApiResponse({
+    status: HttpStatus.BAD_REQUEST,
+    description: 'tinvalid filter value',
+  })
+  @ApiResponse({
+    status: HttpStatus.UNAUTHORIZED,
+    description: 'Unauthorized, does not have a valid token o token is Expired',
+  })
   @Get(':id/kpis')
-  async getKpisSongById(@Param('id') id: string) {
+  async getKpisSongById(
+    @Param('id') id: string,
+    @Query('filter') filter: string,
+    @Query('searchText') searchText: string,
+  ) {
     this.logger.log(`${SongController.name} - getKpisSongById for id ${id}`);
-    return await this.songService.getKpisSongById(id);
+    return await this.songService.getKpisSongById(id, filter, searchText);
   }
 }

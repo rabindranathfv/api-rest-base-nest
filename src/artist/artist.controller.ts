@@ -5,6 +5,7 @@ import {
   HttpStatus,
   Logger,
   Param,
+  Query,
   Res,
   UseGuards,
   UseInterceptors,
@@ -48,15 +49,25 @@ export class ArtistController {
     status: HttpStatus.NOT_FOUND,
     description: 'there is no artists info available',
   })
+  @ApiResponse({
+    status: HttpStatus.BAD_REQUEST,
+    description: 'tinvalid filter value',
+  })
   @Get(':id/canciones')
   async getAllSongsByArtistsById(
     @Res() res: Response,
     @Param('id') id: string,
+    @Query('filter') filter: string,
+    @Query('searchText') searchText: string,
   ) {
     this.logger.log(
       `${ArtistController.name} -  getAllSongsByArtistsById with id ${id}`,
     );
-    const resp = await this.artistService.getAllSongsByArtistsById(id);
+    const resp = await this.artistService.getAllSongsByArtistsById(
+      id,
+      filter,
+      searchText,
+    );
 
     if (!resp)
       res
@@ -131,9 +142,16 @@ export class ArtistController {
     status: 500,
     description: 'Internal Server Error',
   })
+  @ApiResponse({
+    status: HttpStatus.BAD_REQUEST,
+    description: 'tinvalid filter value',
+  })
   @Get('')
-  async getAllArtists() {
+  async getAllArtists(
+    @Query('filter') filter: string,
+    @Query('searchText') searchText: string,
+  ) {
     this.logger.log(`${ArtistController.name} - getAllArtists`);
-    return await this.artistService.getAllArtists();
+    return await this.artistService.getAllArtists(filter, searchText);
   }
 }

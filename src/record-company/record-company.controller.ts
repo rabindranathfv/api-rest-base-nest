@@ -2,8 +2,10 @@ import {
   CacheInterceptor,
   Controller,
   Get,
+  HttpStatus,
   Logger,
   Param,
+  Query,
   UseGuards,
   UseInterceptors,
 } from '@nestjs/common';
@@ -28,28 +30,43 @@ export class RecordCompanyController {
   constructor(private readonly recordCompanyService: RecordCompanyService) {}
 
   @ApiResponse({
-    status: 200,
+    status: HttpStatus.OK,
     description: 'A get for all record companies successfully fetched',
     // type: registerAuth,
   })
   @ApiResponse({
-    status: 500,
+    status: HttpStatus.INTERNAL_SERVER_ERROR,
     description: 'Internal Server Error',
   })
+  @ApiResponse({
+    status: HttpStatus.BAD_REQUEST,
+    description: 'tinvalid filter value',
+  })
+  @ApiResponse({
+    status: HttpStatus.UNAUTHORIZED,
+    description: 'Unauthorized, does not have a valid token o token is Expired',
+  })
   @Get()
-  async findAllRecordCompanies() {
+  async findAllRecordCompanies(
+    @Query('filter') filter: string,
+    @Query('searchText') searchText: string,
+  ) {
     this.logger.log(`${RecordCompanyController.name} - findAllRecordCompanies`);
     return await this.recordCompanyService.findAllRecordCompanies();
   }
 
   @ApiResponse({
-    status: 200,
+    status: HttpStatus.OK,
     description: 'A get summary of a record company by Id successfully fetched',
     // type: registerAuth,
   })
   @ApiResponse({
-    status: 500,
+    status: HttpStatus.INTERNAL_SERVER_ERROR,
     description: 'Internal Server Error',
+  })
+  @ApiResponse({
+    status: HttpStatus.UNAUTHORIZED,
+    description: 'Unauthorized, does not have a valid token o token is Expired',
   })
   @Get(':id/resumen')
   async getSummaryRecordCompanyById(@Param('id') id: string) {
@@ -60,14 +77,18 @@ export class RecordCompanyController {
   }
 
   @ApiResponse({
-    status: 200,
+    status: HttpStatus.OK,
     description:
       'A get record company by Id KPI Radio metrics successfully fetched',
     // type: registerAuth,
   })
   @ApiResponse({
-    status: 500,
+    status: HttpStatus.INTERNAL_SERVER_ERROR,
     description: 'Internal Server Error',
+  })
+  @ApiResponse({
+    status: HttpStatus.UNAUTHORIZED,
+    description: 'Unauthorized, does not have a valid token o token is Expired',
   })
   @Get(':id/kpiradio')
   async getRecordCompanyByIdKpiRadio(@Param('id') id: string) {
@@ -78,17 +99,29 @@ export class RecordCompanyController {
   }
 
   @ApiResponse({
-    status: 200,
+    status: HttpStatus.OK,
     description:
       'A gets Artists list of record company by Id successfully fetched',
     // type: registerAuth,
   })
   @ApiResponse({
-    status: 500,
+    status: HttpStatus.INTERNAL_SERVER_ERROR,
     description: 'Internal Server Error',
   })
+  @ApiResponse({
+    status: HttpStatus.BAD_REQUEST,
+    description: 'tinvalid filter value',
+  })
+  @ApiResponse({
+    status: HttpStatus.UNAUTHORIZED,
+    description: 'Unauthorized, does not have a valid token o token is Expired',
+  })
   @Get(':id/artistas')
-  async getArtistsRecordCompanyById(@Param('id') id: string) {
+  async getArtistsRecordCompanyById(
+    @Param('id') id: string,
+    @Query('filter') filter: string,
+    @Query('searchText') searchText: string,
+  ) {
     this.logger.log(
       `${RecordCompanyController.name} - getArtistsRecordCompanyById for id ${id}`,
     );

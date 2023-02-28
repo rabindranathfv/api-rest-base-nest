@@ -49,10 +49,18 @@ export class SongService {
     }
   }
 
-  async getKpisSongById(id: string): Promise<any> {
+  async getKpisSongById(
+    id: string,
+    filter = '',
+    searchText = '',
+  ): Promise<any> {
     this.logger.log(`${SongService.name} - getKpisSongById`);
     try {
-      const queryResults = await this.songRepository.getKpisSongById(id);
+      const queryResults = await this.songRepository.getKpisSongById(
+        id,
+        filter,
+        searchText,
+      );
 
       return queryResults;
     } catch (error) {

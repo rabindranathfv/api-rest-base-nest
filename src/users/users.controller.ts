@@ -4,6 +4,7 @@ import {
   Controller,
   Delete,
   Get,
+  HttpStatus,
   Logger,
   Param,
   Post,
@@ -43,16 +44,16 @@ export class UsersController {
 
   @Get('')
   @ApiResponse({
-    status: 200,
+    status: HttpStatus.OK,
     description: 'A get for all Users successfully fetched',
     type: [User],
   })
   @ApiResponse({
-    status: 401,
+    status: HttpStatus.UNAUTHORIZED,
     description: 'Unauthorized, does not have a valid token o token is Expired',
   })
   @ApiResponse({
-    status: 500,
+    status: HttpStatus.INTERNAL_SERVER_ERROR,
     description: 'Internal Server Error',
   })
   async findAll() {
@@ -63,20 +64,20 @@ export class UsersController {
 
   @Get(':id')
   @ApiResponse({
-    status: 200,
+    status: HttpStatus.OK,
     description: 'A get for UsersById successfully fetched',
     type: User,
   })
   @ApiResponse({
-    status: 401,
+    status: HttpStatus.UNAUTHORIZED,
     description: 'Unauthorized, does not have a valid token o token is Expired',
   })
   @ApiResponse({
-    status: 500,
+    status: HttpStatus.INTERNAL_SERVER_ERROR,
     description: 'Internal Server Error',
   })
   @ApiResponse({
-    status: 404,
+    status: HttpStatus.NOT_FOUND,
     description: 'user not found <id>',
   })
   @ApiResponse({
@@ -97,16 +98,16 @@ export class UsersController {
 
   @Post('')
   @ApiResponse({
-    status: 200,
+    status: HttpStatus.OK,
     description: 'users updated successfully',
     type: User,
   })
   @ApiResponse({
-    status: 401,
+    status: HttpStatus.UNAUTHORIZED,
     description: 'Unauthorized, does not have a valid token o token is Expired',
   })
   @ApiResponse({
-    status: 500,
+    status: HttpStatus.INTERNAL_SERVER_ERROR,
     description: 'Internal Server Error',
   })
   async createUser(@Body() createUserDTO: CreateUserDto) {
@@ -116,20 +117,20 @@ export class UsersController {
 
   @Put(':id')
   @ApiResponse({
-    status: 200,
+    status: HttpStatus.OK,
     description: 'users created successfully',
     type: User,
   })
   @ApiResponse({
-    status: 401,
+    status: HttpStatus.UNAUTHORIZED,
     description: 'Unauthorized, does not have a valid token o token is Expired',
   })
   @ApiResponse({
-    status: 500,
+    status: HttpStatus.INTERNAL_SERVER_ERROR,
     description: 'Internal Server Error',
   })
   @ApiResponse({
-    status: 404,
+    status: HttpStatus.NOT_FOUND,
     description: 'can not update user <id>',
   })
   @ApiParam({
@@ -150,25 +151,21 @@ export class UsersController {
 
   @Delete(':id')
   @ApiResponse({
-    status: 200,
+    status: HttpStatus.OK,
     description: 'users deleted successfully',
     type: DeleteUser,
   })
   @ApiResponse({
-    status: 401,
+    status: HttpStatus.UNAUTHORIZED,
     description: 'Unauthorized, does not have a valid token o token is Expired',
   })
   @ApiResponse({
-    status: 500,
+    status: HttpStatus.INTERNAL_SERVER_ERROR,
     description: 'Internal Server Error',
   })
   @ApiResponse({
-    status: 404,
+    status: HttpStatus.NOT_FOUND,
     description: 'can not delete user <id>',
-  })
-  @ApiResponse({
-    status: 403,
-    description: 'Unauthorized Request',
   })
   @ApiParam({
     name: 'id',

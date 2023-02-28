@@ -20,13 +20,19 @@ export class ArtistService {
     private readonly artistRepository: ArtistRepository,
   ) {}
 
-  async getAllSongsByArtistsById(artistId: string): Promise<any> {
+  async getAllSongsByArtistsById(
+    artistId: string,
+    filter = '',
+    searchText = '',
+  ): Promise<any> {
     this.logger.log(
       `${ArtistService.name} - getAllSongsByArtistsById with id ${artistId}`,
     );
     try {
       const queryResults = await this.artistRepository.getAllSongsByArtistsById(
         artistId,
+        filter,
+        searchText,
       );
 
       return queryResults;
@@ -86,10 +92,13 @@ export class ArtistService {
     }
   }
 
-  async getAllArtists(): Promise<any> {
+  async getAllArtists(filter = '', searchText = ''): Promise<any> {
     this.logger.log(`${ArtistService.name} - getAllArtists`);
     try {
-      const queryResults = await this.artistRepository.getAllArtists();
+      const queryResults = await this.artistRepository.getAllArtists(
+        filter,
+        searchText,
+      );
 
       return queryResults;
     } catch (error) {

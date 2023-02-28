@@ -45,21 +45,21 @@ export class AuthController {
   constructor(private readonly authService: AuthService) {}
 
   @ApiResponse({
-    status: 200,
+    status: HttpStatus.OK,
     description: 'Login successfully',
     type: LoginAuth,
   })
   @ApiResponse({
-    status: 401,
+    status: HttpStatus.UNAUTHORIZED,
     description:
       'this email was not found or just password is incorrect, please check it',
   })
   @ApiResponse({
-    status: 500,
+    status: HttpStatus.INTERNAL_SERVER_ERROR,
     description: 'Internal Server Error',
   })
   @ApiResponse({
-    status: 429,
+    status: HttpStatus.TOO_MANY_REQUESTS,
     description: 'to Many requests',
   })
   @Throttle(30, 60)
@@ -70,20 +70,20 @@ export class AuthController {
   }
 
   @ApiResponse({
-    status: 200,
+    status: HttpStatus.OK,
     description: 'A get for all Users successfully fetched',
     type: registerAuth,
   })
   @ApiResponse({
-    status: 400,
+    status: HttpStatus.BAD_REQUEST,
     description: 'this email already exist or have some errors',
   })
   @ApiResponse({
-    status: 500,
+    status: HttpStatus.INTERNAL_SERVER_ERROR,
     description: 'Internal Server Error',
   })
   @ApiResponse({
-    status: 429,
+    status: HttpStatus.TOO_MANY_REQUESTS,
     description: 'to Many requests',
   })
   @Throttle(20, 60)
@@ -94,16 +94,16 @@ export class AuthController {
   }
 
   @ApiResponse({
-    status: 200,
+    status: HttpStatus.OK,
     description: 'refresh token session for auth users',
     type: Token,
   })
   @ApiResponse({
-    status: 401,
+    status: HttpStatus.UNAUTHORIZED,
     description: 'Unauthorized, does not have a valid token o token is Expired',
   })
   @ApiResponse({
-    status: 500,
+    status: HttpStatus.INTERNAL_SERVER_ERROR,
     description: 'Internal Server Error',
   })
   @UseGuards(JwtAuthGuard)
@@ -124,20 +124,20 @@ export class AuthController {
   }
 
   @ApiResponse({
-    status: 200,
+    status: HttpStatus.OK,
     description: 'refresh token session for auth users',
     type: Token,
   })
   @ApiResponse({
-    status: 401,
+    status: HttpStatus.UNAUTHORIZED,
     description: 'Unauthorized, does not have a valid token o token is Expired',
   })
   @ApiResponse({
-    status: 500,
+    status: HttpStatus.INTERNAL_SERVER_ERROR,
     description: 'Internal Server Error',
   })
   @ApiResponse({
-    status: 429,
+    status: HttpStatus.TOO_MANY_REQUESTS,
     description: 'to Many requests',
   })
   @Throttle(10, 60)
@@ -148,11 +148,11 @@ export class AuthController {
   }
 
   @ApiResponse({
-    status: 200,
+    status: HttpStatus.OK,
     description: 'logout for users authenticated',
   })
   @ApiResponse({
-    status: 401,
+    status: HttpStatus.UNAUTHORIZED,
     description: 'Unauthorized, does not have a valid token o token is Expired',
   })
   @UseGuards(JwtAuthGuard)

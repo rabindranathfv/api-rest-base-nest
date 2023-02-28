@@ -84,7 +84,7 @@ describe('UsersController', () => {
     expect(findAllSpy).toHaveBeenCalled();
   });
 
-  it('should call V and return all the users', async () => {
+  it('should call findById and return all the users', async () => {
     const userIdMock = '5662792157757440';
     const userFindMock = {
       email: 'rferreira2@hiberus.com',

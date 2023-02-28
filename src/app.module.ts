@@ -4,6 +4,7 @@ import {
   NestModule,
   CacheModule,
   CacheInterceptor,
+  RequestMethod,
 } from '@nestjs/common';
 import { IncomingMessage } from 'http';
 import { LoggerModule } from 'nestjs-pino';
@@ -19,6 +20,7 @@ import {
   RequestIdMiddleware,
   REQUEST_ID_HEADER,
 } from './middlewares/request-id/request-id.middleware';
+import { FilterTimeMiddleware } from './middlewares/filter-time/filter-time.middleware';
 import { validationSchema } from './config/env-schema';
 
 import { UserModule } from './users/user.module';
@@ -108,7 +110,15 @@ import { SongModule } from './song/song.module';
 export class AppModule implements NestModule {
   /* istanbul ignore next */
   configure(consumer: MiddlewareConsumer) {
-    consumer.apply(RequestIdMiddleware).forRoutes('*');
+    consumer
+      .apply(FilterTimeMiddleware)
+      .forRoutes(
+        { path: 'artistas', method: RequestMethod.GET },
+        { path: `artistas/:id/canciones`, method: RequestMethod.GET },
+        { path: `cancion/:id/kpis`, method: RequestMethod.GET },
+        { path: 'discograficas', method: RequestMethod.GET },
+        { path: `discograficas/:id/artistas`, method: RequestMethod.GET },
+      );
     consumer.apply(RequestIdMiddleware).forRoutes('*');
   }
 }
