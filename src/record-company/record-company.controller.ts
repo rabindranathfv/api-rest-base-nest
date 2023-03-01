@@ -52,7 +52,10 @@ export class RecordCompanyController {
     @Query('searchText') searchText: string,
   ) {
     this.logger.log(`${RecordCompanyController.name} - findAllRecordCompanies`);
-    return await this.recordCompanyService.findAllRecordCompanies();
+    return await this.recordCompanyService.findAllRecordCompanies(
+      filter,
+      searchText,
+    );
   }
 
   @ApiResponse({
@@ -125,6 +128,10 @@ export class RecordCompanyController {
     this.logger.log(
       `${RecordCompanyController.name} - getArtistsRecordCompanyById for id ${id}`,
     );
-    return await this.recordCompanyService.getArtistsRecordCompanyById(id);
+    return await this.recordCompanyService.getArtistsRecordCompanyById(
+      id,
+      filter,
+      searchText,
+    );
   }
 }

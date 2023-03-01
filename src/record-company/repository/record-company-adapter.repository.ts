@@ -23,7 +23,7 @@ export class RecordCompanyAdapterRepository implements RecordCompanyRepository {
     @Inject(BIG_QUERY_REPOSITORY) private readonly bigQueryRepository,
   ) {}
 
-  async findAllRecordCompanies(): Promise<any> {
+  async findAllRecordCompanies(filter = '', searchText = ''): Promise<any> {
     this.logger.log(
       `using ${RecordCompanyAdapterRepository.name} - repository - method: findAllRecordCompanies`,
     );
@@ -34,7 +34,7 @@ export class RecordCompanyAdapterRepository implements RecordCompanyRepository {
       const queryStr = `SELECT emisora_N1, emisora_N2, id_interprete, interprete_colaboradores, nombre_interprete, inserciones, universo, 
         cobertura, cob, contactos, grp_s, ots, ola, fecha_peticion, rango, rango_sort_order, fecha
         FROM dataglobalproduccion.BI_Artistas_Alt.odec_t`;
-      const query = `${queryStr}`;
+      const query = `${queryStr} - ${filter} - ${searchText}`;
       // const queryResults = await this.bigQueryRepository.query(instance, query);
       const queryResults = discograficas;
 
@@ -102,7 +102,11 @@ export class RecordCompanyAdapterRepository implements RecordCompanyRepository {
     }
   }
 
-  async getArtistsRecordCompanyById(id: string): Promise<any> {
+  async getArtistsRecordCompanyById(
+    id: string,
+    filter = '',
+    searchText = '',
+  ): Promise<any> {
     this.logger.log(
       `using ${RecordCompanyAdapterRepository.name} - repository - method: getArtistsRecordCompanyById with id: ${id}`,
     );
@@ -114,7 +118,7 @@ export class RecordCompanyAdapterRepository implements RecordCompanyRepository {
       const queryStr = `SELECT emisora_N1, emisora_N2, id_interprete, interprete_colaboradores, nombre_interprete, inserciones, universo, 
         cobertura, cob, contactos, grp_s, ots, ola, fecha_peticion, rango, rango_sort_order, fecha
         FROM dataglobalproduccion.BI_Artistas_Alt.odec_t`;
-      const query = `${queryStr} - ${id}`;
+      const query = `${queryStr} - ${id} - ${filter} - ${searchText}`;
       // const queryResults = await this.bigQueryRepository.query(instance, query);
       // TODO: Update resp mock data
       const queryResults = discografica_id_list_artistas[id];

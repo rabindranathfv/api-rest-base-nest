@@ -16,11 +16,14 @@ export class RecordCompanyService {
     @Inject(RECORD_COMPANY_REPOSITORY) private readonly recordCompanyRepository,
   ) {}
 
-  async findAllRecordCompanies(): Promise<any> {
+  async findAllRecordCompanies(filter = '', searchText = ''): Promise<any> {
     this.logger.log(`${RecordCompanyService.name} - findAllDiscographics`);
     try {
       const queryResults =
-        await this.recordCompanyRepository.findAllRecordCompanies();
+        await this.recordCompanyRepository.findAllRecordCompanies(
+          filter,
+          searchText,
+        );
 
       return queryResults;
     } catch (error) {
@@ -77,13 +80,21 @@ export class RecordCompanyService {
     }
   }
 
-  async getArtistsRecordCompanyById(id: string): Promise<any> {
+  async getArtistsRecordCompanyById(
+    id: string,
+    filter = '',
+    searchText = '',
+  ): Promise<any> {
     this.logger.log(
       `${RecordCompanyService.name} - getArtistsRecordCompanyById`,
     );
     try {
       const queryResults =
-        await this.recordCompanyRepository.getArtistsRecordCompanyById(id);
+        await this.recordCompanyRepository.getArtistsRecordCompanyById(
+          id,
+          filter,
+          searchText,
+        );
 
       return queryResults;
     } catch (error) {
