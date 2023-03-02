@@ -190,11 +190,11 @@ describe('SongController', () => {
       .spyOn(service, 'getKpisSongById')
       .mockImplementation(() => Promise.resolve(mockResp));
 
-    const ctrlResp = await controller.getKpisSongById(songIdMock);
+    const ctrlResp = await controller.getKpisSongById(songIdMock, undefined);
 
     expect(ctrlResp).toBeDefined();
     expect(getKpisSongByIdSpy).toHaveBeenCalled();
-    expect(getKpisSongByIdSpy).toHaveBeenCalledWith(songIdMock);
+    expect(getKpisSongByIdSpy).toHaveBeenCalledWith(songIdMock, undefined);
     expect(ctrlResp).toEqual(mockResp);
   });
 
@@ -205,11 +205,27 @@ describe('SongController', () => {
       .spyOn(service, 'getKpisSongById')
       .mockImplementation(() => Promise.resolve(mockResp));
 
-    const ctrlResp = await controller.getKpisSongById(songIdMock);
+    const ctrlResp = await controller.getKpisSongById(songIdMock, undefined);
 
     expect(ctrlResp).toBeDefined();
     expect(getKpisSongByIdSpy).toHaveBeenCalled();
-    expect(getKpisSongByIdSpy).toHaveBeenCalledWith(songIdMock);
+    expect(getKpisSongByIdSpy).toHaveBeenCalledWith(songIdMock, undefined);
+    expect(ctrlResp).toEqual(mockResp);
+  });
+
+  it('should call getKpisSongById with filter 3M as query params and return kpis of specific song', async () => {
+    const songIdMock = '10000118971';
+    const filterMock = '3M';
+    const mockResp = canciones_id_kpis[songIdMock];
+    const getKpisSongByIdSpy = jest
+      .spyOn(service, 'getKpisSongById')
+      .mockImplementation(() => Promise.resolve(mockResp));
+
+    const ctrlResp = await controller.getKpisSongById(songIdMock, filterMock);
+
+    expect(ctrlResp).toBeDefined();
+    expect(getKpisSongByIdSpy).toHaveBeenCalled();
+    expect(getKpisSongByIdSpy).toHaveBeenCalledWith(songIdMock, filterMock);
     expect(ctrlResp).toEqual(mockResp);
   });
 
@@ -220,12 +236,12 @@ describe('SongController', () => {
       .mockImplementation(() => Promise.reject(new Error('error 500')));
 
     try {
-      await controller.getKpisSongById(songIdMock);
+      await controller.getKpisSongById(songIdMock, undefined);
     } catch (error) {
       expect(getKpisSongByIdSpy).toHaveBeenCalled();
       expect(error).toBeInstanceOf(Error);
       await expect(
-        controller.getKpisSongById(songIdMock),
+        controller.getKpisSongById(songIdMock, undefined),
       ).rejects.toThrowError();
     }
   });

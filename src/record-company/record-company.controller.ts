@@ -40,7 +40,7 @@ export class RecordCompanyController {
   })
   @ApiResponse({
     status: HttpStatus.BAD_REQUEST,
-    description: 'tinvalid filter value',
+    description: 'invalid filter value',
   })
   @ApiResponse({
     status: HttpStatus.UNAUTHORIZED,
@@ -113,7 +113,7 @@ export class RecordCompanyController {
   })
   @ApiResponse({
     status: HttpStatus.BAD_REQUEST,
-    description: 'tinvalid filter value',
+    description: 'invalid filter value',
   })
   @ApiResponse({
     status: HttpStatus.UNAUTHORIZED,

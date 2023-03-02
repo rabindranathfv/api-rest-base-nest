@@ -79,7 +79,7 @@ export class SongController {
   })
   @ApiResponse({
     status: HttpStatus.BAD_REQUEST,
-    description: 'tinvalid filter value',
+    description: 'invalid filter value',
   })
   @ApiResponse({
     status: HttpStatus.UNAUTHORIZED,
@@ -89,9 +89,8 @@ export class SongController {
   async getKpisSongById(
     @Param('id') id: string,
     @Query('filter') filter: string,
-    @Query('searchText') searchText: string,
   ) {
     this.logger.log(`${SongController.name} - getKpisSongById for id ${id}`);
-    return await this.songService.getKpisSongById(id, filter, searchText);
+    return await this.songService.getKpisSongById(id, filter);
   }
 }

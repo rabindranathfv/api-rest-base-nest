@@ -127,20 +127,43 @@ describe('ArtistService:::', () => {
     }
   });
 
-  it('should call getAllSongsByArtistsById and return the songs by an specific artist', async () => {
+  it('should call getAllSongsByArtistsById with no query params and return the songs by an specific artist', async () => {
     const artistIdMock = '10000039078';
     const mockServResp = artistas_id_canciones[artistIdMock];
     const getAllSongsByArtistsByIdSpy = jest
       .spyOn(repository, 'getAllSongsByArtistsById')
       .mockImplementation(() => Promise.resolve(mockServResp));
 
-    const serviceResp = await service.getAllSongsByArtistsById(artistIdMock);
+    const serviceResp = await service.getAllSongsByArtistsById(
+      artistIdMock,
+      undefined,
+      undefined,
+    );
 
     expect(serviceResp).toEqual(mockServResp);
     expect(getAllSongsByArtistsByIdSpy).toHaveBeenCalled();
   });
 
-  it('should call getAllSongsByArtistsById and return 500 exception because some error happens after repository response', async () => {
+  it('should call getAllSongsByArtistsById with query params filter and searchText and return the songs by an specific artist', async () => {
+    const artistIdMock = '10000039078';
+    const filterMock = '3M';
+    const searchTextMock = 'Provenza';
+    const mockServResp = artistas_id_canciones[artistIdMock];
+    const getAllSongsByArtistsByIdSpy = jest
+      .spyOn(repository, 'getAllSongsByArtistsById')
+      .mockImplementation(() => Promise.resolve(mockServResp));
+
+    const serviceResp = await service.getAllSongsByArtistsById(
+      artistIdMock,
+      filterMock,
+      searchTextMock,
+    );
+
+    expect(serviceResp).toEqual(mockServResp);
+    expect(getAllSongsByArtistsByIdSpy).toHaveBeenCalled();
+  });
+
+  it('should call getAllSongsByArtistsById with no query params and return 500 exception because some error happens after repository response', async () => {
     const artistIdMock = '10000039078';
     const getAllSongsByArtistsByIdSpy = jest
       .spyOn(repository, 'getAllSongsByArtistsById')
@@ -157,6 +180,28 @@ describe('ArtistService:::', () => {
     }
   });
 
+  it('should call getAllSongsByArtistsById with query param filter and return 500 exception because some error happens after repository response', async () => {
+    const artistIdMock = '10000039078';
+    const filterMock = '3M';
+    const getAllSongsByArtistsByIdSpy = jest
+      .spyOn(repository, 'getAllSongsByArtistsById')
+      .mockImplementation(() => {
+        throw new Error('error 500');
+      });
+
+    try {
+      await service.getAllSongsByArtistsById(
+        artistIdMock,
+        filterMock,
+        undefined,
+      );
+    } catch (error) {
+      expect(getAllSongsByArtistsByIdSpy).toHaveBeenCalled();
+      expect(error).toBeInstanceOf(Error);
+      expect(error['status']).toBe(500);
+    }
+  });
+
   it('should call getAllSongsByArtistsById and return the empty songs array by an specific artist', async () => {
     const artistIdMock = '10000039078';
     const mockServResp = { canciones: [] };
@@ -164,7 +209,11 @@ describe('ArtistService:::', () => {
       .spyOn(repository, 'getAllSongsByArtistsById')
       .mockImplementation(() => Promise.resolve({ canciones: [] }));
 
-    const serviceResp = await service.getAllSongsByArtistsById(artistIdMock);
+    const serviceResp = await service.getAllSongsByArtistsById(
+      artistIdMock,
+      undefined,
+      undefined,
+    );
 
     expect(serviceResp).toEqual(mockServResp);
     expect(getAllSongsByArtistsByIdSpy).toHaveBeenCalled();
@@ -213,19 +262,33 @@ describe('ArtistService:::', () => {
     expect(getKpiRadioArtistByIdSpy).toHaveBeenCalled();
   });
 
-  it('should call getAllArtists and return an artists list', async () => {
+  it('should call getAllArtists with no query params and return an artists list', async () => {
     const mockServResp = artistas;
     const getAllArtistsSpy = jest
       .spyOn(repository, 'getAllArtists')
       .mockImplementation(() => Promise.resolve(mockServResp));
 
-    const serviceResp = await service.getAllArtists();
+    const serviceResp = await service.getAllArtists(undefined, undefined);
 
     expect(serviceResp).toEqual(mockServResp);
     expect(getAllArtistsSpy).toHaveBeenCalled();
   });
 
-  it('should call getAllArtists and return 500 exception because some error happens after repository response', async () => {
+  it('should call getAllArtists with query params and return an artists list', async () => {
+    const mockServResp = artistas;
+    const filterMock = '6M';
+    const searchTextMock = 'camilo';
+    const getAllArtistsSpy = jest
+      .spyOn(repository, 'getAllArtists')
+      .mockImplementation(() => Promise.resolve(mockServResp));
+
+    const serviceResp = await service.getAllArtists(filterMock, searchTextMock);
+
+    expect(serviceResp).toEqual(mockServResp);
+    expect(getAllArtistsSpy).toHaveBeenCalled();
+  });
+
+  it('should call getAllArtists with no query params and return 500 exception because some error happens after repository response', async () => {
     const getAllArtistsSpy = jest
       .spyOn(repository, 'getAllArtists')
       .mockImplementation(() => {
@@ -233,7 +296,7 @@ describe('ArtistService:::', () => {
       });
 
     try {
-      await service.getAllArtists();
+      await service.getAllArtists(undefined, undefined);
     } catch (error) {
       expect(getAllArtistsSpy).toHaveBeenCalled();
       expect(error).toBeInstanceOf(Error);
@@ -241,13 +304,31 @@ describe('ArtistService:::', () => {
     }
   });
 
-  it('should call getAllArtists and return an empty artists list', async () => {
+  it('should call getAllArtists with query params and return 500 exception because some error happens after repository response', async () => {
+    const filterMock = '6M';
+    const searchTextMock = 'camilo';
+    const getAllArtistsSpy = jest
+      .spyOn(repository, 'getAllArtists')
+      .mockImplementation(() => {
+        throw new Error('error 500');
+      });
+
+    try {
+      await service.getAllArtists(filterMock, searchTextMock);
+    } catch (error) {
+      expect(getAllArtistsSpy).toHaveBeenCalled();
+      expect(error).toBeInstanceOf(Error);
+      expect(error['status']).toBe(500);
+    }
+  });
+
+  it('should call getAllArtists with no query params and return an empty artists list', async () => {
     const mockServResp = [];
     const getAllArtistsSpy = jest
       .spyOn(repository, 'getAllArtists')
       .mockImplementation(() => Promise.resolve(mockServResp));
 
-    const serviceResp = await service.getAllArtists();
+    const serviceResp = await service.getAllArtists(undefined, undefined);
 
     expect(serviceResp).toEqual(mockServResp);
     expect(getAllArtistsSpy).toHaveBeenCalled();

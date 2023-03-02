@@ -109,7 +109,7 @@ describe('ArtistController', () => {
     expect(service).toBeDefined();
   });
 
-  it('should call getAllSongsByArtistsById and return the songs of this artist', async () => {
+  it('should call getAllSongsByArtistsById with no query params and return the songs of this artist', async () => {
     const idArtistsMock = '10000039078';
     const mockServResp = artistas_id_canciones[idArtistsMock];
     const getAllSongsByArtistsByIdSpy = jest
@@ -120,6 +120,8 @@ describe('ArtistController', () => {
     const ctrlResp = await controller.getAllSongsByArtistsById(
       res,
       idArtistsMock,
+      undefined,
+      undefined,
     );
 
     expect(ctrlResp).toBeDefined();
@@ -129,21 +131,70 @@ describe('ArtistController', () => {
     expect(res.status).toHaveBeenCalledWith(HttpStatus.OK);
   });
 
-  it('should call getAllSongsByArtistsByIdSpy and return error 404 because the service response empty', async () => {
+  it('should call getAllSongsByArtistsById with query params filter and searchText and return the songs of this artist', async () => {
+    const idArtistsMock = '10000039078';
+    const filterMock = '3M';
+    const searchTextMock = 'Bit music';
+    const mockServResp = artistas_id_canciones[idArtistsMock];
+    const getAllSongsByArtistsByIdSpy = jest
+      .spyOn(service, 'getAllSongsByArtistsById')
+      .mockImplementation(async () => Promise.resolve(mockServResp));
+
+    const res = responseMock() as unknown as Response;
+    const ctrlResp = await controller.getAllSongsByArtistsById(
+      res,
+      idArtistsMock,
+      filterMock,
+      searchTextMock,
+    );
+
+    expect(ctrlResp).toBeDefined();
+    expect(getAllSongsByArtistsByIdSpy).toHaveBeenCalled();
+    // await expect(ctrlResp).resolves.toEqual(mockServResp);
+    expect(res.status).toHaveBeenCalled();
+    expect(res.status).toHaveBeenCalledWith(HttpStatus.OK);
+  });
+
+  it('should call getAllSongsByArtistsById with no query params and return error 404 because the service response empty', async () => {
     const idArtistsMock = '10000039078';
     const getAllSongsByArtistsByIdSpy = jest
       .spyOn(service, 'getAllSongsByArtistsById')
       .mockImplementation(() => Promise.resolve(null));
 
     const res = responseMock() as unknown as Response;
-    await controller.getAllSongsByArtistsById(res, idArtistsMock);
+    await controller.getAllSongsByArtistsById(
+      res,
+      idArtistsMock,
+      undefined,
+      undefined,
+    );
 
     expect(getAllSongsByArtistsByIdSpy).toHaveBeenCalled();
     expect(res.status).toHaveBeenCalled();
     expect(res.status).toHaveBeenCalledWith(HttpStatus.NOT_FOUND);
   });
 
-  it('should call getAllSongsByArtistsByIdSpy and return error 500 because something wrong happen in the service', async () => {
+  it('should call getAllSongsByArtistsById with query params filter and return error 404 because the service response empty', async () => {
+    const idArtistsMock = '10000039078';
+    const filterMock = '1YR';
+    const getAllSongsByArtistsByIdSpy = jest
+      .spyOn(service, 'getAllSongsByArtistsById')
+      .mockImplementation(() => Promise.resolve(null));
+
+    const res = responseMock() as unknown as Response;
+    await controller.getAllSongsByArtistsById(
+      res,
+      idArtistsMock,
+      filterMock,
+      undefined,
+    );
+
+    expect(getAllSongsByArtistsByIdSpy).toHaveBeenCalled();
+    expect(res.status).toHaveBeenCalled();
+    expect(res.status).toHaveBeenCalledWith(HttpStatus.NOT_FOUND);
+  });
+
+  it('should call getAllSongsByArtistsById with no query params and return error 500 because something wrong happen in the service', async () => {
     const idArtistsMock = '10000039078';
     const getAllSongsByArtistsByIdSpy = jest
       .spyOn(service, 'getAllSongsByArtistsById')
@@ -151,12 +202,22 @@ describe('ArtistController', () => {
 
     const res = responseMock() as unknown as Response;
     try {
-      await controller.getAllSongsByArtistsById(res, idArtistsMock);
+      await controller.getAllSongsByArtistsById(
+        res,
+        idArtistsMock,
+        undefined,
+        undefined,
+      );
     } catch (error) {
       expect(getAllSongsByArtistsByIdSpy).toHaveBeenCalled();
       expect(error).toBeInstanceOf(Error);
       await expect(
-        controller.getAllSongsByArtistsById(res, idArtistsMock),
+        controller.getAllSongsByArtistsById(
+          res,
+          idArtistsMock,
+          undefined,
+          undefined,
+        ),
       ).rejects.toThrowError(Error);
     }
   });
@@ -257,16 +318,45 @@ describe('ArtistController', () => {
     }
   });
 
-  it('should call getAllArtists and return the KpiRadio of specific artist', async () => {
+  it('should call getAllArtists with no query params for filter and search text and return the KpiRadio of specific artist', async () => {
     const mockServResp = artistas;
     const getAllArtistsSpy = jest
       .spyOn(service, 'getAllArtists')
       .mockImplementation(() => Promise.resolve(mockServResp));
 
-    const ctrlResp = await controller.getAllArtists();
+    const ctrlResp = await controller.getAllArtists(undefined, undefined);
 
     expect(ctrlResp).toBeDefined();
     expect(getAllArtistsSpy).toHaveBeenCalled();
+  });
+
+  it('should call getAllArtists with query params for filter and search text and return the KpiRadio of specific artist', async () => {
+    const mockServResp = artistas;
+    const filterMock = '3M';
+    const searchTextMock = 'camilo';
+    const getAllArtistsSpy = jest
+      .spyOn(service, 'getAllArtists')
+      .mockImplementation(() => Promise.resolve(mockServResp));
+
+    const ctrlResp = await controller.getAllArtists(filterMock, searchTextMock);
+
+    expect(ctrlResp).toBeDefined();
+    expect(getAllArtistsSpy).toHaveBeenCalled();
+    expect(getAllArtistsSpy).toHaveBeenCalledWith(filterMock, searchTextMock);
+  });
+
+  it('should call getAllArtists with query param for filter and return the KpiRadio of specific artist', async () => {
+    const mockServResp = artistas;
+    const filterMock = '3M';
+    const getAllArtistsSpy = jest
+      .spyOn(service, 'getAllArtists')
+      .mockImplementation(() => Promise.resolve(mockServResp));
+
+    const ctrlResp = await controller.getAllArtists(filterMock, undefined);
+
+    expect(ctrlResp).toBeDefined();
+    expect(getAllArtistsSpy).toHaveBeenCalled();
+    expect(getAllArtistsSpy).toHaveBeenCalledWith(filterMock, undefined);
   });
 
   it('should call getAllArtists and return error 500 because because something wrong happen in the service', async () => {
@@ -275,11 +365,13 @@ describe('ArtistController', () => {
       .mockImplementation(() => Promise.reject(new Error('error 500')));
 
     try {
-      await controller.getAllArtists();
+      await controller.getAllArtists(undefined, undefined);
     } catch (error) {
       expect(getAllArtistsSpy).toHaveBeenCalled();
       expect(error).toBeInstanceOf(Error);
-      await expect(controller.getAllArtists()).rejects.toThrowError(Error);
+      await expect(
+        controller.getAllArtists(undefined, undefined),
+      ).rejects.toThrowError(Error);
     }
   });
 });

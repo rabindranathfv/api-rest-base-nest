@@ -78,11 +78,7 @@ export class SongAdapterRepository implements SongRepository {
     }
   }
 
-  async getKpisSongById(
-    id: string,
-    filter = '',
-    searchText = '',
-  ): Promise<any> {
+  async getKpisSongById(id: string, filter = ''): Promise<any> {
     this.logger.log(
       `using ${SongAdapterRepository.name} - repository - method: getKpisSongById with id: ${id}`,
     );
@@ -94,7 +90,7 @@ export class SongAdapterRepository implements SongRepository {
       const queryStr = `SELECT emisora_N1, emisora_N2, id_interprete, interprete_colaboradores, nombre_interprete, inserciones, universo, 
         cobertura, cob, contactos, grp_s, ots, ola, fecha_peticion, rango, rango_sort_order, fecha
         FROM dataglobalproduccion.BI_Artistas_Alt.odec_t`;
-      const query = `${queryStr} - ${id} - ${filter} - ${searchText}`;
+      const query = `${queryStr} - ${id} - ${filter}`;
       // const queryResults = await this.bigQueryRepository.query(instance, query);
 
       // TODO: UPDATE THIS MOCK RESPONSE ON JSON FILE

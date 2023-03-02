@@ -183,7 +183,7 @@ describe('SongService', () => {
     }
   });
 
-  it('should call getKpisSongById and return empty kpis of specific song', async () => {
+  it('should call getKpisSongById with no query param filter and return empty kpis of specific song', async () => {
     const songIdMock = '10000118971';
     const mockResp = {
       overview: {},
@@ -193,26 +193,61 @@ describe('SongService', () => {
       .spyOn(repository, 'getKpisSongById')
       .mockImplementation(() => Promise.resolve(mockResp));
 
-    const serviceResp = await service.getKpisSongById(songIdMock);
+    const serviceResp = await service.getKpisSongById(songIdMock, undefined);
 
     expect(serviceResp).toBeDefined();
     expect(getKpisSongByIdSpy).toHaveBeenCalled();
-    expect(getKpisSongByIdSpy).toHaveBeenCalledWith(songIdMock);
+    expect(getKpisSongByIdSpy).toHaveBeenCalledWith(songIdMock, '');
     expect(serviceResp).toEqual(mockResp);
   });
 
-  it('should call getKpisSongById and return kpis of specific song', async () => {
+  it('should call getKpisSongById with query param filter and return empty kpis of specific song', async () => {
+    const songIdMock = '10000118971';
+    const filterMock = '3M';
+    const mockResp = {
+      overview: {},
+      impact: {},
+    };
+    const getKpisSongByIdSpy = jest
+      .spyOn(repository, 'getKpisSongById')
+      .mockImplementation(() => Promise.resolve(mockResp));
+
+    const serviceResp = await service.getKpisSongById(songIdMock, filterMock);
+
+    expect(serviceResp).toBeDefined();
+    expect(getKpisSongByIdSpy).toHaveBeenCalled();
+    expect(getKpisSongByIdSpy).toHaveBeenCalledWith(songIdMock, filterMock);
+    expect(serviceResp).toEqual(mockResp);
+  });
+
+  it('should call getKpisSongById with no query param filter and return kpis of specific song', async () => {
     const songIdMock = '10000118971';
     const mockResp = canciones_id_kpis[songIdMock];
     const getKpisSongByIdSpy = jest
       .spyOn(repository, 'getKpisSongById')
       .mockImplementation(() => Promise.resolve(mockResp));
 
-    const serviceResp = await service.getKpisSongById(songIdMock);
+    const serviceResp = await service.getKpisSongById(songIdMock, undefined);
 
     expect(serviceResp).toBeDefined();
     expect(getKpisSongByIdSpy).toHaveBeenCalled();
-    expect(getKpisSongByIdSpy).toHaveBeenCalledWith(songIdMock);
+    expect(getKpisSongByIdSpy).toHaveBeenCalledWith(songIdMock, '');
+    expect(serviceResp).toEqual(mockResp);
+  });
+
+  it('should call getKpisSongById with query param for filter and return kpis of specific song', async () => {
+    const songIdMock = '10000118971';
+    const filterMock = '6M';
+    const mockResp = canciones_id_kpis[songIdMock];
+    const getKpisSongByIdSpy = jest
+      .spyOn(repository, 'getKpisSongById')
+      .mockImplementation(() => Promise.resolve(mockResp));
+
+    const serviceResp = await service.getKpisSongById(songIdMock, filterMock);
+
+    expect(serviceResp).toBeDefined();
+    expect(getKpisSongByIdSpy).toHaveBeenCalled();
+    expect(getKpisSongByIdSpy).toHaveBeenCalledWith(songIdMock, filterMock);
     expect(serviceResp).toEqual(mockResp);
   });
 

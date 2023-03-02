@@ -252,6 +252,25 @@ describe('RecordCompanyService', () => {
     expect(getArtistsRecordCompanyByIdSpy).toHaveBeenCalled();
   });
 
+  it('should call getArtistsRecordCompanyById with query params filter and searchText and get the artists list from an specific record company succesfully', async () => {
+    const recordCompanyIdMock = '1099';
+    const filterMock = '3M';
+    const searchText = 'Camilo';
+    const mockServResp = discografica_id_list_artistas[recordCompanyIdMock];
+    const getArtistsRecordCompanyByIdSpy = jest
+      .spyOn(repository, 'getArtistsRecordCompanyById')
+      .mockImplementation(() => Promise.resolve(mockServResp));
+
+    const serviceResp = await service.getArtistsRecordCompanyById(
+      recordCompanyIdMock,
+      filterMock,
+      searchText,
+    );
+
+    expect(serviceResp).toEqual(mockServResp);
+    expect(getArtistsRecordCompanyByIdSpy).toHaveBeenCalled();
+  });
+
   it('should call getArtistsRecordCompanyById and get the artists list empty from an specific record company succesfully', async () => {
     const recordCompanyIdMock = '1099';
     const mockServResp = { artistas: [] };
@@ -284,6 +303,37 @@ describe('RecordCompanyService', () => {
       );
       await expect(
         service.getArtistsRecordCompanyById(recordCompanyIdMock),
+      ).rejects.toThrowError();
+    }
+  });
+
+  it('should call getArtistsRecordCompanyById with query params filter and searchText and get error 500 something happen at repository', async () => {
+    const recordCompanyIdMock = '1099';
+    const filterMock = '3M';
+    const searchText = 'Camilo';
+    const getArtistsRecordCompanyByIdSpy = jest
+      .spyOn(repository, 'getArtistsRecordCompanyById')
+      .mockImplementation(() => Promise.reject(new Error('error 500')));
+
+    try {
+      await service.getArtistsRecordCompanyById(
+        recordCompanyIdMock,
+        filterMock,
+        searchText,
+      );
+    } catch (error) {
+      expect(getArtistsRecordCompanyByIdSpy).toHaveBeenCalled();
+      expect(error).toBeInstanceOf(Error);
+      expect(error['status']).toBe(500);
+      expect(error['message']).toBe(
+        'Error make query getArtistsRecordCompanyById',
+      );
+      await expect(
+        service.getArtistsRecordCompanyById(
+          recordCompanyIdMock,
+          filterMock,
+          searchText,
+        ),
       ).rejects.toThrowError();
     }
   });

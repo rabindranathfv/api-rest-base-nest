@@ -51,7 +51,7 @@ export class ArtistController {
   })
   @ApiResponse({
     status: HttpStatus.BAD_REQUEST,
-    description: 'tinvalid filter value',
+    description: 'invalid filter value',
   })
   @Get(':id/canciones')
   async getAllSongsByArtistsById(
@@ -144,7 +144,7 @@ export class ArtistController {
   })
   @ApiResponse({
     status: HttpStatus.BAD_REQUEST,
-    description: 'tinvalid filter value',
+    description: 'invalid filter value',
   })
   @Get('')
   async getAllArtists(
