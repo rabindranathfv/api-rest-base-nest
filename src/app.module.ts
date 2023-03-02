@@ -110,6 +110,7 @@ import { SongModule } from './song/song.module';
 export class AppModule implements NestModule {
   /* istanbul ignore next */
   configure(consumer: MiddlewareConsumer) {
+    consumer.apply(RequestIdMiddleware).forRoutes('*');
     consumer
       .apply(FilterTimeMiddleware)
       .forRoutes(
@@ -119,6 +120,5 @@ export class AppModule implements NestModule {
         { path: 'discograficas', method: RequestMethod.GET },
         { path: `discograficas/:id/artistas`, method: RequestMethod.GET },
       );
-    consumer.apply(RequestIdMiddleware).forRoutes('*');
   }
 }
