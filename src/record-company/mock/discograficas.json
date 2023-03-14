@@ -25,36 +25,88 @@
       "streams": "25M",
       "porcentajeStream": 12.29,
       "cobertura": 14660000,
-      "image": "https://cdn.smehost.net/2019sonymusiccom-smeprod/wp-content/uploads/2020/06/sony-music-large-logo.jpg",
+      "image": "https://i.scdn.co/image/ab6761610000f178c85ae756174cc69352bf6b97",
       "lista_artistas": [
         {
           "nombre": "Camilo FROM BACK",
           "id": "10000081699",
-          "image": "https://imagenes.elpais.com/resizer/vY8nQwaLv1PG3zg9U82yWiTvYAs=/980x980/cloudfront-eu-central-1.images.arcpublishing.com/prisa/W74XX3IZWVG4DLCC7XSCIASKYY.jpg"
+          "image": "https://i.scdn.co/image/ab6761610000f178c85ae756174cc69352bf6b97"
         },
         {
           "nombre": "Karol G FROM BACK",
           "id": "10000074802",
-          "image": "https://media.allure.com/photos/6227cb8ba822ef47bff03b2f/4:3/w_1991,h_1493,c_limit/Karol%20G%20Allure%20Beauty%20Interview1.jpg"
+          "image": "https://i.scdn.co/image/ab6761610000f1786a0594d5bff11a7e0c7ceb1a"
         }
       ],
       "kpis": {
         "compactKpi": [
           {
-            "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+            "categories": [
+              "Jan",
+              "Feb",
+              "Mar",
+              "Apr",
+              "May",
+              "Jun",
+              "Jul",
+              "Aug",
+              "Sep",
+              "Oct",
+              "Nov",
+              "Dec"
+            ],
             "dataSet": [
               {
                 "name": "tocadas",
-                "data": [840, 660, 671, 414, 555, 857, 901, 613, 727, 414, 555, 257]
+                "data": [
+                  840,
+                  660,
+                  671,
+                  414,
+                  555,
+                  857,
+                  901,
+                  613,
+                  727,
+                  414,
+                  555,
+                  257
+                ]
               }
             ]
           },
           {
-            "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+            "categories": [
+              "Jan",
+              "Feb",
+              "Mar",
+              "Apr",
+              "May",
+              "Jun",
+              "Jul",
+              "Aug",
+              "Sep",
+              "Oct",
+              "Nov",
+              "Dec"
+            ],
             "dataSet": [
               {
                 "name": "streams",
-                "data": [300, 250, 671, 414, 555, 207, 901, 693, 777, 414, 555, 157]
+                "data": [
+                  300,
+                  250,
+                  671,
+                  414,
+                  555,
+                  207,
+                  901,
+                  693,
+                  777,
+                  414,
+                  555,
+                  157
+                ]
               }
             ]
           }
@@ -63,11 +115,21 @@
           "dataSet": [
             {
               "name": "cobertura",
-              "data": [190000, 200000, 220000, 225000]
+              "data": [
+                190000,
+                200000,
+                220000,
+                225000
+              ]
             },
             {
               "name": "Stream",
-              "data": [170000, 174000, 174000, 175000]
+              "data": [
+                170000,
+                174000,
+                174000,
+                175000
+              ]
             }
           ]
         }
@@ -87,31 +149,83 @@
         {
           "nombre": "Chanel FROM BACK",
           "id": "10000790164",
-          "image": "https://static2.lasprovincias.es/www/multimedia/202201/31/media/cortadas/chanel-kR3H-U160726079089vGF-1248x770@Las%20Provincias.jpg"
+          "image": "https://i.scdn.co/image/ab6761610000f178c85ae756174cc69352bf6b97"
         },
         {
           "nombre": "Chanel DIF FROM BACK",
           "id": "1000039078",
-          "image": "https://imagenes.elpais.com/resizer/CyJOtQ6tT0naBUVJetUUyyvxPmQ=/1200x0/filters:focal(1692x1074:1702x1084)/cloudfront-eu-central-1.images.arcpublishing.com/prisa/6ZC6MJKMYJC3JPPL2DA3IIA7OE.jpg"
+          "image": "https://i.scdn.co/image/ab6761610000f178c85ae756174cc69352bf6b97"
         }
       ],
       "kpis": {
         "compactKpi": [
           {
-            "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+            "categories": [
+              "Jan",
+              "Feb",
+              "Mar",
+              "Apr",
+              "May",
+              "Jun",
+              "Jul",
+              "Aug",
+              "Sep",
+              "Oct",
+              "Nov",
+              "Dec"
+            ],
             "dataSet": [
               {
                 "name": "tocadas",
-                "data": [640, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
+                "data": [
+                  640,
+                  260,
+                  571,
+                  414,
+                  555,
+                  657,
+                  201,
+                  913,
+                  727,
+                  614,
+                  555,
+                  457
+                ]
               }
             ]
           },
           {
-            "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+            "categories": [
+              "Jan",
+              "Feb",
+              "Mar",
+              "Apr",
+              "May",
+              "Jun",
+              "Jul",
+              "Aug",
+              "Sep",
+              "Oct",
+              "Nov",
+              "Dec"
+            ],
             "dataSet": [
               {
                 "name": "streams",
-                "data": [900, 450, 671, 414, 555, 207, 901, 693, 777, 414, 555, 157]
+                "data": [
+                  900,
+                  450,
+                  671,
+                  414,
+                  555,
+                  207,
+                  901,
+                  693,
+                  777,
+                  414,
+                  555,
+                  157
+                ]
               }
             ]
           }
@@ -120,11 +234,21 @@
           "dataSet": [
             {
               "name": "cobertura",
-              "data": [170000, 200000, 230000, 245000]
+              "data": [
+                170000,
+                200000,
+                230000,
+                245000
+              ]
             },
             {
               "name": "Stream",
-              "data": [120000, 144000, 124000, 185000]
+              "data": [
+                120000,
+                144000,
+                124000,
+                185000
+              ]
             }
           ]
         }
@@ -144,26 +268,78 @@
         {
           "nombre": "Karol G FROM BACK",
           "id": "10000074802",
-          "image": "https://media.allure.com/photos/62ed31b2e109c9f860c59498/1:1/w_2000,h_2000,c_limit/karol%20g%20red%20hair.jpg"
+          "image": "https://i.scdn.co/image/ab6761610000f178c85ae756174cc69352bf6b97"
         }
       ],
       "kpis": {
         "compactKpi": [
           {
-            "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+            "categories": [
+              "Jan",
+              "Feb",
+              "Mar",
+              "Apr",
+              "May",
+              "Jun",
+              "Jul",
+              "Aug",
+              "Sep",
+              "Oct",
+              "Nov",
+              "Dec"
+            ],
             "dataSet": [
               {
                 "name": "tocadas",
-                "data": [190, 150, 671, 414, 555, 207, 901, 693, 777, 414, 555, 157]
+                "data": [
+                  190,
+                  150,
+                  671,
+                  414,
+                  555,
+                  207,
+                  901,
+                  693,
+                  777,
+                  414,
+                  555,
+                  157
+                ]
               }
             ]
           },
           {
-            "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+            "categories": [
+              "Jan",
+              "Feb",
+              "Mar",
+              "Apr",
+              "May",
+              "Jun",
+              "Jul",
+              "Aug",
+              "Sep",
+              "Oct",
+              "Nov",
+              "Dec"
+            ],
             "dataSet": [
               {
                 "name": "streams",
-                "data": [900, 950, 671, 414, 555, 207, 901, 693, 777, 414, 555, 157]
+                "data": [
+                  900,
+                  950,
+                  671,
+                  414,
+                  555,
+                  207,
+                  901,
+                  693,
+                  777,
+                  414,
+                  555,
+                  157
+                ]
               }
             ]
           }
@@ -172,11 +348,21 @@
           "dataSet": [
             {
               "name": "cobertura",
-              "data": [200000, 210000, 230000, 225000]
+              "data": [
+                200000,
+                210000,
+                230000,
+                225000
+              ]
             },
             {
               "name": "Stream",
-              "data": [150000, 194000, 174000, 195000]
+              "data": [
+                150000,
+                194000,
+                174000,
+                195000
+              ]
             }
           ]
         }

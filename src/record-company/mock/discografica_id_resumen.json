@@ -1,101 +1,251 @@
 {
-    "1099": {
-      "nombre": "Sony Music FROM BACK",
-      "subtitle": "Sony Inc",
-      "id": 1099,
-      "image": "https://static.wikia.nocookie.net/sonywikiencastellano/images/0/00/Sony_Music.jpg/revision/latest?cb=20200908232932&path-prefix=es",
-      "streams": 4560000,
-      "tocadas": 1200344,
-      "numero_artistas": 2,
-      "canciones_nro": 3726,
-      "top": {
-        "nombre": "Camilo",
-        "image": "https://imagenes.elpais.com/resizer/vY8nQwaLv1PG3zg9U82yWiTvYAs=/980x980/cloudfront-eu-central-1.images.arcpublishing.com/prisa/W74XX3IZWVG4DLCC7XSCIASKYY.jpg",
-        "hours": 1500,
-        "mins": 5900,
-        "seg": 450000
+  "1099": {
+    "nombre": "Sony Music FROM BACK",
+    "subtitle": "Sony Inc",
+    "id": 1099,
+    "image": "https://i.scdn.co/image/ab6775700000ee8563496912f9be19306ab30fb4",
+    "streams": 4560000,
+    "tocadas": 1200344,
+    "numero_artistas": 2,
+    "canciones_nro": 3726,
+    "top": {
+      "nombre": "Camilo",
+      "image": "https://i.scdn.co/image/ab6761610000f178c85ae756174cc69352bf6b97",
+      "hours": 1500,
+      "mins": 5900,
+      "seg": 450000
+    },
+    "kpisBasicos": {
+      "tocadas": {
+        "categories": [
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr",
+          "May",
+          "Jun",
+          "Jul",
+          "Aug",
+          "Sep",
+          "Oct",
+          "Nov",
+          "Dec"
+        ],
+        "dataSet": {
+          "data": [
+            240,
+            160,
+            671,
+            414,
+            555,
+            257,
+            901,
+            613,
+            727,
+            414,
+            555,
+            257
+          ]
+        }
       },
-      "kpisBasicos": {
-        "tocadas": {
-          "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-          "dataSet":
-            {
-              "data": [240, 160, 671, 414, 555, 257, 901, 613, 727, 414, 555, 257]
-            }
-        },
-        "streams": {
-          "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-          "dataSet":
-            {
-              "data": [240, 160, 671, 414, 555, 257, 901, 613, 727, 414, 555, 257]
-            }
+      "streams": {
+        "categories": [
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr",
+          "May",
+          "Jun",
+          "Jul",
+          "Aug",
+          "Sep",
+          "Oct",
+          "Nov",
+          "Dec"
+        ],
+        "dataSet": {
+          "data": [
+            240,
+            160,
+            671,
+            414,
+            555,
+            257,
+            901,
+            613,
+            727,
+            414,
+            555,
+            257
+          ]
         }
       }
+    }
+  },
+  "1099866": {
+    "nombre": "Universal Music FROM BACK",
+    "subtitle": "Universal Music Inc",
+    "id": 1099866,
+    "image": "https://i.scdn.co/image/ab6775700000ee8586d5adaf161b2c1a3d532f57",
+    "streams": 45600,
+    "tocadas": 12003,
+    "numero_artistas": 1,
+    "canciones_nro": 346,
+    "top": {
+      "nombre": "Karol G",
+      "image": "https://i.scdn.co/image/ab6761610000f1786a0594d5bff11a7e0c7ceb1a",
+      "hours": 1500,
+      "mins": 5900,
+      "seg": 450000
     },
-    "1099866": {
-      "nombre": "Universal Music FROM BACK",
-      "subtitle": "Universal Music Inc",
-      "id": 1099866,
-      "image": "https://static.wikia.nocookie.net/sonywikiencastellano/images/0/00/Sony_Music.jpg/revision/latest?cb=20200908232932&path-prefix=es",
-      "streams": 45600,
-      "tocadas": 12003,
-      "numero_artistas": 1,
-      "canciones_nro": 346,
-      "top": {
-        "nombre": "Karol G",
-        "image": "https://imagenes.elpais.com/resizer/vY8nQwaLv1PG3zg9U82yWiTvYAs=/980x980/cloudfront-eu-central-1.images.arcpublishing.com/prisa/W74XX3IZWVG4DLCC7XSCIASKYY.jpg",
-        "hours": 1500,
-        "mins": 5900,
-        "seg": 450000
+    "kpisBasicos": {
+      "tocadas": {
+        "categories": [
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr",
+          "May",
+          "Jun",
+          "Jul",
+          "Aug",
+          "Sep",
+          "Oct",
+          "Nov",
+          "Dec"
+        ],
+        "dataSet": {
+          "data": [
+            240,
+            160,
+            671,
+            414,
+            555,
+            257,
+            901,
+            613,
+            727,
+            414,
+            555,
+            257
+          ]
+        }
       },
-      "kpisBasicos": {
-        "tocadas": {
-          "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-          "dataSet":
-            {
-              "data": [240, 160, 671, 414, 555, 257, 901, 613, 727, 414, 555, 257]
-            }
-        },
-        "streams": {
-          "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-          "dataSet":
-            {
-              "data": [240, 160, 671, 414, 555, 257, 901, 613, 727, 414, 555, 257]
-            }
+      "streams": {
+        "categories": [
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr",
+          "May",
+          "Jun",
+          "Jul",
+          "Aug",
+          "Sep",
+          "Oct",
+          "Nov",
+          "Dec"
+        ],
+        "dataSet": {
+          "data": [
+            240,
+            160,
+            671,
+            414,
+            555,
+            257,
+            901,
+            613,
+            727,
+            414,
+            555,
+            257
+          ]
         }
       }
+    }
+  },
+  "1099889": {
+    "nombre": "Bit Music FROM BACK",
+    "subtitle": "Bit Inc",
+    "id": 1099889,
+    "image": "https://i.scdn.co/image/ab67616d00001e027f27395aff650d00cf3a71a8",
+    "streams": 26000,
+    "tocadas": 5000,
+    "numero_artistas": 1,
+    "canciones_nro": 1,
+    "top": {
+      "nombre": "Channel",
+      "image": "https://i.scdn.co/image/ab6761610000f1786745c2dc8ad4c3c8d1075241",
+      "hours": 300,
+      "mins": 58,
+      "seg": 450
     },
-    "1099889": {
-      "nombre": "Bit Music FROM BACK",
-      "subtitle": "Bit Inc",
-      "id": 1099889,
-      "image": "https://static.wikia.nocookie.net/sonywikiencastellano/images/0/00/Sony_Music.jpg/revision/latest?cb=20200908232932&path-prefix=es",
-      "streams": 26000,
-      "tocadas": 5000,
-      "numero_artistas": 1,
-      "canciones_nro": 1,
-      "top": {
-        "nombre": "Channel",
-        "image": "https://imagenes.elpais.com/resizer/vY8nQwaLv1PG3zg9U82yWiTvYAs=/980x980/cloudfront-eu-central-1.images.arcpublishing.com/prisa/W74XX3IZWVG4DLCC7XSCIASKYY.jpg",
-        "hours": 300,
-        "mins": 58,
-        "seg": 450
+    "kpisBasicos": {
+      "tocadas": {
+        "categories": [
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr",
+          "May",
+          "Jun",
+          "Jul",
+          "Aug",
+          "Sep",
+          "Oct",
+          "Nov",
+          "Dec"
+        ],
+        "dataSet": {
+          "data": [
+            240,
+            160,
+            671,
+            414,
+            555,
+            257,
+            901,
+            613,
+            727,
+            414,
+            555,
+            257
+          ]
+        }
       },
-      "kpisBasicos": {
-        "tocadas": {
-          "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-          "dataSet":
-            {
-              "data": [240, 160, 671, 414, 555, 257, 901, 613, 727, 414, 555, 257]
-            }
-        },
-        "streams": {
-          "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-          "dataSet":
-            {
-              "data": [240, 160, 671, 414, 555, 257, 901, 613, 727, 414, 555, 257]
-            }
+      "streams": {
+        "categories": [
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr",
+          "May",
+          "Jun",
+          "Jul",
+          "Aug",
+          "Sep",
+          "Oct",
+          "Nov",
+          "Dec"
+        ],
+        "dataSet": {
+          "data": [
+            240,
+            160,
+            671,
+            414,
+            555,
+            257,
+            901,
+            613,
+            727,
+            414,
+            555,
+            257
+          ]
         }
       }
     }
   }
+}

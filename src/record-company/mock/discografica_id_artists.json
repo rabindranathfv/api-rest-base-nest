@@ -1,221 +1,474 @@
 {
-    "1099": {
-      "artistas": [
-        {
-          "title": "Camilo FROM BACK",
-          "image": "https://imagenes.elpais.com/resizer/vY8nQwaLv1PG3zg9U82yWiTvYAs=/980x980/cloudfront-eu-central-1.images.arcpublishing.com/prisa/W74XX3IZWVG4DLCC7XSCIASKYY.jpg",
-          "top_cancion": {
-            "nombre": "Vida de Rico",
-            "id_cancion": 10000635873,
-            "image": "https://cdn.smehost.net/sonymusices-45pressprod/wp-content/uploads/2020/09/645d0f4e-f619-44ef-bf4c-2b238def6434.jpg"
-          },
-          "discografica": {
-            "nombre": "Sony Music",
-            "id": "1099",
-            "image": "https://pbs.twimg.com/profile_images/1493672949748056067/VhOyEf0v_400x400.jpg"
-          },
-          "canciones": "2700",
-          "id": 10000081699,
-          "streams": 30000,
-          "tocadas": 14890,
-          "cobertura": 560990,
-          "kpis": {
-            "compactKpi": [{
-              "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-              "dataSet":[
-                {
-                  "name": "tocadas",
-                  "data": [445, 760, 671, 414, 555, 857, 901, 613, 727, 414, 555, 157]
-                }
-              ]
-            },
-            {
-              "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-              "dataSet":[
-                {
-                  "name": "stream",
-                  "data": [245, 560, 671, 414, 555, 857, 901, 613, 727, 414, 555, 157]
-                }
-              ]
-            }
-          ],
-            "generalKpi": {
-              "dataSet": [
-                {
-                  "name": "cobertura",
-                  "data": [190500, 200000, 220000, 225000]
-                },
-                {
-                  "name": "Stream",
-                  "data": [170500, 174000, 174000, 175000]
-                }
-              ]
-            }
-          }
+  "1099": {
+    "artistas": [
+      {
+        "title": "Camilo FROM BACK",
+        "image": "https://i.scdn.co/image/ab6761610000f178c85ae756174cc69352bf6b97",
+        "top_cancion": {
+          "nombre": "Vida de Rico",
+          "id_cancion": 10000635873,
+          "image": "https://i.scdn.co/image/ab6761610000f178c85ae756174cc69352bf6b97"
         },
-        {
-          "title": "Karol G FROM BACK",
-          "image": "https://media.allure.com/photos/6227cb8ba822ef47bff03b2f/4:3/w_1991,h_1493,c_limit/Karol%20G%20Allure%20Beauty%20Interview1.jpg",
-          "top_cancion": {
-            "nombre": "El Makinon",
-            "id_cancion": 10000643108,
-            "image": "https://i1.sndcdn.com/artworks-hlMu6BEt8CvVgjry-Y6EBQQ-t500x500.jpg"
-          },
-          "discografica": {
-            "nombre": "Sony Music",
-            "id": "1099",
-            "image": "https://pbs.twimg.com/profile_images/1493672949748056067/VhOyEf0v_400x400.jpg"
-          },
-          "canciones": "68",
-          "id": 10000074802,
-          "streams": 15900,
-          "tocadas": 10890,
-          "cobertura": 500990,
-          "kpis": {
-            "compactKpi": [{
-              "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+        "discografica": {
+          "nombre": "Sony Music",
+          "id": "1099",
+          "image": "https://pbs.twimg.com/profile_images/1493672949748056067/VhOyEf0v_400x400.jpg"
+        },
+        "canciones": "2700",
+        "id": 10000081699,
+        "streams": 30000,
+        "tocadas": 14890,
+        "cobertura": 560990,
+        "kpis": {
+          "compactKpi": [
+            {
+              "categories": [
+                "Jan",
+                "Feb",
+                "Mar",
+                "Apr",
+                "May",
+                "Jun",
+                "Jul",
+                "Aug",
+                "Sep",
+                "Oct",
+                "Nov",
+                "Dec"
+              ],
               "dataSet": [
                 {
                   "name": "tocadas",
-                  "data": [200, 450, 671, 414, 555, 207, 901, 693, 777, 414, 555, 457]
+                  "data": [
+                    445,
+                    760,
+                    671,
+                    414,
+                    555,
+                    857,
+                    901,
+                    613,
+                    727,
+                    414,
+                    555,
+                    157
+                  ]
                 }
               ]
             },
             {
-              "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-              "dataSet":[
-                {
-                  "name": "streams",
-                  "data": [845, 1060, 671, 414, 555, 857, 901, 613, 727, 414, 555, 157]
-                }
-              ]
-            }],
-            "generalKpi": {
+              "categories": [
+                "Jan",
+                "Feb",
+                "Mar",
+                "Apr",
+                "May",
+                "Jun",
+                "Jul",
+                "Aug",
+                "Sep",
+                "Oct",
+                "Nov",
+                "Dec"
+              ],
               "dataSet": [
-                {
-                  "name": "cobertura",
-                  "data": [200500, 210000, 230000, 265000]
-                },
-                {
-                  "name": "Stream",
-                  "data": [150500, 194000, 174000, 175000]
-                }
-              ]
-            }
-          }
-        }
-      ]
-    },
-    "1099866": {
-      "artistas": [
-        {
-          "title": "Karol G",
-          "image": "https://media.allure.com/photos/62ed31b2e109c9f860c59498/1:1/w_2000,h_2000,c_limit/karol%20g%20red%20hair.jpg",
-          "top_cancion": {
-            "nombre": "El Makinon",
-            "id_cancion": 10000643108,
-            "image": "https://cdn.smehost.net/sonymusices-45pressprod/wp-content/uploads/2020/09/645d0f4e-f619-44ef-bf4c-2b238def6434.jpg"
-          },
-          "discografica": {
-            "nombre": "Universal Music",
-            "id": "1099866",
-            "image": "https://pbs.twimg.com/profile_images/1493672949748056067/VhOyEf0v_400x400.jpg"
-          },
-          "canciones": "349",
-          "id": 10000074802,
-          "streams": 30000,
-          "tocadas": 14890,
-          "cobertura": 560990,
-          "kpis": {
-            "compactKpi": [{
-              "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-              "dataSet": [
-                {
-                  "name": "tocadas",
-                  "data": [840, 660, 571, 414, 555, 657, 201, 913, 727, 614, 555, 857]
-                }
-              ]
-            },
-            {
-              "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-              "dataSet":[
-                {
-                  "name": "streams",
-                  "data": [845, 1260, 671, 414, 555, 857, 901, 613, 727, 414, 555, 157]
-                }
-              ]
-            }
-          ],
-            "generalKpi": {
-              "dataSet": [
-                {
-                  "name": "cobertura",
-                  "data": [170500, 200000, 230000, 245000]
-                },
-                {
-                  "name": "Stream",
-                  "data": [120500, 144000, 124000, 185000]
-                }
-              ]
-            }
-          }
-        }
-      ]
-    },
-    "1099889": {
-      "artistas": [
-        {
-          "title": "Channel",
-          "image": "https://imagenes.elpais.com/resizer/vY8nQwaLv1PG3zg9U82yWiTvYAs=/980x980/cloudfront-eu-central-1.images.arcpublishing.com/prisa/W74XX3IZWVG4DLCC7XSCIASKYY.jpg",
-          "top_cancion": {
-            "nombre": "Dance",
-            "id_cancion": 100000222,
-            "image": "https://pbs.twimg.com/profile_images/698227460870164480/PBwO2iw8_400x400.png"
-          },
-          "discografica": {
-            "nombre": "Bit Music",
-            "id": "1099889",
-            "image": "https://www.gran-turismo.com/gtsport/decal/7431036157351167488_1.png"
-          },
-          "canciones": "1",
-          "id": 10000039078,
-          "streams": 220,
-          "tocadas": 100,
-          "cobertura": 50000,
-          "kpis": {
-            "compactKpi": [{
-              "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-              "dataSet": [
-                {
-                  "name": "tocadas",
-                  "data": [1040, 660, 571, 414, 555, 657, 201, 913, 727, 614, 555, 857]
-                }
-              ]
-            },
-            {
-              "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-              "dataSet":[
                 {
                   "name": "stream",
-                  "data": [445, 860, 671, 414, 555, 857, 901, 613, 727, 414, 555, 157]
+                  "data": [
+                    245,
+                    560,
+                    671,
+                    414,
+                    555,
+                    857,
+                    901,
+                    613,
+                    727,
+                    414,
+                    555,
+                    157
+                  ]
                 }
               ]
             }
           ],
-            "generalKpi": {
+          "generalKpi": {
+            "dataSet": [
+              {
+                "name": "cobertura",
+                "data": [
+                  190500,
+                  200000,
+                  220000,
+                  225000
+                ]
+              },
+              {
+                "name": "Stream",
+                "data": [
+                  170500,
+                  174000,
+                  174000,
+                  175000
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "title": "Karol G FROM BACK",
+        "image": "https://i.scdn.co/image/ab6761610000f1786a0594d5bff11a7e0c7ceb1a",
+        "top_cancion": {
+          "nombre": "El Makinon",
+          "id_cancion": 10000643108,
+          "image": "https://i.scdn.co/image/ab67616d00004851ae28c8f2748587cc2a33d6c2"
+        },
+        "discografica": {
+          "nombre": "Sony Music",
+          "id": "1099",
+          "image": "https://i.scdn.co/image/ab6761610000f178c85ae756174cc69352bf6b97"
+        },
+        "canciones": "68",
+        "id": 10000074802,
+        "streams": 15900,
+        "tocadas": 10890,
+        "cobertura": 500990,
+        "kpis": {
+          "compactKpi": [
+            {
+              "categories": [
+                "Jan",
+                "Feb",
+                "Mar",
+                "Apr",
+                "May",
+                "Jun",
+                "Jul",
+                "Aug",
+                "Sep",
+                "Oct",
+                "Nov",
+                "Dec"
+              ],
               "dataSet": [
                 {
-                  "name": "cobertura",
-                  "data": [190500, 200000, 230000, 225000]
-                },
+                  "name": "tocadas",
+                  "data": [
+                    200,
+                    450,
+                    671,
+                    414,
+                    555,
+                    207,
+                    901,
+                    693,
+                    777,
+                    414,
+                    555,
+                    457
+                  ]
+                }
+              ]
+            },
+            {
+              "categories": [
+                "Jan",
+                "Feb",
+                "Mar",
+                "Apr",
+                "May",
+                "Jun",
+                "Jul",
+                "Aug",
+                "Sep",
+                "Oct",
+                "Nov",
+                "Dec"
+              ],
+              "dataSet": [
                 {
-                  "name": "Stream",
-                  "data": [120500, 144000, 124000, 135000]
+                  "name": "streams",
+                  "data": [
+                    845,
+                    1060,
+                    671,
+                    414,
+                    555,
+                    857,
+                    901,
+                    613,
+                    727,
+                    414,
+                    555,
+                    157
+                  ]
                 }
               ]
             }
+          ],
+          "generalKpi": {
+            "dataSet": [
+              {
+                "name": "cobertura",
+                "data": [
+                  200500,
+                  210000,
+                  230000,
+                  265000
+                ]
+              },
+              {
+                "name": "Stream",
+                "data": [
+                  150500,
+                  194000,
+                  174000,
+                  175000
+                ]
+              }
+            ]
           }
         }
-      ]
-    }
+      }
+    ]
+  },
+  "1099866": {
+    "artistas": [
+      {
+        "title": "Karol G",
+        "image": "https://i.scdn.co/image/ab6761610000f1786a0594d5bff11a7e0c7ceb1a",
+        "top_cancion": {
+          "nombre": "El Makinon",
+          "id_cancion": 10000643108,
+          "image": "https://i.scdn.co/image/ab67616d00004851ae28c8f2748587cc2a33d6c2"
+        },
+        "discografica": {
+          "nombre": "Universal Music",
+          "id": "1099866",
+          "image": "https://i.scdn.co/image/ab6761610000f178c85ae756174cc69352bf6b97"
+        },
+        "canciones": "349",
+        "id": 10000074802,
+        "streams": 30000,
+        "tocadas": 14890,
+        "cobertura": 560990,
+        "kpis": {
+          "compactKpi": [
+            {
+              "categories": [
+                "Jan",
+                "Feb",
+                "Mar",
+                "Apr",
+                "May",
+                "Jun",
+                "Jul",
+                "Aug",
+                "Sep",
+                "Oct",
+                "Nov",
+                "Dec"
+              ],
+              "dataSet": [
+                {
+                  "name": "tocadas",
+                  "data": [
+                    840,
+                    660,
+                    571,
+                    414,
+                    555,
+                    657,
+                    201,
+                    913,
+                    727,
+                    614,
+                    555,
+                    857
+                  ]
+                }
+              ]
+            },
+            {
+              "categories": [
+                "Jan",
+                "Feb",
+                "Mar",
+                "Apr",
+                "May",
+                "Jun",
+                "Jul",
+                "Aug",
+                "Sep",
+                "Oct",
+                "Nov",
+                "Dec"
+              ],
+              "dataSet": [
+                {
+                  "name": "streams",
+                  "data": [
+                    845,
+                    1260,
+                    671,
+                    414,
+                    555,
+                    857,
+                    901,
+                    613,
+                    727,
+                    414,
+                    555,
+                    157
+                  ]
+                }
+              ]
+            }
+          ],
+          "generalKpi": {
+            "dataSet": [
+              {
+                "name": "cobertura",
+                "data": [
+                  170500,
+                  200000,
+                  230000,
+                  245000
+                ]
+              },
+              {
+                "name": "Stream",
+                "data": [
+                  120500,
+                  144000,
+                  124000,
+                  185000
+                ]
+              }
+            ]
+          }
+        }
+      }
+    ]
+  },
+  "1099889": {
+    "artistas": [
+      {
+        "title": "Channel",
+        "image": "https://i.scdn.co/image/ab6761610000f1786745c2dc8ad4c3c8d1075241",
+        "top_cancion": {
+          "nombre": "Dance",
+          "id_cancion": 100000222,
+          "image": "https://i.scdn.co/image/ab6761610000f178c85ae756174cc69352bf6b97"
+        },
+        "discografica": {
+          "nombre": "Bit Music",
+          "id": "1099889",
+          "image": "https://i.scdn.co/image/ab6761610000f178c85ae756174cc69352bf6b97"
+        },
+        "canciones": "1",
+        "id": 10000039078,
+        "streams": 220,
+        "tocadas": 100,
+        "cobertura": 50000,
+        "kpis": {
+          "compactKpi": [
+            {
+              "categories": [
+                "Jan",
+                "Feb",
+                "Mar",
+                "Apr",
+                "May",
+                "Jun",
+                "Jul",
+                "Aug",
+                "Sep",
+                "Oct",
+                "Nov",
+                "Dec"
+              ],
+              "dataSet": [
+                {
+                  "name": "tocadas",
+                  "data": [
+                    1040,
+                    660,
+                    571,
+                    414,
+                    555,
+                    657,
+                    201,
+                    913,
+                    727,
+                    614,
+                    555,
+                    857
+                  ]
+                }
+              ]
+            },
+            {
+              "categories": [
+                "Jan",
+                "Feb",
+                "Mar",
+                "Apr",
+                "May",
+                "Jun",
+                "Jul",
+                "Aug",
+                "Sep",
+                "Oct",
+                "Nov",
+                "Dec"
+              ],
+              "dataSet": [
+                {
+                  "name": "stream",
+                  "data": [
+                    445,
+                    860,
+                    671,
+                    414,
+                    555,
+                    857,
+                    901,
+                    613,
+                    727,
+                    414,
+                    555,
+                    157
+                  ]
+                }
+              ]
+            }
+          ],
+          "generalKpi": {
+            "dataSet": [
+              {
+                "name": "cobertura",
+                "data": [
+                  190500,
+                  200000,
+                  230000,
+                  225000
+                ]
+              },
+              {
+                "name": "Stream",
+                "data": [
+                  120500,
+                  144000,
+                  124000,
+                  135000
+                ]
+              }
+            ]
+          }
+        }
+      }
+    ]
   }
+}
