@@ -9,6 +9,7 @@ import { ConfigService } from '@nestjs/config';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule, { cors: true });
+  app.setGlobalPrefix('api');
   const configServ = app.get(ConfigService);
   const appLogger = app.get(Logger);
   app.useLogger(appLogger);
@@ -33,6 +34,7 @@ async function bootstrap() {
     .addTag('auth')
     .addTag('user')
     .addTag('artist')
+    .addTag('song')
     .addTag('record-company')
     .build();
   const document = SwaggerModule.createDocument(app, config);
