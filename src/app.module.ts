@@ -8,7 +8,6 @@ import {
 } from '@nestjs/common';
 import { IncomingMessage } from 'http';
 import { LoggerModule } from 'nestjs-pino';
-import { MongooseModule } from '@nestjs/mongoose';
 import { AppController } from './app.controller';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { APP_INTERCEPTOR } from '@nestjs/core';
@@ -64,16 +63,6 @@ import { SongModule } from './song/song.module';
       isGlobal: true,
       load: [configuration],
       validationSchema,
-    }),
-    MongooseModule.forRootAsync({
-      imports: [ConfigModule],
-      inject: [ConfigService],
-      useFactory: (configService: ConfigService) => {
-        /* istanbul ignore next */
-        const mongoConfig = configService.get('MONGO');
-        /* istanbul ignore next */
-        return { uri: mongoConfig.uri };
-      },
     }),
     CacheModule.registerAsync({
       imports: [ConfigModule],

@@ -12,7 +12,6 @@ import { AuthController } from './auth.controller';
 import { AuthService } from './auth.service';
 
 import { User } from '../users/entities/user.entity';
-import { UserSchema } from '../users/schemas/user.schema';
 
 import { BIG_QUERY_REPOSITORY } from '../bigquery/repository/big-query.repository';
 import { AUTH_DATASTORAGE_REPOSITORY } from './repository/auth-datastorage.repository';
@@ -28,7 +27,6 @@ const passportModule = PassportModule.register({ defaultStrategy: 'jwt' });
 @Module({
   imports: [
     ConfigModule.forFeature(configuration),
-    MongooseModule.forFeature([{ name: User.name, schema: UserSchema }]),
     passportModule,
     JwtModule.registerAsync({
       imports: [ConfigModule],

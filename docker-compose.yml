@@ -21,8 +21,6 @@ services:
       - .:/usr/src/app
       - /usr/src/app/node_modules
     restart: unless-stopped
-    depends_on:
-      - mongo
 
   prod:
     container_name: nestjs_api_prod
@@ -43,25 +41,8 @@ services:
       - .:/usr/src/app
       - /usr/src/app/node_modules
     restart: unless-stopped
-    depends_on:
-      - mongo
-
-  mongo: # name of BD service
-    image: mongo
-    container_name: mongo_db
-    ports:
-      - 27017:27017
-    volumes:
-      - mongo:/data/configdb
-      - mongo:/data/db
-    restart: always
-    networks:
-      - nestjs-network
 
 networks:
   nestjs-network:
     name: nestjs-network
     driver: bridge
-
-volumes:
-  mongo:

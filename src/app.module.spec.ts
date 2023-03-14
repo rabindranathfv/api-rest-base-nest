@@ -3,7 +3,6 @@ import { CacheInterceptor, CacheModule } from '@nestjs/common';
 import { IncomingMessage } from 'http';
 import { LoggerModule } from 'nestjs-pino';
 import { APP_INTERCEPTOR } from '@nestjs/core';
-import { MongooseModule } from '@nestjs/mongoose';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 
 import { AppModule } from './app.module';
@@ -58,14 +57,6 @@ describe('AppModule:::', () => {
           isGlobal: true,
           load: [configuration],
           validationSchema,
-        }),
-        MongooseModule.forRootAsync({
-          imports: [ConfigModule],
-          inject: [ConfigService],
-          useFactory: (configService: ConfigService) => {
-            const mongoConfig = configService.get('MONGO');
-            return { uri: mongoConfig.uri };
-          },
         }),
         CacheModule.registerAsync({
           imports: [ConfigModule],
