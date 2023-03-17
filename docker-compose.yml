@@ -47,12 +47,14 @@ services:
       - redis
 
   redis:
-    container_name: redis-backend
     image: redis
+    restart: unless-stopped
     ports:
       - 6379:6379
     volumes:
       - redis:/data
+    networks:
+      - nestjs-network
 
 networks:
   nestjs-network:

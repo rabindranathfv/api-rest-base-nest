@@ -73,6 +73,12 @@ import { SongModule } from './song/song.module';
         /* istanbul ignore next */
         const redisConfig = configService.get('REDIS');
         const cacheConfig = configService.get('CACHE');
+        console.log(
+          'CONFIG REDIS*************',
+          redisConfig.host,
+          redisConfig.port,
+          cacheConfig.ttl,
+        );
         /* istanbul ignore next */
         return {
           store: redisStore,
