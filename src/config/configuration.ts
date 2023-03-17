@@ -9,7 +9,11 @@ export const configuration = () => ({
   //   uri: process.env.MONGO_URI,
   // },
   CACHE: {
-    ttl: process.env.NEST_TTL_CACHE,
-    storage: process.env.NEST_MAX_CACHE_STORAGE,
+    ttl: process.env.TTL_CACHE,
+    storage: process.env.MAX_CACHE_STORAGE,
+  },
+  REDIS: {
+    redisHost: process.env.REDIS_HOST,
+    redisPort: process.env.REDIS_PORT,
   },
 });

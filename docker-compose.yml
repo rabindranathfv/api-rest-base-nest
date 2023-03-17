@@ -21,6 +21,8 @@ services:
       - .:/usr/src/app
       - /usr/src/app/node_modules
     restart: unless-stopped
+    depends_on:
+      - redis
 
   prod:
     container_name: nestjs_api_prod
@@ -41,8 +43,22 @@ services:
       - .:/usr/src/app
       - /usr/src/app/node_modules
     restart: unless-stopped
+    depends_on:
+      - redis
+
+  redis:
+    container_name: redis-backend
+    image: redis
+    ports:
+      - 6379:6379
+    volumes:
+      - redis:/data
 
 networks:
   nestjs-network:
     name: nestjs-network
     driver: bridge
+
+volumes:
+  redis:
+    driver: local

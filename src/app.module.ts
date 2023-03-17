@@ -5,11 +5,13 @@ import {
   CacheModule,
   CacheInterceptor,
   RequestMethod,
+  CacheModuleOptions,
 } from '@nestjs/common';
 import { IncomingMessage } from 'http';
 import { LoggerModule } from 'nestjs-pino';
 import { AppController } from './app.controller';
 import { ConfigModule, ConfigService } from '@nestjs/config';
+import redisStore from 'cache-manager-redis-store';
 import { APP_INTERCEPTOR } from '@nestjs/core';
 import { AppService } from './app.service';
 
@@ -64,17 +66,20 @@ import { SongModule } from './song/song.module';
       load: [configuration],
       validationSchema,
     }),
-    CacheModule.registerAsync({
+    CacheModule.registerAsync<Promise<CacheModuleOptions>>({
       imports: [ConfigModule],
       inject: [ConfigService],
-      useFactory: (configService: ConfigService) => {
+      useFactory: async (configService: ConfigService) => {
         /* istanbul ignore next */
+        const redisConfig = configService.get('REDIS');
         const cacheConfig = configService.get('CACHE');
         /* istanbul ignore next */
         return {
+          store: redisStore,
           isGlobal: true,
-          ttl: Number(cacheConfig.ttl),
-          max: Number(cacheConfig.storage),
+          host: redisConfig.host,
+          port: redisConfig.port,
+          ttl: cacheConfig.ttl,
         };
       },
     }),
