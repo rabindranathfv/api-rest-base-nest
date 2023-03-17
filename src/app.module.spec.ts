@@ -1,8 +1,13 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { CacheInterceptor, CacheModule } from '@nestjs/common';
+import {
+  CacheInterceptor,
+  CacheModule,
+  CacheModuleOptions,
+} from '@nestjs/common';
 import { IncomingMessage } from 'http';
 import { LoggerModule } from 'nestjs-pino';
 import { APP_INTERCEPTOR } from '@nestjs/core';
+import redisStore from 'cache-manager-redis-store';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 
 import { AppModule } from './app.module';
@@ -58,14 +63,26 @@ describe('AppModule:::', () => {
           load: [configuration],
           validationSchema,
         }),
-        CacheModule.registerAsync({
+        CacheModule.registerAsync<Promise<CacheModuleOptions>>({
           imports: [ConfigModule],
           inject: [ConfigService],
-          useFactory: (configService: ConfigService) => {
+          useFactory: async (configService: ConfigService) => {
+            /* istanbul ignore next */
+            const redisConfig = configService.get('REDIS');
             const cacheConfig = configService.get('CACHE');
+            console.log(
+              'CONFIG REDIS*************',
+              redisConfig.host,
+              redisConfig.port,
+              cacheConfig.ttl,
+            );
+            /* istanbul ignore next */
             return {
-              ttl: Number(cacheConfig.ttl),
-              max: Number(cacheConfig.storage),
+              store: redisStore,
+              isGlobal: true,
+              host: redisConfig.host,
+              port: redisConfig.port,
+              ttl: cacheConfig.ttl,
             };
           },
         }),

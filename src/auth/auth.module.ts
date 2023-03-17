@@ -1,7 +1,6 @@
 import { BigQueryAdapterRepository } from '../bigquery/repository/big-query-adapter.repository';
 import { Module, CacheModule } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
-import { MongooseModule } from '@nestjs/mongoose';
 import { JwtModule } from '@nestjs/jwt';
 import { ThrottlerGuard, ThrottlerModule } from '@nestjs/throttler';
 import { PassportModule } from '@nestjs/passport';
