@@ -1,12 +1,4 @@
-import {
-  Res,
-  Controller,
-  Logger,
-  Get,
-  HttpStatus,
-  CacheInterceptor,
-  UseInterceptors,
-} from '@nestjs/common';
+import { Res, Controller, Logger, Get, HttpStatus } from '@nestjs/common';
 import {
   ApiBearerAuth,
   ApiHeader,
@@ -24,7 +16,6 @@ import { TaskDS } from './interface/task.interface';
   name: 'X-Request-id',
   description: 'Custom header for requestId generated automaticly',
 })
-@UseInterceptors(CacheInterceptor) // cache for all get methods on this ctrl
 @Controller('bigquery')
 export class BigqueryController {
   private readonly logger = new Logger(BigqueryController.name);

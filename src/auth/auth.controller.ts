@@ -8,8 +8,6 @@ import {
   Req,
   Res,
   HttpStatus,
-  UseInterceptors,
-  CacheInterceptor,
 } from '@nestjs/common';
 import {
   ApiTags,
@@ -37,7 +35,6 @@ import { SkipThrottle, Throttle } from '@nestjs/throttler';
   name: 'X-Request-id',
   description: 'Custom header for requestId generated automaticly',
 })
-@UseInterceptors(CacheInterceptor)
 @Controller('auth')
 export class AuthController {
   private readonly logger = new Logger(AuthController.name);

@@ -1,6 +1,5 @@
 import {
   Body,
-  CacheInterceptor,
   Controller,
   Delete,
   Get,
@@ -10,7 +9,6 @@ import {
   Post,
   Put,
   UseGuards,
-  UseInterceptors,
 } from '@nestjs/common';
 import {
   ApiTags,
@@ -35,7 +33,6 @@ import { DeleteUser } from './interface/delete-user.interface';
   description: 'Custom header for requestId',
 })
 @UseGuards(JwtAuthGuard)
-@UseInterceptors(CacheInterceptor) // cache for all get methods on this ctrl
 @Controller('users')
 export class UsersController {
   private readonly logger = new Logger(UsersController.name);

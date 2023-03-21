@@ -1,5 +1,5 @@
 import { BigQueryAdapterRepository } from '../bigquery/repository/big-query-adapter.repository';
-import { Module, CacheModule } from '@nestjs/common';
+import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { JwtModule } from '@nestjs/jwt';
 import { ThrottlerGuard, ThrottlerModule } from '@nestjs/throttler';
@@ -9,8 +9,6 @@ import { configuration } from '../config/configuration';
 
 import { AuthController } from './auth.controller';
 import { AuthService } from './auth.service';
-
-import { User } from '../users/entities/user.entity';
 
 import { BIG_QUERY_REPOSITORY } from '../bigquery/repository/big-query.repository';
 import { AUTH_DATASTORAGE_REPOSITORY } from './repository/auth-datastorage.repository';
@@ -37,20 +35,6 @@ const passportModule = PassportModule.register({ defaultStrategy: 'jwt' });
         return {
           secret: jwtConfig.secret,
           signOptions: { expiresIn: jwtConfig.expiresIn || '1h' },
-        };
-      },
-    }),
-    CacheModule.registerAsync({
-      imports: [ConfigModule],
-      inject: [ConfigService],
-      useFactory: (configService: ConfigService) => {
-        /* istanbul ignore next */
-        const cacheConfig = configService.get('CACHE');
-        /* istanbul ignore next */
-        return {
-          isGlobal: true,
-          ttl: Number(cacheConfig.ttl),
-          max: Number(cacheConfig.storage),
         };
       },
     }),

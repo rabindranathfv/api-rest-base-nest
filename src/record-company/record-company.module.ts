@@ -1,4 +1,4 @@
-import { CacheModule, Module } from '@nestjs/common';
+import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { PassportModule } from '@nestjs/passport';
 import { JwtModule } from '@nestjs/jwt';
@@ -20,19 +20,6 @@ const passportModule = PassportModule.register({ defaultStrategy: 'jwt' });
   imports: [
     BigqueryModule,
     ConfigModule.forFeature(configuration),
-    CacheModule.registerAsync({
-      imports: [ConfigModule],
-      inject: [ConfigService],
-      useFactory: (configService: ConfigService) => {
-        /* istanbul ignore next */
-        const cacheConfig = configService.get('CACHE');
-        /* istanbul ignore next */
-        return {
-          ttl: Number(cacheConfig.ttl),
-          max: Number(cacheConfig.storage),
-        };
-      },
-    }),
     passportModule,
     JwtModule.registerAsync({
       imports: [ConfigModule],

@@ -1,5 +1,4 @@
 import {
-  CacheInterceptor,
   Controller,
   Get,
   HttpStatus,
@@ -8,7 +7,6 @@ import {
   Query,
   Res,
   UseGuards,
-  UseInterceptors,
 } from '@nestjs/common';
 import { Response } from 'express';
 import {
@@ -25,7 +23,6 @@ import { JwtAuthGuard } from '../auth/jwt-auth.guard';
 @ApiTags('artist')
 @ApiBearerAuth()
 @UseGuards(JwtAuthGuard)
-@UseInterceptors(CacheInterceptor)
 @ApiHeader({
   name: 'X-Request-id',
   description: 'Custom header for requestId generated automaticly',
