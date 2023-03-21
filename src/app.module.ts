@@ -2,19 +2,20 @@ import {
   MiddlewareConsumer,
   Module,
   NestModule,
-  CacheModule,
-  CacheInterceptor,
+  // CacheModule,
+  // CacheInterceptor,
   RequestMethod,
-  CacheModuleOptions,
+  // CacheModuleOptions,
 } from '@nestjs/common';
 import { IncomingMessage } from 'http';
 import { LoggerModule } from 'nestjs-pino';
 import { AppController } from './app.controller';
 import { ConfigModule, ConfigService } from '@nestjs/config';
-import redisStore from 'cache-manager-redis-store';
-import { APP_INTERCEPTOR } from '@nestjs/core';
+// import redisStore from 'cache-manager-redis-store';
+// import { APP_INTERCEPTOR } from '@nestjs/core';
 import { AppService } from './app.service';
 
+import { RedisModule, RedisModuleOptions } from '@liaoliaots/nestjs-redis';
 import { configuration } from './config/configuration';
 
 import {
@@ -66,26 +67,35 @@ import { SongModule } from './song/song.module';
       load: [configuration],
       validationSchema,
     }),
-    CacheModule.registerAsync<Promise<CacheModuleOptions>>({
+    // CacheModule.registerAsync<Promise<CacheModuleOptions>>({
+    //   imports: [ConfigModule],
+    //   inject: [ConfigService],
+    //   useFactory: async (configService: ConfigService) => {
+    //     /* istanbul ignore next */
+    //     const redisConfig = configService.get('REDIS');
+    //     const cacheConfig = configService.get('CACHE');
+    //     /* istanbul ignore next */
+    //     return {
+    //       store: redisStore,
+    //       isGlobal: true,
+    //       host: redisConfig.host,
+    //       port: redisConfig.port,
+    //       ttl: cacheConfig.ttl,
+    //     };
+    //   },
+    // }),
+    RedisModule.forRootAsync({
       imports: [ConfigModule],
       inject: [ConfigService],
-      useFactory: async (configService: ConfigService) => {
-        /* istanbul ignore next */
+      useFactory: async (
+        configService: ConfigService,
+      ): Promise<RedisModuleOptions> => {
         const redisConfig = configService.get('REDIS');
-        const cacheConfig = configService.get('CACHE');
-        console.log(
-          'CONFIG REDIS*************',
-          redisConfig.host,
-          redisConfig.port,
-          cacheConfig.ttl,
-        );
-        /* istanbul ignore next */
         return {
-          store: redisStore,
-          isGlobal: true,
-          host: redisConfig.host,
-          port: redisConfig.port,
-          ttl: cacheConfig.ttl,
+          config: {
+            host: redisConfig.host,
+            port: redisConfig.port,
+          },
         };
       },
     }),
@@ -97,15 +107,7 @@ import { SongModule } from './song/song.module';
     SongModule,
   ],
   controllers: [AppController],
-  providers: [
-    AppService,
-    ConfigModule,
-    // cache all get endpoints with this config
-    {
-      provide: APP_INTERCEPTOR,
-      useClass: CacheInterceptor,
-    },
-  ],
+  providers: [AppService, ConfigModule],
 })
 export class AppModule implements NestModule {
   /* istanbul ignore next */

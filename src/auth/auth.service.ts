@@ -7,6 +7,9 @@ import {
   Req,
 } from '@nestjs/common';
 
+import { Redis } from 'ioredis';
+import { DEFAULT_REDIS_NAMESPACE, InjectRedis } from '@liaoliaots/nestjs-redis';
+
 import { AUTH_DATASTORAGE_REPOSITORY } from './repository/auth-datastorage.repository';
 
 import { CreateUserDto } from './../users/dtos/create-user.dto';
@@ -24,6 +27,7 @@ export class AuthService {
     @Inject(USER_DATASTORE_REPOSITORY) private readonly userDatastoreRepository,
     @Inject(AUTH_DATASTORAGE_REPOSITORY)
     private readonly authDatastoreRepository,
+    @InjectRedis(DEFAULT_REDIS_NAMESPACE) private readonly redis: Redis,
   ) {}
 
   async login(loginDto: LoginDto) {
@@ -35,6 +39,21 @@ export class AuthService {
         `this email ${loginDto.email} was not found or just password is incorrect, please check it`,
         HttpStatus.UNAUTHORIZED,
       );
+
+    await this.redis.hmset(`login/${loginDto.email}`, { ...loginProcess });
+    const getData = await this.redis.hgetall(`login/${loginDto.email}`);
+    const getDataHashVal = await this.redis.hget(
+      `login/${loginDto.email}`,
+      loginProcess.token,
+    );
+    console.log(
+      '🚀 ~ file: auth.service.ts:49 ~ AuthService ~ login ~ getDataHashVal:',
+      getDataHashVal,
+    );
+    console.log(
+      '🚀 ~ file: auth.service.ts:46 ~ AuthService ~ login ~ getData:',
+      getData,
+    );
     return loginProcess;
   }
 
