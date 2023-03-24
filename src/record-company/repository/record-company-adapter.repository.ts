@@ -6,6 +6,8 @@ import {
   Injectable,
   Logger,
 } from '@nestjs/common';
+import { Redis } from 'ioredis';
+import { DEFAULT_REDIS_NAMESPACE, InjectRedis } from '@liaoliaots/nestjs-redis';
 
 import { BIG_QUERY_REPOSITORY } from './../../bigquery/repository/big-query.repository';
 import { RecordCompanyRepository } from './record-company.repository';
@@ -20,7 +22,7 @@ export class RecordCompanyAdapterRepository implements RecordCompanyRepository {
   private readonly logger = new Logger(RecordCompanyAdapterRepository.name);
 
   constructor(
-    @Inject(BIG_QUERY_REPOSITORY) private readonly bigQueryRepository,
+    @InjectRedis(DEFAULT_REDIS_NAMESPACE) private readonly redis: Redis,
   ) {}
 
   async findAllRecordCompanies(filter = '', searchText = ''): Promise<any> {
@@ -28,14 +30,6 @@ export class RecordCompanyAdapterRepository implements RecordCompanyRepository {
       `using ${RecordCompanyAdapterRepository.name} - repository - method: findAllRecordCompanies`,
     );
     try {
-      const instance = await this.bigQueryRepository.connectWithBigquery();
-
-      // TODO: UPDATE THIS QUERY
-      const queryStr = `SELECT emisora_N1, emisora_N2, id_interprete, interprete_colaboradores, nombre_interprete, inserciones, universo, 
-        cobertura, cob, contactos, grp_s, ots, ola, fecha_peticion, rango, rango_sort_order, fecha
-        FROM dataglobalproduccion.BI_Artistas_Alt.odec_t`;
-      const query = `${queryStr} - ${filter} - ${searchText}`;
-      // const queryResults = await this.bigQueryRepository.query(instance, query);
       const queryResults = discograficas;
 
       return queryResults;
@@ -54,14 +48,6 @@ export class RecordCompanyAdapterRepository implements RecordCompanyRepository {
     );
 
     try {
-      const instance = await this.bigQueryRepository.connectWithBigquery();
-
-      // TODO: UPDATE THIS QUERY
-      const queryStr = `SELECT emisora_N1, emisora_N2, id_interprete, interprete_colaboradores, nombre_interprete, inserciones, universo, 
-        cobertura, cob, contactos, grp_s, ots, ola, fecha_peticion, rango, rango_sort_order, fecha
-        FROM dataglobalproduccion.BI_Artistas_Alt.odec_t`;
-      const query = `${queryStr} - ${id}`;
-      // const queryResults = await this.bigQueryRepository.query(instance, query);
       // TODO: Update mock response
       const queryResults = discografica_id_resumen[id];
 
@@ -81,14 +67,6 @@ export class RecordCompanyAdapterRepository implements RecordCompanyRepository {
     );
 
     try {
-      const instance = await this.bigQueryRepository.connectWithBigquery();
-
-      // TODO: UPDATE THIS QUERY
-      const queryStr = `SELECT emisora_N1, emisora_N2, id_interprete, interprete_colaboradores, nombre_interprete, inserciones, universo, 
-        cobertura, cob, contactos, grp_s, ots, ola, fecha_peticion, rango, rango_sort_order, fecha
-        FROM dataglobalproduccion.BI_Artistas_Alt.odec_t`;
-      const query = `${queryStr} - ${id}`;
-      // const queryResults = await this.bigQueryRepository.query(instance, query);
       // TODO: Update mock response data
       const queryResults = discografica_id_kpi_radio[id];
 
@@ -112,15 +90,12 @@ export class RecordCompanyAdapterRepository implements RecordCompanyRepository {
     );
 
     try {
-      const instance = await this.bigQueryRepository.connectWithBigquery();
-
-      // TODO: UPDATE THIS QUERY
-      const queryStr = `SELECT emisora_N1, emisora_N2, id_interprete, interprete_colaboradores, nombre_interprete, inserciones, universo, 
-        cobertura, cob, contactos, grp_s, ots, ola, fecha_peticion, rango, rango_sort_order, fecha
-        FROM dataglobalproduccion.BI_Artistas_Alt.odec_t`;
-      const query = `${queryStr} - ${id} - ${filter} - ${searchText}`;
-      // const queryResults = await this.bigQueryRepository.query(instance, query);
+      const query = `${id} - ${filter} - ${searchText}`;
       // TODO: Update resp mock data
+      console.log(
+        '🚀 ~ file: record-company-adapter.repository.ts:95 ~ RecordCompanyAdapterRepository ~ query:',
+        query,
+      );
       const queryResults = discografica_id_list_artistas[id];
 
       return queryResults;

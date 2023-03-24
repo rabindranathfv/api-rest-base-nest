@@ -7,8 +7,9 @@ import {
   Logger,
 } from '@nestjs/common';
 
+import { Redis } from 'ioredis';
+import { DEFAULT_REDIS_NAMESPACE, InjectRedis } from '@liaoliaots/nestjs-redis';
 import { ArtistRepository } from './artist.repository';
-import { BIG_QUERY_REPOSITORY } from '../../bigquery/repository/big-query.repository';
 
 import artistas_id_resumen from '../mocks/artistas_id_resumen.json';
 import artistas_id_canciones from '../mocks/artistas_id_canciones.json';
@@ -20,7 +21,7 @@ export class ArtistAdapterRepository implements ArtistRepository {
   private readonly logger = new Logger(ArtistAdapterRepository.name);
 
   constructor(
-    @Inject(BIG_QUERY_REPOSITORY) private readonly bigQueryRepository,
+    @InjectRedis(DEFAULT_REDIS_NAMESPACE) private readonly redis: Redis,
   ) {}
 
   async getKpiRadioArtistById(
@@ -32,16 +33,12 @@ export class ArtistAdapterRepository implements ArtistRepository {
       `using ${ArtistAdapterRepository.name} - repository - method: getKpiRadioArtistById with id: ${artistId}`,
     );
     try {
-      const instance = await this.bigQueryRepository.connectWithBigquery();
+      const query = `${artistId}-${filter}-${searchText}`;
 
-      // TODO: UPDATE THIS QUERY
-      const queryStr = `SELECT emisora_N1, emisora_N2, id_interprete, interprete_colaboradores, nombre_interprete, inserciones, universo, 
-        cobertura, cob, contactos, grp_s, ots, ola, fecha_peticion, rango, rango_sort_order, fecha
-        FROM dataglobalproduccion.BI_Artistas_Alt.odec_t`;
-      const query = `${queryStr}-${artistId}-${filter}-${searchText}`;
-      // const queryResults = await this.bigQueryRepository.query(instance, query);
-
-      // TODO: Check fistMock for charts on radioStationStadistics
+      console.log(
+        '🚀 ~ file: artist-adapter.repository.ts:38 ~ ArtistAdapterRepository ~ query:',
+        query,
+      );
       // const queryResults = radioStationStadistic;
       const queryResults = artistas_id_kpi_radio[artistId];
 
@@ -56,14 +53,12 @@ export class ArtistAdapterRepository implements ArtistRepository {
       `using ${ArtistAdapterRepository.name} - repository - method: getSummaryArtistById with id: ${artistId}`,
     );
     try {
-      const instance = await this.bigQueryRepository.connectWithBigquery();
-
-      // TODO: UPDATE THIS QUERY
-      const queryStr = `SELECT emisora_N1, emisora_N2, id_interprete, interprete_colaboradores, nombre_interprete, inserciones, universo, 
-        cobertura, cob, contactos, grp_s, ots, ola, fecha_peticion, rango, rango_sort_order, fecha
-        FROM dataglobalproduccion.BI_Artistas_Alt.odec_t`;
-      const query = `${queryStr}-${artistId}`;
+      const query = `${artistId}`;
       // const queryResults = await this.bigQueryRepository.query(instance, query);
+      console.log(
+        '🚀 ~ file: artist-adapter.repository.ts:58 ~ ArtistAdapterRepository ~ getSummaryArtistById ~ query:',
+        query,
+      );
       const queryResults = artistas_id_resumen[artistId];
 
       return queryResults;
@@ -81,14 +76,12 @@ export class ArtistAdapterRepository implements ArtistRepository {
       `using ${ArtistAdapterRepository.name} - repository - method: getAllSongsByArtists with id: ${artistId}`,
     );
     try {
-      const instance = await this.bigQueryRepository.connectWithBigquery();
-
-      // TODO: UPDATE THIS QUERY
-      const queryStr = `SELECT emisora_N1, emisora_N2, id_interprete, interprete_colaboradores, nombre_interprete, inserciones, universo, 
-        cobertura, cob, contactos, grp_s, ots, ola, fecha_peticion, rango, rango_sort_order, fecha
-        FROM dataglobalproduccion.BI_Artistas_Alt.odec_t`;
-      const query = `${queryStr}-${artistId}`;
+      const query = `${artistId}`;
       // const queryResults = await this.bigQueryRepository.query(instance, query);
+      console.log(
+        '🚀 ~ file: artist-adapter.repository.ts:81 ~ ArtistAdapterRepository ~ getAllSongsByArtistsById ~ query:',
+        query,
+      );
       const queryResults = artistas_id_canciones[artistId];
 
       return queryResults;
@@ -106,14 +99,11 @@ export class ArtistAdapterRepository implements ArtistRepository {
       `using ${ArtistAdapterRepository.name} - repository - method: getAllArtists`,
     );
     try {
-      const instance = await this.bigQueryRepository.connectWithBigquery();
-
-      // TODO: UPDATE THIS QUERY
-      const queryStr = `SELECT emisora_N1, emisora_N2, id_interprete, interprete_colaboradores, nombre_interprete, inserciones, universo, 
-        cobertura, cob, contactos, grp_s, ots, ola, fecha_peticion, rango, rango_sort_order, fecha
-        FROM dataglobalproduccion.BI_Artistas_Alt.odec_t`;
-      const query = `${queryStr}-${filter}-${searchText}`;
-      // const queryResults = await this.bigQueryRepository.query(instance, query);
+      const query = `${filter}-${searchText}`;
+      console.log(
+        '🚀 ~ file: artist-adapter.repository.ts:104 ~ ArtistAdapterRepository ~ getAllArtists ~ query:',
+        query,
+      );
       const queryResults = artistas;
 
       return queryResults;

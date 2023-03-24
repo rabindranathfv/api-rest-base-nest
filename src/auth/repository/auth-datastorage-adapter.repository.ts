@@ -15,8 +15,6 @@ import { AuthDatastorageRepository } from './auth-datastorage.repository';
 import { compare } from 'bcrypt';
 import { verify } from 'jsonwebtoken';
 
-import { User } from 'src/users/entities/user.entity';
-
 import { USER_DASHBOARD } from '../../users/repository/datastore-user.repository';
 import { ConfigService } from '@nestjs/config';
 
