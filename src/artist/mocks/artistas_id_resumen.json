@@ -1,13 +1,13 @@
 {
   "10000039078": {
-    "nombre": "Chanel FROM BACK",
-    "subtitle": "Bit Music",
+    "artist_name": "Chanel FROM BACK",
+    "record_company": "Bit Music",
     "id_interprete": 10000039078,
     "streams": 5668,
-    "tocadas": 1,
+    "toucheds": 1,
     "canciones_nro": 1,
-    "kpisBasicos": {
-      "tocadas": {
+    "kpis_basics": {
+      "toucheds": {
         "categories": [
           "Jan",
           "Feb",
@@ -74,22 +74,22 @@
     }
   },
   "10000074802": {
-    "nombre": "Karol G FROM BACK",
-    "subtitle": "Universal Music",
+    "artist_name": "Karol G FROM BACK",
+    "record_company": "Universal Music",
     "id": 10000074802,
     "streams": 176331,
-    "tocadas": 11,
+    "toucheds": 11,
     "canciones_nro": 349,
     "top": {
-      "nombre": "El Makinon",
+      "artist_name": "El Makinon",
       "id": "10000643108",
       "image": "https://i.scdn.co/image/ab67616d00004851ae28c8f2748587cc2a33d6c2",
       "hours": 2,
       "mins": 5900,
       "seg": 69
     },
-    "kpisBasicos": {
-      "tocadas": {
+    "kpis_basics": {
+      "toucheds": {
         "categories": [
           "Jan",
           "Feb",
@@ -156,22 +156,22 @@
     }
   },
   "10000081699": {
-    "nombre": "Camilo FROM BACK",
-    "subtitle": "Sony Music",
+    "artist_name": "Camilo FROM BACK",
+    "record_company": "Sony Music",
     "id": 10000081699,
     "streams": 122462,
-    "tocadas": 23,
+    "toucheds": 23,
     "canciones_nro": 2700,
     "top": {
-      "nombre": "Vida de Rico",
+      "artist_name": "Vida de Rico",
       "id": "10000635873",
       "image": "https://i.scdn.co/image/ab67616d00004851d7210e8d6986196b28d084ef",
       "hours": 2,
       "mins": 5900,
       "seg": 69
     },
-    "kpisBasicos": {
-      "tocadas": {
+    "kpis_basics": {
+      "toucheds": {
         "categories": [
           "Jan",
           "Feb",
@@ -238,14 +238,14 @@
     }
   },
   "10000790164": {
-    "nombre": "Chanel FROM BACK",
-    "subtitle": "Bit Music",
+    "artist_name": "Chanel FROM BACK",
+    "record_company": "Bit Music",
     "id": 10000790164,
     "streams": 0,
-    "tocadas": 0,
+    "toucheds": 0,
     "canciones_nro": 0,
-    "kpisBasicos": {
-      "tocadas": {
+    "kpis_basics": {
+      "toucheds": {
         "categories": [
           "Jan",
           "Feb",

@@ -1,0 +1,834 @@
+{
+    "artistas": [
+        {
+            "nombre": "Karol G",
+            "image": "https://i.scdn.co/image/ab6761610000f1786a0594d5bff11a7e0c7ceb1a",
+            "discografica": {
+                "nombre": "Universal Musc Group",
+                "image": "DISCOGRAFICA_LOGO"
+            },
+            "cantidad_de_canciones": 68,
+            "top_cancion": {
+                "nombre": "El Makinon",
+                "streams": 126331,
+                "tocada": 6890
+            },
+            "kpi": {
+                "tocadas": {
+                    "total": 10890,
+                    "porcentaje": 8.29,
+                    "data": [
+                        200,
+                        450,
+                        671,
+                        414,
+                        555,
+                        207,
+                        901,
+                        693,
+                        777,
+                        414,
+                        555,
+                        457
+                    ]
+                },
+                "streams": {
+                    "total": 15900,
+                    "porcentaje": 12.29,
+                    "data": [
+                        300,
+                        250,
+                        671,
+                        414,
+                        555,
+                        207,
+                        901,
+                        693,
+                        777,
+                        414,
+                        555,
+                        157
+                    ]
+                }
+            },
+            "kpi_emisora": [
+                {
+                    "nombre": "cobertura",
+                    "cobertura": 20000
+                }
+            ],
+            "albunes": [
+                {
+                    "nombre": "ALBUM 1 KAROL G",
+                    "image": "SOME_ALBUN_URL",
+                    "canciones": [
+                        {
+                            "nombre": "El makinon",
+                            "kpi": {
+                                "tocadas": {
+                                    "total": 200,
+                                    "porcentaje": 3.5,
+                                    "data": [
+                                        775,
+                                        260,
+                                        571,
+                                        414,
+                                        555,
+                                        657,
+                                        201,
+                                        913,
+                                        727,
+                                        614,
+                                        555,
+                                        457
+                                    ]
+                                },
+                                "streams": {
+                                    "total": 11083,
+                                    "porcentaje": 7.52,
+                                    "data": [
+                                        120750,
+                                        144000,
+                                        124000,
+                                        185000
+                                    ]
+                                }
+                            },
+                            "kpi_emisora": [
+                                {
+                                    "nombre": "cobertura",
+                                    "cobertura": 20000
+                                }
+                            ],
+                            "rango_edad": {
+                                "kpi_total": [
+                                    {
+                                        "nombre": "barImpact",
+                                        "cantidad": 40
+                                    }
+                                ],
+                                "kpi_tiempo": [
+                                    {
+                                        "nombre": "lineImpact",
+                                        "cantidad": [
+                                            190000,
+                                            200000,
+                                            220000,
+                                            225000,
+                                            224000,
+                                            224000,
+                                            223000,
+                                            227000,
+                                            230000,
+                                            240000,
+                                            249000
+                                        ]
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "nombre": "ALBUM 1 KAROL G",
+                    "image": "SOME_ALBUN_URL",
+                    "canciones": [
+                        {
+                            "nombre": "Ay, Dios mío!",
+                            "kpi": {
+                                "tocadas": {
+                                    "total": 190,
+                                    "porcentaje": 1.75,
+                                    "data": [
+                                        575,
+                                        260,
+                                        571,
+                                        414,
+                                        555,
+                                        657,
+                                        201,
+                                        913,
+                                        727,
+                                        614,
+                                        555,
+                                        357
+                                    ]
+                                },
+                                "streams": {
+                                    "total": 9083,
+                                    "porcentaje": 4.52,
+                                    "data": [
+                                        70750,
+                                        84000,
+                                        124000,
+                                        145000
+                                    ]
+                                }
+                            },
+                            "kpi_emisora": [
+                                {
+                                    "nombre": "cobertura",
+                                    "cobertura": 16000
+                                }
+                            ],
+                            "rango_edad": {
+                                "kpi_total": [
+                                    {
+                                        "nombre": "barImpact",
+                                        "cantidad": 22
+                                    }
+                                ],
+                                "kpi_tiempo": [
+                                    {
+                                        "nombre": "lineImpact",
+                                        "cantidad": [
+                                            120000,
+                                            170000,
+                                            150000,
+                                            175000,
+                                            204000,
+                                            206000,
+                                            223000,
+                                            227000,
+                                            230000,
+                                            240000,
+                                            249000
+                                        ]
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "nombre": "ALBUM 1 KAROL G",
+                    "image": "SOME_ALBUN_URL",
+                    "canciones": [
+                        {
+                            "nombre": "Provenza",
+                            "kpi": {
+                                "tocadas": {
+                                    "total": 192,
+                                    "porcentaje": 2.75,
+                                    "data": [
+                                        675,
+                                        260,
+                                        571,
+                                        414,
+                                        555,
+                                        657,
+                                        201,
+                                        913,
+                                        727,
+                                        614,
+                                        555,
+                                        557
+                                    ]
+                                },
+                                "streams": {
+                                    "total": 10783,
+                                    "porcentaje": 5.70,
+                                    "data": [
+                                        60750,
+                                        74000,
+                                        124000,
+                                        135000
+                                    ]
+                                }
+                            },
+                            "kpi_emisora": [
+                                {
+                                    "nombre": "cobertura",
+                                    "cobertura": 15000
+                                }
+                            ],
+                            "rango_edad": {
+                                "kpi_total": [
+                                    {
+                                        "nombre": "barImpact",
+                                        "cantidad": 32
+                                    }
+                                ],
+                                "kpi_tiempo": [
+                                    {
+                                        "nombre": "lineImpact",
+                                        "cantidad": [
+                                            100000,
+                                            110000,
+                                            150000,
+                                            175000,
+                                            204000,
+                                            206000,
+                                            223000,
+                                            227000,
+                                            231000,
+                                            240000,
+                                            249000
+                                        ]
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "nombre": "ALBUM 1 KAROL G",
+                    "image": "SOME_ALBUN_URL",
+                    "canciones": [
+                        {
+                            "nombre": "Tusa",
+                            "kpi": {
+                                "tocadas": {
+                                    "total": 192,
+                                    "porcentaje": 2.75,
+                                    "data": [
+                                        675,
+                                        260,
+                                        571,
+                                        414,
+                                        555,
+                                        657,
+                                        201,
+                                        913,
+                                        727,
+                                        614,
+                                        555,
+                                        557
+                                    ]
+                                },
+                                "streams": {
+                                    "total": 10783,
+                                    "porcentaje": 5.70,
+                                    "data": [
+                                        60750,
+                                        74000,
+                                        124000,
+                                        135000
+                                    ]
+                                }
+                            },
+                            "kpi_emisora": [
+                                {
+                                    "nombre": "cobertura",
+                                    "cobertura": 15000
+                                }
+                            ],
+                            "rango_edad": {
+                                "kpi_total": [
+                                    {
+                                        "nombre": "barImpact",
+                                        "cantidad": 32
+                                    }
+                                ],
+                                "kpi_tiempo": [
+                                    {
+                                        "nombre": "lineImpact",
+                                        "cantidad": [
+                                            100000,
+                                            110000,
+                                            150000,
+                                            175000,
+                                            204000,
+                                            206000,
+                                            223000,
+                                            227000,
+                                            231000,
+                                            240000,
+                                            249000
+                                        ]
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "nombre": "ALBUM 1 KAROL G",
+                    "image": "SOME_ALBUN_URL",
+                    "canciones": [
+                        {
+                            "nombre": "Caramelo",
+                            "kpi": {
+                                "tocadas": {
+                                    "total": 192,
+                                    "porcentaje": 2.75,
+                                    "data": [
+                                        675,
+                                        260,
+                                        571,
+                                        414,
+                                        555,
+                                        657,
+                                        201,
+                                        913,
+                                        727,
+                                        614,
+                                        555,
+                                        557
+                                    ]
+                                },
+                                "streams": {
+                                    "total": 10783,
+                                    "porcentaje": 5.70,
+                                    "data": [
+                                        60750,
+                                        74000,
+                                        124000,
+                                        135000
+                                    ]
+                                }
+                            },
+                            "kpi_emisora": [
+                                {
+                                    "nombre": "cobertura",
+                                    "cobertura": 15000
+                                }
+                            ],
+                            "rango_edad": {
+                                "kpi_total": [
+                                    {
+                                        "nombre": "barImpact",
+                                        "cantidad": 32
+                                    }
+                                ],
+                                "kpi_tiempo": [
+                                    {
+                                        "nombre": "lineImpact",
+                                        "cantidad": [
+                                            100000,
+                                            110000,
+                                            150000,
+                                            175000,
+                                            204000,
+                                            206000,
+                                            223000,
+                                            227000,
+                                            231000,
+                                            240000,
+                                            249000
+                                        ]
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "nombre": "ALBUM 1 KAROL G",
+                    "image": "SOME_ALBUN_URL",
+                    "canciones": [
+                        {
+                            "nombre": "Punto G",
+                            "kpi": {
+                                "tocadas": {
+                                    "total": 192,
+                                    "porcentaje": 2.75,
+                                    "data": [
+                                        675,
+                                        260,
+                                        571,
+                                        414,
+                                        555,
+                                        657,
+                                        201,
+                                        913,
+                                        727,
+                                        614,
+                                        555,
+                                        557
+                                    ]
+                                },
+                                "streams": {
+                                    "total": 10783,
+                                    "porcentaje": 5.70,
+                                    "data": [
+                                        60750,
+                                        74000,
+                                        124000,
+                                        135000
+                                    ]
+                                }
+                            },
+                            "kpi_emisora": [
+                                {
+                                    "nombre": "cobertura",
+                                    "cobertura": 15000
+                                }
+                            ],
+                            "rango_edad": {
+                                "kpi_total": [
+                                    {
+                                        "nombre": "barImpact",
+                                        "cantidad": 32
+                                    }
+                                ],
+                                "kpi_tiempo": [
+                                    {
+                                        "nombre": "lineImpact",
+                                        "cantidad": [
+                                            100000,
+                                            110000,
+                                            150000,
+                                            175000,
+                                            204000,
+                                            206000,
+                                            223000,
+                                            227000,
+                                            231000,
+                                            240000,
+                                            249000
+                                        ]
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "nombre": "Channel",
+            "image": "https://i.scdn.co/image/ab6761610000f1786745c2dc8ad4c3c8d1075241",
+            "discografica": {
+                "nombre": "Bit Music",
+                "image": "DISCOGRAFICA_LOGO"
+            },
+            "cantidad_de_canciones": 1,
+            "kpi": {
+                "tocadas": {
+                    "total": 9890,
+                    "porcentaje": 10.29,
+                    "data": [
+                        1040,
+                        660,
+                        571,
+                        414,
+                        555,
+                        657,
+                        201,
+                        913,
+                        727,
+                        614,
+                        555,
+                        857
+                    ]
+                },
+                "streams": {
+                    "total": 11900,
+                    "porcentaje": 14.29,
+                    "data": [
+                        100,
+                        250,
+                        671,
+                        414,
+                        555,
+                        207,
+                        901,
+                        693,
+                        777,
+                        414,
+                        555,
+                        157
+                    ]
+                }
+            },
+            "kpi_emisora": [
+                {
+                    "nombre": "cobertura",
+                    "cobertura": 14000
+                }
+            ],
+            "albunes": [
+                {
+                    "nombre": "ALBUM 1 Channel",
+                    "image": "SOME_ALBUN_URL",
+                    "canciones": [
+                        {
+                            "nombre": "Dance",
+                            "kpi": {
+                                "tocadas": {
+                                    "total": 10,
+                                    "porcentaje": 10.29,
+                                    "data": [
+                                        575,
+                                        260,
+                                        571,
+                                        414,
+                                        555,
+                                        657,
+                                        201,
+                                        913,
+                                        727,
+                                        614,
+                                        555,
+                                        475
+                                    ]
+                                },
+                                "streams": {
+                                    "total": 5668,
+                                    "porcentaje": 14.29,
+                                    "data": [
+                                        120500,
+                                        144000,
+                                        124000,
+                                        135000
+                                    ]
+                                }
+                            },
+                            "kpi_emisora": [
+                                {
+                                    "nombre": "cobertura",
+                                    "cobertura": 20000
+                                }
+                            ],
+                            "rango_edad": {
+                                "kpi_total": [
+                                    {
+                                        "nombre": "barImpact",
+                                        "cantidad": 40
+                                    }
+                                ],
+                                "kpi_tiempo": [
+                                    {
+                                        "nombre": "lineImpact",
+                                        "cantidad": [
+                                            190000,
+                                            200000,
+                                            220000,
+                                            225000,
+                                            224000,
+                                            224000,
+                                            223000,
+                                            227000,
+                                            230000,
+                                            240000,
+                                            249000
+                                        ]
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "nombre": "Camilo",
+            "image": "https://i.scdn.co/image/ab6761610000f178c85ae756174cc69352bf6b97",
+            "discografica": {
+                "nombre": "Sony Music Entretainment",
+                "image": "DISCOGRAFICA_LOGO"
+            },
+            "cantidad_de_canciones": 2700,
+            "top_cancion": {
+                "nombre": "Vida de rico",
+                "streams": 156331,
+                "tocada": 9890
+            },
+            "kpi": {
+                "tocadas": {
+                    "total": 14890,
+                    "porcentaje": 9.29,
+                    "data": [
+                        445,
+                        760,
+                        671,
+                        414,
+                        555,
+                        857,
+                        901,
+                        613,
+                        727,
+                        414,
+                        555,
+                        157
+                    ]
+                },
+                "streams": {
+                    "total": 30000,
+                    "porcentaje": 13.29,
+                    "data": [
+                        900,
+                        850,
+                        671,
+                        414,
+                        555,
+                        207,
+                        901,
+                        693,
+                        777,
+                        414,
+                        555,
+                        157
+                    ]
+                }
+            },
+            "kpi_emisora": [
+                {
+                    "nombre": "cobertura",
+                    "cobertura": 560990
+                }
+            ],
+            "albunes": [
+                {
+                    "nombre": "ALBUM 1 CAMILO",
+                    "image": "SOME_ALBUN_URL",
+                    "canciones": [
+                        {
+                            "nombre": "Vida de rico",
+                            "kpi": {
+                                "tocadas": {
+                                    "total": 1040,
+                                    "porcentaje": 5.52,
+                                    "data": [
+                                        655,
+                                        260,
+                                        571,
+                                        414,
+                                        555,
+                                        657,
+                                        201,
+                                        913,
+                                        727,
+                                        614,
+                                        555,
+                                        457
+                                    ]
+                                },
+                                "streams": {
+                                    "total": 253,
+                                    "porcentaje": 7.52,
+                                    "data": [
+                                        755,
+                                        960,
+                                        571,
+                                        414,
+                                        555,
+                                        657,
+                                        201,
+                                        913,
+                                        727,
+                                        614,
+                                        555,
+                                        457
+                                    ]
+                                }
+                            },
+                            "kpi_emisora": [
+                                {
+                                    "nombre": "cobertura",
+                                    "cobertura": 30000
+                                }
+                            ],
+                            "rango_edad": {
+                                "kpi_total": [
+                                    {
+                                        "nombre": "barImpact",
+                                        "cantidad": 45
+                                    }
+                                ],
+                                "kpi_tiempo": [
+                                    {
+                                        "nombre": "lineImpact",
+                                        "cantidad": [
+                                            150000,
+                                            120000,
+                                            220000,
+                                            225000,
+                                            224000,
+                                            224000,
+                                            223000,
+                                            227000,
+                                            230000,
+                                            250000,
+                                            259000
+                                        ]
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "nombre": "ALBUM 2 CAMILO",
+                    "image": "SOME_ALBUN_URL",
+                    "canciones": [
+                        {
+                            "nombre": "Índigo",
+                            "kpi": {
+                                "tocadas": {
+                                    "total": 1040,
+                                    "porcentaje": 5.47,
+                                    "data": [
+                                        335,
+                                        260,
+                                        571,
+                                        414,
+                                        555,
+                                        657,
+                                        201,
+                                        913,
+                                        727,
+                                        614,
+                                        555,
+                                        357
+                                    ]
+                                },
+                                "streams": {
+                                    "total": 253,
+                                    "porcentaje": 7.47,
+                                    "data": [
+                                        445,
+                                        960,
+                                        571,
+                                        414,
+                                        555,
+                                        657,
+                                        201,
+                                        913,
+                                        727,
+                                        614,
+                                        555,
+                                        447
+                                    ]
+                                }
+                            },
+                            "kpi_emisora": [
+                                {
+                                    "nombre": "cobertura",
+                                    "cobertura": 30000
+                                }
+                            ],
+                            "rango_edad": {
+                                "kpi_total": [
+                                    {
+                                        "nombre": "barImpact",
+                                        "cantidad": 45
+                                    }
+                                ],
+                                "kpi_tiempo": [
+                                    {
+                                        "nombre": "lineImpact",
+                                        "cantidad": [
+                                            150000,
+                                            120000,
+                                            220000,
+                                            225000,
+                                            224000,
+                                            224000,
+                                            223000,
+                                            227000,
+                                            230000,
+                                            250000,
+                                            259000
+                                        ]
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

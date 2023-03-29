@@ -30,6 +30,7 @@ export class RecordCompanyAdapterRepository implements RecordCompanyRepository {
       `using ${RecordCompanyAdapterRepository.name} - repository - method: findAllRecordCompanies`,
     );
     try {
+      console.log(`filter ${filter}, searchText ${searchText}`);
       const queryResults = discograficas;
 
       return queryResults;

@@ -1,1984 +1,1781 @@
 {
-    "10000039078": {
-        "canciones": [
-        {
-            "emisora_N1": "Cadena Dial",
-            "emisora_N2": "Cadena Dial",
-            "id_emisora": 1004,
-            "fecha": "2022-07-23",
-            "discografica": "Bit Music",
-            "id": 10000118971,
-            "title": "Dance",
-            "id_interprete": 10000039078,
-            "interprete_colaboradores": "Chanel",
-            "nombre_interprete": "Chanel",
-            "streams": 5668,
-            "tocadas": 1,
-            "kpis": {
-                "compactKpi": [{
-                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                  "dataSet": [
-                    {
-                      "name": "tocadas",
-                      "data": [575, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 475]
-                    }
-                  ]
-                },
-                {
-                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                  "dataSet": [
-                    {
-                      "name": "streams",
-                      "data": [100, 250, 671, 414, 555, 207, 901, 693, 777, 414, 555, 157]
-                    }
-                  ]
-                }
-              ],
-                "generalKpi": {
-                  "dataSet": [
-                    {
-                      "name": "cobertura",
-                      "data": [170750, 200000, 230000, 245000]
-                    },
-                    {
-                      "name": "Stream",
-                      "data": [120750, 144000, 124000, 185000]
-                    }
-                  ]
-                }
-              }
-        }
-        ]
-    },
-    "10000074802": {
-        "canciones": [
-        {
-            "emisora_N1": "Los 40",
-            "emisora_N2": "LOS40 Urban",
-            "id_emisora": 383002,
-            "fecha": "2022-07-23",
-            "discografica": "Universal Music",
-            "id": 10000643108,
-            "title": "El makinon",
-            "id_interprete": 10000074802,
-            "interprete_colaboradores": "Karol G (+ Bad Bunny,Maldy,Mariah Angeliq,Mau y Ricky,Myke Towers,Ozuna,Nicki Minaj,Tiësto)",
-            "nombre_interprete": "Karol G",
-            "streams": 1560,
-            "tocadas": 1,
-            "kpis": {
-                "compactKpi": [{
-                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                  "dataSet": [
-                    {
-                      "name": "tocadas",
-                      "data": [775, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                    }
-                  ]
-                },
-                {
-                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                  "dataSet": [
-                    {
-                      "name": "streams",
-                      "data": [975, 1160, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                    }
-                  ]
-                }
-              ],
-                "generalKpi": {
-                  "dataSet": [
-                    {
-                      "name": "cobertura",
-                      "data": [140750, 200000, 230000, 245000]
-                    },
-                    {
-                      "name": "Stream",
-                      "data": [120750, 144000, 124000, 185000]
-                    }
-                  ]
-                }
-              }
-        },
-        {
-            "emisora_N1": "Los 40",
-            "emisora_N2": "LOS40 Urban",
-            "id_emisora": 383002,
-            "fecha": "2022-07-23",
-            "discografica": "Universal Music",
-            "id": 10000634092,
-            "title": "Ay, Dios mío!",
-            "id_interprete": 10000074802,
-            "interprete_colaboradores": "Karol G (+ Bad Bunny,Maldy,Mariah Angeliq,Mau y Ricky,Myke Towers,Ozuna,Nicki Minaj,Tiësto)",
-            "nombre_interprete": "Karol G",
-            "streams": 3277,
-            "tocadas": 1,
-            "kpis": {
-              "compactKpi": [
-                  {
-                    "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                    "dataSet": [
-                      {
-                        "name": "tocadas",
-                        "data": [575, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                      }
-                    ]
-                  },
-                  {
-                    "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                    "dataSet": [
-                      {
-                        "name": "streams",
-                        "data": [675, 960, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                      }
-                    ]
-                  }
-                ],
-                "generalKpi": {
-                  "dataSet": [
-                    {
-                      "name": "cobertura",
-                      "data": [170000, 200000, 230000, 245000]
-                    },
-                    {
-                      "name": "Stream",
-                      "data": [120000, 144000, 124000, 185000]
-                    }
-                  ]
-                }
-              }
-        },
-        {
-            "emisora_N1": "Los 40",
-            "emisora_N2": "LOS40 Urban",
-            "id_emisora": 383002,
-            "fecha": "2022-07-23",
-            "discografica": "Universal Music",
-            "id": 10000659326,
-            "title": "Provenza",
-            "id_interprete": 10000074802,
-            "interprete_colaboradores": "Karol G (+ Bad Bunny,Maldy,Mariah Angeliq,Mau y Ricky,Myke Towers,Ozuna,Nicki Minaj,Tiësto)",
-            "nombre_interprete": "Karol G",
-            "streams": 14202,
-            "tocadas": 5,
-            "kpis": {
-              "compactKpi": [
-                {
-                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                  "dataSet": [
-                    {
-                      "name": "tocadas",
-                      "data": [540, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                    }
-                  ]
-                },
-                {
-                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                  "dataSet": [
-                    {
-                      "name": "streams",
-                      "data": [640, 960, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                    }
-                  ]
-                }
-              ],
-                "generalKpi": {
-                  "dataSet": [
-                    {
-                      "name": "cobertura",
-                      "data": [170000, 200000, 230000, 245000]
-                    },
-                    {
-                      "name": "Stream",
-                      "data": [120000, 144000, 124000, 185000]
-                    }
-                  ]
-                }
-              }
-        },
-        {
-            "emisora_N1": "Los 40",
-            "emisora_N2": "Los 40",
-            "id_emisora": 1002,
-            "fecha": "2022-05-09",
-            "discografica": "Universal Music",
-            "id": 10000659326,
-            "title": "Provenza",
-            "id_interprete": 10000074802,
-            "interprete_colaboradores": "Karol G (+ Bad Bunny,Maldy,Mariah Angeliq,Mau y Ricky,Myke Towers,Ozuna,Nicki Minaj,Tiësto)",
-            "nombre_interprete": "Karol G",
-            "streams": 107919,
-            "tocadas": 7,
-            "kpis": {
-              "compactKpi": [
-                {
-                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                  "dataSet": [
-                    {
-                      "name": "tocadas",
-                      "data": [545, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                    }
-                  ]
-                },
-                {
-                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                  "dataSet": [
-                    {
-                      "name": "streams",
-                      "data": [645, 960, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                    }
-                  ]
-                }
-              ],
-                "generalKpi": {
-                  "dataSet": [
-                    {
-                      "name": "cobertura",
-                      "data": [170000, 200000, 230000, 245000]
-                    },
-                    {
-                      "name": "Stream",
-                      "data": [120000, 144000, 124000, 185000]
-                    }
-                  ]
-                }
-              }
-        },
-        {
-            "emisora_N1": "Los 40",
-            "emisora_N2": "Los 40",
-            "id_emisora": 1002,
-            "fecha": "2022-05-09",
-            "discografica": "Republic Records",
-            "id": 570002102551,
-            "title": "Tusa",
-            "id_interprete": 10000074802,
-            "interprete_colaboradores": "Karol G (+ Bad Bunny,Maldy,Mariah Angeliq,Mau y Ricky,Myke Towers,Ozuna,Nicki Minaj,Tiësto)",
-            "nombre_interprete": "Karol G",
-            "streams": 24506,
-            "tocadas": 2,
-            "kpis": {
-              "compactKpi": [
-                {
-                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                  "dataSet": [
-                    {
-                      "name": "tocadas",
-                      "data": [550, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                    }
-                  ]
-                },
-                {
-                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                  "dataSet": [
-                    {
-                      "name": "streams",
-                      "data": [650, 960, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                    }
-                  ]
-                }
-              ],
-                "generalKpi": {
-                  "dataSet": [
-                    {
-                      "name": "cobertura",
-                      "data": [170000, 200000, 230000, 245000]
-                    },
-                    {
-                      "name": "Stream",
-                      "data": [120000, 144000, 124000, 185000]
-                    }
-                  ]
-                }
-              }
-        },
-        {
-            "emisora_N1": "Los 40",
-            "emisora_N2": "LOS40 Dance",
-            "id_emisora": 375002,
-            "fecha": "2022-05-09",
-            "discografica": "Musical Freedom",
-            "id": 10000649044,
-            "title": "Don\"t be shy",
-            "id_interprete": 10000074802,
-            "interprete_colaboradores": "Karol G (+ Bad Bunny,Maldy,Mariah Angeliq,Mau y Ricky,Myke Towers,Ozuna,Nicki Minaj,Tiësto)",
-            "nombre_interprete": "Karol G",
-            "streams": 1525,
-            "tocadas": 1,
-            "kpis": {
-              "compactKpi": [
-                {
-                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                  "dataSet": [
-                    {
-                      "name": "tocadas",
-                      "data": [555, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                    }
-                  ]
-                },
-                {
-                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                  "dataSet": [
-                    {
-                      "name": "streams",
-                      "data": [655, 960, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                    }
-                  ]
-                }
-              ],
-                "generalKpi": {
-                  "dataSet": [
-                    {
-                      "name": "cobertura",
-                      "data": [170000, 200000, 230000, 245000]
-                    },
-                    {
-                      "name": "Stream",
-                      "data": [120000, 144000, 124000, 185000]
-                    }
-                  ]
-                }
-              }
-        },
-        {
-            "emisora_N1": "Los 40",
-            "emisora_N2": "LOS40 Urban",
-            "id_emisora": 383002,
-            "fecha": "2022-05-09",
-            "discografica": "Sony Music",
-            "id": 10000635011,
-            "title": "Caramelo",
-            "id_interprete": 10000074802,
-            "interprete_colaboradores": "Karol G (+ Bad Bunny,Maldy,Mariah Angeliq,Mau y Ricky,Myke Towers,Ozuna,Nicki Minaj,Tiësto)",
-            "nombre_interprete": "Karol G",
-            "streams": 5069,
-            "tocadas": 1,
-            "kpis": {
-              "compactKpi": [
-                {
-                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                  "dataSet": [
-                    {
-                      "name": "tocadas",
-                      "data": [570, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                    }
-                  ]
-                },
-                {
-                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                  "dataSet": [
-                    {
-                      "name": "streams",
-                      "data": [670, 960, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                    }
-                  ]
-                }
-              ],
-                "generalKpi": {
-                  "dataSet": [
-                    {
-                      "name": "cobertura",
-                      "data": [170000, 200000, 230000, 245000]
-                    },
-                    {
-                      "name": "Stream",
-                      "data": [120000, 144000, 124000, 185000]
-                    }
-                  ]
-                }
-              }
-        },
-        {
-            "emisora_N1": "Los 40",
-            "emisora_N2": "LOS40 Urban",
-            "id_emisora": 383002,
-            "fecha": "2022-05-09",
-            "discografica": "Universal Music",
-            "id": 10000616683,
-            "title": "Punto G",
-            "id_interprete": 10000074802,
-            "interprete_colaboradores": "Karol G (+ Bad Bunny,Maldy,Mariah Angeliq,Mau y Ricky,Myke Towers,Ozuna,Nicki Minaj,Tiësto)",
-            "nombre_interprete": "Karol G",
-            "streams": 4538,
-            "tocadas": 1,
-            "kpis": {
-              "compactKpi": [
-                {
-                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                  "dataSet": [
-                    {
-                      "name": "tocadas",
-                      "data": [575, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                    }
-                  ]
-                },
-                {
-                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                  "dataSet": [
-                    {
-                      "name": "streams",
-                      "data": [675, 960, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                    }
-                  ]
-                }
-              ],
-                "generalKpi": {
-                  "dataSet": [
-                    {
-                      "name": "cobertura",
-                      "data": [170000, 200000, 230000, 245000]
-                    },
-                    {
-                      "name": "Stream",
-                      "data": [120000, 144000, 124000, 185000]
-                    }
-                  ]
-                }
-              }
-        },
-        {
-            "emisora_N1": "Los 40",
-            "emisora_N2": "LOS40 Urban",
-            "id_emisora": 383002,
-            "fecha": "2022-05-09",
-            "discografica": "Universal Music",
-            "id": 10000659326,
-            "title": "Provenza",
-            "id_interprete": 10000074802,
-            "interprete_colaboradores": "Karol G (+ Bad Bunny,Maldy,Mariah Angeliq,Mau y Ricky,Myke Towers,Ozuna,Nicki Minaj,Tiësto)",
-            "nombre_interprete": "Karol G",
-            "streams": 27129,
-            "tocadas": 8,
-            "kpis": {
-              "compactKpi": [
-                {
-                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                  "dataSet": [
-                    {
-                      "name": "tocadas",
-                      "data": [580, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                    }
-                  ]
-                },
-                {
-                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                  "dataSet": [
-                    {
-                      "name": "streams",
-                      "data": [680, 960, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                    }
-                  ]
-                }
-              ],
-                "generalKpi": {
-                  "dataSet": [
-                    {
-                      "name": "cobertura",
-                      "data": [170000, 200000, 230000, 245000]
-                    },
-                    {
-                      "name": "Stream",
-                      "data": [120000, 144000, 124000, 185000]
-                    }
-                  ]
-                }
-              }
-        },
-        {
-            "emisora_N1": "Los 40",
-            "emisora_N2": "LOS40 Urban",
-            "id_emisora": 383002,
-            "fecha": "2022-01-19",
-            "discografica": "Sony Music",
-            "id": 10000635011,
-            "title": "Caramelo",
-            "id_interprete": 10000074802,
-            "interprete_colaboradores": "Karol G (+ Bad Bunny,Maldy,Mariah Angeliq,Mau y Ricky,Myke Towers,Ozuna,Nicki Minaj,Tiësto)",
-            "nombre_interprete": "Karol G",
-            "streams": 1777,
-            "tocadas": 1,
-            "kpis": {
-              "compactKpi": [
-                {
-                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                  "dataSet": [
-                    {
-                      "name": "tocadas",
-                      "data": [585, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                    }
-                  ]
-                },
-                {
-                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                  "dataSet": [
-                    {
-                      "name": "streams",
-                      "data": [685, 960, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                    }
-                  ]
-                }
-              ],
-                "generalKpi": {
-                  "dataSet": [
-                    {
-                      "name": "cobertura",
-                      "data": [170000, 200000, 230000, 245000]
-                    },
-                    {
-                      "name": "Stream",
-                      "data": [120000, 144000, 124000, 185000]
-                    }
-                  ]
-                }
-              }
-        },
-        {
-            "emisora_N1": "Los 40",
-            "emisora_N2": "LOS40 Urban",
-            "id_emisora": 383002,
-            "fecha": "2022-01-19",
-            "discografica": "Universal Music",
-            "id": 10000637228,
-            "title": "Bichota",
-            "id_interprete": 10000074802,
-            "interprete_colaboradores": "Karol G (+ Bad Bunny,Maldy,Mariah Angeliq,Mau y Ricky,Myke Towers,Ozuna,Nicki Minaj,Tiësto)",
-            "nombre_interprete": "Karol G",
-            "streams": 432,
-            "tocadas": 1,
-            "kpis": {
-              "compactKpi": [
-                {
-                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                  "dataSet": [
-                    {
-                      "name": "tocadas",
-                      "data": [590, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                    }
-                  ]
-                },
-                {
-                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                  "dataSet": [
-                    {
-                      "name": "streams",
-                      "data": [690, 960, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                    }
-                  ]
-                }
-              ],
-                "generalKpi": {
-                  "dataSet": [
-                    {
-                      "name": "cobertura",
-                      "data": [170000, 200000, 230000, 245000]
-                    },
-                    {
-                      "name": "Stream",
-                      "data": [120000, 144000, 124000, 185000]
-                    }
-                  ]
-                }
-              }
-        },
-        {
-            "emisora_N1": "Los 40",
-            "emisora_N2": "LOS40 Urban",
-            "id_emisora": 383002,
-            "fecha": "2022-01-19",
-            "discografica": "Universal Music",
-            "id": 10000650375,
-            "title": "Sejodioto",
-            "id_interprete": 10000074802,
-            "interprete_colaboradores": "Karol G (+ Bad Bunny,Maldy,Mariah Angeliq,Mau y Ricky,Myke Towers,Ozuna,Nicki Minaj,Tiësto)",
-            "nombre_interprete": "Karol G",
-            "streams": 849,
-            "tocadas": 1,
-            "kpis": {
-              "compactKpi": [
-                {
-                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                  "dataSet": [
-                    {
-                      "name": "tocadas",
-                      "data": [595, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                    }
-                  ]
-                },
-                {
-                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                  "dataSet": [
-                    {
-                      "name": "streams",
-                      "data": [695, 960, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                    }
-                  ]
-                }
-              ],
-                "generalKpi": {
-                  "dataSet": [
-                    {
-                      "name": "cobertura",
-                      "data": [170000, 200000, 230000, 245000]
-                    },
-                    {
-                      "name": "Stream",
-                      "data": [120000, 144000, 124000, 185000]
-                    }
-                  ]
-                }
-              }
-        },
-        {
-            "emisora_N1": "Los 40",
-            "emisora_N2": "LOS40 Urban",
-            "id_emisora": 383002,
-            "fecha": "2022-01-19",
-            "discografica": "Universal Music",
-            "id": 10000643108,
-            "title": "El makinon",
-            "id_interprete": 10000074802,
-            "interprete_colaboradores": "Karol G (+ Bad Bunny,Maldy,Mariah Angeliq,Mau y Ricky,Myke Towers,Ozuna,Nicki Minaj,Tiësto)",
-            "nombre_interprete": "Karol G",
-            "streams": 5241,
-            "tocadas": 1,
-            "kpis": {
-              "compactKpi": [
-                {
-                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                  "dataSet": [
-                    {
-                      "name": "tocadas",
-                      "data": [600, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                    }
-                  ]
-                },
-                {
-                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                  "dataSet": [
-                    {
-                      "name": "streams",
-                      "data": [710, 960, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                    }
-                  ]
-                }
-              ],
-                "generalKpi": {
-                  "dataSet": [
-                    {
-                      "name": "cobertura",
-                      "data": [170000, 200000, 230000, 245000]
-                    },
-                    {
-                      "name": "Stream",
-                      "data": [120000, 144000, 124000, 185000]
-                    }
-                  ]
-                }
-              }
-        },
-        {
-            "emisora_N1": "Los 40",
-            "emisora_N2": "LOS40 Dance",
-            "id_emisora": 375002,
-            "fecha": "2022-01-19",
-            "discografica": "Musical Freedom",
-            "id": 10000649044,
-            "title": "Don\"t be shy",
-            "id_interprete": 10000074802,
-            "interprete_colaboradores": "Karol G (+ Bad Bunny,Maldy,Mariah Angeliq,Mau y Ricky,Myke Towers,Ozuna,Nicki Minaj,Tiësto)",
-            "nombre_interprete": "Karol G",
-            "streams": 3904,
-            "tocadas": 5,
-            "kpis": {
-              "compactKpi": [
-                {
-                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                  "dataSet": [
-                    {
-                      "name": "tocadas",
-                      "data": [605, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                    }
-                  ]
-                },
-                {
-                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                  "dataSet": [
-                    {
-                      "name": "streams",
-                      "data": [715, 960, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                    }
-                  ]
-                }
-              ],
-                "generalKpi": {
-                  "dataSet": [
-                    {
-                      "name": "cobertura",
-                      "data": [170000, 200000, 230000, 245000]
-                    },
-                    {
-                      "name": "Stream",
-                      "data": [120000, 144000, 124000, 185000]
-                    }
-                  ]
-                }
-              }
-        },
-        {
-            "emisora_N1": "Los 40",
-            "emisora_N2": "Los 40",
-            "id_emisora": 1002,
-            "fecha": "2022-01-19",
-            "discografica": "Republic Records",
-            "id": 570002102551,
-            "title": "Tusa",
-            "id_interprete": 10000074802,
-            "interprete_colaboradores": "Karol G (+ Bad Bunny,Maldy,Mariah Angeliq,Mau y Ricky,Myke Towers,Ozuna,Nicki Minaj,Tiësto)",
-            "nombre_interprete": "Karol G",
-            "streams": 27893,
-            "tocadas": 1,
-            "kpis": {
-                "compactKpi": [
-                  {
-                    "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                    "dataSet": [
-                      {
-                        "name": "tocadas",
-                        "data": [610, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                      }
-                    ]
-                  },
-                  {
-                    "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                    "dataSet": [
-                      {
-                        "name": "streams",
-                        "data": [710, 960, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                      }
-                    ]
-                  }
-                ],
-                "generalKpi": {
-                  "dataSet": [
-                    {
-                      "name": "cobertura",
-                      "data": [170000, 200000, 230000, 245000]
-                    },
-                    {
-                      "name": "Stream",
-                      "data": [120000, 144000, 124000, 185000]
-                    }
-                  ]
-                }
-              }
-        },
-        {
-            "emisora_N1": "Los 40",
-            "emisora_N2": "Los 40",
-            "id_emisora": 1002,
-            "fecha": "2022-01-19",
-            "discografica": "Musical Freedom",
-            "id": 10000649044,
-            "title": "Don\"t be shy",
-            "id_interprete": 10000074802,
-            "interprete_colaboradores": "Karol G (+ Bad Bunny,Maldy,Mariah Angeliq,Mau y Ricky,Myke Towers,Ozuna,Nicki Minaj,Tiësto)",
-            "nombre_interprete": "Karol G",
-            "streams": 72063,
-            "tocadas": 5,
-            "kpis": {
-                "compactKpi": [
-                  {
-                    "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                    "dataSet": [
-                      {
-                        "name": "tocadas",
-                        "data": [620, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                      }
-                    ]
-                  },
-                  {
-                    "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                    "dataSet": [
-                      {
-                        "name": "streams",
-                        "data": [720, 960, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                      }
-                    ]
-                  }
-                ],
-                "generalKpi": {
-                  "dataSet": [
-                    {
-                      "name": "cobertura",
-                      "data": [170000, 200000, 230000, 245000]
-                    },
-                    {
-                      "name": "Stream",
-                      "data": [120000, 144000, 124000, 185000]
-                    }
-                  ]
-                }
-              }
-        },
-        {
-            "emisora_N1": "Los 40",
-            "emisora_N2": "LOS40 Urban",
-            "id_emisora": 383002,
-            "fecha": "2022-09-11",
-            "discografica": "Universal Music",
-            "id": 10000634092,
-            "title": "Ay, Dios mío!",
-            "id_interprete": 10000074802,
-            "interprete_colaboradores": "Karol G (+ Bad Bunny,Maldy,Mariah Angeliq,Mau y Ricky,Myke Towers,Ozuna,Nicki Minaj,Tiësto)",
-            "nombre_interprete": "Karol G",
-            "streams": 986,
-            "tocadas": 1,
-            "kpis": {
-                "compactKpi": [
-                  {
-                    "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                    "dataSet": [
-                      {
-                        "name": "tocadas",
-                        "data": [625, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                      }
-                    ]
-                  },
-                  {
-                    "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                    "dataSet": [
-                      {
-                        "name": "streams",
-                        "data": [725, 960, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                      }
-                    ]
-                  }
-                ],
-                "generalKpi": {
-                  "dataSet": [
-                    {
-                      "name": "cobertura",
-                      "data": [170000, 200000, 230000, 245000]
-                    },
-                    {
-                      "name": "Stream",
-                      "data": [120000, 144000, 124000, 185000]
-                    }
-                  ]
-                }
-              }
-        },
-        {
-            "emisora_N1": "Los 40",
-            "emisora_N2": "LOS40 Urban",
-            "id_emisora": 383002,
-            "fecha": "2022-09-11",
-            "discografica": "Universal Music",
-            "id": 10000616683,
-            "title": "Punto G",
-            "id_interprete": 10000074802,
-            "interprete_colaboradores": "Karol G (+ Bad Bunny,Maldy,Mariah Angeliq,Mau y Ricky,Myke Towers,Ozuna,Nicki Minaj,Tiësto)",
-            "nombre_interprete": "Karol G",
-            "streams": 1638,
-            "tocadas": 1,
-            "kpis": {
-                "compactKpi": [
-                  {
-                    "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                    "dataSet": [
-                      {
-                        "name": "tocadas",
-                        "data": [630, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                      }
-                    ]
-                  },
-                  {
-                    "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                    "dataSet": [
-                      {
-                        "name": "streams",
-                        "data": [730, 960, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                      }
-                    ]
-                  }
-                ],
-                "generalKpi": {
-                  "dataSet": [
-                    {
-                      "name": "cobertura",
-                      "data": [170000, 200000, 230000, 245000]
-                    },
-                    {
-                      "name": "Stream",
-                      "data": [120000, 144000, 124000, 185000]
-                    }
-                  ]
-                }
-              }
-        },
-        {
-            "emisora_N1": "Los 40",
-            "emisora_N2": "LOS40 Urban",
-            "id_emisora": 383002,
-            "fecha": "2022-09-11",
-            "discografica": "Universal Music",
-            "id": 10000659326,
-            "title": "Provenza",
-            "id_interprete": 10000074802,
-            "interprete_colaboradores": "Karol G (+ Bad Bunny,Maldy,Mariah Angeliq,Mau y Ricky,Myke Towers,Ozuna,Nicki Minaj,Tiësto)",
-            "nombre_interprete": "Karol G",
-            "streams": 10823,
-            "tocadas": 5,
-            "kpis": {
-                "compactKpi": [
-                  {
-                    "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                    "dataSet": [
-                      {
-                        "name": "tocadas",
-                        "data": [635, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                      }
-                    ]
-                  },
-                  {
-                    "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                    "dataSet": [
-                      {
-                        "name": "streams",
-                        "data": [735, 960, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                      }
-                    ]
-                  }
-                ],
-                "generalKpi": {
-                  "dataSet": [
-                    {
-                      "name": "cobertura",
-                      "data": [170000, 200000, 230000, 245000]
-                    },
-                    {
-                      "name": "Stream",
-                      "data": [120000, 144000, 124000, 185000]
-                    }
-                  ]
-                }
-              }
-        },
-        {
-            "emisora_N1": "Los 40",
-            "emisora_N2": "LOS40 Urban",
-            "id_emisora": 383002,
-            "fecha": "2022-09-11",
-            "discografica": "Universal Music",
-            "id": 10000664607,
-            "title": "Gatúbela",
-            "id_interprete": 10000074802,
-            "interprete_colaboradores": "Karol G (+ Bad Bunny,Maldy,Mariah Angeliq,Mau y Ricky,Myke Towers,Ozuna,Nicki Minaj,Tiësto)",
-            "nombre_interprete": "Karol G",
-            "streams": 17698,
-            "tocadas": 8,
-            "kpis": {
-                "compactKpi": [
-                  {
-                    "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                    "dataSet": [
-                      {
-                        "name": "tocadas",
-                        "data": [640, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                      }
-                    ]
-                  },
-                  {
-                    "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                    "dataSet": [
-                      {
-                        "name": "streams",
-                        "data": [740, 960, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                      }
-                    ]
-                  }
-                ],
-                "generalKpi": {
-                  "dataSet": [
-                    {
-                      "name": "cobertura",
-                      "data": [170000, 200000, 230000, 245000]
-                    },
-                    {
-                      "name": "Stream",
-                      "data": [120000, 144000, 124000, 185000]
-                    }
-                  ]
-                }
-              }
-        },
-        {
-            "emisora_N1": "Los 40",
-            "emisora_N2": "LOS40 Urban",
-            "id_emisora": 383002,
-            "fecha": "2022-09-11",
-            "discografica": "Sony Music",
-            "id": 10000635011,
-            "title": "Caramelo",
-            "id_interprete": 10000074802,
-            "interprete_colaboradores": "Karol G (+ Bad Bunny,Maldy,Mariah Angeliq,Mau y Ricky,Myke Towers,Ozuna,Nicki Minaj,Tiësto)",
-            "nombre_interprete": "Karol G",
-            "streams": 2802,
-            "tocadas": 1,
-            "kpis": {
-              "compactKpi": [
-                {
-                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                  "dataSet": [
-                    {
-                      "name": "tocadas",
-                      "data": [645, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                    }
-                  ]
-                },
-                {
-                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                  "dataSet": [
-                    {
-                      "name": "streams",
-                      "data": [745, 960, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                    }
-                  ]
-                }
-              ],
-                "generalKpi": {
-                  "dataSet": [
-                    {
-                      "name": "cobertura",
-                      "data": [170000, 200000, 230000, 245000]
-                    },
-                    {
-                      "name": "Stream",
-                      "data": [120000, 144000, 124000, 185000]
-                    }
-                  ]
-                }
-              }
-        },
-        {
-            "emisora_N1": "Los 40",
-            "emisora_N2": "LOS40 Urban",
-            "id_emisora": 383002,
-            "fecha": "2022-09-11",
-            "discografica": "Universal Music",
-            "id": 10000637228,
-            "title": "Bichota",
-            "id_interprete": 10000074802,
-            "interprete_colaboradores": "Karol G (+ Bad Bunny,Maldy,Mariah Angeliq,Mau y Ricky,Myke Towers,Ozuna,Nicki Minaj,Tiësto)",
-            "nombre_interprete": "Karol G",
-            "streams": 1933,
-            "tocadas": 1,
-            "kpis": {
-                "compactKpi": [
-                  {
-                    "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                    "dataSet": [
-                      {
-                        "name": "tocadas",
-                        "data": [650, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                      }
-                    ]
-                  },
-                  {
-                    "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                    "dataSet": [
-                      {
-                        "name": "streams",
-                        "data": [750, 960, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                      }
-                    ]
-                  }
-                ],
-                "generalKpi": {
-                  "dataSet": [
-                    {
-                      "name": "cobertura",
-                      "data": [170000, 200000, 230000, 245000]
-                    },
-                    {
-                      "name": "Stream",
-                      "data": [120000, 144000, 124000, 185000]
-                    }
-                  ]
-                }
-              }
-        }
-        ]
-    },
-    "10000081699": {
-        "canciones": [
-        {
-            "emisora_N1": "Cadena Dial",
-            "emisora_N2": "Cadena Dial Latino",
-            "id_emisora": 376004,
-            "fecha": "2022-08-17",
-            "discografica": "Sony Music",
-            "id": 10000635873,
-            "title": "Vida de rico",
-            "id_interprete": 10000081699,
-            "interprete_colaboradores": "Camilo (+ Carlos Vives,El Alfa,Evaluna Montaner,Farruko,Reik,Manuel Turizo,Mau y Ricky,Pedro Capó,Pedro Capó,Shakira,Rauw Alejandro,Wisin)",
-            "nombre_interprete": "Camilo",
-            "streams": 253,
-            "tocadas": 2,
-            "kpis": {
-                "compactKpi": [
-                  {
-                    "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                    "dataSet": [
-                      {
-                        "name": "tocadas",
-                        "data": [655, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                      }
-                    ]
-                  },
-                  {
-                    "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                    "dataSet": [
-                      {
-                        "name": "streams",
-                        "data": [755, 960, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                      }
-                    ]
-                  }
-                ],
-                "generalKpi": {
-                  "dataSet": [
-                    {
-                      "name": "cobertura",
-                      "data": [190750, 200000, 230000, 245000]
-                    },
-                    {
-                      "name": "Stream",
-                      "data": [150750, 144000, 124000, 185000]
-                    }
-                  ]
-                }
-              }
-        },
-        {
-            "emisora_N1": "Cadena Dial",
-            "emisora_N2": "Cadena Dial Latino",
-            "id_emisora": 376004,
-            "fecha": "2022-08-17",
-            "discografica": "Sony Music",
-            "id": 10000651213,
-            "title": "Índigo",
-            "id_interprete": 10000081699,
-            "interprete_colaboradores": "Camilo (+ Carlos Vives,El Alfa,Evaluna Montaner,Farruko,Reik,Manuel Turizo,Mau y Ricky,Pedro Capó,Pedro Capó,Shakira,Rauw Alejandro,Wisin)",
-            "nombre_interprete": "Camilo",
-            "streams": 359,
-            "tocadas": 1,
-            "kpis": {
-              "compactKpi": [
-                {
-                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                  "dataSet": [
-                    {
-                      "name": "tocadas",
-                      "data": [660, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                    }
-                  ]
-                },
-                {
-                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                  "dataSet": [
-                    {
-                      "name": "streams",
-                      "data": [760, 960, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                    }
-                  ]
-                }
-              ],
-                "generalKpi": {
-                  "dataSet": [
-                    {
-                      "name": "cobertura",
-                      "data": [190750, 200000, 230000, 245000]
-                    },
-                    {
-                      "name": "Stream",
-                      "data": [150750, 144000, 124000, 185000]
-                    }
-                  ]
-                }
-              }
-        },
-        {
-            "emisora_N1": "Cadena Dial",
-            "emisora_N2": "Cadena Dial Latino",
-            "id_emisora": 376004,
-            "fecha": "2022-08-17",
-            "discografica": "Sony Music",
-            "id": 10000642784,
-            "title": "Millones",
-            "id_interprete": 10000081699,
-            "interprete_colaboradores": "Camilo (+ Carlos Vives,El Alfa,Evaluna Montaner,Farruko,Reik,Manuel Turizo,Mau y Ricky,Pedro Capó,Pedro Capó,Shakira,Rauw Alejandro,Wisin)",
-            "nombre_interprete": "Camilo",
-            "streams": 417,
-            "tocadas": 3,
-            "kpis": {
-                "compactKpi": [
-                  {
-                    "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                    "dataSet": [
-                      {
-                        "name": "tocadas",
-                        "data": [665, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                      }
-                    ]
-                  },
-                  {
-                    "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                    "dataSet": [
-                      {
-                        "name": "streams",
-                        "data": [765, 960, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                      }
-                    ]
-                  }
-                ],
-                "generalKpi": {
-                  "dataSet": [
-                    {
-                      "name": "cobertura",
-                      "data": [190750, 200000, 230000, 245000]
-                    },
-                    {
-                      "name": "Stream",
-                      "data": [150750, 144000, 124000, 185000]
-                    }
-                  ]
-                }
-              }
-        },
-        {
-            "emisora_N1": "Los 40",
-            "emisora_N2": "Los 40",
-            "id_emisora": 1002,
-            "fecha": "2022-08-17",
-            "discografica": "Sony Music",
-            "id": 10000661014,
-            "title": "Pegao",
-            "id_interprete": 10000081699,
-            "interprete_colaboradores": "Camilo (+ Carlos Vives,El Alfa,Evaluna Montaner,Farruko,Reik,Manuel Turizo,Mau y Ricky,Pedro Capó,Pedro Capó,Shakira,Rauw Alejandro,Wisin)",
-            "nombre_interprete": "Camilo",
-            "streams": 13984,
-            "tocadas": 1,
-            "kpis": {
-                "compactKpi": [
-                  {
-                    "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                    "dataSet": [
-                      {
-                        "name": "tocadas",
-                        "data": [670, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                      }
-                    ]
-                  },
-                  {
-                    "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                    "dataSet": [
-                      {
-                        "name": "streams",
-                        "data": [770, 960, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                      }
-                    ]
-                  }
-                ],
-                "generalKpi": {
-                  "dataSet": [
-                    {
-                      "name": "cobertura",
-                      "data": [190750, 200000, 230000, 245000]
-                    },
-                    {
-                      "name": "Stream",
-                      "data": [150750, 144000, 124000, 185000]
-                    }
-                  ]
-                }
-              }
-        },
-        {
-            "emisora_N1": "Los 40",
-            "emisora_N2": "Los 40",
-            "id_emisora": 1002,
-            "fecha": "2022-08-17",
-            "discografica": "Sony Music",
-            "id": 10000631428,
-            "title": "Favorito",
-            "id_interprete": 10000081699,
-            "interprete_colaboradores": "Camilo (+ Carlos Vives,El Alfa,Evaluna Montaner,Farruko,Reik,Manuel Turizo,Mau y Ricky,Pedro Capó,Pedro Capó,Shakira,Rauw Alejandro,Wisin)",
-            "nombre_interprete": "Camilo",
-            "streams": 12363,
-            "tocadas": 1,
-            "kpis": {
-                "compactKpi": [
-                  {
-                    "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                    "dataSet": [
-                      {
-                        "name": "tocadas",
-                        "data": [675, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                      }
-                    ]
-                  },
-                  {
-                    "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                    "dataSet": [
-                      {
-                        "name": "streams",
-                        "data": [775, 960, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                      }
-                    ]
-                  }
-                ],
-                "generalKpi": {
-                  "dataSet": [
-                    {
-                      "name": "cobertura",
-                      "data": [190750, 200000, 230000, 245000]
-                    },
-                    {
-                      "name": "Stream",
-                      "data": [150750, 144000, 124000, 185000]
-                    }
-                  ]
-                }
-              }
-        },
-        {
-            "emisora_N1": "Los 40",
-            "emisora_N2": "Los 40",
-            "id_emisora": 1002,
-            "fecha": "2022-08-17",
-            "discografica": "Sony Music",
-            "id": 10000635873,
-            "title": "Vida de rico",
-            "id_interprete": 10000081699,
-            "interprete_colaboradores": "Camilo (+ Carlos Vives,El Alfa,Evaluna Montaner,Farruko,Reik,Manuel Turizo,Mau y Ricky,Pedro Capó,Pedro Capó,Shakira,Rauw Alejandro,Wisin)",
-            "nombre_interprete": "Camilo",
-            "streams": 26892,
-            "tocadas": 1,
-            "kpis": {
-                "compactKpi": [
-                  {
-                    "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                    "dataSet": [
-                      {
-                        "name": "tocadas",
-                        "data": [680, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                      }
-                    ]
-                  },
-                  {
-                    "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                    "dataSet": [
-                      {
-                        "name": "streams",
-                        "data": [780, 960, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                      }
-                    ]
-                  }
-                ],
-                "generalKpi": {
-                  "dataSet": [
-                    {
-                      "name": "cobertura",
-                      "data": [190750, 200000, 230000, 245000]
-                    },
-                    {
-                      "name": "Stream",
-                      "data": [150750, 144000, 124000, 185000]
-                    }
-                  ]
-                }
-              }
-        },
-        {
-            "emisora_N1": "Los 40",
-            "emisora_N2": "Los 40",
-            "id_emisora": 1002,
-            "fecha": "2022-08-17",
-            "discografica": "Sony Music",
-            "id": 10000642785,
-            "title": "KESI",
-            "id_interprete": 10000081699,
-            "interprete_colaboradores": "Camilo (+ Carlos Vives,El Alfa,Evaluna Montaner,Farruko,Reik,Manuel Turizo,Mau y Ricky,Pedro Capó,Pedro Capó,Shakira,Rauw Alejandro,Wisin)",
-            "nombre_interprete": "Camilo",
-            "streams": 13572,
-            "tocadas": 1,
-            "kpis": {
-                "compactKpi": [
-                  {
-                    "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                    "dataSet": [
-                      {
-                        "name": "tocadas",
-                        "data": [685, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                      }
-                    ]
-                  },
-                  {
-                    "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                    "dataSet": [
-                      {
-                        "name": "streams",
-                        "data": [785, 960, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                      }
-                    ]
-                  }
-                ],
-                "generalKpi": {
-                  "dataSet": [
-                    {
-                      "name": "cobertura",
-                      "data": [190750, 200000, 230000, 245000]
-                    },
-                    {
-                      "name": "Stream",
-                      "data": [150750, 144000, 124000, 185000]
-                    }
-                  ]
-                }
-              }
-        },
-        {
-            "emisora_N1": "Los 40",
-            "emisora_N2": "LOS40 Urban",
-            "id_emisora": 383002,
-            "fecha": "2022-08-17",
-            "discografica": "Sony Music",
-            "id": 10000634175,
-            "title": "Tattoo",
-            "id_interprete": 10000081699,
-            "interprete_colaboradores": "Camilo (+ Carlos Vives,El Alfa,Evaluna Montaner,Farruko,Reik,Manuel Turizo,Mau y Ricky,Pedro Capó,Pedro Capó,Shakira,Rauw Alejandro,Wisin)",
-            "nombre_interprete": "Camilo",
-            "streams": 5051,
-            "tocadas": 2,
-            "kpis": {
-                "compactKpi": [
-                  {
-                    "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                    "dataSet": [
-                      {
-                        "name": "tocadas",
-                        "data": [690, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                      }
-                    ]
-                  },
-                  {
-                    "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                    "dataSet": [
-                      {
-                        "name": "streams",
-                        "data": [790, 960, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                      }
-                    ]
-                  }
-                ],
-                "generalKpi": {
-                  "dataSet": [
-                    {
-                      "name": "cobertura",
-                      "data": [190750, 200000, 230000, 245000]
-                    },
-                    {
-                      "name": "Stream",
-                      "data": [150750, 144000, 124000, 185000]
-                    }
-                  ]
-                }
-              }
-        },
-        {
-            "emisora_N1": "Los 40",
-            "emisora_N2": "Los 40",
-            "id_emisora": 1002,
-            "fecha": "2022-08-17",
-            "discografica": "Sony Music",
-            "id": 10000642784,
-            "title": "Millones",
-            "id_interprete": 10000081699,
-            "interprete_colaboradores": "Camilo (+ Carlos Vives,El Alfa,Evaluna Montaner,Farruko,Reik,Manuel Turizo,Mau y Ricky,Pedro Capó,Pedro Capó,Shakira,Rauw Alejandro,Wisin)",
-            "nombre_interprete": "Camilo",
-            "streams": 3900,
-            "tocadas": 1,
-            "kpis": {
-                "compactKpi": [
-                  {
-                    "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                    "dataSet": [
-                      {
-                        "name": "tocadas",
-                        "data": [710, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                      }
-                    ]
-                  },
-                  {
-                    "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                    "dataSet": [
-                      {
-                        "name": "streams",
-                        "data": [810, 960, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                      }
-                    ]
-                  }
-                ],
-                "generalKpi": {
-                  "dataSet": [
-                    {
-                      "name": "cobertura",
-                      "data": [190750, 200000, 230000, 245000]
-                    },
-                    {
-                      "name": "Stream",
-                      "data": [150750, 144000, 124000, 185000]
-                    }
-                  ]
-                }
-              }
-        },
-        {
-            "emisora_N1": "Los 40",
-            "emisora_N2": "LOS40 Urban",
-            "id_emisora": 383002,
-            "fecha": "2022-08-17",
-            "discografica": "Sony Music",
-            "id": 10000631428,
-            "title": "Favorito",
-            "id_interprete": 10000081699,
-            "interprete_colaboradores": "Camilo (+ Carlos Vives,El Alfa,Evaluna Montaner,Farruko,Reik,Manuel Turizo,Mau y Ricky,Pedro Capó,Pedro Capó,Shakira,Rauw Alejandro,Wisin)",
-            "nombre_interprete": "Camilo",
-            "streams": 2552,
-            "tocadas": 1,
-            "kpis": {
-              "compactKpi": [
-                {
-                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                  "dataSet": [
-                    {
-                      "name": "tocadas",
-                      "data": [715, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                    }
-                  ]
-                },
-                {
-                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                  "dataSet": [
-                    {
-                      "name": "streams",
-                      "data": [815, 960, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                    }
-                  ]
-                }
-              ],
-                "generalKpi": {
-                  "dataSet": [
-                    {
-                      "name": "cobertura",
-                      "data": [190750, 200000, 230000, 245000]
-                    },
-                    {
-                      "name": "Stream",
-                      "data": [150750, 144000, 124000, 185000]
-                    }
-                  ]
-                }
-              }
-        },
-        {
-            "emisora_N1": "Los 40",
-            "emisora_N2": "LOS40 Urban",
-            "id_emisora": 383002,
-            "fecha": "2022-08-17",
-            "discografica": "Sony Music",
-            "id": 10000661014,
-            "title": "Pegao",
-            "id_interprete": 10000081699,
-            "interprete_colaboradores": "Camilo (+ Carlos Vives,El Alfa,Evaluna Montaner,Farruko,Reik,Manuel Turizo,Mau y Ricky,Pedro Capó,Pedro Capó,Shakira,Rauw Alejandro,Wisin)",
-            "nombre_interprete": "Camilo",
-            "streams": 9814,
-            "tocadas": 3,
-            "kpis": {
-              "compactKpi": [
-                {
-                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                  "dataSet": [
-                    {
-                      "name": "tocadas",
-                      "data": [720, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                    }
-                  ]
-                },
-                {
-                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                  "dataSet": [
-                    {
-                      "name": "streams",
-                      "data": [820, 960, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                    }
-                  ]
-                }
-              ],
-                "generalKpi": {
-                  "dataSet": [
-                    {
-                      "name": "cobertura",
-                      "data": [190750, 200000, 230000, 245000]
-                    },
-                    {
-                      "name": "Stream",
-                      "data": [150750, 144000, 124000, 185000]
-                    }
-                  ]
-                }
-              }
-        },
-        {
-            "emisora_N1": "Cadena Dial",
-            "emisora_N2": "Cadena Dial",
-            "id_emisora": 1004,
-            "fecha": "2022-08-17",
-            "discografica": "Sony Music",
-            "id": 10000642784,
-            "title": "Millones",
-            "id_interprete": 10000081699,
-            "interprete_colaboradores": "Camilo (+ Carlos Vives,El Alfa,Evaluna Montaner,Farruko,Reik,Manuel Turizo,Mau y Ricky,Pedro Capó,Pedro Capó,Shakira,Rauw Alejandro,Wisin)",
-            "nombre_interprete": "Camilo",
-            "streams": 5532,
-            "tocadas": 1,
-            "kpis": {
-                "compactKpi": [
-                  {
-                    "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                    "dataSet": [
-                      {
-                        "name": "tocadas",
-                        "data": [720, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                      }
-                    ]
-                  },
-                  {
-                    "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                    "dataSet": [
-                      {
-                        "name": "streams",
-                        "data": [820, 960, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                      }
-                    ]
-                  }
-                ],
-                "generalKpi": {
-                  "dataSet": [
-                    {
-                      "name": "cobertura",
-                      "data": [190750, 200000, 230000, 245000]
-                    },
-                    {
-                      "name": "Stream",
-                      "data": [150750, 144000, 124000, 185000]
-                    }
-                  ]
-                }
-              }
-        },
-        {
-            "emisora_N1": "Cadena Dial",
-            "emisora_N2": "Cadena Dial",
-            "id_emisora": 1004,
-            "fecha": "2022-08-17",
-            "discografica": "Sony Music",
-            "id": 10000631428,
-            "title": "Favorito",
-            "id_interprete": 10000081699,
-            "interprete_colaboradores": "Camilo (+ Carlos Vives,El Alfa,Evaluna Montaner,Farruko,Reik,Manuel Turizo,Mau y Ricky,Pedro Capó,Pedro Capó,Shakira,Rauw Alejandro,Wisin)",
-            "nombre_interprete": "Camilo",
-            "streams": 19658,
-            "tocadas": 1,
-            "kpis": {
-                "compactKpi": [
-                  {
-                    "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                    "dataSet": [
-                      {
-                        "name": "tocadas",
-                        "data": [725, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                      }
-                    ]
-                  },
-                  {
-                    "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                    "dataSet": [
-                      {
-                        "name": "streams",
-                        "data": [825, 960, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                      }
-                    ]
-                  }
-                ],
-                "generalKpi": {
-                  "dataSet": [
-                    {
-                      "name": "cobertura",
-                      "data": [190750, 200000, 230000, 245000]
-                    },
-                    {
-                      "name": "Stream",
-                      "data": [150750, 144000, 124000, 185000]
-                    }
-                  ]
-                }
-              }
-        },
-        {
-            "emisora_N1": "Cadena Dial",
-            "emisora_N2": "Cadena Dial Latino",
-            "id_emisora": 376004,
-            "fecha": "2022-08-17",
-            "discografica": "Sony Music",
-            "id": 10000607355,
-            "title": "Desconocidos",
-            "id_interprete": 10000081699,
-            "interprete_colaboradores": "Camilo (+ Carlos Vives,El Alfa,Evaluna Montaner,Farruko,Reik,Manuel Turizo,Mau y Ricky,Pedro Capó,Pedro Capó,Shakira,Rauw Alejandro,Wisin)",
-            "nombre_interprete": "Camilo",
-            "streams": 51,
-            "tocadas": 1,
-            "kpis": {
-                "compactKpi": [
-                  {
-                    "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                    "dataSet": [
-                      {
-                        "name": "tocadas",
-                        "data": [730, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                      }
-                    ]
-                  },
-                  {
-                    "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                    "dataSet": [
-                      {
-                        "name": "streams",
-                        "data": [830, 960, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                      }
-                    ]
-                  }
-                ],
-                "generalKpi": {
-                  "dataSet": [
-                    {
-                      "name": "cobertura",
-                      "data": [190750, 200000, 230000, 245000]
-                    },
-                    {
-                      "name": "Stream",
-                      "data": [150750, 144000, 124000, 185000]
-                    }
-                  ]
-                }
-              }
-        },
-        {
-            "emisora_N1": "Cadena Dial",
-            "emisora_N2": "Cadena Dial",
-            "id_emisora": 1004,
-            "fecha": "2022-08-17",
-            "discografica": "Sony Music",
-            "id": 10000635873,
-            "title": "Vida de rico",
-            "id_interprete": 10000081699,
-            "interprete_colaboradores": "Camilo (+ Carlos Vives,El Alfa,Evaluna Montaner,Farruko,Reik,Manuel Turizo,Mau y Ricky,Pedro Capó,Pedro Capó,Shakira,Rauw Alejandro,Wisin)",
-            "nombre_interprete": "Camilo",
-            "streams": 2359,
-            "tocadas": 1,
-            "kpis": {
-                "compactKpi": [
-                  {
-                    "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                    "dataSet": [
-                      {
-                        "name": "tocadas",
-                        "data": [735, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                      }
-                    ]
-                  },
-                  {
-                    "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                    "dataSet": [
-                      {
-                        "name": "streams",
-                        "data": [835, 960, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                      }
-                    ]
-                  }
-                ],
-                "generalKpi": {
-                  "dataSet": [
-                    {
-                      "name": "cobertura",
-                      "data": [190750, 200000, 230000, 245000]
-                    },
-                    {
-                      "name": "Stream",
-                      "data": [150750, 144000, 124000, 185000]
-                    }
-                  ]
-                }
-              }
-        },
-        {
-            "emisora_N1": "Los 40",
-            "emisora_N2": "LOS40 Urban",
-            "id_emisora": 383002,
-            "fecha": "2022-01-17",
-            "discografica": "Sony Music",
-            "id": 10000638723,
-            "title": "Bebé",
-            "id_interprete": 10000081699,
-            "interprete_colaboradores": "Camilo (+ Carlos Vives,El Alfa,Evaluna Montaner,Farruko,Reik,Manuel Turizo,Mau y Ricky,Pedro Capó,Pedro Capó,Shakira,Rauw Alejandro,Wisin)",
-            "nombre_interprete": "Camilo",
-            "streams": 3445,
-            "tocadas": 1,
-            "kpis": {
-              "compactKpi": [
-                {
-                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                  "dataSet": [
-                    {
-                      "name": "tocadas",
-                      "data": [740, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                    }
-                  ]
-                },
-                {
-                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                  "dataSet": [
-                    {
-                      "name": "streams",
-                      "data": [840, 960, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                    }
-                  ]
-                }
-              ],
-                "generalKpi": {
-                  "dataSet": [
-                    {
-                      "name": "cobertura",
-                      "data": [190750, 200000, 230000, 245000]
-                    },
-                    {
-                      "name": "Stream",
-                      "data": [150750, 144000, 124000, 185000]
-                    }
-                  ]
-                }
-              }
-        },
-        {
-            "emisora_N1": "Los 40",
-            "emisora_N2": "LOS40 Urban",
-            "id_emisora": 383002,
-            "fecha": "2022-01-17",
-            "discografica": "Sony Music",
-            "id": 570002093874,
-            "title": "Tutu",
-            "id_interprete": 10000081699,
-            "interprete_colaboradores": "Camilo (+ Carlos Vives,El Alfa,Evaluna Montaner,Farruko,Reik,Manuel Turizo,Mau y Ricky,Pedro Capó,Pedro Capó,Shakira,Rauw Alejandro,Wisin)",
-            "nombre_interprete": "Camilo",
-            "streams": 2260,
-            "tocadas": 1,
-            "kpis": {
-              "compactKpi": [
-                {
-                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                  "dataSet": [
-                    {
-                      "name": "tocadas",
-                      "data": [715, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                    }
-                  ]
-                },
-                {
-                  "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                  "dataSet": [
-                    {
-                      "name": "streams",
-                      "data": [845, 960, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                    }
-                  ]
-                }
-              ],
-                "generalKpi": {
-                  "dataSet": [
-                    {
-                      "name": "cobertura",
-                      "data": [190750, 200000, 230000, 245000]
-                    },
-                    {
-                      "name": "Stream",
-                      "data": [150750, 144000, 124000, 185000]
-                    }
-                  ]
-                }
-              }
-        }
-        ]
-    },
-    "10000790164": {
-        "canciones": [
+  "10000039078": {
+    "canciones": [
+      {
+        "id_emisora": 1004,
+        "fecha": "2022-07-23",
+        "record_company": "Bit Music",
+        "id": 10000118971,
+        "song_name": "Dance",
+        "id_interprete": 10000039078,
+        "interprete_colaboradores": "Chanel",
+        "artist_name": "Chanel",
+        "streams": 5668,
+        "stream_percentage": 8.25,
+        "toucheds": 1,
+        "toucheds_percentage": 7.21,
+        "kpis": {
+          "compactKpi": [
             {
-                "emisora_N1": "Cadena Dial",
-                "emisora_N2": "Cadena Dial",
-                "id_emisora": 1004,
-                "fecha": "2022-07-23",
-                "discografica": "Bit Music",
-                "id": 10000118971,
-                "title": "Dance",
-                "id_interprete": 10000039078,
-                "interprete_colaboradores": "Chanel",
-                "nombre_interprete": "Chanel",
-                "streams": 5668,
-                "tocadas": 1,
-                "kpis": {
-                    "compactKpi": [
-                      {
-                        "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                        "dataSet": [
-                          {
-                            "name": "tocadas",
-                            "data": [910, 260, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                          }
-                        ]
-                      },
-                      {
-                        "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                        "dataSet": [
-                          {
-                            "name": "streams",
-                            "data": [1010, 960, 571, 414, 555, 657, 201, 913, 727, 614, 555, 457]
-                          }
-                        ]
-                      }
-                    ],
-                    "generalKpi": {
-                      "dataSet": [
-                        {
-                          "name": "cobertura",
-                          "data": [200750, 200000, 230000, 245000]
-                        },
-                        {
-                          "name": "Stream",
-                          "data": [110750, 144000, 124000, 185000]
-                        }
-                      ]
-                    }
-                  }
+              "categories": [
+                "Jan",
+                "Feb",
+                "Mar",
+                "Apr",
+                "May",
+                "Jun",
+                "Jul",
+                "Aug",
+                "Sep",
+                "Oct",
+                "Nov",
+                "Dec"
+              ],
+              "dataSet": [
+                {
+                  "name": "tocadas",
+                  "data": [
+                    575,
+                    260,
+                    571,
+                    414,
+                    555,
+                    657,
+                    201,
+                    913,
+                    727,
+                    614,
+                    555,
+                    475
+                  ]
+                }
+              ]
+            },
+            {
+              "categories": [
+                "Jan",
+                "Feb",
+                "Mar",
+                "Apr",
+                "May",
+                "Jun",
+                "Jul",
+                "Aug",
+                "Sep",
+                "Oct",
+                "Nov",
+                "Dec"
+              ],
+              "dataSet": [
+                {
+                  "name": "streams",
+                  "data": [
+                    100,
+                    250,
+                    671,
+                    414,
+                    555,
+                    207,
+                    901,
+                    693,
+                    777,
+                    414,
+                    555,
+                    157
+                  ]
+                }
+              ]
+            }
+          ],
+          "generalKpi": {
+            "dataSet": [
+              {
+                "name": "cobertura",
+                "data": [
+                  170750,
+                  200000,
+                  230000,
+                  245000
+                ]
+              },
+              {
+                "name": "Stream",
+                "data": [
+                  120750,
+                  144000,
+                  124000,
+                  185000
+                ]
               }
-        ]
-    }
+            ]
+          }
+        }
+      }
+    ]
+  },
+  "10000074802": {
+    "canciones": [
+      {
+        "id_emisora": 383002,
+        "fecha": "2022-07-23",
+        "record_company": "Universal Music",
+        "id": 10000643108,
+        "song_name": "El makinon",
+        "id_interprete": 10000074802,
+        "interprete_colaboradores": "Karol G (+ Bad Bunny,Maldy,Mariah Angeliq,Mau y Ricky,Myke Towers,Ozuna,Nicki Minaj,Tiësto)",
+        "artist_name": "Karol G",
+        "streams": 1560,
+        "stream_percentage": 8.25,
+        "toucheds": 1,
+        "toucheds_percentage": 7.21,
+        "kpis": {
+          "compactKpi": [
+            {
+              "categories": [
+                "Jan",
+                "Feb",
+                "Mar",
+                "Apr",
+                "May",
+                "Jun",
+                "Jul",
+                "Aug",
+                "Sep",
+                "Oct",
+                "Nov",
+                "Dec"
+              ],
+              "dataSet": [
+                {
+                  "name": "tocadas",
+                  "data": [
+                    775,
+                    260,
+                    571,
+                    414,
+                    555,
+                    657,
+                    201,
+                    913,
+                    727,
+                    614,
+                    555,
+                    457
+                  ]
+                }
+              ]
+            },
+            {
+              "categories": [
+                "Jan",
+                "Feb",
+                "Mar",
+                "Apr",
+                "May",
+                "Jun",
+                "Jul",
+                "Aug",
+                "Sep",
+                "Oct",
+                "Nov",
+                "Dec"
+              ],
+              "dataSet": [
+                {
+                  "name": "streams",
+                  "data": [
+                    975,
+                    1160,
+                    571,
+                    414,
+                    555,
+                    657,
+                    201,
+                    913,
+                    727,
+                    614,
+                    555,
+                    457
+                  ]
+                }
+              ]
+            }
+          ],
+          "generalKpi": {
+            "dataSet": [
+              {
+                "name": "cobertura",
+                "data": [
+                  140750,
+                  200000,
+                  230000,
+                  245000
+                ]
+              },
+              {
+                "name": "Stream",
+                "data": [
+                  120750,
+                  144000,
+                  124000,
+                  185000
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "emisora_N1": "Los 40",
+        "emisora_N2": "LOS40 Urban",
+        "id_emisora": 383002,
+        "fecha": "2022-07-23",
+        "record_company": "Universal Music",
+        "id": 10000634092,
+        "song_name": "Ay, Dios mío!",
+        "id_interprete": 10000074802,
+        "interprete_colaboradores": "Karol G (+ Bad Bunny,Maldy,Mariah Angeliq,Mau y Ricky,Myke Towers,Ozuna,Nicki Minaj,Tiësto)",
+        "artist_name": "Karol G",
+        "streams": 3277,
+        "stream_percentage": 8.25,
+        "toucheds": 1,
+        "toucheds_percentage": 7.21,
+        "kpis": {
+          "compactKpi": [
+            {
+              "categories": [
+                "Jan",
+                "Feb",
+                "Mar",
+                "Apr",
+                "May",
+                "Jun",
+                "Jul",
+                "Aug",
+                "Sep",
+                "Oct",
+                "Nov",
+                "Dec"
+              ],
+              "dataSet": [
+                {
+                  "name": "tocadas",
+                  "data": [
+                    575,
+                    260,
+                    571,
+                    414,
+                    555,
+                    657,
+                    201,
+                    913,
+                    727,
+                    614,
+                    555,
+                    457
+                  ]
+                }
+              ]
+            },
+            {
+              "categories": [
+                "Jan",
+                "Feb",
+                "Mar",
+                "Apr",
+                "May",
+                "Jun",
+                "Jul",
+                "Aug",
+                "Sep",
+                "Oct",
+                "Nov",
+                "Dec"
+              ],
+              "dataSet": [
+                {
+                  "name": "streams",
+                  "data": [
+                    675,
+                    960,
+                    571,
+                    414,
+                    555,
+                    657,
+                    201,
+                    913,
+                    727,
+                    614,
+                    555,
+                    457
+                  ]
+                }
+              ]
+            }
+          ],
+          "generalKpi": {
+            "dataSet": [
+              {
+                "name": "cobertura",
+                "data": [
+                  170000,
+                  200000,
+                  230000,
+                  245000
+                ]
+              },
+              {
+                "name": "Stream",
+                "data": [
+                  120000,
+                  144000,
+                  124000,
+                  185000
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id_emisora": 383002,
+        "fecha": "2022-07-23",
+        "record_company": "Universal Music",
+        "id": 10000659326,
+        "song_name": "Provenza",
+        "id_interprete": 10000074802,
+        "interprete_colaboradores": "Karol G (+ Bad Bunny,Maldy,Mariah Angeliq,Mau y Ricky,Myke Towers,Ozuna,Nicki Minaj,Tiësto)",
+        "artist_name": "Karol G",
+        "streams": 14202,
+        "stream_percentage": 8.25,
+        "toucheds": 5,
+        "toucheds_percentage": 7.21,
+        "kpis": {
+          "compactKpi": [
+            {
+              "categories": [
+                "Jan",
+                "Feb",
+                "Mar",
+                "Apr",
+                "May",
+                "Jun",
+                "Jul",
+                "Aug",
+                "Sep",
+                "Oct",
+                "Nov",
+                "Dec"
+              ],
+              "dataSet": [
+                {
+                  "name": "tocadas",
+                  "data": [
+                    540,
+                    260,
+                    571,
+                    414,
+                    555,
+                    657,
+                    201,
+                    913,
+                    727,
+                    614,
+                    555,
+                    457
+                  ]
+                }
+              ]
+            },
+            {
+              "categories": [
+                "Jan",
+                "Feb",
+                "Mar",
+                "Apr",
+                "May",
+                "Jun",
+                "Jul",
+                "Aug",
+                "Sep",
+                "Oct",
+                "Nov",
+                "Dec"
+              ],
+              "dataSet": [
+                {
+                  "name": "streams",
+                  "data": [
+                    640,
+                    960,
+                    571,
+                    414,
+                    555,
+                    657,
+                    201,
+                    913,
+                    727,
+                    614,
+                    555,
+                    457
+                  ]
+                }
+              ]
+            }
+          ],
+          "generalKpi": {
+            "dataSet": [
+              {
+                "name": "cobertura",
+                "data": [
+                  170000,
+                  200000,
+                  230000,
+                  245000
+                ]
+              },
+              {
+                "name": "Stream",
+                "data": [
+                  120000,
+                  144000,
+                  124000,
+                  185000
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id_emisora": 1002,
+        "fecha": "2022-05-09",
+        "record_company": "Universal Music",
+        "id": 10000659326,
+        "song_name": "Provenza",
+        "id_interprete": 10000074802,
+        "interprete_colaboradores": "Karol G (+ Bad Bunny,Maldy,Mariah Angeliq,Mau y Ricky,Myke Towers,Ozuna,Nicki Minaj,Tiësto)",
+        "artist_name": "Karol G",
+        "streams": 107919,
+        "stream_percentage": 8.25,
+        "toucheds": 7,
+        "toucheds_percentage": 7.21,
+        "kpis": {
+          "compactKpi": [
+            {
+              "categories": [
+                "Jan",
+                "Feb",
+                "Mar",
+                "Apr",
+                "May",
+                "Jun",
+                "Jul",
+                "Aug",
+                "Sep",
+                "Oct",
+                "Nov",
+                "Dec"
+              ],
+              "dataSet": [
+                {
+                  "name": "tocadas",
+                  "data": [
+                    545,
+                    260,
+                    571,
+                    414,
+                    555,
+                    657,
+                    201,
+                    913,
+                    727,
+                    614,
+                    555,
+                    457
+                  ]
+                }
+              ]
+            },
+            {
+              "categories": [
+                "Jan",
+                "Feb",
+                "Mar",
+                "Apr",
+                "May",
+                "Jun",
+                "Jul",
+                "Aug",
+                "Sep",
+                "Oct",
+                "Nov",
+                "Dec"
+              ],
+              "dataSet": [
+                {
+                  "name": "streams",
+                  "data": [
+                    645,
+                    960,
+                    571,
+                    414,
+                    555,
+                    657,
+                    201,
+                    913,
+                    727,
+                    614,
+                    555,
+                    457
+                  ]
+                }
+              ]
+            }
+          ],
+          "generalKpi": {
+            "dataSet": [
+              {
+                "name": "cobertura",
+                "data": [
+                  170000,
+                  200000,
+                  230000,
+                  245000
+                ]
+              },
+              {
+                "name": "Stream",
+                "data": [
+                  120000,
+                  144000,
+                  124000,
+                  185000
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id_emisora": 1002,
+        "fecha": "2022-05-09",
+        "record_company": "Republic Records",
+        "id": 570002102551,
+        "song_name": "Tusa",
+        "id_interprete": 10000074802,
+        "interprete_colaboradores": "Karol G (+ Bad Bunny,Maldy,Mariah Angeliq,Mau y Ricky,Myke Towers,Ozuna,Nicki Minaj,Tiësto)",
+        "artist_name": "Karol G",
+        "streams": 24506,
+        "stream_percentage": 8.25,
+        "toucheds": 1,
+        "toucheds_percentage": 7.21,
+        "kpis": {
+          "compactKpi": [
+            {
+              "categories": [
+                "Jan",
+                "Feb",
+                "Mar",
+                "Apr",
+                "May",
+                "Jun",
+                "Jul",
+                "Aug",
+                "Sep",
+                "Oct",
+                "Nov",
+                "Dec"
+              ],
+              "dataSet": [
+                {
+                  "name": "tocadas",
+                  "data": [
+                    550,
+                    260,
+                    571,
+                    414,
+                    555,
+                    657,
+                    201,
+                    913,
+                    727,
+                    614,
+                    555,
+                    457
+                  ]
+                }
+              ]
+            },
+            {
+              "categories": [
+                "Jan",
+                "Feb",
+                "Mar",
+                "Apr",
+                "May",
+                "Jun",
+                "Jul",
+                "Aug",
+                "Sep",
+                "Oct",
+                "Nov",
+                "Dec"
+              ],
+              "dataSet": [
+                {
+                  "name": "streams",
+                  "data": [
+                    650,
+                    960,
+                    571,
+                    414,
+                    555,
+                    657,
+                    201,
+                    913,
+                    727,
+                    614,
+                    555,
+                    457
+                  ]
+                }
+              ]
+            }
+          ],
+          "generalKpi": {
+            "dataSet": [
+              {
+                "name": "cobertura",
+                "data": [
+                  170000,
+                  200000,
+                  230000,
+                  245000
+                ]
+              },
+              {
+                "name": "Stream",
+                "data": [
+                  120000,
+                  144000,
+                  124000,
+                  185000
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id_emisora": 375002,
+        "fecha": "2022-05-09",
+        "record_company": "Musical Freedom",
+        "id": 10000649044,
+        "song_name": "Don\"t be shy",
+        "id_interprete": 10000074802,
+        "interprete_colaboradores": "Karol G (+ Bad Bunny,Maldy,Mariah Angeliq,Mau y Ricky,Myke Towers,Ozuna,Nicki Minaj,Tiësto)",
+        "artist_name": "Karol G",
+        "streams": 1525,
+        "stream_percentage": 8.25,
+        "toucheds": 1,
+        "toucheds_percentage": 7.21,
+        "kpis": {
+          "compactKpi": [
+            {
+              "categories": [
+                "Jan",
+                "Feb",
+                "Mar",
+                "Apr",
+                "May",
+                "Jun",
+                "Jul",
+                "Aug",
+                "Sep",
+                "Oct",
+                "Nov",
+                "Dec"
+              ],
+              "dataSet": [
+                {
+                  "name": "tocadas",
+                  "data": [
+                    555,
+                    260,
+                    571,
+                    414,
+                    555,
+                    657,
+                    201,
+                    913,
+                    727,
+                    614,
+                    555,
+                    457
+                  ]
+                }
+              ]
+            },
+            {
+              "categories": [
+                "Jan",
+                "Feb",
+                "Mar",
+                "Apr",
+                "May",
+                "Jun",
+                "Jul",
+                "Aug",
+                "Sep",
+                "Oct",
+                "Nov",
+                "Dec"
+              ],
+              "dataSet": [
+                {
+                  "name": "streams",
+                  "data": [
+                    655,
+                    960,
+                    571,
+                    414,
+                    555,
+                    657,
+                    201,
+                    913,
+                    727,
+                    614,
+                    555,
+                    457
+                  ]
+                }
+              ]
+            }
+          ],
+          "generalKpi": {
+            "dataSet": [
+              {
+                "name": "cobertura",
+                "data": [
+                  170000,
+                  200000,
+                  230000,
+                  245000
+                ]
+              },
+              {
+                "name": "Stream",
+                "data": [
+                  120000,
+                  144000,
+                  124000,
+                  185000
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id_emisora": 383002,
+        "fecha": "2022-05-09",
+        "record_company": "Sony Music",
+        "id": 10000635011,
+        "song_name": "Caramelo",
+        "id_interprete": 10000074802,
+        "interprete_colaboradores": "Karol G (+ Bad Bunny,Maldy,Mariah Angeliq,Mau y Ricky,Myke Towers,Ozuna,Nicki Minaj,Tiësto)",
+        "artist_name": "Karol G",
+        "streams": 5069,
+        "stream_percentage": 8.25,
+        "toucheds": 1,
+        "toucheds_percentage": 7.21,
+        "kpis": {
+          "compactKpi": [
+            {
+              "categories": [
+                "Jan",
+                "Feb",
+                "Mar",
+                "Apr",
+                "May",
+                "Jun",
+                "Jul",
+                "Aug",
+                "Sep",
+                "Oct",
+                "Nov",
+                "Dec"
+              ],
+              "dataSet": [
+                {
+                  "name": "tocadas",
+                  "data": [
+                    570,
+                    260,
+                    571,
+                    414,
+                    555,
+                    657,
+                    201,
+                    913,
+                    727,
+                    614,
+                    555,
+                    457
+                  ]
+                }
+              ]
+            },
+            {
+              "categories": [
+                "Jan",
+                "Feb",
+                "Mar",
+                "Apr",
+                "May",
+                "Jun",
+                "Jul",
+                "Aug",
+                "Sep",
+                "Oct",
+                "Nov",
+                "Dec"
+              ],
+              "dataSet": [
+                {
+                  "name": "streams",
+                  "data": [
+                    670,
+                    960,
+                    571,
+                    414,
+                    555,
+                    657,
+                    201,
+                    913,
+                    727,
+                    614,
+                    555,
+                    457
+                  ]
+                }
+              ]
+            }
+          ],
+          "generalKpi": {
+            "dataSet": [
+              {
+                "name": "cobertura",
+                "data": [
+                  170000,
+                  200000,
+                  230000,
+                  245000
+                ]
+              },
+              {
+                "name": "Stream",
+                "data": [
+                  120000,
+                  144000,
+                  124000,
+                  185000
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id_emisora": 383002,
+        "fecha": "2022-05-09",
+        "record_company": "Universal Music",
+        "id": 10000616683,
+        "song_name": "Punto G",
+        "id_interprete": 10000074802,
+        "interprete_colaboradores": "Karol G (+ Bad Bunny,Maldy,Mariah Angeliq,Mau y Ricky,Myke Towers,Ozuna,Nicki Minaj,Tiësto)",
+        "artist_name": "Karol G",
+        "streams": 4538,
+        "stream_percentage": 8.25,
+        "toucheds": 1,
+        "toucheds_percentage": 7.21,
+        "kpis": {
+          "compactKpi": [
+            {
+              "categories": [
+                "Jan",
+                "Feb",
+                "Mar",
+                "Apr",
+                "May",
+                "Jun",
+                "Jul",
+                "Aug",
+                "Sep",
+                "Oct",
+                "Nov",
+                "Dec"
+              ],
+              "dataSet": [
+                {
+                  "name": "tocadas",
+                  "data": [
+                    575,
+                    260,
+                    571,
+                    414,
+                    555,
+                    657,
+                    201,
+                    913,
+                    727,
+                    614,
+                    555,
+                    457
+                  ]
+                }
+              ]
+            },
+            {
+              "categories": [
+                "Jan",
+                "Feb",
+                "Mar",
+                "Apr",
+                "May",
+                "Jun",
+                "Jul",
+                "Aug",
+                "Sep",
+                "Oct",
+                "Nov",
+                "Dec"
+              ],
+              "dataSet": [
+                {
+                  "name": "streams",
+                  "data": [
+                    675,
+                    960,
+                    571,
+                    414,
+                    555,
+                    657,
+                    201,
+                    913,
+                    727,
+                    614,
+                    555,
+                    457
+                  ]
+                }
+              ]
+            }
+          ],
+          "generalKpi": {
+            "dataSet": [
+              {
+                "name": "cobertura",
+                "data": [
+                  170000,
+                  200000,
+                  230000,
+                  245000
+                ]
+              },
+              {
+                "name": "Stream",
+                "data": [
+                  120000,
+                  144000,
+                  124000,
+                  185000
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id_emisora": 383002,
+        "fecha": "2022-05-09",
+        "record_company": "Universal Music",
+        "id": 10000659326,
+        "song_name": "Provenza",
+        "id_interprete": 10000074802,
+        "interprete_colaboradores": "Karol G (+ Bad Bunny,Maldy,Mariah Angeliq,Mau y Ricky,Myke Towers,Ozuna,Nicki Minaj,Tiësto)",
+        "artist_name": "Karol G",
+        "streams": 27129,
+        "stream_percentage": 8.25,
+        "toucheds": 1,
+        "toucheds_percentage": 7.21,
+        "kpis": {
+          "compactKpi": [
+            {
+              "categories": [
+                "Jan",
+                "Feb",
+                "Mar",
+                "Apr",
+                "May",
+                "Jun",
+                "Jul",
+                "Aug",
+                "Sep",
+                "Oct",
+                "Nov",
+                "Dec"
+              ],
+              "dataSet": [
+                {
+                  "name": "tocadas",
+                  "data": [
+                    580,
+                    260,
+                    571,
+                    414,
+                    555,
+                    657,
+                    201,
+                    913,
+                    727,
+                    614,
+                    555,
+                    457
+                  ]
+                }
+              ]
+            },
+            {
+              "categories": [
+                "Jan",
+                "Feb",
+                "Mar",
+                "Apr",
+                "May",
+                "Jun",
+                "Jul",
+                "Aug",
+                "Sep",
+                "Oct",
+                "Nov",
+                "Dec"
+              ],
+              "dataSet": [
+                {
+                  "name": "streams",
+                  "data": [
+                    680,
+                    960,
+                    571,
+                    414,
+                    555,
+                    657,
+                    201,
+                    913,
+                    727,
+                    614,
+                    555,
+                    457
+                  ]
+                }
+              ]
+            }
+          ],
+          "generalKpi": {
+            "dataSet": [
+              {
+                "name": "cobertura",
+                "data": [
+                  170000,
+                  200000,
+                  230000,
+                  245000
+                ]
+              },
+              {
+                "name": "Stream",
+                "data": [
+                  120000,
+                  144000,
+                  124000,
+                  185000
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id_emisora": 383002,
+        "fecha": "2022-01-19",
+        "record_company": "Sony Music",
+        "id": 10000635011,
+        "song_name": "Caramelo",
+        "id_interprete": 10000074802,
+        "interprete_colaboradores": "Karol G (+ Bad Bunny,Maldy,Mariah Angeliq,Mau y Ricky,Myke Towers,Ozuna,Nicki Minaj,Tiësto)",
+        "artist_name": "Karol G",
+        "streams": 1777,
+        "stream_percentage": 8.25,
+        "toucheds": 1,
+        "toucheds_percentage": 7.21,
+        "kpis": {
+          "compactKpi": [
+            {
+              "categories": [
+                "Jan",
+                "Feb",
+                "Mar",
+                "Apr",
+                "May",
+                "Jun",
+                "Jul",
+                "Aug",
+                "Sep",
+                "Oct",
+                "Nov",
+                "Dec"
+              ],
+              "dataSet": [
+                {
+                  "name": "tocadas",
+                  "data": [
+                    585,
+                    260,
+                    571,
+                    414,
+                    555,
+                    657,
+                    201,
+                    913,
+                    727,
+                    614,
+                    555,
+                    457
+                  ]
+                }
+              ]
+            },
+            {
+              "categories": [
+                "Jan",
+                "Feb",
+                "Mar",
+                "Apr",
+                "May",
+                "Jun",
+                "Jul",
+                "Aug",
+                "Sep",
+                "Oct",
+                "Nov",
+                "Dec"
+              ],
+              "dataSet": [
+                {
+                  "name": "streams",
+                  "data": [
+                    685,
+                    960,
+                    571,
+                    414,
+                    555,
+                    657,
+                    201,
+                    913,
+                    727,
+                    614,
+                    555,
+                    457
+                  ]
+                }
+              ]
+            }
+          ],
+          "generalKpi": {
+            "dataSet": [
+              {
+                "name": "cobertura",
+                "data": [
+                  170000,
+                  200000,
+                  230000,
+                  245000
+                ]
+              },
+              {
+                "name": "Stream",
+                "data": [
+                  120000,
+                  144000,
+                  124000,
+                  185000
+                ]
+              }
+            ]
+          }
+        }
+      }
+    ]
+  },
+  "10000081699": {
+    "canciones": [
+      {
+        "emisora_N2": "Cadena Dial Latino",
+        "id_emisora": 376004,
+        "fecha": "2022-08-17",
+        "record_company": "Sony Music",
+        "id": 10000635873,
+        "song_name": "Vida de rico",
+        "id_interprete": 10000081699,
+        "interprete_colaboradores": "Camilo (+ Carlos Vives,El Alfa,Evaluna Montaner,Farruko,Reik,Manuel Turizo,Mau y Ricky,Pedro Capó,Pedro Capó,Shakira,Rauw Alejandro,Wisin)",
+        "artist_name": "Camilo",
+        "streams": 253,
+        "stream_percentage": 8.25,
+        "toucheds": 2,
+        "toucheds_percentage": 7.21,
+        "kpis": {
+          "compactKpi": [
+            {
+              "categories": [
+                "Jan",
+                "Feb",
+                "Mar",
+                "Apr",
+                "May",
+                "Jun",
+                "Jul",
+                "Aug",
+                "Sep",
+                "Oct",
+                "Nov",
+                "Dec"
+              ],
+              "dataSet": [
+                {
+                  "name": "tocadas",
+                  "data": [
+                    655,
+                    260,
+                    571,
+                    414,
+                    555,
+                    657,
+                    201,
+                    913,
+                    727,
+                    614,
+                    555,
+                    457
+                  ]
+                }
+              ]
+            },
+            {
+              "categories": [
+                "Jan",
+                "Feb",
+                "Mar",
+                "Apr",
+                "May",
+                "Jun",
+                "Jul",
+                "Aug",
+                "Sep",
+                "Oct",
+                "Nov",
+                "Dec"
+              ],
+              "dataSet": [
+                {
+                  "name": "streams",
+                  "data": [
+                    755,
+                    960,
+                    571,
+                    414,
+                    555,
+                    657,
+                    201,
+                    913,
+                    727,
+                    614,
+                    555,
+                    457
+                  ]
+                }
+              ]
+            }
+          ],
+          "generalKpi": {
+            "dataSet": [
+              {
+                "name": "cobertura",
+                "data": [
+                  190750,
+                  200000,
+                  230000,
+                  245000
+                ]
+              },
+              {
+                "name": "Stream",
+                "data": [
+                  150750,
+                  144000,
+                  124000,
+                  185000
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id_emisora": 376004,
+        "fecha": "2022-08-17",
+        "record_company": "Sony Music",
+        "id": 10000651213,
+        "song_name": "Índigo",
+        "id_interprete": 10000081699,
+        "interprete_colaboradores": "Camilo (+ Carlos Vives,El Alfa,Evaluna Montaner,Farruko,Reik,Manuel Turizo,Mau y Ricky,Pedro Capó,Pedro Capó,Shakira,Rauw Alejandro,Wisin)",
+        "artist_name": "Camilo",
+        "streams": 359,
+        "stream_percentage": 8.25,
+        "toucheds": 1,
+        "toucheds_percentage": 7.21,
+        "kpis": {
+          "compactKpi": [
+            {
+              "categories": [
+                "Jan",
+                "Feb",
+                "Mar",
+                "Apr",
+                "May",
+                "Jun",
+                "Jul",
+                "Aug",
+                "Sep",
+                "Oct",
+                "Nov",
+                "Dec"
+              ],
+              "dataSet": [
+                {
+                  "name": "tocadas",
+                  "data": [
+                    660,
+                    260,
+                    571,
+                    414,
+                    555,
+                    657,
+                    201,
+                    913,
+                    727,
+                    614,
+                    555,
+                    457
+                  ]
+                }
+              ]
+            },
+            {
+              "categories": [
+                "Jan",
+                "Feb",
+                "Mar",
+                "Apr",
+                "May",
+                "Jun",
+                "Jul",
+                "Aug",
+                "Sep",
+                "Oct",
+                "Nov",
+                "Dec"
+              ],
+              "dataSet": [
+                {
+                  "name": "streams",
+                  "data": [
+                    760,
+                    960,
+                    571,
+                    414,
+                    555,
+                    657,
+                    201,
+                    913,
+                    727,
+                    614,
+                    555,
+                    457
+                  ]
+                }
+              ]
+            }
+          ],
+          "generalKpi": {
+            "dataSet": [
+              {
+                "name": "cobertura",
+                "data": [
+                  190750,
+                  200000,
+                  230000,
+                  245000
+                ]
+              },
+              {
+                "name": "Stream",
+                "data": [
+                  150750,
+                  144000,
+                  124000,
+                  185000
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id_emisora": 376004,
+        "fecha": "2022-08-17",
+        "record_company": "Sony Music",
+        "id": 10000642784,
+        "song_name": "Millones",
+        "id_interprete": 10000081699,
+        "interprete_colaboradores": "Camilo (+ Carlos Vives,El Alfa,Evaluna Montaner,Farruko,Reik,Manuel Turizo,Mau y Ricky,Pedro Capó,Pedro Capó,Shakira,Rauw Alejandro,Wisin)",
+        "artist_name": "Camilo",
+        "streams": 417,
+        "stream_percentage": 8.25,
+        "toucheds": 3,
+        "toucheds_percentage": 7.21,
+        "kpis": {
+          "compactKpi": [
+            {
+              "categories": [
+                "Jan",
+                "Feb",
+                "Mar",
+                "Apr",
+                "May",
+                "Jun",
+                "Jul",
+                "Aug",
+                "Sep",
+                "Oct",
+                "Nov",
+                "Dec"
+              ],
+              "dataSet": [
+                {
+                  "name": "tocadas",
+                  "data": [
+                    665,
+                    260,
+                    571,
+                    414,
+                    555,
+                    657,
+                    201,
+                    913,
+                    727,
+                    614,
+                    555,
+                    457
+                  ]
+                }
+              ]
+            },
+            {
+              "categories": [
+                "Jan",
+                "Feb",
+                "Mar",
+                "Apr",
+                "May",
+                "Jun",
+                "Jul",
+                "Aug",
+                "Sep",
+                "Oct",
+                "Nov",
+                "Dec"
+              ],
+              "dataSet": [
+                {
+                  "name": "streams",
+                  "data": [
+                    765,
+                    960,
+                    571,
+                    414,
+                    555,
+                    657,
+                    201,
+                    913,
+                    727,
+                    614,
+                    555,
+                    457
+                  ]
+                }
+              ]
+            }
+          ],
+          "generalKpi": {
+            "dataSet": [
+              {
+                "name": "cobertura",
+                "data": [
+                  190750,
+                  200000,
+                  230000,
+                  245000
+                ]
+              },
+              {
+                "name": "Stream",
+                "data": [
+                  150750,
+                  144000,
+                  124000,
+                  185000
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id_emisora": 1002,
+        "fecha": "2022-08-17",
+        "record_company": "Sony Music",
+        "id": 10000661014,
+        "song_name": "Pegao",
+        "id_interprete": 10000081699,
+        "interprete_colaboradores": "Camilo (+ Carlos Vives,El Alfa,Evaluna Montaner,Farruko,Reik,Manuel Turizo,Mau y Ricky,Pedro Capó,Pedro Capó,Shakira,Rauw Alejandro,Wisin)",
+        "artist_name": "Camilo",
+        "streams": 13984,
+        "stream_percentage": 8.25,
+        "toucheds": 4,
+        "toucheds_percentage": 7.21,
+        "kpis": {
+          "compactKpi": [
+            {
+              "categories": [
+                "Jan",
+                "Feb",
+                "Mar",
+                "Apr",
+                "May",
+                "Jun",
+                "Jul",
+                "Aug",
+                "Sep",
+                "Oct",
+                "Nov",
+                "Dec"
+              ],
+              "dataSet": [
+                {
+                  "name": "tocadas",
+                  "data": [
+                    670,
+                    260,
+                    571,
+                    414,
+                    555,
+                    657,
+                    201,
+                    913,
+                    727,
+                    614,
+                    555,
+                    457
+                  ]
+                }
+              ]
+            },
+            {
+              "categories": [
+                "Jan",
+                "Feb",
+                "Mar",
+                "Apr",
+                "May",
+                "Jun",
+                "Jul",
+                "Aug",
+                "Sep",
+                "Oct",
+                "Nov",
+                "Dec"
+              ],
+              "dataSet": [
+                {
+                  "name": "streams",
+                  "data": [
+                    770,
+                    960,
+                    571,
+                    414,
+                    555,
+                    657,
+                    201,
+                    913,
+                    727,
+                    614,
+                    555,
+                    457
+                  ]
+                }
+              ]
+            }
+          ],
+          "generalKpi": {
+            "dataSet": [
+              {
+                "name": "cobertura",
+                "data": [
+                  190750,
+                  200000,
+                  230000,
+                  245000
+                ]
+              },
+              {
+                "name": "Stream",
+                "data": [
+                  150750,
+                  144000,
+                  124000,
+                  185000
+                ]
+              }
+            ]
+          }
+        }
+      }
+    ]
+  },
+  "10000790164": {
+    "canciones": [
+      {
+        "id_emisora": 1004,
+        "fecha": "2022-07-23",
+        "record_company": "Bit Music",
+        "id": 10000118971,
+        "song_name": "Dance",
+        "id_interprete": 10000039078,
+        "interprete_colaboradores": "Chanel",
+        "artist_name": "Chanel",
+        "streams": 5668,
+        "stream_percentage": 8.25,
+        "toucheds": 1,
+        "toucheds_percentage": 7.21,
+        "kpis": {
+          "compactKpi": [
+            {
+              "categories": [
+                "Jan",
+                "Feb",
+                "Mar",
+                "Apr",
+                "May",
+                "Jun",
+                "Jul",
+                "Aug",
+                "Sep",
+                "Oct",
+                "Nov",
+                "Dec"
+              ],
+              "dataSet": [
+                {
+                  "name": "tocadas",
+                  "data": [
+                    910,
+                    260,
+                    571,
+                    414,
+                    555,
+                    657,
+                    201,
+                    913,
+                    727,
+                    614,
+                    555,
+                    457
+                  ]
+                }
+              ]
+            },
+            {
+              "categories": [
+                "Jan",
+                "Feb",
+                "Mar",
+                "Apr",
+                "May",
+                "Jun",
+                "Jul",
+                "Aug",
+                "Sep",
+                "Oct",
+                "Nov",
+                "Dec"
+              ],
+              "dataSet": [
+                {
+                  "name": "streams",
+                  "data": [
+                    1010,
+                    960,
+                    571,
+                    414,
+                    555,
+                    657,
+                    201,
+                    913,
+                    727,
+                    614,
+                    555,
+                    457
+                  ]
+                }
+              ]
+            }
+          ],
+          "generalKpi": {
+            "dataSet": [
+              {
+                "name": "cobertura",
+                "data": [
+                  200750,
+                  200000,
+                  230000,
+                  245000
+                ]
+              },
+              {
+                "name": "Stream",
+                "data": [
+                  110750,
+                  144000,
+                  124000,
+                  185000
+                ]
+              }
+            ]
+          }
+        }
+      }
+    ]
+  }
 }

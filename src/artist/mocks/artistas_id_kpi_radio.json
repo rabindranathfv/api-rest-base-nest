@@ -1,45 +1,132 @@
 {
     "10000039078": {
-        "cobertura": {
-            "categories": ["LOS40 Dance", "LOS40", "LOS40 Classic", "LOS40 Urban", "Cadena Dial", "Cadena Dial Latino", "Cadena Dial Baladas", "Cadena Dial Esencial", "Cadena Dial Mini", "Radiolé"],
+        "kpi_station": {
+            "categories": [
+                "LOS40 Dance",
+                "LOS40",
+                "LOS40 Classic",
+                "LOS40 Urban",
+                "Cadena Dial",
+                "Cadena Dial Latino",
+                "Cadena Dial Baladas",
+                "Cadena Dial Esencial",
+                "Cadena Dial Mini",
+                "Radiolé"
+            ],
             "dataSet": [
                 {
-                "name": "cobertura",
-                "data": [0, 0, 0, 0, 20000, 0, 0, 0, 0, 0]
+                    "name": "cobertura",
+                    "data": [
+                        0,
+                        0,
+                        0,
+                        0,
+                        20000,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0
+                    ]
                 }
             ]
         }
     },
     "10000074802": {
-        "cobertura": {
-            "categories": ["LOS40 Dance", "LOS40", "LOS40 Classic", "LOS40 Urban", "Cadena Dial", "Cadena Dial Latino", "Cadena Dial Baladas", "Cadena Dial Esencial", "Cadena Dial Mini", "Radiolé"],
+        "kpi_station": {
+            "categories": [
+                "LOS40 Dance",
+                "LOS40",
+                "LOS40 Classic",
+                "LOS40 Urban",
+                "Cadena Dial",
+                "Cadena Dial Latino",
+                "Cadena Dial Baladas",
+                "Cadena Dial Esencial",
+                "Cadena Dial Mini",
+                "Radiolé"
+            ],
             "dataSet": [
                 {
-                "name": "cobertura",
-                "data": [70000, 70000, 20000, 0, 0, 10000, 0, 0, 10000, 50000]
+                    "name": "cobertura",
+                    "data": [
+                        70000,
+                        70000,
+                        20000,
+                        0,
+                        0,
+                        10000,
+                        0,
+                        0,
+                        10000,
+                        50000
+                    ]
                 }
             ]
         }
     },
     "10000081699": {
-        "cobertura": {
-            "categories": ["LOS40 Dance", "LOS40", "LOS40 Classic", "LOS40 Urban", "Cadena Dial", "Cadena Dial Latino", "Cadena Dial Baladas", "Cadena Dial Esencial", "Cadena Dial Mini", "Radiolé"],
-            "dataSet": [
-              {
-                "name": "cobertura",
-                "data": [50000, 29000, 12000, 4000, 4000, 59000, 6000, 25000, 19000, 10000]
-              }
-            ]
-        }
-
-    },
-    "10000790164": {
-        "cobertura": {
-            "categories": ["LOS40 Dance", "LOS40", "LOS40 Classic", "LOS40 Urban", "Cadena Dial", "Cadena Dial Latino", "Cadena Dial Baladas", "Cadena Dial Esencial", "Cadena Dial Mini", "Radiolé"],
+        "kpi_station": {
+            "categories": [
+                "LOS40 Dance",
+                "LOS40",
+                "LOS40 Classic",
+                "LOS40 Urban",
+                "Cadena Dial",
+                "Cadena Dial Latino",
+                "Cadena Dial Baladas",
+                "Cadena Dial Esencial",
+                "Cadena Dial Mini",
+                "Radiolé"
+            ],
             "dataSet": [
                 {
-                "name": "cobertura",
-                "data": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+                    "name": "cobertura",
+                    "data": [
+                        50000,
+                        29000,
+                        12000,
+                        4000,
+                        4000,
+                        59000,
+                        6000,
+                        25000,
+                        19000,
+                        10000
+                    ]
+                }
+            ]
+        }
+    },
+    "10000790164": {
+        "kpi_station": {
+            "categories": [
+                "LOS40 Dance",
+                "LOS40",
+                "LOS40 Classic",
+                "LOS40 Urban",
+                "Cadena Dial",
+                "Cadena Dial Latino",
+                "Cadena Dial Baladas",
+                "Cadena Dial Esencial",
+                "Cadena Dial Mini",
+                "Radiolé"
+            ],
+            "dataSet": [
+                {
+                    "name": "cobertura",
+                    "data": [
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0
+                    ]
                 }
             ]
         }

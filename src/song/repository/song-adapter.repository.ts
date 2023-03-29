@@ -62,6 +62,7 @@ export class SongAdapterRepository implements SongRepository {
     );
 
     try {
+      console.log(`filter ${filter}`);
       // TODO: UPDATE THIS MOCK RESPONSE ON JSON FILE
       const queryResults = canciones_id_kpis[id];
 

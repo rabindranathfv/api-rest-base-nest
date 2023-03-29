@@ -1,15 +1,15 @@
 {
-    "artistas": [
+    "artists": [
         {
-            "title": "Karol G",
-            "subtitle": "Universal Musc Group",
+            "artist_name": "Karol G",
+            "record_company": "Universal Musc Group",
             "image": "https://i.scdn.co/image/ab6761610000f1786a0594d5bff11a7e0c7ceb1a",
-            "canciones": "68",
+            "total_songs": "68",
             "id": 10000074802,
             "streams": 15900,
-            "porcentajeStream": 12.29,
-            "tocadas": 10890,
-            "porcentajeTocadas": 8.29,
+            "stream_percentage": 12.29,
+            "toucheds": 10890,
+            "toucheds_percentage": 8.29,
             "cobertura": 500990,
             "kpis": {
                 "compactKpi": [
@@ -83,41 +83,19 @@
                             }
                         ]
                     }
-                ],
-                "generalKpi": {
-                    "dataSet": [
-                        {
-                            "name": "cobertura",
-                            "data": [
-                                200500,
-                                210000,
-                                230000,
-                                265000
-                            ]
-                        },
-                        {
-                            "name": "Stream",
-                            "data": [
-                                150500,
-                                194000,
-                                174000,
-                                175000
-                            ]
-                        }
-                    ]
-                }
+                ]
             }
         },
         {
-            "title": "Camilo",
-            "subtitle": "Sony Music Entretainment",
+            "artist_name": "Camilo",
+            "record_company": "Sony Music Entretainment",
             "image": "https://i.scdn.co/image/ab6761610000f178c85ae756174cc69352bf6b97",
-            "canciones": "2700",
+            "total_songs": "2700",
             "id": 10000081699,
             "streams": 30000,
-            "porcentajeStream": 13.29,
-            "tocadas": 14890,
-            "porcentajeTocadas": 9.29,
+            "stream_percentage": 13.29,
+            "toucheds": 14890,
+            "toucheds_percentage": 9.29,
             "cobertura": 560990,
             "kpis": {
                 "compactKpi": [
@@ -191,41 +169,19 @@
                             }
                         ]
                     }
-                ],
-                "generalKpi": {
-                    "dataSet": [
-                        {
-                            "name": "cobertura",
-                            "data": [
-                                190500,
-                                200000,
-                                220000,
-                                225000
-                            ]
-                        },
-                        {
-                            "name": "Stream",
-                            "data": [
-                                170500,
-                                174000,
-                                174000,
-                                175000
-                            ]
-                        }
-                    ]
-                }
+                ]
             }
         },
         {
-            "title": "Channel",
-            "subtitle": "Sony Music Entretainment",
+            "artist_name": "Channel",
+            "record_company": "Sony Music Entretainment",
             "image": "https://i.scdn.co/image/ab6761610000f1786745c2dc8ad4c3c8d1075241",
-            "canciones": "1",
+            "total_songs": "1",
             "id": 10000039078,
             "streams": 220,
-            "porcentajeStream": 14.29,
-            "tocadas": 100,
-            "porcentajeTocadas": 10.29,
+            "stream_percentage": 14.29,
+            "toucheds": 100,
+            "toucheds_percentage": 10.29,
             "cobertura": 50000,
             "kpis": {
                 "compactKpi": [
@@ -299,29 +255,7 @@
                             }
                         ]
                     }
-                ],
-                "generalKpi": {
-                    "dataSet": [
-                        {
-                            "name": "cobertura",
-                            "data": [
-                                190500,
-                                200000,
-                                230000,
-                                225000
-                            ]
-                        },
-                        {
-                            "name": "Stream",
-                            "data": [
-                                120500,
-                                144000,
-                                124000,
-                                135000
-                            ]
-                        }
-                    ]
-                }
+                ]
             }
         }
     ]
