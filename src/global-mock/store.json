@@ -53,8 +53,44 @@
             },
             "kpi_emisora": [
                 {
-                    "nombre": "cobertura",
+                    "nombre": "LOS40 Dance",
+                    "cobertura": 0
+                },
+                {
+                    "nombre": "LOS40",
+                    "cobertura": 0
+                },
+                {
+                    "nombre": "LOS40 Classi",
+                    "cobertura": 0
+                },
+                {
+                    "nombre": "LOS40 Urban",
+                    "cobertura": 0
+                },
+                {
+                    "nombre": "Cadena Dial",
                     "cobertura": 20000
+                },
+                {
+                    "nombre": "Cadena Dial Latino",
+                    "cobertura": 0
+                },
+                {
+                    "nombre": "Cadena Dial Baladas",
+                    "cobertura": 0
+                },
+                {
+                    "nombre": "Cadena Dial Esencial",
+                    "cobertura": 0
+                },
+                {
+                    "nombre": "Cadena Dial Mini",
+                    "cobertura": 0
+                },
+                {
+                    "nombre": "Radiolé",
+                    "cobertura": 0
                 }
             ],
             "albunes": [
@@ -63,7 +99,7 @@
                     "image": "SOME_ALBUN_URL",
                     "canciones": [
                         {
-                            "nombre": "El makinon",
+                            "nombre": "El Makinon",
                             "kpi": {
                                 "tocadas": {
                                     "total": 200,
@@ -96,8 +132,44 @@
                             },
                             "kpi_emisora": [
                                 {
-                                    "nombre": "cobertura",
+                                    "nombre": "LOS40 Dance",
+                                    "cobertura": 70000
+                                },
+                                {
+                                    "nombre": "LOS40",
+                                    "cobertura": 70000
+                                },
+                                {
+                                    "nombre": "LOS40 Classi",
                                     "cobertura": 20000
+                                },
+                                {
+                                    "nombre": "LOS40 Urban",
+                                    "cobertura": 0
+                                },
+                                {
+                                    "nombre": "Cadena Dial",
+                                    "cobertura": 0
+                                },
+                                {
+                                    "nombre": "Cadena Dial Latino",
+                                    "cobertura": 10000
+                                },
+                                {
+                                    "nombre": "Cadena Dial Baladas",
+                                    "cobertura": 0
+                                },
+                                {
+                                    "nombre": "Cadena Dial Esencial",
+                                    "cobertura": 0
+                                },
+                                {
+                                    "nombre": "Cadena Dial Mini",
+                                    "cobertura": 10000
+                                },
+                                {
+                                    "nombre": "Radiolé",
+                                    "cobertura": 50000
                                 }
                             ],
                             "rango_edad": {
@@ -126,13 +198,7 @@
                                     }
                                 ]
                             }
-                        }
-                    ]
-                },
-                {
-                    "nombre": "ALBUM 1 KAROL G",
-                    "image": "SOME_ALBUN_URL",
-                    "canciones": [
+                        },
                         {
                             "nombre": "Ay, Dios mío!",
                             "kpi": {
@@ -167,8 +233,44 @@
                             },
                             "kpi_emisora": [
                                 {
-                                    "nombre": "cobertura",
-                                    "cobertura": 16000
+                                    "nombre": "LOS40 Dance",
+                                    "cobertura": 0
+                                },
+                                {
+                                    "nombre": "LOS40",
+                                    "cobertura": 0
+                                },
+                                {
+                                    "nombre": "LOS40 Classi",
+                                    "cobertura": 0
+                                },
+                                {
+                                    "nombre": "LOS40 Urban",
+                                    "cobertura": 0
+                                },
+                                {
+                                    "nombre": "Cadena Dial",
+                                    "cobertura": 0
+                                },
+                                {
+                                    "nombre": "Cadena Dial Latino",
+                                    "cobertura": 10000
+                                },
+                                {
+                                    "nombre": "Cadena Dial Baladas",
+                                    "cobertura": 0
+                                },
+                                {
+                                    "nombre": "Cadena Dial Esencial",
+                                    "cobertura": 0
+                                },
+                                {
+                                    "nombre": "Cadena Dial Mini",
+                                    "cobertura": 10000
+                                },
+                                {
+                                    "nombre": "Radiolé",
+                                    "cobertura": 50000
                                 }
                             ],
                             "rango_edad": {
@@ -197,13 +299,7 @@
                                     }
                                 ]
                             }
-                        }
-                    ]
-                },
-                {
-                    "nombre": "ALBUM 1 KAROL G",
-                    "image": "SOME_ALBUN_URL",
-                    "canciones": [
+                        },
                         {
                             "nombre": "Provenza",
                             "kpi": {
@@ -238,8 +334,44 @@
                             },
                             "kpi_emisora": [
                                 {
-                                    "nombre": "cobertura",
-                                    "cobertura": 15000
+                                    "nombre": "LOS40 Dance",
+                                    "cobertura": 70000
+                                },
+                                {
+                                    "nombre": "LOS40",
+                                    "cobertura": 0
+                                },
+                                {
+                                    "nombre": "LOS40 Classi",
+                                    "cobertura": 20000
+                                },
+                                {
+                                    "nombre": "LOS40 Urban",
+                                    "cobertura": 0
+                                },
+                                {
+                                    "nombre": "Cadena Dial",
+                                    "cobertura": 0
+                                },
+                                {
+                                    "nombre": "Cadena Dial Latino",
+                                    "cobertura": 20000
+                                },
+                                {
+                                    "nombre": "Cadena Dial Baladas",
+                                    "cobertura": 0
+                                },
+                                {
+                                    "nombre": "Cadena Dial Esencial",
+                                    "cobertura": 0
+                                },
+                                {
+                                    "nombre": "Cadena Dial Mini",
+                                    "cobertura": 0
+                                },
+                                {
+                                    "nombre": "Radiolé",
+                                    "cobertura": 30000
                                 }
                             ],
                             "rango_edad": {
@@ -268,13 +400,7 @@
                                     }
                                 ]
                             }
-                        }
-                    ]
-                },
-                {
-                    "nombre": "ALBUM 1 KAROL G",
-                    "image": "SOME_ALBUN_URL",
-                    "canciones": [
+                        },
                         {
                             "nombre": "Tusa",
                             "kpi": {
@@ -309,8 +435,44 @@
                             },
                             "kpi_emisora": [
                                 {
-                                    "nombre": "cobertura",
-                                    "cobertura": 15000
+                                    "nombre": "LOS40 Dance",
+                                    "cobertura": 0
+                                },
+                                {
+                                    "nombre": "LOS40",
+                                    "cobertura": 70000
+                                },
+                                {
+                                    "nombre": "LOS40 Classi",
+                                    "cobertura": 22000
+                                },
+                                {
+                                    "nombre": "LOS40 Urban",
+                                    "cobertura": 0
+                                },
+                                {
+                                    "nombre": "Cadena Dial",
+                                    "cobertura": 0
+                                },
+                                {
+                                    "nombre": "Cadena Dial Latino",
+                                    "cobertura": 0
+                                },
+                                {
+                                    "nombre": "Cadena Dial Baladas",
+                                    "cobertura": 0
+                                },
+                                {
+                                    "nombre": "Cadena Dial Esencial",
+                                    "cobertura": 0
+                                },
+                                {
+                                    "nombre": "Cadena Dial Mini",
+                                    "cobertura": 0
+                                },
+                                {
+                                    "nombre": "Radiolé",
+                                    "cobertura": 80000
                                 }
                             ],
                             "rango_edad": {
@@ -343,7 +505,7 @@
                     ]
                 },
                 {
-                    "nombre": "ALBUM 1 KAROL G",
+                    "nombre": "ALBUM 2 KAROL G",
                     "image": "SOME_ALBUN_URL",
                     "canciones": [
                         {
@@ -380,8 +542,44 @@
                             },
                             "kpi_emisora": [
                                 {
-                                    "nombre": "cobertura",
-                                    "cobertura": 15000
+                                    "nombre": "LOS40 Dance",
+                                    "cobertura": 0
+                                },
+                                {
+                                    "nombre": "LOS40",
+                                    "cobertura": 0
+                                },
+                                {
+                                    "nombre": "LOS40 Classi",
+                                    "cobertura": 1000
+                                },
+                                {
+                                    "nombre": "LOS40 Urban",
+                                    "cobertura": 0
+                                },
+                                {
+                                    "nombre": "Cadena Dial",
+                                    "cobertura": 0
+                                },
+                                {
+                                    "nombre": "Cadena Dial Latino",
+                                    "cobertura": 90000
+                                },
+                                {
+                                    "nombre": "Cadena Dial Baladas",
+                                    "cobertura": 0
+                                },
+                                {
+                                    "nombre": "Cadena Dial Esencial",
+                                    "cobertura": 0
+                                },
+                                {
+                                    "nombre": "Cadena Dial Mini",
+                                    "cobertura": 0
+                                },
+                                {
+                                    "nombre": "Radiolé",
+                                    "cobertura": 0
                                 }
                             ],
                             "rango_edad": {
@@ -414,7 +612,7 @@
                     ]
                 },
                 {
-                    "nombre": "ALBUM 1 KAROL G",
+                    "nombre": "ALBUM 3 KAROL G",
                     "image": "SOME_ALBUN_URL",
                     "canciones": [
                         {
@@ -451,8 +649,44 @@
                             },
                             "kpi_emisora": [
                                 {
-                                    "nombre": "cobertura",
-                                    "cobertura": 15000
+                                    "nombre": "LOS40 Dance",
+                                    "cobertura": 0
+                                },
+                                {
+                                    "nombre": "LOS40",
+                                    "cobertura": 50000
+                                },
+                                {
+                                    "nombre": "LOS40 Classi",
+                                    "cobertura": 20000
+                                },
+                                {
+                                    "nombre": "LOS40 Urban",
+                                    "cobertura": 0
+                                },
+                                {
+                                    "nombre": "Cadena Dial",
+                                    "cobertura": 0
+                                },
+                                {
+                                    "nombre": "Cadena Dial Latino",
+                                    "cobertura": 10000
+                                },
+                                {
+                                    "nombre": "Cadena Dial Baladas",
+                                    "cobertura": 0
+                                },
+                                {
+                                    "nombre": "Cadena Dial Esencial",
+                                    "cobertura": 0
+                                },
+                                {
+                                    "nombre": "Cadena Dial Mini",
+                                    "cobertura": 10000
+                                },
+                                {
+                                    "nombre": "Radiolé",
+                                    "cobertura": 30000
                                 }
                             ],
                             "rango_edad": {
@@ -534,8 +768,44 @@
             },
             "kpi_emisora": [
                 {
-                    "nombre": "cobertura",
-                    "cobertura": 14000
+                    "nombre": "LOS40 Dance",
+                    "cobertura": 70000
+                },
+                {
+                    "nombre": "LOS40",
+                    "cobertura": 70000
+                },
+                {
+                    "nombre": "LOS40 Classi",
+                    "cobertura": 20000
+                },
+                {
+                    "nombre": "LOS40 Urban",
+                    "cobertura": 0
+                },
+                {
+                    "nombre": "Cadena Dial",
+                    "cobertura": 0
+                },
+                {
+                    "nombre": "Cadena Dial Latino",
+                    "cobertura": 10000
+                },
+                {
+                    "nombre": "Cadena Dial Baladas",
+                    "cobertura": 0
+                },
+                {
+                    "nombre": "Cadena Dial Esencial",
+                    "cobertura": 0
+                },
+                {
+                    "nombre": "Cadena Dial Mini",
+                    "cobertura": 10000
+                },
+                {
+                    "nombre": "Radiolé",
+                    "cobertura": 50000
                 }
             ],
             "albunes": [
@@ -665,8 +935,44 @@
             },
             "kpi_emisora": [
                 {
-                    "nombre": "cobertura",
-                    "cobertura": 560990
+                    "nombre": "LOS40 Dance",
+                    "cobertura": 50000
+                },
+                {
+                    "nombre": "LOS40",
+                    "cobertura": 29000
+                },
+                {
+                    "nombre": "LOS40 Classi",
+                    "cobertura": 12000
+                },
+                {
+                    "nombre": "LOS40 Urban",
+                    "cobertura": 4000
+                },
+                {
+                    "nombre": "Cadena Dial",
+                    "cobertura": 4000
+                },
+                {
+                    "nombre": "Cadena Dial Latino",
+                    "cobertura": 10000
+                },
+                {
+                    "nombre": "Cadena Dial Baladas",
+                    "cobertura": 59000
+                },
+                {
+                    "nombre": "Cadena Dial Esencial",
+                    "cobertura": 6000
+                },
+                {
+                    "nombre": "Cadena Dial Mini",
+                    "cobertura": 25000
+                },
+                {
+                    "nombre": "Radiolé",
+                    "cobertura": 19000
                 }
             ],
             "albunes": [
@@ -716,8 +1022,44 @@
                             },
                             "kpi_emisora": [
                                 {
-                                    "nombre": "cobertura",
-                                    "cobertura": 30000
+                                    "nombre": "LOS40 Dance",
+                                    "cobertura": 70000
+                                },
+                                {
+                                    "nombre": "LOS40",
+                                    "cobertura": 70000
+                                },
+                                {
+                                    "nombre": "LOS40 Classi",
+                                    "cobertura": 20000
+                                },
+                                {
+                                    "nombre": "LOS40 Urban",
+                                    "cobertura": 0
+                                },
+                                {
+                                    "nombre": "Cadena Dial",
+                                    "cobertura": 0
+                                },
+                                {
+                                    "nombre": "Cadena Dial Latino",
+                                    "cobertura": 10000
+                                },
+                                {
+                                    "nombre": "Cadena Dial Baladas",
+                                    "cobertura": 0
+                                },
+                                {
+                                    "nombre": "Cadena Dial Esencial",
+                                    "cobertura": 0
+                                },
+                                {
+                                    "nombre": "Cadena Dial Mini",
+                                    "cobertura": 10000
+                                },
+                                {
+                                    "nombre": "Radiolé",
+                                    "cobertura": 50000
                                 }
                             ],
                             "rango_edad": {
@@ -795,8 +1137,44 @@
                             },
                             "kpi_emisora": [
                                 {
-                                    "nombre": "cobertura",
-                                    "cobertura": 30000
+                                    "nombre": "LOS40 Dance",
+                                    "cobertura": 0
+                                },
+                                {
+                                    "nombre": "LOS40",
+                                    "cobertura": 0
+                                },
+                                {
+                                    "nombre": "LOS40 Classi",
+                                    "cobertura": 0
+                                },
+                                {
+                                    "nombre": "LOS40 Urban",
+                                    "cobertura": 0
+                                },
+                                {
+                                    "nombre": "Cadena Dial",
+                                    "cobertura": 0
+                                },
+                                {
+                                    "nombre": "Cadena Dial Latino",
+                                    "cobertura": 40000
+                                },
+                                {
+                                    "nombre": "Cadena Dial Baladas",
+                                    "cobertura": 0
+                                },
+                                {
+                                    "nombre": "Cadena Dial Esencial",
+                                    "cobertura": 0
+                                },
+                                {
+                                    "nombre": "Cadena Dial Mini",
+                                    "cobertura": 20000
+                                },
+                                {
+                                    "nombre": "Radiolé",
+                                    "cobertura": 90000
                                 }
                             ],
                             "rango_edad": {
